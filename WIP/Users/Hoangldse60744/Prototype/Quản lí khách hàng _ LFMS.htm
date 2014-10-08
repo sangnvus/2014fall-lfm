@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Quản lí khách hàng | LFMS</title>
+    <link href="http://localhost:19442/Content/logo/LFMS-icon-48.png" rel="icon">
+
+    
+
+    <!-- basic styles -->
+    <link href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/main.css" rel="stylesheet" type="text/css">
+    <link href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/font-awesome.css" rel="stylesheet" type="text/css">
+
+    <!-- ace styles -->
+    <link href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/ace.css" rel="stylesheet" type="text/css">
+    <link href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/ace-rtl.css" rel="stylesheet" type="text/css">
+    <link href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/ace-skins.css" rel="stylesheet" type="text/css">
+
+    <!-- ace settings handler -->
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/ace-extra.js" type="text/javascript"></script>
+
+    <!-- basic scripts -->
+    <!--[if !IE]> -->
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/jquery-2.js" type="text/javascript"></script>
+    <!-- <![endif]-->
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/main.js" type="text/javascript"></script>
+
+    <!--[if !IE]> -->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='~/Content/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <!-- <![endif]-->
+
+    <script type="text/javascript">
+        if ("ontouchend" in document && document.ontouchend != null) document.write("<script src='~/Content/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/bootstrap.js" type="text/javascript"></script>
+
+    <!-- ace scripts -->
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/ace-elements.js" type="text/javascript"></script>
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/ace.js" type="text/javascript"></script>
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/md5.js" type="text/javascript"></script>
+
+
+<style>.cke{visibility:hidden;}</style></head>
+
+<body>
+    <div class="navbar navbar-default" id="navbar">
+        <script type="text/javascript">
+            try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+        </script>
+
+        <div class="navbar-container" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a href="http://localhost:19442/Home/Index" class="navbar-brand" title="Trang chủ">
+                    <small>
+                        <img src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/LFMS-logo-big.png" style="border: none; height: 22px">
+                    </small>
+                </a><!-- /.brand -->
+            </div><!-- /.navbar-header -->
+
+            <div id="staffIdDiv" value="1" style="display:none"></div>
+
+<div class="navbar-header pull-right" role="navigation">
+    <ul class="nav ace-nav">
+        <li class="green" id="notificationArea" style="display: block"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-bell-alt" id="bellIcon"></i><span class="badge badge-success" id="countCalender1">0</span></a><ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close"><li class="dropdown-header"><i class="icon-calendar"></i>Hôm nay có <span id="countCalender2">0</span> sự kiện</li><li></li></ul></li>
+
+        <li class="light-green">
+            <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                <img class="nav-user-photo" src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/thuannh.jpg" alt="">
+                <span class="user-info">
+                    <small>Xin chào,</small>
+                    <p>Nguyễn Hòa Thuận</p>
+                </span>
+
+                <i class="icon-caret-down"></i>
+            </a>
+
+            <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                <li>
+                    <a href="http://localhost:19442/Case/ListCase" onclick="">
+                        <i class="icon-folder-open"></i>
+                        Danh sách hồ sơ
+                    </a>
+                </li>
+
+                <li class="divider"></li>
+
+                    <li>
+                        <a href="http://localhost:19442/Customer/Customer" onclick="">
+                            <i class="icon-group"></i>
+                            Quản lý khách hàng
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="http://localhost:19442/Staff/Staff">
+                            <i class="icon-user"></i>
+                            Quản lý nhân viên
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="http://localhost:19442/Service/Service" onclick="">
+                            <i class="icon-cog"></i>
+                            Quản lý dịch vụ
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="http://localhost:19442/Office/Office">
+                            <i class="icon-home"></i>
+                            Quản lý văn phòng
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="http://localhost:19442/Salary/Salary">
+                            <i class=" icon-globe"></i>
+                            Quản lí lương nhân viên
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="http://localhost:19442/Statistic/Statistic">
+                            <i class="icon-home"></i>
+                            Thống kê
+                        </a>
+                    </li>
+                     <li class="divider"></li>
+                    <li>
+                        <a href="http://localhost:19442/OtherCost/OtherCost">
+                            <i class="icon-cog"></i>
+                            Chi phí khác
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+
+                <li>
+                    <a data-toggle="modal" href="#tblPassChange" onclick='$("#PassChangeDiv").appendTo("#bodyChangePass"); validatePassword("#validatPassForm"); clearFieldPassword();'>
+                        <i class="icon-key"></i>
+                        Đổi mật khẩu
+                    </a>
+                </li>
+
+                <li class="divider"></li>
+
+                <li>
+                    <a href="#" onclick="logOut()">
+                        <i class="icon-off"></i>
+                        Đăng xuất
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul><!-- /.ace-nav -->
+</div><!-- /.navbar-header -->
+
+<script>
+    $(document).ready(function () {
+        GetCalendarsByStaffId();
+    });
+
+    function GetCalendarsByStaffId() {
+        $.post("/UserControl/GetCalendarsByStaffId", { staffId: $("#staffIdDiv").attr("value") }, function (out) {
+            var item = '<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-bell-alt" id="bellIcon"></i><span class="badge badge-success" id="countCalender1"></span></a>';
+            item += '<ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close"><li class="dropdown-header"><i class="icon-calendar"></i>Hôm nay có <span id="countCalender2"></span> sự kiện</li>';
+            var count = 0;
+
+            $.each(out, function (index, ca) {
+                var casecode = "";
+                var priority;
+                if (typeof (ca.Case) != "undefined") {
+                    casecode = " (" + ca.Case.CaseCode + ")";
+                    priority = "";
+                } else priority = ca.Priority;
+                count += 1;
+
+                item += '<li><a>';
+                item += '<span class="label label-lg ' + priority + '" style="margin-right: 10px"><i class="icon-info-sign"></i></span>';
+                item += '<span class="msg-body">';
+                item += '<span class="msg-title" style="font-weight: bold">' + ca.Title + casecode + '</span>';
+
+                var date1 = convertNETDateTime(ca.BeginTime).toLocaleFormat('%d/%m/%Y');
+                var time1 = convertNETDateTime(ca.BeginTime).toLocaleTimeString();
+                var date2 = convertNETDateTime(ca.EndTime).toLocaleFormat('%d/%m/%Y');
+                var time2 = convertNETDateTime(ca.EndTime).toLocaleTimeString();
+
+                if (date1 == date2) {
+                    if (time1 == "12:00:00 AM" && time2 == "12:00:00 AM") {
+                        item += '<span class="msg-time"><span>Cả ngày</span></span>';
+                    } else {
+                        item += '<span class="msg-time"><span> Bắt đầu: ' + time1 + '</span></span>';
+                        item += '<span class="msg-time"><span> Kết thúc: ' + time2 + '</span></span>';
+                    }
+                } else {
+                    item += '<span class="msg-time"><span> Từ ngày: ' + date1 + '</span></span>';
+                    item += '<span class="msg-time"><span> Đến ngày: ' + date2 + '</span></span>';
+                }
+
+                item += '</span>'; // span body
+                item += '</a></li>';
+            });
+
+            item += '<li></li></ul>';
+            $('#notificationArea').html(item);
+            $('#countCalender1').text(count);
+            $('#countCalender2').text(count);
+
+            if (count != 0) {
+                $('#countCalender1').attr('class', 'badge badge-important');
+                $('#bellIcon').attr('class', 'icon-bell-alt icon-animated-bell');
+            }
+        });
+    }
+
+</script>
+
+<div id="PassChangeDiv">
+    <div id="tblPassChange" class="modal fade" tabindex="-1">
+        <div class="modal-dialog" style="width: 100%; min-width: 600px; max-width: 600px">
+            <div class="modal-content">
+                <div class="modal-header no-padding">
+                    <div class="table-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="white">×</span>
+                        </button>
+                        Thay đổi mật khẩu
+                    </div>
+                </div>
+                <form class="modal-body no-padding" id="validatPassForm">
+                    <div class="modal-body no-padding">
+                        <div class="col-xs-12 form-horizontal" style="padding-top: 20px; margin-left: 10px">
+                            <div class="row">
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-4 ">Mật khẩu cũ: <span style="color: red"> *</span></label>
+                                    <div class="col-sm-8">
+                                        
+                                        <div>
+                                            <input name="Oldpassword" id="Oldpassword" style="width:100%" type="password">
+                                        </div>
+                                        <div id="checkPass" style="display: none">
+                                            <span style="color: #D16E6C">Mật khẩu cũ không đúng ! </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-4 ">Mật khẩu mới: <span style="color: red"> *</span></label>
+                                    <div class="col-sm-8">
+                                        <div>
+                                            <input name="password" id="password" style="width:100%" type="password">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-4 ">Lặp lại mật khẩu mới: <span style="color: red"> *</span></label>
+                                    <div class="col-sm-8">
+                                        <div>
+                                            <input name="password2" id="password2" style="width:100%" type="password">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="modal-footer no-margin-top"></div>
+                <div class="modal-footer no-margin-top">
+                    <button class="btn btn-grey pull-left" type="button" data-dismiss="modal" id="btnCloseChange">
+                        <i class="icon-remove"></i>
+                        Đóng
+                    </button>
+                    <button class="btn btn-success" type="button" data-bb-handler="confirm" id="btnUpdatePass" onclick="updateStaffPass()">
+                        <i class="icon-ok"></i>
+                        Đổi mật khẩu
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</div>
+<script type="text/javascript">
+    function updateStaffPass() {
+        if ($('#validatPassForm').valid()) {
+            editFr = $('#tblPassChange');
+            var oldPassword = $.md5($('#Oldpassword', editFr).val());
+            var staffPassword = $.md5($('#password2', editFr).val());
+            $.post("/UserControl/UpdateStaffPass", {
+                oldPassword: oldPassword, staffPassword2: staffPassword
+            }, function (result) {
+                if (result == "successful") {
+                    $('.close').click();
+                    $('#checkPass').attr("style", "display: none");
+                    notification("Cập nhật mật khẩu nhân viên thành công!", "", 3000, "btn-primary center");
+                } else if (result == 'error') {
+                    $('.close').click();
+                    $('#checkPass').attr("style", "display: none");
+                    notification("Cập nhật mật khẩu nhân viên nhân viên thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                } else if (result == "notMatch") {
+                    $('#checkPass').attr("style", "display: block");
+                }
+            })
+                .error(function () {
+                    $('.close').click();
+                    $('#checkPass').attr("style", "display: none");
+                    notification("Cập nhật mật khẩu nhân viên thất bại", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                });
+        }
+    }
+
+    function validatePassword(validateform) {
+        $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                password: {
+                    required: true,
+                    alphanumeric: true,
+                    minlength: 6
+
+
+                },
+                password2: {
+                    required: true,
+                    alphanumeric: true,
+                    minlength: 6,
+                    equalTo: "#password"
+                },
+                Oldpassword: {
+                    required: true,
+                    alphanumeric: true
+                }
+            },
+            messages: {
+                password: {
+                    required: "Hãy nhập mật khẩu mới.",
+                    alphanumeric: "Mật khẩu không được có kí tự đặc biệt",
+                    minlength: "Mật khẩu mới phải có ít nhất 6 kí tự.",
+                },
+                password2: {
+                    required: "Hãy nhập lại mật khẩu mới.",
+                    alphanumeric: "Mật khẩu không được có kí tự đặc biệt",
+                    minlength: "Mật khẩu mới phải có ít nhất 6 kí tự.",
+                    equalTo: "Mật khẩu 2 không trùng khớp.",
+                },
+                Oldpassword: {
+                    required: "Hãy nhập lại mật khẩu cũ.",
+                    alphanumeric: "Mật khẩu không được có kí tự đặc biệt",
+                }
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                }
+                else error.insertAfter(element.parent());
+            }
+        });
+    }
+
+    function clearFieldPassword() {
+        editFr = $('#tblPassChange');
+        $('#Oldpassword', editFr).val("");
+        $('#password', editFr).val("");
+        $('#password2', editFr).val("");
+
+    }
+
+    function logOut() {
+        $.post("/Login/LogOut", {}, function (out) {
+            if (out != "success") {
+                alert(out);
+            }
+            window.location = ("/Login/Login");
+        });
+    }
+</script>
+
+
+        </div><!-- /.container -->
+    </div>
+
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+        </script>
+
+        <div class="main-container-inner">
+            <a class="menu-toggler" id="menu-toggler" href="#">
+                <span class="menu-text"></span>
+            </a>
+
+
+    <div class=" sidebar" id="sidebar">
+        <script type="text/javascript">
+            try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+        </script>
+
+        <ul class="nav nav-list">
+            <li class="active" id="liCustomer" onclick="getAllCustomerJson()">
+                <a href="#" onclick="setLiActiveClass('#liCustomer')">
+                    <i class="icon-edit"></i>
+                    <span class="menu-text"> Khách hàng</span>
+                </a>
+            </li>
+
+            <li class="" id="liCustomerGroup" onclick="getAllCustomerGroupJson()">
+                <a href="#" onclick="setLiActiveClass('#liCustomerGroup')">
+                    <i class="icon-calendar"></i>
+                    <span class="menu-text"> Nhóm khách hàng</span>
+                </a>
+            </li>
+        </ul><!-- /.nav-list -->
+
+        <div class="sidebar-collapse" id="sidebar-collapse">
+            <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+        </div>
+
+        <script type="text/javascript">
+            try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+        </script>
+    </div>
+
+            <div class="main-content">
+
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+        </script>
+
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+
+                <a href="http://localhost:19442/Home/Index">Trang chủ</a> | Quản lý khách hàng
+            </li>
+
+            <li>
+                <span id="breadcrumbsMenu" style="font-weight: bold">Danh sách khách hàng</span>
+            </li>
+        </ul><!-- .breadcrumb -->
+    </div>
+
+                <div class="page-content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            
+
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/jquery.css">
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/jquery-ui-1.css">
+
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/chosen.css">
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/bootstrap.css">
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/font-awesome.css">
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/ace.css">
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/datepicker.css">
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/screen.css">
+
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/ckeditor.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/ckfinder.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/jquery-ui-1.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/timeliner.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/bootbox.js" type="text/javascript"></script>
+<script>
+    var cusGroupPage = false;
+</script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/jquery_006.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/jquery_004.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/jquery_005.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/jquery.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/jquery_002.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/typeahead-bs2.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/chosen.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/jquery_003.js"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20kh%C3%A1ch%20h%C3%A0ng%20_%20LFMS_files/additional-methods.js"></script>
+
+
+
+<div id="bodyContent">
+<div class="table-responsive" id="">
+    <a data-toggle="modal">
+        <button onclick="" class="btn btn-primary" id="btnAdd" data-toggle="modal" href="#tblAddCustomer">
+            <i class="icon-plus"></i>
+            Thêm khách hàng
+        </button>
+    </a>
+    <hr>
+    <div id="tblCustomer_wrapper" class="dataTables_wrapper" role="grid"><div class="row"><div class="col-sm-6"><div class="dataTables_length" id="tblCustomer_length"><label>Hiển thị <select aria-controls="tblCustomer" size="1" name="tblCustomer_length"><option selected="selected" value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> dòng</label></div></div><div class="col-sm-6"><div id="tblCustomer_filter" class="dataTables_filter"><label>Tìm kiếm: <input aria-controls="tblCustomer" type="text"></label></div></div></div><table style="width: 100%;" aria-describedby="tblCustomer_info" id="tblCustomer" class="table table-striped table-bordered table-hover dataTable" width="100%">
+        <thead>
+            <tr role="row"><th aria-label="Tên khách hàng: activate to sort column ascending" aria-sort="descending" style="width: 296px;" colspan="1" rowspan="1" aria-controls="tblCustomer" tabindex="0" role="columnheader" class="sorting_desc">Tên khách hàng</th><th aria-label="Người đại diện: activate to sort column ascending" style="width: 207px;" colspan="1" rowspan="1" aria-controls="tblCustomer" tabindex="0" role="columnheader" class="hidden-640 sorting" width="20%">Người đại diện</th><th aria-label="Địa chỉ liên hệ: activate to sort column ascending" style="width: 285px;" colspan="1" rowspan="1" aria-controls="tblCustomer" tabindex="0" role="columnheader" class="hidden-480 sorting" width="27%">Địa chỉ liên hệ</th><th aria-label="Số điện thoại: activate to sort column ascending" style="width: 162px;" colspan="1" rowspan="1" aria-controls="tblCustomer" tabindex="0" role="columnheader" class="sorting" width="16%">Số điện thoại</th><th aria-label=" " style="width: 84px;" colspan="1" rowspan="1" role="columnheader" class="sorting_disabled" width="9%"> </th></tr>
+        </thead>
+    <tbody id="tbodyCustomerTbl" role="alert" aria-live="polite" aria-relevant="all"><tr><td><a onclick="getCustomerByIndex(0)" data-toggle="modal" href="#tblCustomerDetail">Vương Thùy Dương</a></td><td class="hidden-640">Nguyễn Thị Hòa Thảo</td><td class="hidden-480">30A ấp Thống Nhất I, Tân Thới Nhì, Hóc Môn</td><td>0903346932</td><td class=" action-buttons"><center><a onclick="getCustomerByIndex(0)" class="view" title="View" data-toggle="modal" href="#tblCustomerDetail" id="0"><i class="icon-zoom-in bigger-130"></i></a><a onclick="getUpdateCustomerPopup(0)" class="green" title="Update" data-toggle="modal" href="#tblCustomerDetail" id="0"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete5" onclick="deleteCustomer(5)" class="red" title="Delete" href="#" data-id="5"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr><td><a onclick="getCustomerByIndex(1)" data-toggle="modal" href="#tblCustomerDetail">Vũ Ngọc Minh</a></td><td class="hidden-640">Vũ Ngọc Minh</td><td class="hidden-480">Cù Lao An Bình , Ấp An Thuận - Xã An Bình - Huyện Long Hồ - Tĩnh Vĩnh Long</td><td>09272727278</td><td class=" action-buttons"><center><a onclick="getCustomerByIndex(1)" class="view" title="View" data-toggle="modal" href="#tblCustomerDetail" id="1"><i class="icon-zoom-in bigger-130"></i></a><a onclick="getUpdateCustomerPopup(1)" class="green" title="Update" data-toggle="modal" href="#tblCustomerDetail" id="1"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete190" onclick="deleteCustomer(190)" class="red" title="Delete" href="#" data-id="190"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr><td><a onclick="getCustomerByIndex(2)" data-toggle="modal" href="#tblCustomerDetail">Trịnh Hoài Diễm</a></td><td class="hidden-640">Trịnh Hoài Diễm</td><td class="hidden-480">2A Hùng Vương, Phường 1, Thành phố Vĩnh Long</td><td>0927278298</td><td class=" action-buttons"><center><a onclick="getCustomerByIndex(2)" class="view" title="View" data-toggle="modal" href="#tblCustomerDetail" id="2"><i class="icon-zoom-in bigger-130"></i></a><a onclick="getUpdateCustomerPopup(2)" class="green" title="Update" data-toggle="modal" href="#tblCustomerDetail" id="2"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete120" onclick="deleteCustomer(120)" class="red" title="Delete" href="#" data-id="120"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr><td><a onclick="getCustomerByIndex(3)" data-toggle="modal" href="#tblCustomerDetail">Trần Văn Nam</a></td><td class="hidden-640">Trần Văn Nam</td><td class="hidden-480">Phạm Hùng - Phường 9 - TP. Vĩnh Long - tỉnh Vĩnh Long</td><td>09761222442</td><td class=" action-buttons"><center><a onclick="getCustomerByIndex(3)" class="view" title="View" data-toggle="modal" href="#tblCustomerDetail" id="3"><i class="icon-zoom-in bigger-130"></i></a><a onclick="getUpdateCustomerPopup(3)" class="green" title="Update" data-toggle="modal" href="#tblCustomerDetail" id="3"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete40" onclick="deleteCustomer(40)" class="red" title="Delete" href="#" data-id="40"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr><td><a onclick="getCustomerByIndex(4)" data-toggle="modal" href="#tblCustomerDetail">Tạ Thị Loan</a></td><td class="hidden-640">Tạ Thị Loan</td><td class="hidden-480">26 Đinh Tiên Hoàng, P 8, Thị Xã Vĩnh Long.</td><td>0828218238</td><td class=" action-buttons"><center><a onclick="getCustomerByIndex(4)" class="view" title="View" data-toggle="modal" href="#tblCustomerDetail" id="4"><i class="icon-zoom-in bigger-130"></i></a><a onclick="getUpdateCustomerPopup(4)" class="green" title="Update" data-toggle="modal" href="#tblCustomerDetail" id="4"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete90" onclick="deleteCustomer(90)" class="red" title="Delete" href="#" data-id="90"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr><td><a onclick="getCustomerByIndex(5)" data-toggle="modal" href="#tblCustomerDetail">Phạm Thị Thanh</a></td><td class="hidden-640">Phạm Thị Thanh</td><td class="hidden-480">111 C C/c Phạm Thế Hiển, P.4, Q.8</td><td>0937367544</td><td class=" action-buttons"><center><a onclick="getCustomerByIndex(5)" class="view" title="View" data-toggle="modal" href="#tblCustomerDetail" id="5"><i class="icon-zoom-in bigger-130"></i></a><a onclick="getUpdateCustomerPopup(5)" class="green" title="Update" data-toggle="modal" href="#tblCustomerDetail" id="5"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete1009" onclick="deleteCustomer(1009)" class="red" title="Delete" href="#" data-id="1009"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr><td><a onclick="getCustomerByIndex(6)" data-toggle="modal" href="#tblCustomerDetail">Phạm Thành Nam</a></td><td class="hidden-640">Phạm Thành Nam</td><td class="hidden-480">Số 24, Đường 3 tháng 2, Phường 1 - TPVL - Vĩnh Long</td><td>0973223737</td><td class=" action-buttons"><center><a onclick="getCustomerByIndex(6)" class="view" title="View" data-toggle="modal" href="#tblCustomerDetail" id="6"><i class="icon-zoom-in bigger-130"></i></a><a onclick="getUpdateCustomerPopup(6)" class="green" title="Update" data-toggle="modal" href="#tblCustomerDetail" id="6"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete60" onclick="deleteCustomer(60)" class="red" title="Delete" href="#" data-id="60"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr><td><a onclick="getCustomerByIndex(7)" data-toggle="modal" href="#tblCustomerDetail">Phạm Ngọc Tích</a></td><td class="hidden-640">Phạm Ngọc Tích</td><td class="hidden-480">13 nguyen hue phuong 2 tp vinh long</td><td>09273783278</td><td class=" action-buttons"><center><a onclick="getCustomerByIndex(7)" class="view" title="View" data-toggle="modal" href="#tblCustomerDetail" id="7"><i class="icon-zoom-in bigger-130"></i></a><a onclick="getUpdateCustomerPopup(7)" class="green" title="Update" data-toggle="modal" href="#tblCustomerDetail" id="7"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete180" onclick="deleteCustomer(180)" class="red" title="Delete" href="#" data-id="180"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr><td><a onclick="getCustomerByIndex(8)" data-toggle="modal" href="#tblCustomerDetail">Phạm Anh Dương</a></td><td class="hidden-640">Phạm Anh Dương</td><td class="hidden-480"> 103 đường 3 tháng. P. 1. Thành phố Vĩnh Long</td><td>0926278722</td><td class=" action-buttons"><center><a onclick="getCustomerByIndex(8)" class="view" title="View" data-toggle="modal" href="#tblCustomerDetail" id="8"><i class="icon-zoom-in bigger-130"></i></a><a onclick="getUpdateCustomerPopup(8)" class="green" title="Update" data-toggle="modal" href="#tblCustomerDetail" id="8"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete160" onclick="deleteCustomer(160)" class="red" title="Delete" href="#" data-id="160"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr><td><a onclick="getCustomerByIndex(9)" data-toggle="modal" href="#tblCustomerDetail">Nguyễn Văn Lượng</a></td><td class="hidden-640">Nguyễn Văn Lượng</td><td class="hidden-480">23 Tô Ký, Tân Chánh Hiệp, Q12, HCM</td><td>0977889999</td><td class=" action-buttons"><center><a onclick="getCustomerByIndex(9)" class="view" title="View" data-toggle="modal" href="#tblCustomerDetail" id="9"><i class="icon-zoom-in bigger-130"></i></a><a onclick="getUpdateCustomerPopup(9)" class="green" title="Update" data-toggle="modal" href="#tblCustomerDetail" id="9"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete1" onclick="deleteCustomer(1)" class="red" title="Delete" href="#" data-id="1"><i class="icon-trash bigger-130"></i></a></center></td></tr></tbody></table><div class="row"><div class="col-sm-6"><div id="tblCustomer_info" class="dataTables_info">Hiển thị <b style="color:#428BCA"> 1 </b> tới <b style="color:#428BCA"> 10 </b> trong  <b style="color:#428BCA"> 26 </b> khách hàng</div></div><div class="col-sm-6"><div class="dataTables_paginate paging_bootstrap"><ul class="pagination"><li class="prev disabled"><a href="#"><i class="icon-double-angle-left"></i></a></li><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li class="next"><a href="#"><i class="icon-double-angle-right"></i></a></li></ul></div></div></div></div>
+</div>
+
+
+<div id="tblAddCustomer" class="modal fade" tabindex="-1">
+    <div class="modal-dialog" style="width: 80%; padding-top: 3.4%; min-width: 600px">
+        <div class="modal-content">
+            <div class="modal-header no-padding">
+                <div class="table-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="white">×</span>
+                    </button>
+                    Thêm Khách Hàng
+                </div>
+            </div>
+            <div class="modal-body no-padding">
+                <form novalidate="novalidate" id="addCustomerValidateForm">
+                    <div class="col-sm-12" style="padding:2% 2% 1% 2%">
+                        <div class="col-sm-6" style="padding-right:20px">
+                            <div class="form-group row">
+                                <label class="col-sm-4">Tên khách hàng:<span style="color: red"> *</span></label>
+                                <div class="col-sm-8">
+                                    <div><input id="txtName" name="txtName" style="width: 100%" maxlength="50" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Người đại diện:<span style="color: red"> *</span></label>
+                                <div class="col-sm-8">
+                                    <div><input id="txtRepresent" name="txtRepresent" style="width: 100%" maxlength="50" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Ngày sinh:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group input-group-sm">
+                                        <input class="form-control date-picker" id="datePickerBD" data-date-format="dd/mm/yyyy" readonly="readonly" style="background: none repeat scroll 0 0 #fff !important; width: 100%; cursor: pointer; " type="text">
+                                        <span class="input-group-addon">
+                                            <i class="icon-calendar bigger-110"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Ngày cấp CMND:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group input-group-sm">
+                                        <input class="form-control date-picker" id="datePickerNC" data-date-format="dd/mm/yyyy" readonly="readonly" style="background: none repeat scroll 0 0 #fff !important; width: 100%; cursor: pointer; " type="text">
+                                        <span class="input-group-addon">
+                                            <i class="icon-calendar bigger-110"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Số tài khoản:</label>
+                                <div class="col-sm-8">
+                                    <div><input id="txtBankAccount" style="width: 100%" maxlength="20" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Mã số thuế:</label>
+                                <div class="col-sm-8">
+                                    <div><input id="txtTaxCode" style="width: 100%" maxlength="14" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Ðiện thoại di động:<span style="color: red"> *</span></label>
+                                <div class="col-sm-8">
+                                    <div class="input-group" style="width: 100%">
+                                        <span class="input-group-addon"> <i class="icon-phone"></i> </span>
+                                        <input class="form-control input-mask-phone " id="txtMobile" name="txtMobile" style="width: 100%" maxlength="20" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-6" style="padding-left:20px">
+                            <div class="form-group row">
+                                <label class="col-sm-4">Nhóm khách hàng:<span style="color: red"> *</span></label>
+                                <div class="col-sm-8">
+                                    <div><select id="selectCustomerGroup" name="selectCustomerGroup" style="width: 100%; cursor: pointer"><option value="1">Cá nhân</option><option value="2">Doanh nghiệp</option><option value="3">Tổ chức khác</option></select></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Giới tính:</label>
+                                <div class="col-sm-8">
+                                    <label>
+                                        <input class="ace" value="Nam" name="sex" id="sexMale" type="radio">
+                                        <span class="lbl"> Nam</span>
+                                    </label>
+                                    <label style="margin-left:30px">
+                                        <input class="ace" value="Nữ" name="sex" id="sexFemale" type="radio">
+                                        <span class="lbl"> Nữ</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Số CMND:</label>
+                                <div class="col-sm-8">
+                                    <div><input id="txtIdentityNum" style="width: 100%" maxlength="12" type="text"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4">Nơi cấp CMND:</label>
+                                <div class="col-sm-8">
+                                    <div><input id="txtIdentityPlace" style="width: 100%" maxlength="50" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Tên ngân hàng</label>
+                                <div class="col-sm-8">
+                                    <input id="txtBankBranch" style="width: 100%" maxlength="50" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Email:</label>
+                                <div class="col-sm-8">
+                                    <div><input id="txtEmail" name="txtEmail" style="width: 100%" maxlength="50" type="email"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Ðiện thoại cố định:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group" style="width: 100%">
+                                        <span class="input-group-addon"> <i class="icon-phone"></i> </span>
+                                        <input class="form-control input-mask-phone " id="txtTelephone" name="txtTelephone" style="width: 100%" maxlength="20" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 row">
+                            <div class="form-group">
+                                <label class="col-sm-2">Địa chỉ:<span style="color: red"> *</span></label>
+                                <div class="col-sm-10">
+                                    <div><textarea id="txtAddress" name="txtAddress" style="width: 103%; resize: none " maxlength="100"></textarea></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer no-margin-top"></div>
+            <div class="modal-footer no-margin-top">
+                <div>
+                    <button class="btn btn-warning pull-left" onclick="clearFieldCustomer()" id="" style="width: 125px; margin-left: 5%">
+                        <i class="icon-refresh"></i>
+                        Làm trống
+                    </button>
+                    <button class="btn btn-success pull-right" type="button" id="btnAddNewCustomer" onclick="addCustomer()" style="width: 125px; margin-right: 5%">
+                        <i class="icon-ok">
+                        </i>
+                        Thêm mới
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div>
+</div>
+
+
+<div id="tblCustomerDetail" class="modal fade" tabindex="-1">
+    <div class="modal-dialog" style="width: 80%; padding-top: 3.4%; min-width: 600px">
+        <div class="modal-content">
+            <div class="modal-header no-padding">
+                <div class="table-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="white">×</span>
+                    </button>
+                    Chi Tiết Khách Hàng
+                </div>
+            </div>
+
+            <div class="modal-body no-padding">
+                <form id="updateCustomerValidateForm">
+                    <div class="col-sm-12" style="padding: 2% 2% 1% 2%">
+                        <div class="col-sm-6" style="padding-right:20px">
+                            <div class="form-group row">
+                                <label class="col-sm-4">Tên khách hàng:<span style="color: red"> *</span></label>
+                                <div class="col-sm-8">
+                                    <input id="detailCustomerId" style="display: none" type="text">
+                                    <div><input id="detailName" name="txtName" class="editableSelect" style="width: 100%" maxlength="50" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Người đại diện:<span style="color: red"> *</span></label>
+                                <div class="col-sm-8">
+                                    <div><input id="detailRepresent" class="editableSelect" style="width: 100%" maxlength="50" type="text"></div>
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Ngày sinh:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group input-group-sm">
+                                        <input class="form-control date-picker editableSelect" id="detailBirthday" data-date-format="dd/mm/yyyy" style="width: 100%; cursor: pointer;" type="text">
+                                        <span class="input-group-addon">
+                                            <i class="icon-calendar bigger-110"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Ngày cấp CMND:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group input-group-sm">
+                                        <input class="form-control date-picker editableSelect" id="detailIdentityDate" data-date-format="dd/mm/yyyy" style="width: 100%; cursor: pointer;" type="text">
+                                        <span class="input-group-addon">
+                                            <i class="icon-calendar bigger-110"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Số tài khoản:</label>
+                                <div class="col-sm-8">
+                                    <div><input id="detailBankAccount" class="editableSelect" style="width: 100%" maxlength="20" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Mã số thuế:</label>
+                                <div class="col-sm-8">
+                                    <div><input id="detailTaxCode" class="editableSelect" style="width: 100%" maxlength="14" type="text"></div>
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Ðiện thoại di động:<span style="color: red"> *</span></label>
+                                <div class="col-sm-8">
+                                    <div class="input-group" style="width:100%">
+                                        <span class="input-group-addon"> <i class="icon-phone"></i> </span>
+                                        <input class="form-control input-mask-phone editableSelect" id="detailMobile" name="txtMobile" style="width:100%" maxlength="20" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6" style="padding-left:20px">
+                            <div class="form-group row">
+                                <label class="col-sm-4">Nhóm khách hàng:<span style="color: red"> *</span></label>
+                                <div class="col-sm-8 ">
+                                    <div><select id="selectedGroup" name="selectCustomerGroup" class="form-control editableSelect" style="width: 100%; cursor: pointer"><option selected="selected" value="1">Cá nhân</option><option value="2">Doanh nghiệp</option><option value="3">Tổ chức khác</option></select></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Giới tính:</label>
+                                <div class="col-sm-8">
+                                    <label>
+                                        <input class="ace editableGender" value="Nam" name="gender" id="genderMale" type="radio">
+                                        <span class="lbl"> Nam</span>
+                                    </label>
+                                    <label style="margin-left: 21px">
+                                        <input class="ace editableGender" value="Nữ" name="gender" id="genderFemale" type="radio">
+                                        <span class="lbl"> Nữ</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Số CMND:</label>
+                                <div class="col-sm-8">
+                                    <input id="detailIdentityNum" class="editableSelect" style="width: 100%" maxlength="12" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Nơi cấp CMND:</label>
+                                <div class="col-sm-8">
+                                    <input id="detailIdentityPlace" class="editableSelect" style="width: 100%" maxlength="50" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Tên ngân hàng:</label>
+                                <div class="col-sm-8">
+                                    <div><input id="detailBankBranch" class="editableSelect" style="width: 100%" maxlength="50" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Email:</label>
+                                <div class="col-sm-8">
+                                    <div><input id="detailEmail" class="editableSelect" name="txtEmail" style="width: 100%" maxlength="50" type="email"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4">Ðiện thoại cố định:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group" style="width: 100%">
+                                        <span class="input-group-addon"> <i class="icon-phone"></i> </span>
+                                        <input class="form-control input-mask-phone editableSelect" id="detailTelephone" name="txtTelephone" maxlength="20" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 row">
+                            <div class="form-group">
+                                <label class="col-sm-2">Địa chỉ:<span style="color: red"> *</span></label>
+                                <div class="col-sm-10">
+                                    <div><textarea id="detailAddress" class="form-control editableSelect" name="txtAddress" style="width: 103%; min-width: 526px; resize: none " maxlength="100"></textarea></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer no-margin-top"></div>
+            <div class="modal-footer no-margin-top">
+                <button class="btn btn-grey pull-left" type="button" data-dismiss="modal" style="width: 125px; margin-left: 5%">
+                    <i class="icon-remove"></i>
+                    Đóng
+                </button>
+                <button class="btn btn-success pull-right" onclick="updateCustomer()" id="disablebutton" style="width: 125px; margin-right: 5%; display: none">
+                    <i class="icon-ok"></i>
+                    Lưu chỉnh sửa
+                </button>
+                <button class="btn btn-primary pull-right" onclick="enablebutton()" id="enablebutton" style="width: 125px; margin-right: 5%">
+                    <i class="icon-edit"></i>
+                    Chỉnh Sửa
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+<div id="messageBox" class="" style="display:none; width: 400px" align="center">
+    <div style="float:right; padding-right: 15px">
+        <a href="#" class="closeDivisor" onclick="closeDivisor('messageBox'); return false;">[x]</a>
+    </div>
+    <div class="opacity1">
+        <p id="messageBoxContent" style="padding-left: 15px"></p>
+    </div>
+</div>
+
+
+
+</div>
+
+<div id="bodyChangePass">
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setLiActiveClass('#liCustomer');
+        getAllCustomerJson();
+        
+    });
+
+    var allCustomer = null;
+    var allCustomerGroup = null;
+
+    function setLiActiveClass(liId) {
+        $('#liCustomer').attr("class", "");
+        $('#liCustomerGroup').attr("class", "");
+        $(liId).attr("class", "active");
+        //
+    }
+
+    function getAllCustomerJson() {
+
+        $.post("/Customer/GetAllCustomerJson", { displayNum: "10", orderKey: "0", orderType: "desc", code: "", pageNum: "0" }, function (out) {
+            cusGroupPage = false;
+            document.getElementById("bodyContent").innerHTML = (out.html);//render HTML cua partial view
+            var item = '<tbody id="tbodyCustomerTbl"  role="alert" aria-live="polite" aria-relevant="all">';
+
+            $.each(out.list.list, function (index, cus) {
+                item += '<tr>';
+                item += '<td><a onClick="getCustomerByIndex(' + index + ')" data-toggle="modal" href="#tblCustomerDetail">' + cus.CustomerName + '</a></td>';
+                if (cus.Representative == "" || cus.Representative == null || !cus.Representative || cus.Representative === null || cus.Representative == "null") {
+                    item += '<td><i style="color: grey"></i></td>';
+                } else {
+                    item += '<td class="hidden-640">' + cus.Representative + '</td>';
+                }
+                item += '<td class="hidden-480">' + cus.Address + '</td>';
+                item += '<td>' + cus.Mobile + '</td>';
+                item += '<td class=" action-buttons"><center><a onClick="getCustomerByIndex(' + index + ')" class="view" title="View" data-toggle="modal" href="#tblCustomerDetail" id="' + index
+                    + '"><i class="icon-zoom-in bigger-130"></i></a><a onClick="getUpdateCustomerPopup(' + index + ')" class="green" title="Update" data-toggle="modal" href="#tblCustomerDetail" id="' + index
+                    + '"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete' + cus.CustomerId + '" onClick="deleteCustomer(' + cus.CustomerId + ')" class="red" title="Delete" href="#" data-id="' + cus.CustomerId + '"><i class="icon-trash bigger-130"></i></a></center></td>'
+                    + '</td>';
+                item += '</tr>';
+            });
+            item += '</tbody>';
+            $('#tblCustomer').append(item);
+            var oTable1 = $('#tblCustomer').dataTable({
+                "aoColumns": [
+                    null, null, null, null, { "bSortable": false }
+                ],
+                "aaSorting": [[0, "desc"]]
+
+            });
+            editFr = $('#tblCustomer').val();
+            $("#txtMobile", editFr).numeric({ decimal: false, negative: false });
+            $("#txtTelephone", editFr).numeric({ decimal: false, negative: false });
+            $("#txtBankAccount", editFr).numeric({ decimal: false, negative: false });
+            $("#txtTaxCode", editFr).numeric({ decimal: false, negative: false });
+            $("#txtIdentityNum", editFr).numeric({ decimal: false, negative: false });
+            $("#detailBankAccount", editFr).numeric({ decimal: false, negative: false });
+            $("#detailTaxCode", editFr).numeric({ decimal: false, negative: false });
+            $("#detailMobile", editFr).numeric({ decimal: false, negative: false });
+            $("#detailIdentityNum", editFr).numeric({ decimal: false, negative: false });
+            $("#detailTelephone", editFr).numeric({ decimal: false, negative: false });
+
+            $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+                $(this).prev().focus();
+            });
+            loadSelectCustomerGroup();//load combobox CustomerGroup khi add new customer (ham nay phai duoc load sau khi ra render ra html cua partial view)
+        });
+        $('#breadcrumbsMenu').text('Danh sách khách hàng');
+        
+    }
+
+    var cusGroupPage = false;
+    var changePage = false;
+    var changeRecord = 10;
+    var totalRecord;
+    var serverSideListCase = true;
+    
+    function getPagingCustomerJson(displayNum1, orderKey1, orderType1, code1, pageNum1) {
+        $.ajax({
+            url: '/Customer/GetPagingCustomerJson',
+            method: 'POST',
+            async: false,
+            data: { displayNum: displayNum1, orderKey: orderKey1, orderType: orderType1, code: code1, pageNum: pageNum1 },
+            success: function (out) {
+                {
+                    var item = '';
+                    allCustomer = out.list;
+
+                    $.each(out.list, function (index, cus) {
+                        item += '<tr>';
+                        item += '<td><a onClick="getCustomerByIndex(' + index + ')" data-toggle="modal" href="#tblCustomerDetail">' + cus.CustomerName + '</a></td>';
+                        if (cus.Representative == "" || cus.Representative == null || !cus.Representative || cus.Representative === null || cus.Representative == "null") {
+                            item += '<td><i style="color: grey"></i></td>';
+                        } else {
+                            item += '<td class="hidden-640">' + cus.Representative + '</td>';
+                        }
+                        item += '<td class="hidden-480">' + cus.Address + '</td>';
+                        item += '<td>' + cus.Mobile + '</td>';
+                        item += '<td class=" action-buttons"><center><a onClick="getCustomerByIndex(' + index + ')" class="view" title="View" data-toggle="modal" href="#tblCustomerDetail" id="' + index
+                            + '"><i class="icon-zoom-in bigger-130"></i></a><a onClick="getUpdateCustomerPopup(' + index + ')" class="green" title="Update" data-toggle="modal" href="#tblCustomerDetail" id="' + index
+                            + '"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete' + cus.CustomerId + '" onClick="deleteCustomer(' + cus.CustomerId + ')" class="red" title="Delete" href="#" data-id="' + cus.CustomerId + '"><i class="icon-trash bigger-130"></i></a></center></td>'
+                            + '</td>';
+                        item += '</tr>';
+                    });
+                    $('#tbodyCustomerTbl').html(item);
+                    totalRecord = out.totalRecord;
+                };
+            }
+        });
+    }
+
+    function addCustomer() {
+        if ($('#addCustomerValidateForm').valid()) {
+            var cusname = $('#txtName').val();
+            var selectCustomerGroup = $('#selectCustomerGroup').val();
+            var represent = $('#txtRepresent').val();
+            if (document.getElementById('sexMale').checked) {
+                var sex = document.getElementById('sexMale').value;
+            } else if (document.getElementById('sexFemale').checked) {
+                var sex = document.getElementById('sexFemale').value;
+            }
+            var birthDay = $('#datePickerBD').val();
+            var identityNum = $('#txtIdentityNum').val();
+            var identityDate = $('#datePickerNC').val();
+            var identityPlace = $('#txtIdentityPlace').val();
+            var bankAccount = $('#txtBankAccount').val();
+            var bankBranch = $('#txtBankBranch').val();
+            var taxCode = $('#txtTaxCode').val();
+            var address = $('#txtAddress').val();
+            var email = $('#txtEmail').val();
+            var mobile = $('#txtMobile').val();
+            var telephone = $('#txtTelephone').val();
+
+            $.post("/Customer/AddCustomer", {
+                    cusname: cusname, selectCustomerGroup: selectCustomerGroup, represent: represent, sex: sex,
+                    birthDay: birthDay, identityNum: identityNum, identityDate: identityDate, identityPlace: identityPlace,
+                    bankAccount: bankAccount, bankBranch: bankBranch, taxCode: taxCode, address: address, email: email,
+                    mobile: mobile, telephone: telephone
+                }, function (result) {
+                    if (result == "success") {
+                        getAllCustomerJson();
+                        $('.close').click();
+                        $("body").attr("class", "");
+                        notification("Tạo khách hàng thành công!", "", 3000, "btn-primary center");
+                    } else {
+                        $('.close').click();
+                        notification("Tạo khách hàng thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                    }
+                })
+                .error(function () {
+                    $('.close').click();
+                    notification("Tạo khách hàng thất bại!", "Có lỗi xảy ra trong quá trình tạo khách hàng.", 5000, "gritter-error center");
+                });
+        }
+    }
+
+    function loadSelectCustomerGroup() {
+        $.ajax({
+            url: "/Customer/GetAllCustomerGroupJson",
+            type: 'POST',
+            async: false,
+            success: function (data) {
+                if (data.list != null) {
+                    var item = '';
+                    $.each(data.list, function (index, customer) {
+                        item += '<option value="' + customer.CustomerGroupId + '">' + customer.CustomerGroupName + '</option>';
+                    });
+                    $('#selectCustomerGroup').html(item);
+
+                    $('#selectedGroup').html(item);
+                    
+                    $('#selectCustomerGroup').val('');
+                }
+            },
+            error: function (errMsg) {
+                alert(errMsg.responseText);
+            }
+        });
+        validateCustomer('#addCustomerValidateForm');
+    }
+    function resetFeildDetail() {
+        $('#detailCustomerId').val("");
+        $('#detailRepresent').val("");
+        $('#detailName').val("");
+        $('#detailGroup').val("");
+        $("#genderMale").prop("checked", false);
+        $("#genderFemale").prop("checked", false);
+        $('#detailBirthday').val("");
+        $('#detailIdentityNum').val("");
+        $('#detailIdentityPlace').val("");
+        $('#detailIdentityDate').val("");
+        $('#detailBankAccount').val("");
+        $('#detailBankBranch').val("");
+        $('#detailAddress').val("");
+        $('#detailMobile').val("");
+        $('#detailTelephone').val("");
+        $('#detailEmail').val("");
+        $('#detailTaxCode').val("");
+    }
+
+    function getCustomerByIndex(index) {
+        resetFeildDetail();
+        validator.resetForm();
+        //Lay customer detail dua vao idex cua customer do trong mang allCustomer
+        //loadSelectedCustomerGroup(allCustomer[index].CustomerGroup.CustomerGroupId);//Goi ham nay de render ra CustomerGroup selection
+        var editFr = $('#tblCustomerDetail');
+        $('#detailCustomerId', editFr).val(allCustomer[index].CustomerId);
+        $('#detailRepresent', editFr).val(allCustomer[index].Representative);
+        $('#detailName', editFr).val(allCustomer[index].CustomerName);
+        $('#selectedGroup', editFr).val(allCustomer[index].CustomerGroup.CustomerGroupId);
+        $("#genderMale").prop("checked", false);
+        $("#genderFemale").prop("checked", false);
+        if (allCustomer[index].Sex == 'Nam') {
+            $("#genderMale").prop("checked", true);
+        } else if (allCustomer[index].Sex == 'Nữ') {
+            $("#genderFemale").prop("checked", true);
+        }
+        if (allCustomer[index].DateOfBirth != null)
+        {
+            var bd = convertNETDateTime(allCustomer[index].DateOfBirth).toLocaleFormat('%d/%m/%Y');
+        }
+        else
+        {
+            var bd = "";
+        }
+        $('#detailBirthday', editFr).val(bd);
+        $('#detailIdentityNum', editFr).val(allCustomer[index].IdentityNumber);
+        $('#detailIdentityPlace', editFr).val(allCustomer[index].IdentityPlace);
+        if (allCustomer[index].IdentityDate != null) {
+            var idd = convertNETDateTime(allCustomer[index].IdentityDate).toLocaleFormat('%d/%m/%Y');
+        }
+        else {
+            var idd = "";
+        }
+        $('#detailIdentityDate', editFr).val(idd);
+        $('#detailBankAccount', editFr).val(allCustomer[index].BankAccount);
+        $('#detailBankBranch', editFr).val(allCustomer[index].BankBranch);
+        $('#detailAddress', editFr).val(allCustomer[index].Address);
+        $('#detailMobile', editFr).val(allCustomer[index].Mobile);
+        $('#detailTelephone', editFr).val(allCustomer[index].Telephone);
+        $('#detailEmail', editFr).val(allCustomer[index].Email);
+        $('#detailTaxCode', editFr).val(allCustomer[index].TaxCode);
+        disablebutton();
+        validateCustomer('#updateCustomerValidateForm');
+        $('#detailBirthday').attr("readonly", "readonly");
+        $('#detailBirthday').removeAttr("style");
+        $('#detailIdentityDate').attr("readonly", "readonly");
+        $('#detailIdentityDate').removeAttr("style");
+    }
+
+    function getUpdateCustomerPopup(index) {
+        resetFeildDetail();
+        //Lay customer detail dua vao idex cua customer do trong mang allCustomer
+        //loadSelectedCustomerGroup(allCustomer[index].CustomerGroup.CustomerGroupId);//Goi ham nay de render ra CustomerGroup selection
+        var editFr = $('#tblCustomerDetail');
+        $('#detailCustomerId', editFr).val(allCustomer[index].CustomerId);
+        $('#detailRepresent', editFr).val(allCustomer[index].Representative);
+        $('#detailName', editFr).val(allCustomer[index].CustomerName);
+        $('#selectedGroup', editFr).val(allCustomer[index].CustomerGroup.CustomerGroupId);
+        $("#genderMale").prop("checked", false);
+        $("#genderFemale").prop("checked", false);
+        if (allCustomer[index].Sex == 'Nam') {
+            $("#genderMale").prop("checked", true);
+        } else if (allCustomer[index].Sex == 'Nữ') {
+            $("#genderFemale").prop("checked", true);
+        }
+        if (allCustomer[index].DateOfBirth != null) {
+            var bd = convertNETDateTime(allCustomer[index].DateOfBirth).toLocaleFormat('%d/%m/%Y');
+        }
+        else {
+            var bd = "";
+        }
+        $('#detailBirthday', editFr).val(bd);
+        $('#detailIdentityNum', editFr).val(allCustomer[index].IdentityNumber);
+        $('#detailIdentityPlace', editFr).val(allCustomer[index].IdentityPlace);
+        if (allCustomer[index].IdentityDate != null) {
+            var idd = convertNETDateTime(allCustomer[index].IdentityDate).toLocaleFormat('%d/%m/%Y');
+        }
+        else {
+            var idd = "";
+        }
+        $('#detailIdentityDate', editFr).val(idd);
+        $('#detailBankAccount', editFr).val(allCustomer[index].BankAccount);
+        $('#detailBankBranch', editFr).val(allCustomer[index].BankBranch);
+        $('#detailAddress', editFr).val(allCustomer[index].Address);
+        $('#detailMobile', editFr).val(allCustomer[index].Mobile);
+        $('#detailTelephone', editFr).val(allCustomer[index].Telephone);
+        $('#detailEmail', editFr).val(allCustomer[index].Email);
+        $('#detailTaxCode', editFr).val(allCustomer[index].TaxCode);
+        enablebutton();
+        validateCustomer('#updateCustomerValidateForm');
+    }
+
+    function updateCustomer() {
+        if ($('#updateCustomerValidateForm').valid()) {
+            var cusId = $('#detailCustomerId').val();
+            var cusname = $('#detailName').val();
+            var selectCustomerGroup = $('#selectedGroup option:selected').val();
+            var represent = $('#detailRepresent').val();
+            if (document.getElementById('genderMale').checked) {
+                var sex = document.getElementById('genderMale').value;
+            } else if (document.getElementById('genderFemale').checked) {
+                var sex = document.getElementById('genderFemale').value;
+            }
+            var birthDay = $('#detailBirthday').val();
+            var identityNum = $('#detailIdentityNum').val();
+            var identityDate = $('#detailIdentityDate').val();
+            var identityPlace = $('#detailIdentityPlace').val();
+            var bankAccount = $('#detailBankAccount').val();
+            var bankBranch = $('#detailBankBranch').val();
+            var taxCode = $('#detailTaxCode').val();
+            var address = $('#detailAddress').val();
+            var email = $('#detailEmail').val();
+            var mobile = $('#detailMobile').val();
+            var telephone = $('#detailTelephone').val();
+
+            $.post("/Customer/UpdateCustomer", {
+                    id: cusId, name: cusname, selectCustomerGroup: selectCustomerGroup, represent: represent, sex: sex,
+                    birthDay: birthDay, identityNum: identityNum, identityDate: identityDate, identityPlace: identityPlace,
+                    bankAccount: bankAccount, bankBranch: bankBranch, taxCode: taxCode, address: address, email: email,
+                    mobile: mobile, telephone: telephone
+                }, function (result) {
+                    if (result == "success") {
+                        getAllCustomerJson();
+                        $("body").attr("class", "");
+                        notification("Chỉnh sửa khách hàng thành công!", "", 3000, "btn-primary center");
+                    } else {
+                        notification("Chỉnh sửa khách hàng thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                    }
+                })
+                .error(function () {
+                    notification("Chỉnh sửa khách hàng thất bại!", "Có lỗi xảy ra trong quá trình chỉnh sửa khách hàng.", 5000, "gritter-error center");
+                });
+            $('.close').click();
+        }
+    }
+
+    function deleteCustomer(id) {
+        $(ace.click_event, function () {
+            bootbox.confirm("Bạn thực sự muốn xóa khách hàng này?", function (result) {
+                if (result) {
+                    $.post("/Customer/DeleteCustomer", { customerId: id }
+                        , function (result2) {
+                            if (result2 == "success") {
+                                getAllCustomerJson();
+                                notification("Xóa khách hàng thành công!", "", 3000, "btn-primary center");
+                            } else {
+                                notification("Xóa khách hàng thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                            }
+                        })
+                        .error(function () {
+                            notification("Xóa khách hàng thất bại!", "Có lỗi xảy ra trong quá trình xóa khách hàng.", 5000, "gritter-error center");
+                        });
+                }
+            });
+        });
+    }
+
+    function disablebutton() {
+        //Khong cho user edit cac field
+        $('.editableInput').attr("readonly", "");
+        $('.editableSelect').attr("disabled", "disabled");
+        $('.editableGender').attr("disabled", "disabled");
+        $('#enablebutton').show();
+        $('#disablebutton').hide();
+    }
+    
+    function enablebutton() {
+        //Cho phep user edit
+        $('.editableInput').removeAttr("readonly");
+        $('.editableSelect').removeAttr("disabled");
+        $('.editableGender').removeAttr("disabled");
+        $('#disablebutton').show();
+        $('#enablebutton').hide();
+
+        $('#detailBirthday').attr("readonly", "readonly");
+        $('#detailBirthday').attr("style", "background: none repeat scroll 0 0 #fff !important; width: 100%; cursor: pointer")
+        $('#detailIdentityDate').attr("readonly", "readonly");
+        $('#detailIdentityDate').attr("style", "background: none repeat scroll 0 0 #fff !important; width: 100%; cursor: pointer")
+    }
+
+    function clearFieldCustomer() {
+        $('#txtName').val("");
+        $('#selectCustomerGroup').val("0");
+        $('#txtRepresent').val("");
+        $('#sexMale').removeAttr("checked");
+        $('#sexFemale').removeAttr("checked");
+        $('#datePickerBD').val("");
+        $('#txtIdentityNum').val("");
+        $('#datePickerNC').val("");
+        $('#txtIdentityPlace').val("");
+        $('#txtBankAccount').val("");
+        $('#txtBankBranch').val("");
+        $('#txtTaxCode').val("");
+        $('#txtAddress').val("");
+        $('#txtEmail').val("");
+        $('#txtMobile').val("");
+        $('#txtTelephone').val("");
+    }
+
+    var validator;
+    //Validate
+    function validateCustomer(validateform) {
+     validator=   $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                txtName: {
+                    required: true
+                },
+                txtRepresent:{
+                    required: true
+                },
+                selectCustomerGroup: {
+                    required: true 
+                 
+                },
+                txtAddress: {
+                    required: true
+                },
+                txtEmail: {
+                    email: true
+                },
+                txtMobile: {
+                    required: true,
+                }
+              
+            },
+            messages: {
+                txtName: {
+                    required: "Nhập tên khách hàng!"
+                },
+                txtRepresent: {
+                    required: "Nhập tên người đại diện!"
+                },
+                selectCustomerGroup: {
+                    required: "Chọn nhóm khách hàng!",
+                },
+                txtAddress: {
+                    required: "Nhập địa chỉ!"
+                },
+                txtEmail: {
+                    required: "Nhập địa chỉ email!",
+                    email: "Email chưa đúng định dạng!"
+                },
+                txtMobile: {
+                    required: "Nhập số điện thoại di động!",
+                }
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                } else error.insertAfter(element.parent());
+            }
+        });
+    }
+
+    jQuery(function ($) {
+     
+
+        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+            $(this).prev().focus();
+        });
+
+        $('textarea[class*=autosize]').autosize({ append: "\n" });
+
+    });
+
+    function getAllCustomerGroupJson() {
+        $.post("/Customer/GetAllCustomerGroupJson", {}, function (out) {
+            cusGroupPage = true;
+            document.getElementById("bodyContent").innerHTML = (out.html);//render HTML cua partial view
+            var item = '<tbody>';
+            $.each(out.list, function (index, cus) {
+                allCustomerGroup = out.list;
+                item += '<tr>';
+                item += '<td><a onClick="getCustomerGroupByIndex(' + index + ')" data-toggle="modal" href="#tblCustomerGroupDetail">' + cus.CustomerGroupName + '</a></td>';
+                if (cus.Description == "" || cus.Description == null || !cus.Description || cus.Description === null || cus.Description == "null") {
+                    item += '<td><i style="color: grey"></i></td>';
+                } else {
+                    item += '<td>' + cus.Description + '</td>';
+                }
+                item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getCustomerGroupByIndex(' + index + ')" class="view" title="View" data-toggle="modal" href="#tblCustomerGroupDetail" id="' + index
+                    + '"><i class="icon-zoom-in bigger-130"></i></a><a onClick="getUpdatePopup(' + index + ')" class="green" title="Update" data-toggle="modal" href="#tblCustomerGroupDetail" id="' + index
+                    + '"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete' + cus.CustomerGroupId + '" onClick="deleteCustomerGroup(' + cus.CustomerGroupId + ')" class="red" title="Delete" href="#" data-id="' + cus.CustomerGroupId + '"><i class="icon-trash bigger-130"></i></a></center></td>'
+                    + '</td>';
+                item += '</tr>';
+            });
+            item += '</tbody>';
+            $('#tblCustomerGroup').append(item);
+            $('#tblCustomerGroup').dataTable().fnDestroy();
+            var oTable1 = $('#tblCustomerGroup').dataTable({
+                "aoColumns": [
+                    null, null, { "bSortable": false }
+                ]
+            });
+            validateCustomerGroup('#addCustomerGroupValidateForm');
+        });
+        $('#breadcrumbsMenu').text('Nhóm khách hàng');
+    }
+
+    function addCustomerGroup() {
+        if ($('#addCustomerGroupValidateForm').valid()) {
+            var groupName = $('#txtGroupName').val();
+            var description = $('#txtDescription').val();
+
+            $.post("/Customer/AddCustomerGroup", {
+                    groupName: groupName, description: description
+                }, function (result) {
+                    if (result == "success") {
+                        $('.close').click();
+                        $("body").attr("class", "");
+                        getAllCustomerGroupJson();
+                        notification("Tạo nhóm khách hàng thành công!", "", 3000, "btn-primary center");
+                    } else {
+                        $('.close').click();
+                        notification("Tạo nhóm khách hàng thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                    }
+                })
+                .error(function () {
+                    $('.close').click();
+                    notification("Tạo nhóm khách hàng thất bại!", "Có lỗi xảy ra trong quá trình tạo nhóm khách hàng.", 5000, "gritter-error center");
+                });
+        }
+    }
+
+    function getCustomerGroupByIndex(index) {
+        //Lay CustomerGroup detail dua vao idex cua CustomerGroup do trong mang allCustomerGroup
+        var editFr = $('#tblCustomerGroupDetail');
+        $('#detailCustomerGroupId', editFr).val(allCustomerGroup[index].CustomerGroupId);
+        $('#detailName', editFr).val(allCustomerGroup[index].CustomerGroupName);
+        $('#detailDescription', editFr).val(allCustomerGroup[index].Description);
+
+        disablebutton();
+        validateCustomerGroup('#updateCustomerGroupValidateForm');
+    }
+
+    function getUpdatePopup(index) {
+        //Lay CustomerGroup detail dua vao idex cua CustomerGroup do trong mang allCustomerGroup
+        var editFr = $('#tblCustomerGroupDetail');
+        $('#detailCustomerGroupId', editFr).val(allCustomerGroup[index].CustomerGroupId);
+        $('#detailName', editFr).val(allCustomerGroup[index].CustomerGroupName);
+        $('#detailDescription', editFr).val(allCustomerGroup[index].Description);
+
+        enablebutton();
+        validateCustomerGroup('#updateCustomerGroupValidateForm');
+    }
+
+    function updateCustomerGroup() {
+        if ($('#updateCustomerGroupValidateForm').valid()) {
+            var groupId = $('#detailCustomerGroupId').val();
+            var groupName = $('#detailName').val();
+            var description = $('#detailDescription').val();
+
+            disablebutton(); //Nhan nut Update thi se disable cac editable field
+
+            $.post("/Customer/UpdateCustomerGroup", {
+                    groupId: groupId, groupName: groupName, description: description
+                }, function (result) {
+                    if (result == "success") {
+                        $('.close').click();
+                        $("body").attr("class", "");
+                        getAllCustomerGroupJson();
+                        notification("Chỉnh sửa nhóm khách hàng thành công!", "", 3000, "btn-primary center");
+                    } else {
+                        notification("Chỉnh sửa nhóm khách hàng thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                    }
+                })
+                .error(function () {
+                    notification("Chỉnh sửa nhóm khách hàng thất bại!", "Có lỗi xảy ra trong quá trình chỉnh sửa nhóm khách hàng.", 5000, "gritter-error center");
+                });
+        }
+    }
+
+    function deleteCustomerGroup(id) {
+        $(ace.click_event, function () {
+            bootbox.confirm("Bạn thực sự muốn xóa nhóm khách hàng này?", function (result) {
+                if (result) {
+                    $.post("/Customer/DeleteCustomerGroup", { groupId: id }
+                        , function (result2) {
+                            if (result2 == "success") {
+                                getAllCustomerGroupJson();
+                                notification("Xóa nhóm khách hàng thành công!", "", 3000, "btn-primary center");
+                            } else {
+                                notification("Xóa nhóm khách hàng thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                            }
+                        })
+                        .error(function () {
+                            notification("Xóa nhóm khách hàng thất bại!", "Có lỗi xảy ra trong quá trình xóa nhóm khách hàng.", 5000, "gritter-error center");
+                        });
+                }
+            });
+        });
+    }
+
+    function clearFieldGroup() {
+        $('#txtGroupName').val("");
+        $('#txtDescription').val("");
+    }
+
+    //Validate
+    function validateCustomerGroup(validateform) {
+        $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                txtGroupName: {
+                    required: true
+                }
+            },
+            messages: {
+                txtGroupName: {
+                    required: "Nhập tên nhóm khách hàng!"
+                }
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                } else error.insertAfter(element.parent());
+            }
+        });
+    }
+
+    jQuery(function ($) {
+
+
+        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+            $(this).prev().focus();
+        });
+
+        $('textarea[class*=autosize]').autosize({ append: "\n" });
+
+    });
+</script>
+                            <!-- PAGE CONTENT ENDS -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.page-content -->
+            </div><!-- /.main-content -->
+
+        </div><!-- /.main-container-inner -->
+
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="icon-double-angle-up icon-only bigger-110"></i>
+        </a>
+    </div><!-- /.main-container -->
+    
+    
+
+
+<textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px none; padding: 0px; box-sizing: content-box; word-wrap: break-word; height: 0px ! important; min-height: 0px ! important; overflow: hidden; transition: none 0s ease 0s ;"></textarea><div class="datepicker datepicker-dropdown dropdown-menu"><div style="display: block;" class="datepicker-days"><table class=" table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Tháng 10 2014</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">CN</th><th class="dow">T2</th><th class="dow">T3</th><th class="dow">T4</th><th class="dow">T5</th><th class="dow">T6</th><th class="dow">T7</th></tr></thead><tbody><tr><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td></tr><tr><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day active">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td></tr><tr><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td></tr><tr><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td></tr><tr><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td></tr><tr><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td><td class="day new">6</td><td class="day new">7</td><td class="day new">8</td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div><div style="display: none;" class="datepicker-months"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2014</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Tháng 1</span><span class="month">Tháng 2</span><span class="month">Tháng 3</span><span class="month">Tháng 4</span><span class="month">Tháng 5</span><span class="month">Tháng 6</span><span class="month">Tháng 7</span><span class="month">Tháng 8</span><span class="month">Tháng 9</span><span class="month active">Tháng 10</span><span class="month">Tháng 11</span><span class="month">Tháng 12</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div><div style="display: none;" class="datepicker-years"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2010-2019</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year active">2014</span><span class="year">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year old">2020</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div></div><div class="datepicker datepicker-dropdown dropdown-menu"><div style="display: block;" class="datepicker-days"><table class=" table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Tháng 10 2014</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">CN</th><th class="dow">T2</th><th class="dow">T3</th><th class="dow">T4</th><th class="dow">T5</th><th class="dow">T6</th><th class="dow">T7</th></tr></thead><tbody><tr><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td></tr><tr><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day active">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td></tr><tr><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td></tr><tr><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td></tr><tr><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td></tr><tr><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td><td class="day new">6</td><td class="day new">7</td><td class="day new">8</td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div><div style="display: none;" class="datepicker-months"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2014</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Tháng 1</span><span class="month">Tháng 2</span><span class="month">Tháng 3</span><span class="month">Tháng 4</span><span class="month">Tháng 5</span><span class="month">Tháng 6</span><span class="month">Tháng 7</span><span class="month">Tháng 8</span><span class="month">Tháng 9</span><span class="month active">Tháng 10</span><span class="month">Tháng 11</span><span class="month">Tháng 12</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div><div style="display: none;" class="datepicker-years"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2010-2019</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year active">2014</span><span class="year">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year old">2020</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div></div><div class="datepicker datepicker-dropdown dropdown-menu"><div style="display: block;" class="datepicker-days"><table class=" table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Tháng 10 2014</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">CN</th><th class="dow">T2</th><th class="dow">T3</th><th class="dow">T4</th><th class="dow">T5</th><th class="dow">T6</th><th class="dow">T7</th></tr></thead><tbody><tr><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td></tr><tr><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day active">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td></tr><tr><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td></tr><tr><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td></tr><tr><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td></tr><tr><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td><td class="day new">6</td><td class="day new">7</td><td class="day new">8</td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div><div style="display: none;" class="datepicker-months"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2014</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Tháng 1</span><span class="month">Tháng 2</span><span class="month">Tháng 3</span><span class="month">Tháng 4</span><span class="month">Tháng 5</span><span class="month">Tháng 6</span><span class="month">Tháng 7</span><span class="month">Tháng 8</span><span class="month">Tháng 9</span><span class="month active">Tháng 10</span><span class="month">Tháng 11</span><span class="month">Tháng 12</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div><div style="display: none;" class="datepicker-years"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2010-2019</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year active">2014</span><span class="year">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year old">2020</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div></div><div class="datepicker datepicker-dropdown dropdown-menu"><div style="display: block;" class="datepicker-days"><table class=" table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Tháng 10 2014</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">CN</th><th class="dow">T2</th><th class="dow">T3</th><th class="dow">T4</th><th class="dow">T5</th><th class="dow">T6</th><th class="dow">T7</th></tr></thead><tbody><tr><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td></tr><tr><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day active">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td></tr><tr><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td></tr><tr><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td></tr><tr><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td></tr><tr><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td><td class="day new">6</td><td class="day new">7</td><td class="day new">8</td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div><div style="display: none;" class="datepicker-months"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2014</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Tháng 1</span><span class="month">Tháng 2</span><span class="month">Tháng 3</span><span class="month">Tháng 4</span><span class="month">Tháng 5</span><span class="month">Tháng 6</span><span class="month">Tháng 7</span><span class="month">Tháng 8</span><span class="month">Tháng 9</span><span class="month active">Tháng 10</span><span class="month">Tháng 11</span><span class="month">Tháng 12</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div><div style="display: none;" class="datepicker-years"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2010-2019</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year active">2014</span><span class="year">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year old">2020</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div></div></body></html>
