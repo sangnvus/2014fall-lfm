@@ -1,0 +1,3360 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Quản lí lương nhân viên | LFMS</title>
+    <link href="http://localhost:19442/Content/logo/LFMS-icon-48.png" rel="icon">
+
+    
+
+    <!-- basic styles -->
+    <link href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/main.css" rel="stylesheet" type="text/css">
+    <link href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/font-awesome.css" rel="stylesheet" type="text/css">
+
+    <!-- ace styles -->
+    <link href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/ace.css" rel="stylesheet" type="text/css">
+    <link href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/ace-rtl.css" rel="stylesheet" type="text/css">
+    <link href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/ace-skins.css" rel="stylesheet" type="text/css">
+
+    <!-- ace settings handler -->
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/ace-extra.js" type="text/javascript"></script>
+
+    <!-- basic scripts -->
+    <!--[if !IE]> -->
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/jquery-2.js" type="text/javascript"></script>
+    <!-- <![endif]-->
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/main.js" type="text/javascript"></script>
+
+    <!--[if !IE]> -->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='~/Content/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <!-- <![endif]-->
+
+    <script type="text/javascript">
+        if ("ontouchend" in document && document.ontouchend != null) document.write("<script src='~/Content/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/bootstrap.js" type="text/javascript"></script>
+
+    <!-- ace scripts -->
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/ace-elements.js" type="text/javascript"></script>
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/ace.js" type="text/javascript"></script>
+    <script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/md5.js" type="text/javascript"></script>
+
+
+</head>
+
+<body>
+    <div class="navbar navbar-default" id="navbar">
+        <script type="text/javascript">
+            try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+        </script>
+
+        <div class="navbar-container" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a href="http://localhost:19442/Home/Index" class="navbar-brand" title="Trang chủ">
+                    <small>
+                        <img src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/LFMS-logo-big.png" style="border: none; height: 22px">
+                    </small>
+                </a><!-- /.brand -->
+            </div><!-- /.navbar-header -->
+
+            <div id="staffIdDiv" value="1" style="display:none"></div>
+
+<div class="navbar-header pull-right" role="navigation">
+    <ul class="nav ace-nav">
+        <li class="green" id="notificationArea" style="display: block"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-bell-alt" id="bellIcon"></i><span class="badge badge-success" id="countCalender1">0</span></a><ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close"><li class="dropdown-header"><i class="icon-calendar"></i>Hôm nay có <span id="countCalender2">0</span> sự kiện</li><li></li></ul></li>
+
+        <li class="light-green">
+            <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                <img class="nav-user-photo" src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/thuannh.jpg" alt="">
+                <span class="user-info">
+                    <small>Xin chào,</small>
+                    <p>Nguyễn Hòa Thuận</p>
+                </span>
+
+                <i class="icon-caret-down"></i>
+            </a>
+
+            <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                <li>
+                    <a href="http://localhost:19442/Case/ListCase" onclick="">
+                        <i class="icon-folder-open"></i>
+                        Danh sách hồ sơ
+                    </a>
+                </li>
+
+                <li class="divider"></li>
+
+                    <li>
+                        <a href="http://localhost:19442/Customer/Customer" onclick="">
+                            <i class="icon-group"></i>
+                            Quản lý khách hàng
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="http://localhost:19442/Staff/Staff">
+                            <i class="icon-user"></i>
+                            Quản lý nhân viên
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="http://localhost:19442/Service/Service" onclick="">
+                            <i class="icon-cog"></i>
+                            Quản lý dịch vụ
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="http://localhost:19442/Office/Office">
+                            <i class="icon-home"></i>
+                            Quản lý văn phòng
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="http://localhost:19442/Salary/Salary">
+                            <i class=" icon-globe"></i>
+                            Quản lí lương nhân viên
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="http://localhost:19442/Statistic/Statistic">
+                            <i class="icon-home"></i>
+                            Thống kê
+                        </a>
+                    </li>
+                     <li class="divider"></li>
+                    <li>
+                        <a href="http://localhost:19442/OtherCost/OtherCost">
+                            <i class="icon-cog"></i>
+                            Chi phí khác
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+
+                <li>
+                    <a data-toggle="modal" href="#tblPassChange" onclick='$("#PassChangeDiv").appendTo("#bodyChangePass"); validatePassword("#validatPassForm"); clearFieldPassword();'>
+                        <i class="icon-key"></i>
+                        Đổi mật khẩu
+                    </a>
+                </li>
+
+                <li class="divider"></li>
+
+                <li>
+                    <a href="#" onclick="logOut()">
+                        <i class="icon-off"></i>
+                        Đăng xuất
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul><!-- /.ace-nav -->
+</div><!-- /.navbar-header -->
+
+<script>
+    $(document).ready(function () {
+        GetCalendarsByStaffId();
+    });
+
+    function GetCalendarsByStaffId() {
+        $.post("/UserControl/GetCalendarsByStaffId", { staffId: $("#staffIdDiv").attr("value") }, function (out) {
+            var item = '<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-bell-alt" id="bellIcon"></i><span class="badge badge-success" id="countCalender1"></span></a>';
+            item += '<ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close"><li class="dropdown-header"><i class="icon-calendar"></i>Hôm nay có <span id="countCalender2"></span> sự kiện</li>';
+            var count = 0;
+
+            $.each(out, function (index, ca) {
+                var casecode = "";
+                var priority;
+                if (typeof (ca.Case) != "undefined") {
+                    casecode = " (" + ca.Case.CaseCode + ")";
+                    priority = "";
+                } else priority = ca.Priority;
+                count += 1;
+
+                item += '<li><a>';
+                item += '<span class="label label-lg ' + priority + '" style="margin-right: 10px"><i class="icon-info-sign"></i></span>';
+                item += '<span class="msg-body">';
+                item += '<span class="msg-title" style="font-weight: bold">' + ca.Title + casecode + '</span>';
+
+                var date1 = convertNETDateTime(ca.BeginTime).toLocaleFormat('%d/%m/%Y');
+                var time1 = convertNETDateTime(ca.BeginTime).toLocaleTimeString();
+                var date2 = convertNETDateTime(ca.EndTime).toLocaleFormat('%d/%m/%Y');
+                var time2 = convertNETDateTime(ca.EndTime).toLocaleTimeString();
+
+                if (date1 == date2) {
+                    if (time1 == "12:00:00 AM" && time2 == "12:00:00 AM") {
+                        item += '<span class="msg-time"><span>Cả ngày</span></span>';
+                    } else {
+                        item += '<span class="msg-time"><span> Bắt đầu: ' + time1 + '</span></span>';
+                        item += '<span class="msg-time"><span> Kết thúc: ' + time2 + '</span></span>';
+                    }
+                } else {
+                    item += '<span class="msg-time"><span> Từ ngày: ' + date1 + '</span></span>';
+                    item += '<span class="msg-time"><span> Đến ngày: ' + date2 + '</span></span>';
+                }
+
+                item += '</span>'; // span body
+                item += '</a></li>';
+            });
+
+            item += '<li></li></ul>';
+            $('#notificationArea').html(item);
+            $('#countCalender1').text(count);
+            $('#countCalender2').text(count);
+
+            if (count != 0) {
+                $('#countCalender1').attr('class', 'badge badge-important');
+                $('#bellIcon').attr('class', 'icon-bell-alt icon-animated-bell');
+            }
+        });
+    }
+
+</script>
+
+<div id="PassChangeDiv">
+    <div id="tblPassChange" class="modal fade" tabindex="-1">
+        <div class="modal-dialog" style="width: 100%; min-width: 600px; max-width: 600px">
+            <div class="modal-content">
+                <div class="modal-header no-padding">
+                    <div class="table-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="white">×</span>
+                        </button>
+                        Thay đổi mật khẩu
+                    </div>
+                </div>
+                <form class="modal-body no-padding" id="validatPassForm">
+                    <div class="modal-body no-padding">
+                        <div class="col-xs-12 form-horizontal" style="padding-top: 20px; margin-left: 10px">
+                            <div class="row">
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-4 ">Mật khẩu cũ: <span style="color: red"> *</span></label>
+                                    <div class="col-sm-8">
+                                        
+                                        <div>
+                                            <input name="Oldpassword" id="Oldpassword" style="width:100%" type="password">
+                                        </div>
+                                        <div id="checkPass" style="display: none">
+                                            <span style="color: #D16E6C">Mật khẩu cũ không đúng ! </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-4 ">Mật khẩu mới: <span style="color: red"> *</span></label>
+                                    <div class="col-sm-8">
+                                        <div>
+                                            <input name="password" id="password" style="width:100%" type="password">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-4 ">Lặp lại mật khẩu mới: <span style="color: red"> *</span></label>
+                                    <div class="col-sm-8">
+                                        <div>
+                                            <input name="password2" id="password2" style="width:100%" type="password">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="modal-footer no-margin-top"></div>
+                <div class="modal-footer no-margin-top">
+                    <button class="btn btn-grey pull-left" type="button" data-dismiss="modal" id="btnCloseChange">
+                        <i class="icon-remove"></i>
+                        Đóng
+                    </button>
+                    <button class="btn btn-success" type="button" data-bb-handler="confirm" id="btnUpdatePass" onclick="updateStaffPass()">
+                        <i class="icon-ok"></i>
+                        Đổi mật khẩu
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</div>
+<script type="text/javascript">
+    function updateStaffPass() {
+        if ($('#validatPassForm').valid()) {
+            editFr = $('#tblPassChange');
+            var oldPassword = $.md5($('#Oldpassword', editFr).val());
+            var staffPassword = $.md5($('#password2', editFr).val());
+            $.post("/UserControl/UpdateStaffPass", {
+                oldPassword: oldPassword, staffPassword2: staffPassword
+            }, function (result) {
+                if (result == "successful") {
+                    $('.close').click();
+                    $('#checkPass').attr("style", "display: none");
+                    notification("Cập nhật mật khẩu nhân viên thành công!", "", 3000, "btn-primary center");
+                } else if (result == 'error') {
+                    $('.close').click();
+                    $('#checkPass').attr("style", "display: none");
+                    notification("Cập nhật mật khẩu nhân viên nhân viên thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                } else if (result == "notMatch") {
+                    $('#checkPass').attr("style", "display: block");
+                }
+            })
+                .error(function () {
+                    $('.close').click();
+                    $('#checkPass').attr("style", "display: none");
+                    notification("Cập nhật mật khẩu nhân viên thất bại", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                });
+        }
+    }
+
+    function validatePassword(validateform) {
+        $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                password: {
+                    required: true,
+                    alphanumeric: true,
+                    minlength: 6
+
+
+                },
+                password2: {
+                    required: true,
+                    alphanumeric: true,
+                    minlength: 6,
+                    equalTo: "#password"
+                },
+                Oldpassword: {
+                    required: true,
+                    alphanumeric: true
+                }
+            },
+            messages: {
+                password: {
+                    required: "Hãy nhập mật khẩu mới.",
+                    alphanumeric: "Mật khẩu không được có kí tự đặc biệt",
+                    minlength: "Mật khẩu mới phải có ít nhất 6 kí tự.",
+                },
+                password2: {
+                    required: "Hãy nhập lại mật khẩu mới.",
+                    alphanumeric: "Mật khẩu không được có kí tự đặc biệt",
+                    minlength: "Mật khẩu mới phải có ít nhất 6 kí tự.",
+                    equalTo: "Mật khẩu 2 không trùng khớp.",
+                },
+                Oldpassword: {
+                    required: "Hãy nhập lại mật khẩu cũ.",
+                    alphanumeric: "Mật khẩu không được có kí tự đặc biệt",
+                }
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                }
+                else error.insertAfter(element.parent());
+            }
+        });
+    }
+
+    function clearFieldPassword() {
+        editFr = $('#tblPassChange');
+        $('#Oldpassword', editFr).val("");
+        $('#password', editFr).val("");
+        $('#password2', editFr).val("");
+
+    }
+
+    function logOut() {
+        $.post("/Login/LogOut", {}, function (out) {
+            if (out != "success") {
+                alert(out);
+            }
+            window.location = ("/Login/Login");
+        });
+    }
+</script>
+
+
+        </div><!-- /.container -->
+    </div>
+
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+        </script>
+
+        <div class="main-container-inner">
+            <a class="menu-toggler" id="menu-toggler" href="#">
+                <span class="menu-text"></span>
+            </a>
+
+
+    <div class=" sidebar" id="sidebar">
+        <script type="text/javascript">
+            try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+        </script>
+
+        <ul class="nav nav-list">
+            <li class="" id="liStaffSalary" onclick="GetSalary()">
+                <a href="#" onclick="setLiActiveClass('#liStaffSalary')">
+                    <i class="icon-exchange"></i>
+                    <span class="menu-text"> Lương nhân viên Nhân viên</span>
+                </a>
+
+            </li>
+
+            <li class="" id="liStaffBenefit" onclick="getAllBenefit()">
+                <a href="#" onclick="setLiActiveClass('#liStaffBenefit')">
+                    <i class="icon-bar-chart"></i>
+                    <span class="menu-text"> Trợ cấp </span>
+                </a>
+            </li>
+            <li class="" id="liStaffReward" onclick="getAllReward()">
+                <a href="#" onclick="setLiActiveClass('#liStaffReward')">
+                    <i class="icon-cogs"></i>
+                    <span class="menu-text"> Thưởng </span>
+                </a>
+            </li>
+            <li class="" id="liStaffImpress" onclick="getAllImpress()">
+                <a href="#" onclick="setLiActiveClass('#liStaffImpress')">
+                    <i class=" icon-heart-empty"></i>
+                    <span class="menu-text"> Tạm ứng </span>
+                </a>
+            </li>
+
+
+            <li class="" id="liStaffTax" onclick="getAllTax()">
+                <a href="#" onclick="setLiActiveClass('#liStaffTax')">
+                    <i class="icon-legal"></i>
+                    <span class="menu-text"> Thuế  </span>
+                </a>
+            </li>
+            <li class="" id="liStaffAssurance" onclick="getAllAssurance()">
+                <a href="#" onclick="setLiActiveClass('#liStaffAssurance')">
+                    <i class=" icon-heart"></i>
+                    <span class="menu-text"> Bảo hiểm </span>
+                </a>
+            </li>
+
+            <li class="" id="liTimesheet" onclick="getAllTimesheet()">
+                <a href="#" onclick="setLiActiveClass('#liTimesheet')">
+                    <i class="icon-exchange"></i>
+                    <span class="menu-text"> Ngày nghỉ </span>
+                </a>
+            </li>
+
+        </ul><!-- /.nav-list -->
+
+        <div class="sidebar-collapse" id="sidebar-collapse">
+            <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+        </div>
+
+        <script type="text/javascript">
+            try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+        </script>
+    </div>
+
+            <div class="main-content">
+
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+        </script>
+
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+                <a href="http://localhost:19442/Home/Index">Trang chủ</a> | Quản lí lương
+            </li>
+            <li>
+                <span id="breadcrumbsMenu" style="font-weight: bold">Lương nhân viên</span>
+            </li>
+
+            
+        </ul><!-- .breadcrumb -->
+    </div>
+
+                <div class="page-content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/jquery.css">
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/jquery-ui-1.css">
+
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/chosen.css">
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/bootstrap.css">
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/font-awesome.css">
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/ace.css">
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/datepicker.css">
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/screen.css">
+<link rel="stylesheet" href="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/screen.css">
+
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/ckfinder.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/jquery-ui-1.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/timeliner.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/bootbox.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/jquery_006.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/jquery_002.js" type="text/javascript"></script>
+
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/bootstrap-datepicker.js" type="text/javascript"></script>
+
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/jquery_009.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/fuelux.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/jquery.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/jquery_004.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/typeahead-bs2.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/chosen.js" type="text/javascript"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/jquery_007.js"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/jquery_003.js"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/bootstrap-wysiwyg.js"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/additional-methods.js"></script>
+
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/jquery_005.js"></script>
+<script src="Qu%E1%BA%A3n%20l%C3%AD%20l%C6%B0%C6%A1ng%20nh%C3%A2n%20vi%C3%AAn%20_%20LFMS_files/jquery_008.js"></script>
+
+
+
+<div id="bodyContent"><div>
+    <div id="staffId" value="1"></div>
+
+    <div class="table-responsive" id="divHidden">
+
+        <a data-toggle="modal" href="#tblAddStaff">
+            <button class="btn btn-primary" id="btnAdd">
+                <i class="icon-plus"></i>
+                Tính lương
+            </button>
+        </a>
+        <a data-toggle="modal">
+            <button class="btn btn-primary" id="btnExportExcel" onclick="exportExcel()">
+                <i class="icon-plus"></i>
+                Xuất file Excel
+            </button>
+        </a>
+        <hr>
+
+        <div style="overflow: auto">
+            <div style="float: left" class="form-group">
+                <label>Hiển thị tháng tính lương</label>
+                <div>
+                    <select name="selectTypeService" id="selectMonth" onchange="getSalarybyMonthandYear()" style="width: 100%" class="form-control"><option selected="selected" value="0">Tất cả</option><option value="1">Tháng 1</option><option value="2">Tháng 2</option><option value="3">Tháng 3</option><option value="4">Tháng 4</option><option value="5">Tháng 5</option><option value="6">Tháng 6</option><option value="7">Tháng 7</option><option value="8">Tháng 8</option><option value="9">Tháng 9</option><option value="10">Tháng 10</option><option value="11">Tháng 11</option><option value="12">Tháng 12</option></select>
+                </div>
+            </div>
+
+            <div style="float: left; margin-left: 5%" class="form-group">
+                <label>Năm</label>
+                <div>
+                    <select id="cboYear" name="cboYear" onchange="getSalarybyMonthandYear()" style="width: 100%; cursor: pointer" class="form-control "><option selected="selected" value="2014">Năm 2014</option><option value="2013">Năm 2013</option><option value="2012">Năm 2012</option><option value="2011">Năm 2011</option><option value="2010">Năm 2010</option><option value="2009">Năm 2009</option><option value="2008">Năm 2008</option><option value="2007">Năm 2007</option><option value="2006">Năm 2006</option><option value="2005">Năm 2005</option><option value="2004">Năm 2004</option><option value="2003">Năm 2003</option><option value="2002">Năm 2002</option><option value="2001">Năm 2001</option><option value="2000">Năm 2000</option></select><br>
+                </div>
+            </div>
+        </div>
+
+        <div id="tblSalaryDetail_wrapper" class="dataTables_wrapper" role="grid"><div class="row"><div class="col-sm-6"><div class="dataTables_length" id="tblSalaryDetail_length"><label>Hiển thị <select aria-controls="tblSalaryDetail" size="1" name="tblSalaryDetail_length"><option selected="selected" value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> dòng</label></div></div><div class="col-sm-6"><div id="tblSalaryDetail_filter" class="dataTables_filter"><label>Tìm kiếm: <input aria-controls="tblSalaryDetail" type="text"></label></div></div></div><table style="width: 100%;" aria-describedby="tblSalaryDetail_info" id="tblSalaryDetail" class="table table-striped table-bordered table-hover dataTable" width="100%">
+            <thead>
+                <tr role="row"><th aria-label="Tên nhân viên: activate to sort column descending" aria-sort="ascending" style="width: 167px;" colspan="1" rowspan="1" aria-controls="tblSalaryDetail" tabindex="0" role="columnheader" class="sorting_asc" width="16%">Tên nhân viên</th><th aria-label="Ngày làm: activate to sort column ascending" style="width: 116px;" colspan="1" rowspan="1" aria-controls="tblSalaryDetail" tabindex="0" role="columnheader" class="sorting" width="12%">Ngày làm</th><th aria-label="Ngày nghỉ: activate to sort column ascending" style="width: 116px;" colspan="1" rowspan="1" aria-controls="tblSalaryDetail" tabindex="0" role="columnheader" class="sorting" width="12%">Ngày nghỉ</th><th aria-label="Trợ cấp: activate to sort column ascending" style="width: 116px;" colspan="1" rowspan="1" aria-controls="tblSalaryDetail" tabindex="0" role="columnheader" class="sorting" width="12%">Trợ cấp</th><th aria-label="Thuế: activate to sort column ascending" style="width: 116px;" colspan="1" rowspan="1" aria-controls="tblSalaryDetail" tabindex="0" role="columnheader" class="sorting" width="12%">Thuế</th><th aria-label="Bảo hiểm: activate to sort column ascending" style="width: 142px;" colspan="1" rowspan="1" aria-controls="tblSalaryDetail" tabindex="0" role="columnheader" class="sorting" width="14%">Bảo hiểm</th><th aria-label="Lương nhận: activate to sort column ascending" style="width: 167px;" colspan="1" rowspan="1" aria-controls="tblSalaryDetail" tabindex="0" role="columnheader" class="sorting" width="16%">Lương nhận</th><th aria-label="" style="width: 40px;" colspan="1" rowspan="1" aria-controls="tblSalaryDetail" tabindex="0" role="columnheader" class="sorting_disabled" width="8%"></th></tr>
+            </thead>
+        <tbody aria-relevant="all" aria-live="polite" role="alert" id="listStaffMonth"><tr class="odd"><td class="  sorting_1"><a onclick="getSalaryByIndex(2)" data-toggle="modal" href="#tblUpdateSalary">Lê Văn Dụng</a></td><td class="  ">19</td><td class="  ">1</td><td class="  ">800.000 VNĐ</td><td class="  ">5.698.298 VNĐ</td><td class="  ">1.291.810 VNĐ</td><td class="  ">41.694.892 VNĐ</td><td class="visible-md visible-lg hidden-sm hidden-xs action-buttons  "><center><a onclick="getSalaryByIndex(2); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="2"><i class="icon-pencil bigger-130"></i></a><a onclick="deleteSalary(1006)" class="red" title="Xóa" href="#" data-id="1006"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr class="even"><td class="  sorting_1"><a onclick="getSalaryByIndex(12)" data-toggle="modal" href="#tblUpdateSalary">Lê Văn Dụng</a></td><td class="  ">22</td><td class="  ">0</td><td class="  ">2.300.000 VNĐ</td><td class="  ">5.546.000 VNĐ</td><td class="  ">5.016.000 VNĐ</td><td class="  ">41.238.000 VNĐ</td><td class="visible-md visible-lg hidden-sm hidden-xs action-buttons  "><center><a onclick="getSalaryByIndex(12); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="12"><i class="icon-pencil bigger-130"></i></a><a onclick="deleteSalary(1016)" class="red" title="Xóa" href="#" data-id="1016"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr class="odd"><td class="  sorting_1"><a onclick="getSalaryByIndex(5)" data-toggle="modal" href="#tblUpdateSalary">Lương Thị Kim Anh</a></td><td class="  ">20</td><td class="  ">0</td><td class="  ">800.000 VNĐ</td><td class="  ">0 VNĐ</td><td class="  ">202.800 VNĐ</td><td class="  ">7.597.200 VNĐ</td><td class="visible-md visible-lg hidden-sm hidden-xs action-buttons  "><center><a onclick="getSalaryByIndex(5); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="5"><i class="icon-pencil bigger-130"></i></a><a onclick="deleteSalary(1009)" class="red" title="Xóa" href="#" data-id="1009"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr class="even"><td class="  sorting_1"><a onclick="getSalaryByIndex(15)" data-toggle="modal" href="#tblUpdateSalary">Lương Thị Kim Anh</a></td><td class="  ">22</td><td class="  ">0</td><td class="  ">800.000 VNĐ</td><td class="  ">0 VNĐ</td><td class="  ">741.000 VNĐ</td><td class="  ">7.059.000 VNĐ</td><td class="visible-md visible-lg hidden-sm hidden-xs action-buttons  "><center><a onclick="getSalaryByIndex(15); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="15"><i class="icon-pencil bigger-130"></i></a><a onclick="deleteSalary(1019)" class="red" title="Xóa" href="#" data-id="1019"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr class="odd"><td class="  sorting_1"><a onclick="getSalaryByIndex(1)" data-toggle="modal" href="#tblUpdateSalary">Nguyễn Huỳnh Kim Ngân</a></td><td class="  ">17.875</td><td class="  ">2.125</td><td class="  ">800.000 VNĐ</td><td class="  ">0 VNĐ</td><td class="  ">204.019 VNĐ</td><td class="  ">6.642.856 VNĐ</td><td class="visible-md visible-lg hidden-sm hidden-xs action-buttons  "><center><a onclick="getSalaryByIndex(1); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="1"><i class="icon-pencil bigger-130"></i></a><a onclick="deleteSalary(1005)" class="red" title="Xóa" href="#" data-id="1005"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr class="even"><td class="  sorting_1"><a onclick="getSalaryByIndex(11)" data-toggle="modal" href="#tblUpdateSalary">Nguyễn Huỳnh Kim Ngân</a></td><td class="  ">12</td><td class="  ">10</td><td class="  ">2.300.000 VNĐ</td><td class="  ">0 VNĐ</td><td class="  ">126.955 VNĐ</td><td class="  ">209.409 VNĐ</td><td class="visible-md visible-lg hidden-sm hidden-xs action-buttons  "><center><a onclick="getSalaryByIndex(11); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="11"><i class="icon-pencil bigger-130"></i></a><a onclick="deleteSalary(1015)" class="red" title="Xóa" href="#" data-id="1015"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr class="odd"><td class="  sorting_1"><a onclick="getSalaryByIndex(0)" data-toggle="modal" href="#tblUpdateSalary">Nguyễn Hòa Thuận</a></td><td class="  ">17</td><td class="  ">3</td><td class="  ">1.800.000 VNĐ</td><td class="  ">3.150.971 VNĐ</td><td class="  ">4.767.019 VNĐ</td><td class="  ">36.053.885 VNĐ</td><td class="visible-md visible-lg hidden-sm hidden-xs action-buttons  "><center><a onclick="getSalaryByIndex(0); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="0"><i class="icon-pencil bigger-130"></i></a><a onclick="deleteSalary(1004)" class="red" title="Xóa" href="#" data-id="1004"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr class="even"><td class="  sorting_1"><a onclick="getSalaryByIndex(10)" data-toggle="modal" href="#tblUpdateSalary">Nguyễn Hòa Thuận</a></td><td class="  ">13</td><td class="  ">9</td><td class="  ">2.300.000 VNĐ</td><td class="  ">0 VNĐ</td><td class="  ">784.882 VNĐ</td><td class="  ">5.619.664 VNĐ</td><td class="visible-md visible-lg hidden-sm hidden-xs action-buttons  "><center><a onclick="getSalaryByIndex(10); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="10"><i class="icon-pencil bigger-130"></i></a><a onclick="deleteSalary(1014)" class="red" title="Xóa" href="#" data-id="1014"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr class="odd"><td class="  sorting_1"><a onclick="getSalaryByIndex(4)" data-toggle="modal" href="#tblUpdateSalary">Nguyễn Hữu Tiếng</a></td><td class="  ">20</td><td class="  ">0</td><td class="  ">800.000 VNĐ</td><td class="  ">0 VNĐ</td><td class="  ">241.800 VNĐ</td><td class="  ">8.058.200 VNĐ</td><td class="visible-md visible-lg hidden-sm hidden-xs action-buttons  "><center><a onclick="getSalaryByIndex(4); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="4"><i class="icon-pencil bigger-130"></i></a><a onclick="deleteSalary(1008)" class="red" title="Xóa" href="#" data-id="1008"><i class="icon-trash bigger-130"></i></a></center></td></tr><tr class="even"><td class="  sorting_1"><a onclick="getSalaryByIndex(14)" data-toggle="modal" href="#tblUpdateSalary">Nguyễn Hữu Tiếng</a></td><td class="  ">22</td><td class="  ">0</td><td class="  ">800.000 VNĐ</td><td class="  ">0 VNĐ</td><td class="  ">788.500 VNĐ</td><td class="  ">6.511.500 VNĐ</td><td class="visible-md visible-lg hidden-sm hidden-xs action-buttons  "><center><a onclick="getSalaryByIndex(14); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="14"><i class="icon-pencil bigger-130"></i></a><a onclick="deleteSalary(1018)" class="red" title="Xóa" href="#" data-id="1018"><i class="icon-trash bigger-130"></i></a></center></td></tr></tbody></table><div class="row"><div class="col-sm-6"><div id="tblSalaryDetail_info" class="dataTables_info">Hiển thị <b style="color:#428BCA"> 1 </b> tới <b style="color:#428BCA"> 10 </b> trong  <b style="color:#428BCA"> 20 </b> dòng</div></div><div class="col-sm-6"><div class="dataTables_paginate paging_bootstrap"><ul class="pagination"><li class="prev disabled"><a href="#"><i class="icon-double-angle-left"></i></a></li><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li class="next"><a href="#"><i class="icon-double-angle-right"></i></a></li></ul></div></div></div></div>
+    </div>
+    <div class="row">
+        
+        <div id="tblAddStaff" class="modal fade" tabindex="-1">
+            <div class="modal-dialog" style="width: 100%; max-width: 800px">
+                <div class="modal-content">
+                    <div class="modal-header no-padding">
+                        <div class="table-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                <span class="white">×</span>
+                            </button>
+                            Tính lương
+                        </div>
+                    </div>
+                    <form novalidate="novalidate" class="modal-body no-padding" id="addStaffSalaryValidateForm">
+                        <div class="col-sm-6">
+                            <div class="space"></div>
+                            
+                            <div class="form-group">
+                                <label>Tên nhân viên</label><span style="color: red"> *</span>
+                                <div>
+                                    <select id="selectStaffName" name="selectStaffName" style="width: 100%; cursor: pointer"><option value="1">Nguyễn Hòa Thuận</option><option value="2">Nguyễn Huỳnh Kim Ngân</option><option value="3">Lê Văn Dụng</option><option value="4">Nguyễn Thị Hòa Thảo</option><option value="5">Nguyễn Hữu Tiếng</option><option value="6">Lương Thị Kim Anh</option><option value="7">Nguyễn Ngọc Tàu</option><option value="8">Nguyễn Thành Tín</option><option value="9">Nguyễn Phi Long</option><option value="10">Ngô Văn Tùng</option></select><br>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Ngày Tính lương</label><span style="color: red"> *</span>
+
+                                <div class="input-group input-group-sm">
+                                    <input class="form-control date-picker" id="txtStaffDayofbith" name="txtStaffDayofbith" readonly="readonly" data-date-format="dd/mm/yyyy" style="width: 100%; cursor: pointer; background: none repeat scroll 0 0 #fff !important" type="text">
+                                    <span class="input-group-addon">
+                                        <i class="icon-calendar bigger-110"></i>
+                                    </span>
+                                </div>
+                                <div id="existCountSalary" style="display: none">
+                                    <span style="color: red">Tháng này bạn đã tính lương rồi!</span>
+                                </div>
+                                <div id="invalidateCountSalary" style="display: none">
+                                    <span style="color: red">Bạn chỉ được chọn tháng hiện tại!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="space"></div>
+                            <div class="form-group" id="officeNewDiv">
+                                <label>Trợ cấp</label><span style="color: red"> *</span>
+                                <div>
+                                    <select class="chosen-select" name="cboBenefit" id="cboBenefit" style="cursor: pointer; display: none;" multiple="multiple"><option value="1">Trợ cấp cơ bản</option><option value="2">Trợ cấp đi lại</option><option value="3">Trợ cấp đi công tác</option><option value="4">Trợ cấp làm ngoài giờ</option></select><div id="cboBenefit_chosen" title="" style="width: 100%;" class="chosen-container chosen-container-multi"><ul class="chosen-choices"><li class="search-field"><input value="Tìm Kiếm . . ." class="default" autocomplete="off" style="width: 90px;" type="text"></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div></div>
+                                </div>
+                            </div>
+                            <div class="form-group" id="officeNewDiv">
+                                <label>Bảo hiểm</label><span style="color: red"> *</span>
+                                <div>
+                                    <select class="chosen-select" name="cboAssurance" id="cboAssurance" style="cursor: pointer; display: none;" multiple="multiple"><option value="1">Bảo hiểm y tế</option><option value="2">Bảo hiểm xã hội</option><option value="3">Bảo hiểm thất nghiệp</option></select><div id="cboAssurance_chosen" title="" style="width: 100%;" class="chosen-container chosen-container-multi"><ul class="chosen-choices"><li class="search-field"><input value="Tìm Kiếm . . ." class="default" autocomplete="off" style="width: 90px;" type="text"></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer no-margin-top">
+                        </div>
+                    </form>
+                    <div class="modal-footer no-margin-top">
+                        <button class="btn btn-warning pull-left" onclick="clearFieldSalary()" id="btnCloseAdd" style="width: 125px">
+                            <i class="icon-refresh"></i>
+                            Làm trống
+                        </button>
+                        <button class="btn btn-success" type="button" data-bb-handler="confirm" id="btnAddNewCase" onclick="addStaffSalary()">
+                            <i class="icon-ok"></i>
+                            Tính lương
+                        </button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+    </div>
+    <div id="tblUpdateSalary" class="modal fade" tabindex="-1">
+        <div class="modal-dialog" style="width: 90%; max-width: 1000px">
+            <div class="modal-content">
+                <div class="modal-header no-padding">
+                    <div class="table-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="white">×</span>
+                        </button>
+                        Chi tiết tiền lương nhân viên
+                    </div>
+                </div>
+                
+                <form class="modal-body no-padding" id="updateStaffSalaryValidateForm">
+                    <div class="col-sm-3">
+                        <div class="space"></div>
+
+                        <div class="form-group">
+                            <label>Tên nhân viên</label><span style="color: red"> *</span>
+                            <div>
+                                <select id="detailStaffName" name="detailStaffName" style="width: 100%; cursor: pointer" class="form-control editableInput"><option selected="selected" value="1">Nguyễn Hòa Thuận</option><option value="2">Nguyễn Huỳnh Kim Ngân</option><option value="3">Lê Văn Dụng</option><option value="4">Nguyễn Thị Hòa Thảo</option><option value="5">Nguyễn Hữu Tiếng</option><option value="6">Lương Thị Kim Anh</option><option value="7">Nguyễn Ngọc Tàu</option><option value="8">Nguyễn Thành Tín</option><option value="9">Nguyễn Phi Long</option><option value="10">Ngô Văn Tùng</option></select><br>
+                                <input id="salaryId" style="display: none" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label>Ngày tính lương</label><span style="color: red"> *</span>
+
+                                <div class="input-group input-group-sm">
+                                    <input class="form-control date-picker editableSelect" id="detailDate" name="dateStaffTimesheet" data-date-format="dd/mm/yyyy" style="width: 100%; cursor: pointer;" type="text">
+                                    <span class="input-group-addon">
+                                        <i class="icon-calendar bigger-110"></i>
+                                    </span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Số người phụ thuộc:</label>
+                            <input id="detailAppendantPeople" maxlength="2" name="txtAppendantPeople" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+                        <div class="form-group">
+                            <label>Tổng số ngày đi làm</label>
+                            <input id="detailTotalPresent" maxlength="50" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+                        <div class="form-group">
+                            <label>Lương cơ bản </label>
+                            <input id="detailBaseSalary" maxlength="50" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+                        <div class="form-group">
+                            <label>Tổng tiền thực nhận</label>
+                            <input id="detailActualSalary" maxlength="50" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="space"></div>
+                        <div class="form-group">
+                            <label>Chi tiết bảo hiểm</label><span style="color: red"> *</span>
+                            <div>
+                                <select style="display: none;" class="chosen-select editableInput" name="cboOffice" id="staffAssuranceDetail" multiple="multiple"><option value="1">Bảo hiểm y tế</option><option value="2">Bảo hiểm xã hội</option><option value="3">Bảo hiểm thất nghiệp</option></select><div id="staffAssuranceDetail_chosen" title="" style="width: 100%;" class="chosen-container chosen-container-multi"><ul class="chosen-choices"><li class="search-field"><input value="Tìm Kiếm . . ." class="default" autocomplete="off" style="width: 0px;" type="text"></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Chi tiết trợ cấp</label><span style="color: red"> *</span>
+                            <div>
+
+                                <select style="display: none;" class="chosen-select editableInput" name="cboOffice" id="staffBenefitDetail" multiple="multiple"><option value="1">Trợ cấp cơ bản</option><option value="2">Trợ cấp đi lại</option><option value="3">Trợ cấp đi công tác</option><option value="4">Trợ cấp làm ngoài giờ</option></select><div id="staffBenefitDetail_chosen" title="" style="width: 100%;" class="chosen-container chosen-container-multi"><ul class="chosen-choices"><li class="search-field"><input value="Tìm Kiếm . . ." class="default" autocomplete="off" style="width: 0px;" type="text"></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div></div>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="form-group">
+                            <label>Chi tiết thuế</label><span style="color: red"> *</span>
+                            <div>
+                                <select style="display: none;" class="chosen-select editableInput" name="cboOffice" id="staffTaxDetail" multiple="multiple"><option value="1">Thuế thu nhập cá nhân mức 1</option><option value="2">Thuế thu nhập cá nhân mức 2</option><option value="3">Thuế thu nhập cá nhân mức 3</option><option value="4">Thuế thu nhập cá nhân mức 4</option><option value="5">Thuế thu nhập cá nhân mức  5</option><option value="6">Thuế thu nhập cá nhân mức 6</option><option value="7">Thuế thu nhập cá nhân mức 7</option></select><div id="staffTaxDetail_chosen" title="" style="width: 100%;" class="chosen-container chosen-container-multi"><ul class="chosen-choices"><li class="search-field"><input value="Tìm Kiếm . . ." class="default" autocomplete="off" style="width: 0px;" type="text"></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Tổng tiền tạm ứng </label>
+                            <input id="detailTotalImprest" maxlength="50" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Số ngày nghỉ có phép</label>
+                            <input id="detailTotalAbsentAllow" maxlength="50" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+                        <div class="form-group">
+                            <label>Số ngày nghỉ không phép</label>
+                            <input id="detailTotalAbsentIsallow" maxlength="50" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+                        <div class="form-group">
+                            <label>Tổng số ngày nghỉ</label>
+                            <input id="detailTotalAbsent" maxlength="50" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-4">
+                        <div class="space"></div>
+                        <div class="form-group">
+                            <label>Tổng tiền bảo hiểm</label>
+                            <input id="detailTotalAssurance" maxlength="50" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+                        <div class="form-group">
+                            <label>Tổng tiền trợ cấp </label>
+                            <input id="detailTotalBenefit" maxlength="50" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+                        <div class="form-group">
+                            <label>Tổng tiền thuế</label>
+                            <input id="detailTotalTax" maxlength="50" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+                        <div class="form-group">
+                            <label>Tổng tiền thưởng </label>
+                            <input id="detailTotalReward" maxlength="50" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+                        <div class="form-group">
+                            <label>Số ngày bị trừ lương</label>
+                            <input id="detailTotalDatedet" maxlength="50" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+                        <div class="form-group">
+                            <label>Số tiền bị trừ lương</label>
+                            <input id="detailTotalMoneydet" maxlength="50" style="width: 100%" class="" disabled="disabled" type="text"><br>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer no-margin-top">
+                    </div>
+                </form>
+                <div class="modal-footer no-margin-top">
+
+                    <button class="btn  btn-grey pull-left" type="button" data-dismiss="modal">
+                        <i class="icon-remove"></i>
+                        Đóng
+                    </button>
+                    <button class="btn btn-success" onclick="updateStaffSalary()" style="display: none" id="disablebutton">
+                        <i class="icon-ok"></i>
+                        Tính lại
+                    </button>
+
+
+                    <button class="btn btn-primary" onclick="enablebuttonSalary()" id="enablebutton">
+                        <i class="icon-edit"></i>
+                        Chỉnh sửa
+                    </button>
+
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</div>
+
+</div>
+
+<div id="bodyChangePass">
+
+</div>
+
+
+
+
+<script type="text/javascript">
+    setLiActiveClass('#liStaffDetail');
+    var allStaff = null;
+
+    $(document).ready(function () {
+        GetSalary();
+    });
+
+    function maskMoney(input) {
+        var num = $(input).val();
+        if (num != "") {
+            var str = ("" + num).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, function ($1) { return $1 + "." });
+            $(input).val(str + " VNĐ");
+        }
+    }
+
+    function convertToMoney(num) {
+        if ("" + num != "") {
+            var str = ("" + num).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, function ($1) { return $1 + "." });
+            str = str + " VNĐ";
+            return str;
+        }
+    }
+
+    function removeMask(input) {
+        var num = $(input).val();
+        if (num != "") {
+            var result = num.replace(" VNĐ", "");
+            result = parseInt(result.split(".").join(""));
+            return $(input).val(result);
+        }
+    }
+
+    function setLiActiveClass(liId) {
+        $('#liStaffSalary').attr("class", "");
+        $('#liStaffTax').attr("class", "");
+        $('#liStaffAssurance').attr("class", "");
+        $('#liStaffImpress').attr("class", "");
+        $('#liStaffBenefit').attr("class", "");
+        $('#liTimesheet').attr("class", "");
+        $('#liStaffReward').attr("class", "");
+
+        $(liId).attr("class", "active");
+    }
+    function GetSalary() {
+        $.post("/Salary/GetSalary", function (out) {
+            document.getElementById("bodyContent").innerHTML = (out.html);
+            {
+                var item = '<tbody id="listStaffMonth">';
+                allSalary = out.list;
+                $.each(out.list, function (index, salary) {
+                    item += '<tr>';
+                    item += '<td><a onClick="getSalaryByIndex(' + index + ')" data-toggle="modal" href="#tblUpdateSalary">' + salary.Staff.StaffName + '</a></td>';
+                    item += '<td>' + salary.TotalPresent + '</td>';
+                    item += '<td>' + salary.TotalAbsent + '</td>';
+                    item += '<td>' + convertToMoney(salary.TotalBenefit) + '</td>';
+                    item += '<td>' + convertToMoney(salary.TotalTax) + '</td>';
+                    item += '<td>' + convertToMoney(salary.TotalAssurance) + '</td>';
+                    item += '<td>' + convertToMoney(salary.ActualSalary) + '</td>';
+
+                    item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getSalaryByIndex(' + index + '); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="' + index
+                         + '"><i class="icon-pencil bigger-130"></i></a><a onClick="deleteSalary(' + salary.SalaryID + ')" class="red" title="Xóa" href="#" data-id="' + salary.SalaryID + '"><i class="icon-trash bigger-130"></i></a></center></td>';
+                    item += '</tr>';
+                });
+                item += '</tbody>';
+                item = item.split("null").join("");
+                $('#tblSalaryDetail').append(item);
+                $("#tblSalaryDetail").dataTable().fnDestroy();
+                var oTableSalary = $('#tblSalaryDetail').dataTable({
+                    "aoColumns": [
+                       null, null, null, null, null, null, null, { "bSortable": false }
+                    ]
+                });
+                loadSelectBenefit();
+                loadSelectAssurancet();
+                getStaffTax();
+                getStaffName();
+                getMonthinYear();
+                getYear();
+                // Gọi JS cho component ngày
+                $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+                    $(this).prev().focus();
+                });
+                //Chạy hàm validate
+                validateAddStaffSalary('#addStaffSalaryValidateForm');
+                $("#cboBenefit").chosen();
+                $("#cboBenefit_chosen").css("width", "100%");
+
+                $("#cboAssurance").chosen();
+                $("#cboAssurance_chosen").css("width", "100%");
+
+                $("#staffOffice").chosen();
+                $("#staffOffice_chosen").css("width", "100%");
+
+                $("#staffAssuranceDetail").chosen();
+                $("#staffAssuranceDetail_chosen").css("width", "100%");
+
+                $("#staffBenefitDetail").chosen();
+                $("#staffBenefitDetail_chosen").css("width", "100%");
+
+                $("#staffTaxDetail").chosen();
+                $("#staffTaxDetail_chosen").css("width", "100%");
+
+                $("#currentImpress").chosen();
+                $("#currentImpress_chosen").css("width", "100%");
+
+                //})
+                ;
+            }
+        });
+        $('#breadcrumbsMenu').text('Lương nhân viên');
+    }
+
+    function GetUpdateSalary() {
+        $.post("/Salary/GetSalaryUpdate", function (out) {
+            {
+                allSalary = out;
+                var item = '<tbody id="listStaffMonth">';
+
+                $.each(out, function (index, salary) {
+                    item += '<tr>';
+                    item += '<td><a onClick="getSalaryByIndex(' + index + ')" data-toggle="modal" href="#tblUpdateSalary">' + salary.Staff.StaffName + '</a></td>';
+                    item += '<td>' + salary.TotalPresent + '</td>';
+                    item += '<td>' + salary.TotalAbsent + '</td>';
+                    item += '<td>' + convertToMoney(salary.TotalBenefit) + '</td>';
+                    item += '<td>' + convertToMoney(salary.TotalTax) + '</td>';
+                    item += '<td>' + convertToMoney(salary.TotalAssurance) + '</td>';
+                    item += '<td>' + convertToMoney(salary.ActualSalary) + '</td>';
+
+                    item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getSalaryByIndex(' + index + '); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="' + index
+                         + '"><i class="icon-pencil bigger-130"></i></a><a onClick="deleteSalary(' + salary.SalaryID + ')" class="red" title="Xóa" href="#" data-id="' + salary.SalaryID + '"><i class="icon-trash bigger-130"></i></a></center></td>';
+                    item += '</tr>';
+                });
+                item += '</tbody>';
+                item = item.split("null").join("");
+                $('#tblSalaryDetail').html(item);
+                $("#tblSalaryDetail").dataTable().fnDestroy();
+                var oTableSalary = $('#tblSalaryDetail').dataTable({
+                    "aoColumns": [
+                       null, null, null, null, null, null, null, { "bSortable": false }
+                    ]
+                });
+          
+                $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+                    $(this).prev().focus();
+                });
+                //Chạy hàm validate
+                validateAddStaffSalary('#addStaffSalaryValidateForm');
+                getMonthinYear();
+
+                //})
+                ;
+            }
+        });
+        $('#breadcrumbsMenu').text('Lương nhân viên');
+    }
+
+    //function getSalarybyMonth() {
+
+    //    $.post("/Salary/getSalarybyMonth", { monthId: $('#selectMonth').val() }, function (out) {
+
+    //        $("#tblSalaryDetail")[0].removeChild($("#listStaffMonth")[0]);
+    //        {
+    //            var item = '<tbody id="listStaffMonth">';
+    //            allSalaryIndexMonth = out.list;
+    //            $.each(out.list, function (index, salarydetail) {
+    //                item += '<tr>';
+    //                item += '<td><a onClick="getSalaryByIndexMonth(' + index + ')" data-toggle="modal" href="#tblUpdateSalary">' + salarydetail.Staff.StaffName + '</a></td>';
+    //                item += '<td>' + salarydetail.TotalPresent + '</td>';
+    //                item += '<td>' + salarydetail.TotalAbsent + '</td>';
+    //                item += '<td>' + convertToMoney(salarydetail.TotalBenefit) + '</td>';
+    //                item += '<td>' + convertToMoney(salarydetail.TotalTax) + '</td>';
+    //                item += '<td>' + convertToMoney(salarydetail.TotalAssurance) + '</td>';
+    //                item += '<td>' + convertToMoney(salarydetail.ActualSalary) + '</td>';
+
+    //                item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getSalaryByIndex(' + index + '); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="' + index
+    //                     + '"><i class="icon-pencil bigger-130"></i></a><a onClick="deleteSalary(' + salarydetail.SalaryID + ')" class="red" title="Xóa" href="#" data-id="' + salarydetail.SalaryID + '"><i class="icon-trash bigger-130"></i></a></center></td>';
+    //                item += '</tr>';
+    //            });
+    //            item += '</tbody>';
+    //            item = item.split("null").join("");
+    //            $('#tblSalaryDetail').append(item);
+    //            $("#tblSalaryDetail").dataTable().fnDestroy();
+    //            var oTableSalary = $('#tblSalaryDetail').dataTable({
+    //                "aoColumns": [
+    //                   null, null, null, null, null, null, null, { "bSortable": false }
+    //                ]
+    //            });
+
+    //            loadSelectBenefit();
+    //            loadSelectAssurancet();
+    //            getStaffTax();
+    //            getStaffName();
+    //            //getMonthinYear();
+
+    //            // Gọi JS cho component ngày
+    //            $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+    //                $(this).prev().focus();
+    //            });
+
+    //            //Chạy hàm validate
+    //            validateAddStaffSalary('#addStaffSalaryValidateForm');
+
+    //            $("#cboBenefit").chosen();
+    //            $("#cboBenefit_chosen").css("width", "100%");
+
+    //            $("#cboAssurance").chosen();
+    //            $("#cboAssurance_chosen").css("width", "100%");
+
+    //            $("#staffOffice").chosen();
+    //            $("#staffOffice_chosen").css("width", "100%");
+    //            //})
+    //            ;
+    //        }
+    //    });
+    //    $('#breadcrumbsMenu').text('Lương nhân viên');
+
+    //}
+
+    function getSalarybyMonthandYear() {
+
+        $.post("/Salary/getSalarybyMonthandYear", { monthId: $('#selectMonth').val(), yearId: $('#cboYear').val() }, function (out) {
+
+            $("#tblSalaryDetail")[0].removeChild($("#listStaffMonth")[0]);
+            {
+                var item = '<tbody id="listStaffMonth">';
+                allSalary = out.list;
+                $('.close').click();
+                $.each(out.list, function (index, salarydetail) {
+                    item += '<tr>';
+                    item += '<td><a onClick="getSalaryByIndex(' + index + ')" data-toggle="modal" href="#tblUpdateSalary">' + salarydetail.Staff.StaffName + '</a></td>';
+                    item += '<td>' + salarydetail.TotalPresent + '</td>';
+                    item += '<td>' + salarydetail.TotalAbsent + '</td>';
+                    item += '<td>' + convertToMoney(salarydetail.TotalBenefit) + '</td>';
+                    item += '<td>' + convertToMoney(salarydetail.TotalTax) + '</td>';
+                    item += '<td>' + convertToMoney(salarydetail.TotalAssurance) + '</td>';
+                    item += '<td>' + convertToMoney(salarydetail.ActualSalary) + '</td>';
+
+                    item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getSalaryByIndex(' + index + '); enablebuttonSalary()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateSalary" data-id="' + index
+                         + '"><i class="icon-pencil bigger-130"></i></a><a onClick="deleteSalary(' + salarydetail.SalaryID + ')" class="red" title="Xóa" href="#" data-id="' + salarydetail.SalaryID + '"><i class="icon-trash bigger-130"></i></a></center></td>';
+                    item += '</tr>';
+                });
+                item += '</tbody>';
+                item = item.split("null").join("");
+                $('#tblSalaryDetail').append(item);
+                $("#tblSalaryDetail").dataTable().fnDestroy();
+                var oTableSalary = $('#tblSalaryDetail').dataTable({
+                    "aoColumns": [
+                       null, null, null, null, null, null, null, { "bSortable": false }
+                    ]
+                });
+
+                //loadSelectBenefit();
+                //loadSelectAssurancet();
+                //getStaffTax();
+                //getStaffName();
+                //getMonthinYear();
+
+                // Gọi JS cho component ngày
+                $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+                    $(this).prev().focus();
+                });
+
+                //Chạy hàm validate
+                validateAddStaffSalary('#addStaffSalaryValidateForm');
+
+                $("#cboBenefit").chosen();
+                $("#cboBenefit_chosen").css("width", "100%");
+
+                $("#cboAssurance").chosen();
+                $("#cboAssurance_chosen").css("width", "100%");
+
+                $("#staffOffice").chosen();
+                $("#staffOffice_chosen").css("width", "100%");
+                //})
+                ;
+            }
+        });
+        $('#breadcrumbsMenu').text('Lương nhân viên');
+
+    }
+    function getSalaryByIndexMonth(index) {
+        disablebuttonSalary(); //chạy hàm này để disable cái select box
+        editFr = $('#tblUpdateSalary');
+
+        $('#salaryId', editFr).val(allSalaryIndexMonth[index].SalaryID);
+        $('#detailStaffName', editFr).val(allSalaryIndexMonth[index].Staff.StaffId);
+
+        var bd = convertNETDateTime(allSalaryIndexMonth[index].Date).toLocaleFormat('%d/%m/%Y');
+        $('#detailDate', editFr).val(bd);
+
+        $('#detailTotalAbsent', editFr).val(allSalaryIndexMonth[index].TotalAbsent);
+        $('#detailTotalPresent', editFr).val(allSalaryIndexMonth[index].TotalPresent);
+        $('#detailTotalBenefit', editFr).val(convertToMoney(allSalaryIndexMonth[index].TotalBenefit));
+        $('#detailTotalImprest', editFr).val(convertToMoney(allSalaryIndexMonth[index].TotalImprest));
+        $('#detailTotalTax', editFr).val(convertToMoney(allSalaryIndexMonth[index].TotalTax));
+        $('#detailTotalAssurance', editFr).val(convertToMoney(allSalaryIndexMonth[index].TotalAssurance));
+        $('#detailTotalReward', editFr).val(convertToMoney(allSalaryIndexMonth[index].TotalReward));
+        $('#detailBaseSalary', editFr).val(convertToMoney(allSalaryIndexMonth[index].BaseSalary));
+        $('#detailActualSalary', editFr).val(convertToMoney(allSalaryIndexMonth[index].ActualSalary));
+        $('#detailAppendantPeople', editFr).val(allSalaryIndexMonth[index].Staff.AppendantPeople);
+        $('#detailTotalAbsentIsallow', editFr).val(allSalaryIndexMonth[index].Staff.TimeSheets.StaffId);
+        $('#detailTotalMoneydet', editFr).val(convertToMoney(allSalaryIndexMonth[index].TotalMoneyDeduction));
+        $('#detailTotalDatedet', editFr).val(allSalaryIndexMonth[index].TotalDateDeduction);
+
+        //Tính tổng số ngày nghỉ có phép
+        var array = new Array();
+        var IsallowAbsent = 0;
+        var Absent = 0;
+        $.each(allSalaryIndexMonth[index].Staff.TimeSheets, function (i, totalabsent) {
+            var bd1 = convertNETDateTime(totalabsent.Date).toLocaleFormat('%m');
+            var bd = convertNETDateTime(allSalaryIndexMonth[index].Date).toLocaleFormat('%m');
+            //$('#detailDate', editFr).val(bd);
+            if (totalabsent.IsAllowed == false && bd1 == bd) {
+                IsallowAbsent = IsallowAbsent + totalabsent.Hours;
+
+            } if (totalabsent.IsAllowed == true && bd1 == bd) {
+                Absent = Absent + totalabsent.Hours;
+
+            }
+        });
+        IsallowAbsent = IsallowAbsent / 8;
+        Absent = Absent / 8;
+        $('#detailTotalAbsentAllow', editFr).val(Absent);
+        $('#detailTotalAbsentIsallow', editFr).val(IsallowAbsent);
+
+        $("#staffAssuranceDetail").val(array);
+        $("#staffAssuranceDetail").trigger("chosen:updated");
+
+        //tạo ra một mảng để lưu các id và push lại giá trị vào để hiển thị bảo hiểm
+        var array = new Array();
+        $.each(allSalaryIndexMonth[index].SalaryAssuranceDetails, function (i, assurance) {
+            array.push(assurance.AssuranceID);
+        });
+        $("#staffAssuranceDetail").val(array);
+        $("#staffAssuranceDetail").trigger("chosen:updated");
+
+        //tạo ra một mảng để lưu các id và push lại giá trị vào để hiển thị thuế
+        var array = new Array();
+        $.each(allSalaryIndexMonth[index].SalaryTaxDetails, function (i, tax) {
+            array.push(tax.TaxID);
+        });
+        $("#staffTaxDetail").val(array);
+        $("#staffTaxDetail").trigger("chosen:updated");
+
+        //tạo ra một mảng để lưu các id và push lại giá trị vào để hiển thị trợ cấp
+        var array = new Array();
+        $.each(allSalaryIndexMonth[index].SalaryBenefitDetails, function (i, benefit) {
+            array.push(benefit.BenefitID);
+        });
+        $("#staffBenefitDetail").val(array);
+        $("#staffBenefitDetail").trigger("chosen:updated");
+
+        validateAddStaffSalary('#updateStaffSalaryValidateForm');
+
+
+    }
+
+    function getMonthinYear() {
+
+        $.post("/Salary/getMonthInYear", {}, function (out) {
+            var item = "";
+            $.each(out, function (index, ser) {
+                item += '<option value="' + ser.Value + '">' + ser.Month + '</option>';
+            });
+            $("#selectMonth").html(item);
+            $("#cboMonth").html(item);
+            //tháng được thưởng
+            $("#cboMonthReward").html(item);
+            $("#cboMonthImpress").html(item);
+            $("#cboMonthTimesheet").html(item);
+            //     $("#selectMonth").trigger("chosen:updated");
+        });
+    }
+
+    function getYear() {
+
+        $.post("/Salary/getYear", {}, function (out) {
+            var item = "";
+            $.each(out, function (index, ser) {
+                item += '<option value="' + ser.Value + '">' + ser.Year + '</option>';
+            });
+            $("#cboYear").html(item);
+            $("#cboYearReward").html(item);
+            $("#cboYearImpress").html(item);
+            $("#cboYearTimesheet").html(item);
+            //     $("#selectMonth").trigger("chosen:updated");
+        });
+    }
+
+    function addStaffSalary() {
+        if ($('#addStaffSalaryValidateForm').valid()) {
+            editFr = $('#tblAddStaff').val();
+            var staffGroup = $('#selectStaffName option:selected', editFr).val();
+            var staffDayofbith = $('#txtStaffDayofbith', editFr).val();
+            var staffRole = $('#selectStaffTax option:selected', editFr).val();
+
+            // bảo hiểm
+            var cboAssUVal = "";
+            if ($("#cboAssurance").val() != null && $("#cboAssurance").val() != "") {
+                cboAssUVal = $("#cboAssurance").val().toString();
+            }
+            //trợ cấp
+            var cboOfficeVal = "";
+            if ($("#cboBenefit").val() != null && $("#cboBenefit").val() != "") {
+                cboOfficeVal = $("#cboBenefit").val().toString();
+            }
+
+
+            $.post("/Salary/AddStaffSalary", {
+                selectStaffName: staffGroup, selectStaffTax: staffRole, txtStaffDayofbith: staffDayofbith, cboAssUVal: cboAssUVal, cboOfficeVal: cboOfficeVal
+            }, function (result) {
+                $('#existCountSalary').attr("style", "display: none");
+                $('#invalidateCountSalary').attr("style", "display: none");
+                if (result == "successful") {
+                    $('.close').click();
+                    $("body").attr("class", "");
+                    //clearField1();
+                    GetUpdateSalary();
+                    notification("Tính lương nhân viên thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'error') {
+                    $('.close').click();
+                    notification("Tính lương nhân viên thất bại!", "Hãy thử tính lại", 3000, "gritter-error center");
+                }
+                else if (result == "exist") {
+                    $('#existCountSalary').attr("style", "display: block");
+                }
+                else if (result == "dateinValide") {
+                    $('#invalidateCountSalary').attr("style", "display: block");
+                }
+            })
+                .error(function () {
+                    $('.close').click();
+                    notification("Tính lương nhân viên thất bại", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                });
+
+        }
+    }
+
+    function getSalaryByIndex(index) {
+        disablebuttonSalary(); //chạy hàm này để disable cái select box
+        editFr = $('#tblUpdateSalary');
+        $('#salaryId', editFr).val(allSalary[index].SalaryID);
+        $('#detailStaffName', editFr).val(allSalary[index].Staff.StaffId);
+
+        var bd = convertNETDateTime(allSalary[index].Date).toLocaleFormat('%d/%m/%Y');
+        $('#detailDate', editFr).val(bd);
+        var bd1 = convertNETDateTime(allSalary[index].Date).toLocaleFormat('%m');
+
+        $('#detailTotalAbsent', editFr).val(allSalary[index].TotalAbsent);
+        $('#detailTotalPresent', editFr).val(allSalary[index].TotalPresent);
+        $('#detailTotalBenefit', editFr).val(convertToMoney(allSalary[index].TotalBenefit));
+        $('#detailTotalImprest', editFr).val(convertToMoney(allSalary[index].TotalImprest));
+        $('#detailTotalTax', editFr).val(convertToMoney(allSalary[index].TotalTax));
+        $('#detailTotalAssurance', editFr).val(convertToMoney(allSalary[index].TotalAssurance));
+        $('#detailTotalReward', editFr).val(convertToMoney(allSalary[index].TotalReward));
+        $('#detailBaseSalary', editFr).val(convertToMoney(allSalary[index].BaseSalary));
+        $('#detailActualSalary', editFr).val(convertToMoney(allSalary[index].ActualSalary));
+        $('#detailAppendantPeople', editFr).val(allSalary[index].Staff.AppendantPeople);
+        $('#detailTotalMoneydet', editFr).val(convertToMoney(allSalary[index].TotalMoneyDeduction));
+        $('#detailTotalDatedet', editFr).val(allSalary[index].TotalDateDeduction);
+
+
+        //Tính tổng số ngày nghỉ có phép
+        var array = new Array();
+        var IsallowAbsent = 0;
+        var Absent = 0;
+        $.each(allSalary[index].Staff.TimeSheets, function (i, totalabsent) {
+            var bd1 = convertNETDateTime(totalabsent.Date).toLocaleFormat('%m');
+            var bd = convertNETDateTime(allSalary[index].Date).toLocaleFormat('%m');
+            //$('#detailDate', editFr).val(bd);
+            if (totalabsent.IsAllowed == false && bd1 == bd) {
+                IsallowAbsent = IsallowAbsent + totalabsent.Hours;
+
+            } if (totalabsent.IsAllowed == true && bd1 == bd) {
+                Absent = Absent + totalabsent.Hours;
+
+            }
+        });
+        IsallowAbsent = IsallowAbsent / 8;
+        Absent = Absent / 8;
+        $('#detailTotalAbsentAllow', editFr).val(Absent);
+        $('#detailTotalAbsentIsallow', editFr).val(IsallowAbsent);
+
+        $("#staffAssuranceDetail").val(array);
+        $("#staffAssuranceDetail").trigger("chosen:updated");
+
+
+        //tạo ra một mảng để lưu các id và push lại giá trị vào để hiển thị bảo hiểm
+        var array = new Array();
+        $.each(allSalary[index].SalaryAssuranceDetails, function (i, assurance) {
+            array.push(assurance.AssuranceID);
+        });
+        $("#staffAssuranceDetail").val(array);
+        $("#staffAssuranceDetail").trigger("chosen:updated");
+
+        //tạo ra một mảng để lưu các id và push lại giá trị vào để hiển thị thuế
+        var array = new Array();
+        $.each(allSalary[index].SalaryTaxDetails, function (i, tax) {
+            array.push(tax.TaxID);
+        });
+        $("#staffTaxDetail").val(array);
+        $("#staffTaxDetail").trigger("chosen:updated");
+
+        //tạo ra một mảng để lưu các id và push lại giá trị vào để hiển thị trợ cấp
+        var array = new Array();
+        $.each(allSalary[index].SalaryBenefitDetails, function (i, benefit) {
+            array.push(benefit.BenefitID);
+        });
+        $("#staffBenefitDetail").val(array);
+        $("#staffBenefitDetail").trigger("chosen:updated");
+
+        validateAddStaffSalary('#updateStaffSalaryValidateForm');
+    }
+    //gọi lại nhóm nhân viên để đổ dữ liệu về select box
+
+    function getStaffName() {
+        $.post("/Staff/ListAllStaff", {}, function (out) {
+            var item = '';
+            $.each(out, function (index, group) {
+                item += '<option value="' + group.StaffId + '">' + group.StaffName + '</option>';
+            });
+            $('#selectStaffName').html(item);
+            $('#selectGroup').html(item);
+            $('#detailStaffName').html(item);
+            $('#selectStaffImpress').html(item);
+            $('#selectStaffReward').html(item);
+            $('#selectStaffTimesheet').html(item);
+            
+            
+
+
+
+            $("#selectGroup").trigger("chosen:updated")
+            $('#selectStaffName').val("");
+        });
+    }
+
+    function loadSelectAssurancet() {
+        $.post("/Salary/GetSelectAssurance", {}, function (out) {
+            var item = "";
+            $.each(out, function (index, off) {
+                item += '<option value="' + off.AssuranceID + '">' + off.Name + '</option>';
+            });
+            $('#cboAssurance').html(item);
+            $('#staffAssuranceDetail').html(item);
+
+            $("#cboAssurance").trigger("chosen:updated");
+        });
+    }
+
+    function getStaffTax() {
+        $.post("/Salary/GetAllTax", {}, function (out) {
+            var item = '';
+            $.each(out, function (index, role) {
+
+                item += '<option value="' + role.TaxID + '">' + role.Name + '</option>';
+
+            });
+            $('#selectStaffTax').html(item);
+            $('#txtSalary').html(item);
+            $("#txtSalary").trigger("chosen:updated");
+            $('#staffTaxDetail').html(item);
+            $('#selectStaffTax').val("");
+
+        });
+    }
+
+    //Hàm này để gọi lên tất cả các trợ cấp
+    function loadSelectBenefit() {
+        $.post("/Salary/GetSelectBenefit", {}, function (out) {
+            var item = "";
+            $.each(out, function (index, off) {
+                item += '<option value="' + off.BenefitID + '">' + off.Name + '</option>';
+            });
+            $('#cboBenefit').html(item);
+            $("#cboBenefit").trigger("chosen:updated");
+            $('#staffBenefitDetail').html(item);
+        });
+    }
+
+    function updateStaffSalary() {
+        if ($('#updateStaffSalaryValidateForm').valid()) {
+            editFr = $('#tblUpdateSalary');
+            var salaryId = $('#salaryId', editFr).val();
+            var selectStaffId = $('#detailStaffName', editFr).val();
+            var detailDate = $('#detailDate', editFr).val();
+
+            //mảng bảo hiểm
+            var cboStaffAssuranceDetail = "";
+            if ($("#staffAssuranceDetail").val() != null && $("#staffAssuranceDetail").val() != "") {
+                cboStaffAssuranceDetail = $("#staffAssuranceDetail").val().toString();
+                //mảng trợ cấp
+            }
+            var cboStaffBenefitDetail = "";
+            if ($("#staffBenefitDetail").val() != null && $("#staffBenefitDetail").val() != "") {
+                cboStaffBenefitDetail = $("#staffBenefitDetail").val().toString();
+
+
+            }
+            $.post("/Salary/UpdateStaffSalary", {
+                salaryId: salaryId, selectStaffId: selectStaffId, detailDate: detailDate, cboStaffAssuranceDetail: cboStaffAssuranceDetail, cboStaffBenefitDetail: cboStaffBenefitDetail
+            }, function (result) {
+                if (result == "successful") {
+                    disablebuttonSalary(); // CHỈNH sửa lần 2
+                    GetUpdateSalary();
+                    $('.close').click();
+                    $("body").attr("class", "");
+                    notification("Cập nhật  lương nhân viên thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'error') {
+                    notification("Cập nhật  lương nhân viên thất bại!", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                }
+                else if (result == 'notpermit') {
+                    notification("Bạn chỉ được chỉnh sửa lương tháng hiện tại!", "", 3000, "gritter-error center");
+                }
+            })
+                    .error(function () {
+                        notification("Cập nhật lương nhân viên thất bại", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                    });
+
+
+        }
+    }
+
+    function deleteSalary(id) {
+        $(ace.click_event, function () {
+            bootbox.confirm("Bạn thực sự muốn thực hiện thao tác này?", function (result) {
+                if (result) {
+                    $.post("/Salary/deleteSalary", { salaryId: id }
+                        , function (result) {
+                            if (result == "Successful") {
+                                GetUpdateSalary();
+                                notification("Xóa lương nhân viên thành công!", "", 2000, "btn-primary center");
+                            } else if (result == 'Error') {
+                                $('.close').click();
+                                notification("Xóa lương nhân viên thất bại!", "", 3000, "gritter-error center");
+                            }
+                        })
+                        .error(function () {
+                            notification("Xóa lương nhân viên thất bại!", "Có lỗi xảy ra trong quá trình xóa nhóm lưng nhân viên.", 3000, "gritter-error center");
+                        });
+                }
+            });
+        });
+    }
+    function exportExcel() {
+        $.post("/Salary/ExportExcel", { monthId: $('#selectMonth').val(), yearId: $('#cboYear').val() }, function (result) {
+            if (result == "Successful") {
+                notification("Xuất file Excel thành công !", "", 2000, "btn-primary center");
+            } else if (result == 'Error') {
+                notification("Xuất file Excel thất bại!", "Không có dữ liệu để xuất ra file, hãy chọn tháng khác!.", 3000, "gritter-error center");
+            }
+        }).error(function () {
+            $('.close').click();
+            notification("Xuất file Excel thất bại", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+        });
+    }
+
+    function disablebuttonSalary() {
+        editFr = $('#tblUpdateStaff');
+        $('.editableInput').attr("disabled", "");
+        $('.editableSelect').attr("disabled", "disabled");
+        $('.ace', editFr).attr("disabled", "");
+        $('#enablebutton').show();
+        $('#disablebutton').hide();
+        $('#detailStaffDayofbith', editFr).attr("style", "cursor: pointer");
+
+    }
+
+    function enablebuttonSalary() {
+        editFr = $('#tblUpdateStaff');
+        $('.editableInput').removeAttr("disabled");
+        //$('.editableSelect').removeAttr("disabled");
+        $("#staffAssuranceDetail").trigger("chosen:updated");
+        //$("#staffTaxDetail").trigger("chosen:updated");
+        $("#staffBenefitDetail").trigger("chosen:updated");
+        $('.ace', editFr).removeAttr("disabled");
+        $("#staffOffice").trigger("chosen:updated");
+        $('#disablebutton').show();
+        $('#enablebutton').hide();
+
+    }
+
+    function clearFieldSalary() {
+        editFr = $('#tblAddStaff');
+        $('#selectStaffName', editFr).val("");
+        $('#txtStaffDayofbith', editFr).val("");
+
+
+        $("#cboAssurance", editFr).val("");
+        $("#cboAssurance").trigger("chosen:updated")
+
+        $("#cboBenefit", editFr).val("");
+        $("#cboBenefit").trigger("chosen:updated")
+    }
+
+    function validateAddStaffSalary(validateform) {
+        validator = $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                selectStaffName: {
+                    required: true
+                },
+                txtStaffDayofbith: {
+                    required: true
+                }
+                //,
+                //cboBenefit: {
+                //    required: true
+                //},
+                //cboAssurance: {
+                //    required: true
+                //}
+
+            },
+            messages: {
+                selectStaffName: {
+                    required: "Chọn một nhân viên!"
+                },
+                txtStaffDayofbith: {
+                    required: "Chọn ngày tính lương nhân viên!",
+                }
+                //,
+                //cboBenefit: {
+                //    required: "Chọn một trợ cấp!",
+                //},
+                //cboAssurance: {
+                //    required: "Chọn một bảo hiểm!",
+                //}
+
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                }
+                else error.insertAfter(element.parent());
+            }
+        });
+    }
+
+</script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        //$(".chosen-select").chosen();
+        //$("#cboOffice_chosen").css("width", "100%");
+
+        var oTableSalary = $('#tblSalaryDetail').dataTable({
+            "aoColumns": [
+                null, null, null, null, null, null, null, { "bSortable": false }
+            ]
+        });
+
+        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+            $(this).prev().focus();
+        });
+
+        $('textarea[class*=autosize]').autosize({ append: "\n" });
+    })
+</script>
+
+
+
+
+
+
+
+<script>
+    function getAllTax() {
+        $.post("/Salary/GetTaxs", function (out) {
+
+            document.getElementById("bodyContent").innerHTML = (out.html);
+            {
+
+                var item = '<tbody>';
+                allStaffTax = out.list;
+                $.each(out.list, function (index, tax) {
+
+                    item += '<tr>';
+                    item += '<td><a onClick="getTaxById(' + index + ')" data-toggle="modal" href="#tblUpdateTax">' + tax.Name + '</a></td>';
+                    item += '<td>' + convertToMoney(tax.MoneyFrom) + '</td>';
+                    item += '<td>' + convertToMoney(tax.MoneyTo) + '</td>';
+                    item += '<td>' + tax.Rate + '</td>';
+                    item += '<td>' + convertToMoney(tax.IndexTax) + '</td>';
+                    if (tax.Active == false) {
+                        item += '<td><span class="label label-lg label-danger arrowed">Ngừng áp dụng</span></td>';
+                    }
+                    else if (tax.Active == true) {
+                        item += '<td><span class="label label-lg label-success arrowed">Đang áp dụng</span></td>';
+                    }
+                    item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getTaxById(' + index + '); enablebuttonTax()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateTax" data-id="' + index
+                        + '"><i class="icon-pencil bigger-130"></i></a><a onClick="deleteTax(' + tax.TaxID + ')" class="red" title="Xóa" href="#" data-id="' + tax.TaxID + '"><i class="icon-trash bigger-130"></i></a></center></td>';
+
+                    item += '</tr>';
+                });
+                item += '</tbody>';
+                item = item.split("null").join("");
+                $('#tblTaxDetail').append(item);
+                $("#tblTaxDetail").dataTable().fnDestroy();
+                var oTableTax = $('#tblTaxDetail').dataTable({
+                    "aoColumns": [
+                       null, null, null, null, null, null, { "bSortable": false }
+                    ]
+                });
+                validateAddTax('#addTaxValidateForm');
+                $("#txtTaxFrom").numeric({ decimal: false, negative: false });
+                $("#txtTaxTo").numeric({ decimal: false, negative: false });
+                $("#txtTaxIndex").numeric({ decimal: false, negative: false });
+
+                ;
+            }
+        })
+        $('#breadcrumbsMenu').text('Thuế');
+    }
+
+    function addNewTax() {
+        if ($('#addTaxValidateForm').valid()) {
+            editFr = $('#tblAddTax');
+            var txtTaxName = $('#txtTaxName', editFr).val();
+            var txtTaxRate = $('#txtTaxRate', editFr).val();
+            //var txtTaxIndex = $('#txtTaxIndex', editFr).val();
+            var txtTaxIndex = $("#txtTaxIndex").val().replace("VNĐ", "");
+            txtTaxIndex = txtTaxIndex.split(".").join("");
+
+            //var txtTaxFrom = $('#txtTaxFrom', editFr).val();
+            var txtTaxFrom = $("#txtTaxFrom").val().replace("VNĐ", "");
+            txtTaxFrom = txtTaxFrom.split(".").join("");
+
+            //var txtTaxTo = $('#txtTaxTo', editFr).val();
+            var txtTaxTo = $("#txtTaxTo").val().replace("VNĐ", "");
+            txtTaxTo = txtTaxTo.split(".").join("");
+
+            $.post("/Salary/AddTax", {
+                txtTaxName: txtTaxName, txtTaxRate: txtTaxRate, txtTaxIndex: txtTaxIndex, txtTaxFrom: txtTaxFrom, txtTaxTo: txtTaxTo
+
+            }, function (result) {
+                $('#existTaxError').attr("style", "display: none");
+                if (result == "Successful") {
+                    getAllTax();
+                    $('.close').click();
+                    $("body").attr("class", "");
+
+                    notification("Tạo thuế thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'Error') {
+                    $('.close').click();
+                    notification("Tạo thuế thất bại!", "", 3000, "gritter-error center");
+                }
+                else if (result == "exist") {
+                    $('#existTaxError').attr("style", "display: block");
+                }
+            })
+                .error(function () {
+                    $('.close').click();
+                    notification("Tạo thuế thất bại!", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                });
+        }
+    }
+
+    function getTaxById(index) {
+        disablebuttonTax();
+        editFr = $('#tblUpdateTax');
+        $('#txTaxId', editFr).val(allStaffTax[index].TaxID);
+        $('#txtEditName', editFr).val(allStaffTax[index].Name);
+        //$('#txtEditFrom', editFr).val(allStaffTax[index].MoneyFrom);
+        var from = convertToMoney(allStaffTax[index].MoneyFrom);
+        $('#txtEditFrom', editFr).val(from);
+
+        //$('#txtEditTo', editFr).val(allStaffTax[index].MoneyTo);
+        var to = convertToMoney(allStaffTax[index].MoneyTo);
+        $('#txtEditTo', editFr).val(to);
+
+        $('#txtEditTax', editFr).val(allStaffTax[index].Rate);
+        //$('#txtEditIndex', editFr).val(allStaffTax[index].IndexTax);
+        var editIndex = convertToMoney(allStaffTax[index].IndexTax);
+        $('#txtEditIndex', editFr).val(editIndex);
+
+        validateAddTax('#updateTaxValidateForm');
+        $("#txtEditTo").numeric({ decimal: false, negative: false });
+        $("#txtEditIndex").numeric({ decimal: false, negative: false });
+        $("#txtEditFrom").numeric({ decimal: false, negative: false });
+    }
+
+    function updateTax() {
+        if ($('#updateTaxValidateForm').valid()) {
+            editFr = $('#tblUpdateTax');
+            var txTaxId = $('#txTaxId', editFr).val();
+            var taxName = $('#txtEditName', editFr).val();
+            var taxTax = $('#txtEditTax', editFr).val();
+            //var taxIndex = $('#txtEditIndex', editFr).val();
+            var taxIndex = $("#txtEditIndex").val().replace("VNĐ", "");
+            taxIndex = taxIndex.split(".").join("");
+
+            //var txtTaxFrom = $('#txtEditFrom', editFr).val();
+            var txtTaxFrom = $("#txtEditFrom").val().replace("VNĐ", "");
+            txtTaxFrom = txtTaxFrom.split(".").join("");
+
+            //var txtTaxTo = $('#txtEditTo', editFr).val();
+            var txtTaxTo = $("#txtEditTo").val().replace("VNĐ", "");
+            txtTaxTo = txtTaxTo.split(".").join("");
+
+            disablebuttonTax(); // CHỈNH sửa lần 2
+            $.post("/Salary/UpdateTax", {
+                txTaxId: txTaxId, txtTaxName: taxName, txtTaxRate: taxTax, txtTaxIndex: taxIndex, txtTaxFrom: txtTaxFrom, txtTaxTo: txtTaxTo
+            }, function (result) {
+                $('#existTaxErrorDetail').attr("style", "display: none");
+                if (result == "Successful") {
+                    $('.close').click();
+                    getAllTax();
+                    $("body").attr("class", "");
+                    notification("Cập nhật thuế thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'Error') {
+                    $('.close').click();
+                    notification("Cập nhậtthuế thất bại!", "", 3000, "gritter-error center");
+                }
+                else if (result == "exist") {
+                    $('#existTaxErrorDetail').attr("style", "display: block");
+                }
+            })
+                        .error(function () {
+                            $('.close').click();
+                            notification("Tạo thuế thất bại!", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                        });
+        }
+    }
+    function deleteTax(id) {
+        $(ace.click_event, function () {
+            bootbox.confirm("Bạn có muốn thực hiện thao tác này?", function (result) {
+                if (result) {
+                    $.post("/Salary/DeleteTax", { txTaxId: id }
+                    , function (result) {
+                        if (result == "inactive") {
+                            $('.close').click();
+                            getAllTax();
+
+                            $("body").attr("class", "");
+                            notification("Thuế này đã ngừng áp dụng!", "", 3000, "btn-primary center");
+                        } if (result == "active") {
+                            $('.close').click();
+                            getAllTax();
+                            $("body").attr("class", "");
+                            notification("Thuế đã áp dụng lại!", "", 3000, "btn-primary center");
+                        }
+                        else if (result == "Error") {
+
+                            notification("Chỉnh sửa Thuế thất bại!", "Thuế này hiện đang được sử dụng", 5000, "gritter-error center");
+                        }
+                    }).error(function () {
+                        notification("Chỉnh sửa Thuếthất bại!", "Có lỗi xảy ra trong quá trình xóa văn phòng.", 5000, "gritter-error center");
+                    });
+                    $("#closeBtn").click();
+                }
+            });
+        });
+    }
+
+    function validateAddTax(validateform) {
+        $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                txtTaxName: {
+                    required: true
+                },
+                txtTaxFrom: {
+                    required: true,
+                    maxlength: false
+
+                },
+                txtTaxIndex: {
+                    required: true,
+                    maxlength: false
+                },
+                txtTaxRate: {
+                    required: true,
+                    number: true,
+                    min: true
+                },
+                txtTaxTo: {
+                    required: true,
+                    maxlength: false
+
+                }
+
+            },
+            messages: {
+                txtTaxName: {
+                    required: "Nhập tên thuế!"
+                },
+                txtTaxFrom: {
+                    required: "Nhập khoảng tiền bắt đầu tính thuế!",
+                },
+                txtTaxIndex: {
+                    required: "Nhập chỉ số tính thuế!"
+                },
+                txtTaxRate: {
+                    required: "Nhập phần trăm tính thuế %!",
+                    number: "Hãy nhập số chính xác",
+                    min: "% không hợp lệ"
+                },
+                txtTaxTo: {
+                    required: "Nhập khoảng tiền kết thúc tính thuế!",
+                }
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                }
+                else error.insertAfter(element.parent());
+            }
+        });
+    }
+
+    function disablebuttonTax() {
+        editFr = $('#tblUpdateTax');
+        $('.editableInput', editFr).attr("disabled", "");
+        $('#enablebuttonTax').show();
+        $('#disablebuttonTax').hide();
+    }
+
+    function enablebuttonTax() {
+        editFr = $('#tblUpdateTax');
+        $('.editableInput', editFr).removeAttr("disabled");
+        $('#disablebuttonTax').show();
+        $('#enablebuttonTax').hide();
+    }
+
+    //function clearField2() {
+    //    editFr = $('#tblAddTax');
+    //    $('#txtGroupName', editFr).val("");
+    //    $('#txtGroupDetail', editFr).val("");
+    //}
+
+</script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        var oTableTax = $('#tblTaxDetail').dataTable({
+            "aoColumns": [
+               null, null, null, null, null, null, { "bSortable": false }
+            ]
+        });
+
+        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+            $(this).prev().focus();
+        });
+
+        $('textarea[class*=autosize]').autosize({ append: "\n" });
+    })
+</script>
+
+
+
+<script>
+    function getAllAssurance() {
+        $.post("/Salary/getAllAssurance", function (out) {
+
+            document.getElementById("bodyContent").innerHTML = (out.html);
+            {
+                var item = '<tbody>';
+                allAssurance = out.list;
+                $.each(out.list, function (index, assur) {
+                    item += '<tr>';
+                    item += '<td><a onClick="getAssuranceById(' + index + ')" data-toggle="modal" href="#tblUpdateAssurance">' + assur.Name + '</a></td>';
+                    item += '<td>' + assur.Rate + '</td>';
+                    if (assur.Active == false) {
+                        item += '<td><span class="label label-lg label-danger arrowed">Ngừng áp dụng</span></td>';
+                    }
+                    else if (assur.Active == true) {
+                        item += '<td><span class="label label-lg label-success arrowed">Đang áp dụng</span></td>';
+                    }
+                    item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getAssuranceById(' + index + '); enablebuttonAssuran()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateAssurance" data-id="' + index
+                        + '"><i class="icon-pencil bigger-130"></i></a><a onClick="deleteAssuran(' + assur.AssuranceID + ')" class="red" title="Xóa" href="#" data-id="' + assur.AssuranceID + '"><i class="icon-trash bigger-130"></i></a></center></td>';
+                    item += '</tr>';
+                });
+                item += '</tbody>';
+                item = item.split("null").join("");
+                $('#tblAssuranDetail').append(item);
+                $("#tblAssuranDetail").dataTable().fnDestroy();
+                var oTableAssuran = $('#tblAssuranDetail').dataTable({
+                    "aoColumns": [
+                       null, null, null, { "bSortable": false }
+                    ]
+                });
+                validateAddAssuran('#addAssuranceValidateForm');
+                ;
+            }
+        })
+        $('#breadcrumbsMenu').text('Bảo hiểm');
+    }
+
+    function addNewAssurance() {
+        if ($('#addAssuranceValidateForm').valid()) {
+            editFr = $('#tblAddAssurance');
+            var txtAssName = $('#txtAssuranceName', editFr).val();
+            var txtAssIndex = $('#txtAssuranceIndex', editFr).val();
+            $.post("/Salary/AddAssurance", {
+                txtAssuranceName: txtAssName, txtAssuranceIndex: txtAssIndex
+
+            }, function (result) {
+                $('#existAssuranError').attr("style", "display: none");
+                if (result == "Successful") {
+                    getAllAssurance();
+                    $('.close').click();
+                    $("body").attr("class", "");
+
+                    notification("Tạo bảo hiểm mới thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'Error') {
+                    $('.close').click();
+                    notification("Tạo bảo hiểm thất bại!", "", 3000, "gritter-error center");
+                }
+                else if (result == "exist") {
+                    $('#existAssuranError').attr("style", "display: block");
+                }
+
+            })
+                .error(function () {
+                    $('.close').click();
+                    notification("Tạo bảo hiểm thất bại!", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                });
+        }
+    }
+
+    function getAssuranceById(index) {
+        disablebuttonAssuran();
+        editFr = $('#tblUpdateAssurance');
+        $('#txAssuranceId', editFr).val(allAssurance[index].AssuranceID);
+        $('#txtEditName', editFr).val(allAssurance[index].Name);
+        $('#txtEditRate', editFr).val(allAssurance[index].Rate);
+
+        validateAddAssuran('#updateAssuranceValidateForm');
+    }
+
+    function updateAssurance() {
+        if ($('#updateAssuranceValidateForm').valid()) {
+            editFr = $('#tblUpdateAssurance');
+            var txAssuranceId = $('#txAssuranceId', editFr).val();
+            var assName = $('#txtEditName', editFr).val();
+            var assRate = $('#txtEditRate', editFr).val();
+
+            disablebuttonAssuran(); // Chỉnh sửa lần 2
+            $.post("/Salary/UpdateAssurance", {
+                assuranceId: txAssuranceId, txtEditName: assName, txtEditRate: assRate
+            }, function (result) {
+                if (result == "Successful") {
+                    $('.close').click();
+                    getAllAssurance();
+                    $("body").attr("class", "");
+                    notification("Cập nhật bảo hiểm thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'Error') {
+                    $('.close').click();
+                    notification("Cập nhật bảo hiểm thất bại!", "", 3000, "gritter-error center");
+                }
+            })
+                        .error(function () {
+                            $('.close').click();
+                            notification("Cập nhật bảo hiểm thất bại!", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                        });
+        }
+    }
+
+    function deleteAssuran(id) {
+        $(ace.click_event, function () {
+            bootbox.confirm("Bạn có muốn thực hiện thao tác này?", function (result) {
+                if (result) {
+                    $.post("/Salary/DeleteAssurance", { assuranceId: id }
+                    , function (result) {
+                        if (result == "inactive") {
+                            $('.close').click();
+                            getAllAssurance();
+
+                            $("body").attr("class", "");
+                            notification("Bảo hiểm này đã ngừng áp dụng!", "", 3000, "btn-primary center");
+                        } if (result == "active") {
+                            $('.close').click();
+                            getAllAssurance();
+                            $("body").attr("class", "");
+                            notification("Bảo hiểm đã áp dụng lại!", "", 3000, "btn-primary center");
+                        }
+                        else if (result == "Error") {
+
+                            notification("Chỉnh sửa Bảo hiểm thất bại!", "Bảo hiểm này hiện đang được sử dụng.", 5000, "gritter-error center");
+                        }
+                    }).error(function () {
+                        notification("Chỉnh sửa Bảo hiểm thất bại!", "Có lỗi xảy ra trong quá trình xóa bảo hiểm.", 5000, "gritter-error center");
+                    });
+                    $("#closeBtn").click();
+                }
+            });
+        });
+    }
+
+    function validateAddAssuran(validateform) {
+        $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                txtAssuranceName: {
+                    required: true
+                },
+                txtAssuranceIndex: {
+                    required: true,
+                    number: true,
+                    min: true
+
+                }
+
+            },
+            messages: {
+                txtAssuranceName: {
+                    required: "Nhập tên bảo hiểm!"
+                },
+                txtAssuranceIndex: {
+                    required: "Nhập phần trăm (%) bảo hiểm!",
+                    number: "Hãy nhập số chính xác!",
+                    min: "Hãy nhập % chính xác!"
+                }
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                }
+                else error.insertAfter(element.parent());
+            }
+        });
+    }
+
+    function disablebuttonAssuran() {
+        editFr = $('#tblUpdateAssurance');
+        $('.editableInput', editFr).attr("disabled", "");
+        $('#enablebuttonAssuran').show();
+        $('#disablebuttonAssuran').hide();
+    }
+
+    function enablebuttonAssuran() {
+        editFr = $('#tblUpdateAssurance');
+        $('.editableInput', editFr).removeAttr("disabled");
+        $('#disablebuttonAssuran').show();
+        $('#enablebuttonAssuran').hide();
+    }
+
+    //function clearField2() {
+    //    editFr = $('#tblAddAssurance');
+    //    $('#txtGroupName', editFr).val("");
+    //    $('#txtGroupDetail', editFr).val("");
+    //}
+
+</script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        var oTableAssuran = $('#tblAssuranDetail').dataTable({
+            "aoColumns": [
+               null, null, null, { "bSortable": false }
+            ]
+        });
+
+        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+            $(this).prev().focus();
+        });
+
+        $('textarea[class*=autosize]').autosize({ append: "\n" });
+    })
+</script>
+
+
+
+<script>
+    //$(document).ready(function () {
+    //    getStaffImpress();
+    //});
+
+    function getStaffImpress() {
+        $.post("/Staff/ListAllStaff", {}, function (out) {
+            var item = '<option value="0">Tất cả nhân viên</option>';
+            $.each(out, function (index, group) {
+                item += '<option value="' + group.StaffId + '">' + group.StaffName + '</option>';
+            });
+            //$('#selectStaffImpress').html(item);
+            //$("#selectStaffImpress").trigger("chosen:updated")
+            $('#txtEditName').html(item);
+            $('#selectImpressView').html(item);
+
+
+        });
+    }
+
+    function getAllImpress() {
+
+        $.post("/Salary/getAllImpress", function (out) {
+            document.getElementById("bodyContent").innerHTML = (out.html);
+            {
+                var item = '<tbody id="listStaffImpress">';
+                allImpress = out.list;
+                $.each(out.list, function (index, impress) {
+
+                    item += '<tr>';
+                    item += '<td><a onClick="getImpressById(' + index + ')" data-toggle="modal" href="#tblUpdateImpress">' + impress.Staff.StaffName + '</a></td>';
+                    item += '<td>' + convertNETDateTime(impress.Date).toLocaleFormat('%d/%m/%Y') + '</td>';
+                    item += '<td>' + convertToMoney(impress.Money) + '</td>';
+                    item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getImpressById(' + index + '); enablebuttonImpress()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateImpress" data-id="' + index
+                        + '"><i class="icon-pencil bigger-130"></i></a><a onClick="deleteImpress(' + impress.ID + ')" class="red" title="Xóa" href="#" data-id="' + impress.ID + '"><i class="icon-trash bigger-130"></i></a></center></td>';
+                    item += '</tr>';
+                });
+                item += '</tbody>';
+                item = item.split("null").join("");
+                $('#tblImpressDetail').append(item);
+                $("#tblImpressDetail").dataTable().fnDestroy();
+                $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+                    $(this).prev().focus();
+                });
+                var oTableImpress = $('#tblImpressDetail').dataTable({
+                    "aoColumns": [
+                        null, null, null, { "bSortable": false }
+                    ]
+                });
+                getStaffImpress();
+                getMonthinYear();
+                getYear();
+                getStaffName();
+                validateAddImpress('#addImpressValidateForm');
+                $("#txtmoneyImpress").numeric({ decimal: false, negative: false });
+
+                ;
+            }
+        })
+        $('#breadcrumbsMenu').text('Tạm ứng');
+    }
+
+    function getImpressByStaffId() {
+
+        $.post("/Salary/getImpressByStaffId", { staffId: $('#selectImpressView').val(), monthImpressId: $('#cboMonthImpress').val(), yearImpressId: $('#cboYearImpress').val() }, function (out) {
+            $("#tblImpressDetail")[0].removeChild($("#listStaffImpress")[0]);
+            {
+                var item = '<tbody id="listStaffImpress">';
+                allImpress = out.list;
+                $.each(out.list, function (index, impress) {
+
+                    item += '<tr>';
+                    item += '<td><a onClick="getImpressById(' + index + ')" data-toggle="modal" href="#tblUpdateImpress">' + impress.Staff.StaffName + '</a></td>';
+                    item += '<td>' + convertNETDateTime(impress.Date).toLocaleFormat('%d/%m/%Y') + '</td>';
+                    item += '<td>' + convertToMoney(impress.Money) + '</td>';
+                    item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getImpressById(' + index + '); enablebuttonImpress()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateImpress" data-id="' + index
+                        + '"><i class="icon-pencil bigger-130"></i></a><a onClick="deleteImpress(' + impress.ID + ')" class="red" title="Xóa" href="#" data-id="' + impress.ID + '"><i class="icon-trash bigger-130"></i></a></center></td>';
+                    item += '</tr>';
+                });
+                item += '</tbody>';
+                item = item.split("null").join("");
+                $('#tblImpressDetail').append(item);
+                $("#tblImpressDetail").dataTable().fnDestroy();
+                $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+                    $(this).prev().focus();
+                });
+                var oTableImpress = $('#tblImpressDetail').dataTable({
+                    "aoColumns": [
+                        null, null, null, { "bSortable": false }
+                    ]
+                });
+                //getStaffImpress();
+                validateAddImpress('#addImpressValidateForm');
+                $("#txtmoneyImpress").numeric({ decimal: false, negative: false });
+
+                ;
+            }
+        })
+        $('#breadcrumbsMenu').text('Tạm ứng');
+    }
+
+
+    function addNewIpress() {
+        if ($('#addImpressValidateForm').valid()) {
+            editFr = $('#tblAddImpress');
+            var selectStaffImpress = $('#selectStaffImpress option:selected', editFr).val();
+            var dateStaffImpress = $('#dateStaffImpress', editFr).val();
+            //var txtmoneyImpress = $('#txtmoneyImpress', editFr).val();
+            var txtmoneyImpress = $("#txtmoneyImpress").val().replace("VNĐ", "");
+            txtmoneyImpress = txtmoneyImpress.split(".").join("");
+
+            $.post("/Salary/AddImpress", {
+                selectStaffImpress: selectStaffImpress, dateStaffImpress: dateStaffImpress, txtmoneyImpress: txtmoneyImpress
+
+            }, function (result) {
+                $('#invalidateMonthError').attr("style", "display: none");
+                if (result == "Successful") {
+                    getAllImpress();
+                    $('.close').click();
+                    $("body").attr("class", "");
+
+                    notification("Thêm tạm ứng thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'Error') {
+                    $('.close').click();
+                    notification("Thêm tạm ứng thất bại!", "", 3000, "gritter-error center");
+                }
+                else if (result == "dateinValide") {
+                    $('#invalidateMonthError').attr("style", "display: block");
+                }
+            })
+                .error(function () {
+                    $('.close').click();
+                    notification("Thêm tạm ứng thất bại!", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                });
+        }
+    }
+
+    function getImpressById(index) {
+        disablebuttonImpress();
+        editFr = $('#tblUpdateImpress');
+        $('#txtImpressId', editFr).val(allImpress[index].ID);
+        $('#txtEditName', editFr).val(allImpress[index].Staff.StaffId);
+        $("#txtEditName").trigger("chosen:updated");
+
+        var bd = convertNETDateTime(allImpress[index].Date).toLocaleFormat('%d/%m/%Y');
+        $('#txtEditDate', editFr).val(bd);
+        //$('#txtEditMoney', editFr).val(allImpress[index].Money);
+        var editmoney = convertToMoney(allImpress[index].Money);
+        $('#txtEditMoney', editFr).val(editmoney);
+
+        $('#txtEditDate', editFr).attr("readonly", "readonly");
+        $('#txtEditDate', editFr).removeAttr("style");
+
+        validateAddImpress('#updateImpressValidateForm');
+        $("#txtEditMoney").numeric({ decimal: false, negative: false });
+
+    }
+
+    function updateImpress() {
+        if ($('#updateImpressValidateForm').valid()) {
+            editFr = $('#tblUpdateImpress');
+            var txtImpressId = $('#txtImpressId', editFr).val();
+            var impressName = $('#txtEditName', editFr).val();
+            var impressDate = $('#txtEditDate', editFr).val();
+            //var impressMoney = $('#txtEditMoney', editFr).val();
+            var impressMoney = $("#txtEditMoney").val().replace("VNĐ", "");
+            impressMoney = impressMoney.split(".").join("");
+
+            disablebuttonImpress(); // Chỉnh sửa lần 2
+            $.post("/Salary/UpdateImpress", {
+                txtImpressId: txtImpressId, txtEditName: impressName, txtEditDate: impressDate, txtEditMoney: impressMoney
+            }, function (result) {
+                $('#invalidateMonthErrorEdit').attr("style", "display: none");
+                if (result == "Successful") {
+                    $('.close').click();
+                    getAllImpress();
+                    $("body").attr("class", "");
+                    notification("Cập nhật tạm ứng thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'Error') {
+                    $('.close').click();
+                    notification("Cập nhật tạm ứng thất bại!", "", 3000, "gritter-error center");
+                }
+                else if (result == "dateinValide") {
+                    $('#invalidateMonthErrorEdit').attr("style", "display: block");
+                }
+            })
+                        .error(function () {
+                            $('.close').click();
+                            notification("Cập nhật tạm ứng thất bại!", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                        });
+        }
+    }
+
+    function deleteImpress(id) {
+        $(ace.click_event, function () {
+            bootbox.confirm("Bạn thực sự muốn thực hiện thao tác này?", function (result) {
+                if (result) {
+                    $.post("/Salary/deleteImpress", { txtImpressId: id }
+                        , function (result) {
+                            if (result == "Successful") {
+                                getAllImpress();
+                                notification("Xóa tạm ứng của nhân viên thành công!", "", 2000, "btn-primary center");
+                            } else if (result == 'Error') {
+                                $('.close').click();
+                                notification("Xóa tạm ứng của nhân viên thất bại!", "Tạm ứng này hiện đang được sử dụng!", 3000, "gritter-error center");
+                            }
+                        })
+                        .error(function () {
+                            notification("Xóa tạm ứng của nhân viên thất bại!", "Có lỗi xảy ra trong quá trình xóa.", 3000, "gritter-error center");
+                        });
+                }
+            });
+        });
+    }
+
+    function validateAddImpress(validateform) {
+        $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                selectStaffImpress: {
+                    required: true
+                },
+                dateStaffImpress: {
+                    required: true
+                }
+                ,
+                txtmoneyImpress: {
+                    required: true,
+                    maxlength: false
+                }
+
+            },
+            messages: {
+                selectStaffImpress: {
+                    required: "Chọn một nhân viên!"
+                },
+                dateStaffImpress: {
+                    required: "Hãy chọn ngày tạm ứng của nhân viên",
+
+                },
+                txtmoneyImpress: {
+                    required: "Nhập số tiền tạm ứng!",
+
+                }
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                }
+                else error.insertAfter(element.parent());
+            }
+        });
+    }
+
+    function disablebuttonImpress() {
+        editFr = $('#tblUpdateImpress');
+        $('.editableInput', editFr).attr("disabled", "");
+        $('.editableSelect').attr("disabled", "disabled");
+        $('#enablebuttonImpress').show();
+        $('#disablebuttonImpress').hide();
+    }
+
+    function enablebuttonImpress() {
+        editFr = $('#tblUpdateImpress');
+        $('.editableInput', editFr).removeAttr("disabled");
+        $('.editableSelect').removeAttr("disabled");
+        $('#disablebuttonImpress').show();
+        $('#enablebuttonImpress').hide();
+        $('#txtEditDate').attr("readonly", "readonly");
+        $('#txtEditDate').attr("style", "background: none repeat scroll 0 0 #fff !important; width: 100%; cursor: pointer")
+
+    }
+
+    //function clearField2() {
+    //    editFr = $('#tblAddAssurance');
+    //    $('#txtGroupName', editFr).val("");
+    //    $('#txtGroupDetail', editFr).val("");
+    //}
+
+</script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        var oTableImpress = $('#tblImpressDetail').dataTable({
+            "aoColumns": [
+                null, null, null, { "bSortable": false }
+            ]
+        });
+
+        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+            $(this).prev().focus();
+        });
+
+        $('textarea[class*=autosize]').autosize({ append: "\n" });
+    })
+</script>
+
+
+<script>
+    function getAllBenefit() {
+
+        $.post("/Salary/getAllBenefit", function (out) {
+
+            document.getElementById("bodyContent").innerHTML = (out.html);
+            {
+
+                var item = '<tbody>';
+                allAssurance = out.list;
+                $.each(out.list, function (index, benefit) {
+
+                    item += '<tr>';
+                    item += '<td><a onClick="getBenefitById(' + index + ')" data-toggle="modal" href="#tblUpdateBenefit">' + benefit.Name + '</a></td>';
+                    item += '<td>' + convertToMoney(benefit.Rate) + '</td>';
+                    if (benefit.Active == false) {
+                        item += '<td><span class="label label-lg label-danger arrowed">Ngừng áp dụng</span></td>';
+                    }
+                    else if (benefit.Active == true) {
+                        item += '<td><span class="label label-lg label-success arrowed">Đang áp dụng</span></td>';
+                    }
+                    item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getBenefitById(' + index + '); enablebuttonBenefit()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateBenefit" data-id="' + index
+     + '"><i class="icon-pencil bigger-130"></i></a><a onClick="deleteBenefit(' + benefit.BenefitID + ')" class="red" title="Xóa" href="#" data-id="' + benefit.BenefitID + '"><i class="icon-trash bigger-130"></i></a></center></td>';
+
+                    item += '</tr>';
+                });
+                item += '</tbody>';
+                item = item.split("null").join("");
+                $('#tblBenefitDetail').append(item);
+                $("#tblBenefitDetail").dataTable().fnDestroy();
+                var oTableBenefit = $('#tblBenefitDetail').dataTable({
+                    "aoColumns": [
+                        null, null, null, { "bSortable": false }
+                    ]
+                });
+                validateAddBenefit('#addBenefitValidateForm');
+                $("#txtBenefitRate").numeric({ decimal: false, negative: false });
+
+                ;
+            }
+        })
+        $('#breadcrumbsMenu').text('Trợ cấp');
+    }
+
+
+
+    function addNewBenefit() {
+        if ($('#addBenefitValidateForm').valid()) {
+            editFr = $('#tblAddBenefit');
+            var txtbenefitName = $('#txtBenefitName', editFr).val();
+            var txtbenefitRate = $("#txtBenefitRate").val().replace("VNĐ", "");
+            txtbenefitRate = txtbenefitRate.split(".").join("");
+            $.post("/Salary/addNewBenefit", {
+                benefitName: txtbenefitName, benefitRate: txtbenefitRate
+
+            }, function (result) {
+                $('#existStaffGroupError').attr("style", "display: none");
+                if (result == "Successful") {
+                    getAllBenefit();
+                    $('.close').click();
+                    $("body").attr("class", "");
+
+                    notification("Tạo trợ cấp thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'Error') {
+                    $('.close').click();
+                    notification("Tạo trợ cấp thất bại!", "", 3000, "gritter-error center");
+                }
+                else if (result == "exist") {
+                    $('#existBenefitError').attr("style", "display: block");
+                }
+            })
+                .error(function () {
+                    $('.close').click();
+                    notification("Tạo trợ cấp thất bại!", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                });
+        }
+    }
+
+    function getBenefitById(index) {
+        disablebuttonBenefit();
+        editFr = $('#tblUpdateBenefit');
+        $('#txBenefitId', editFr).val(allAssurance[index].BenefitID);
+        $('#txtEditName', editFr).val(allAssurance[index].Name);
+
+        var editmoney = convertToMoney(allAssurance[index].Rate);
+        $('#txtEditRate', editFr).val(editmoney);
+        validateAddBenefit('#updateBenefitValidateForm');
+        $("#txtEditRate").numeric({ decimal: false, negative: false });
+
+    }
+
+    function updateBenefit() {
+        if ($('#updateBenefitValidateForm').valid()) {
+            editFr = $('#tblUpdateBenefit');
+            var txbenefitId = $('#txBenefitId', editFr).val();
+            var benefitName = $('#txtEditName', editFr).val();
+            var benefitRate = $("#txtEditRate").val().replace("VNĐ", "");
+            benefitRate = benefitRate.split(".").join("");
+
+            disablebuttonBenefit(); // Chỉnh sửa lần 2
+            $.post("/Salary/UpdateBenefit", {
+                benefitId: txbenefitId, txtEditName: benefitName, txtEditRate: benefitRate
+            }, function (result) {
+                if (result == "Successful") {
+                    $('.close').click();
+                    getAllBenefit();
+                    $("body").attr("class", "");
+                    notification("Cập nhật trợ cấp thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'Error') {
+                    $('.close').click();
+                    notification("Cập nhật trợ cấp thất bại!", "", 3000, "gritter-error center");
+                }
+            })
+                        .error(function () {
+                            $('.close').click();
+                            notification("Cập nhật trợ cấp thất bại!", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                        });
+        }
+    }
+
+    function deleteBenefit(id) {
+        $(ace.click_event, function () {
+            bootbox.confirm("Bạn có muốn thực hiện thao tác này?", function (result) {
+                if (result) {
+                    $.post("/Salary/DeleteBenefit", { benefitId: id }
+                    , function (result) {
+                        if (result == "inactive") {
+                            $('.close').click();
+                            getAllBenefit();
+
+                            $("body").attr("class", "");
+                            notification("Trợ cấp này đã ngừng áp dụng!", "", 3000, "btn-primary center");
+                        } if (result == "active") {
+                            $('.close').click();
+                            getAllBenefit();
+                            $("body").attr("class", "");
+                            notification("Trợ cấp đã áp dụng lại!", "", 3000, "btn-primary center");
+                        }
+                        else if (result == "Error") {
+
+                            notification("Chỉnh sửa trợ cấp thất bại!", "Trợ cấp này hiện đang được sử dụng", 5000, "gritter-error center");
+                        }
+                    }).error(function () {
+                        notification("Chỉnh sửa trợ cấp thất bại!", "Có lỗi xảy ra trong quá trình xóa văn phòng.", 5000, "gritter-error center");
+                    });
+                    $("#closeBtn").click();
+                }
+            });
+        });
+    }
+
+    function validateAddBenefit(validateform) {
+        $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                txtBenefitName: {
+                    required: true
+                },
+                txtBenefitRate: {
+                    required: true, maxlength: false
+                }
+
+            },
+            messages: {
+                txtBenefitName: {
+                    required: "Nhập tên trợ cấp!"
+                },
+                txtBenefitRate: {
+                    required: "Nhập số tiền trợ cấp!",
+                    //number: "Hãy nhập số chính xác"
+                }
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                }
+                else error.insertAfter(element.parent());
+            }
+        });
+    }
+
+    function disablebuttonBenefit() {
+        editFr = $('#tblUpdateBenefit');
+        $('.editableInput', editFr).attr("disabled", "");
+        $('#enablebuttonBenefit').show();
+        $('#disablebuttonBenefit').hide();
+    }
+
+    function enablebuttonBenefit() {
+        editFr = $('#tblUpdateBenefit');
+        $('.editableInput', editFr).removeAttr("disabled");
+        $('#disablebuttonBenefit').show();
+        $('#enablebuttonBenefit').hide();
+    }
+
+    //function clearField2() {
+    //    editFr = $('#tblAddAssurance');
+    //    $('#txtGroupName', editFr).val("");
+    //    $('#txtGroupDetail', editFr).val("");
+    //}
+
+</script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        var oTableBenefit = $('#tblBenefitDetail').dataTable({
+            "aoColumns": [
+              null, null, null, { "bSortable": false }
+            ]
+        });
+
+        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+            $(this).prev().focus();
+        });
+
+        $('textarea[class*=autosize]').autosize({ append: "\n" });
+    })
+</script>
+
+<script>
+    function getStaffTimesheet() {
+        $.post("/Staff/ListAllStaff", {}, function (out) {
+            var item = '<option value="0">Tất cả nhân viên</option>';
+            $.each(out, function (index, group) {
+                item += '<option value="' + group.StaffId + '">' + group.StaffName + '</option>';
+            });
+            //$('#selectStaffTimesheet').html(item);
+            //$("#selectStaffTimesheet").trigger("chosen:updated")
+            $('#txtEditName').html(item);
+            $('#selectTimeSheetView').html(item);
+        });
+    }
+
+    function getAllTimesheet() {
+
+        $.post("/Salary/GetTimesheet", function (out) {
+
+
+            document.getElementById("bodyContent").innerHTML = (out.html);
+            {
+
+                var item = '<tbody id="listTimeSheetStaff">';
+                allTimesheet = out.list;
+                $.each(out.list, function (index, timesheet) {
+
+                    item += '<tr>';
+                    item += '<td><a onClick="getStaffTimesheetId(' + index + ')" data-toggle="modal" href="#tblUpdateTimesheet">' + timesheet.Staff.StaffName + '</a></td>';
+                    item += '<td>' + convertNETDateTime(timesheet.Date).toLocaleFormat('%d/%m/%Y') + '</td>';
+                    item += '<td>' + timesheet.Description + '</td>';
+                    item += '<td>' + timesheet.Hours + '</td>';
+                    if (timesheet.IsAllowed == false) {
+                        item += '<td><span class="label label-lg label-danger arrowed">Không phép</span></td>';
+                    }
+                    else if (timesheet.IsAllowed == true) {
+                        item += '<td><span class="label label-lg label-success arrowed">Có phép</span></td>';
+                    }
+                    item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getStaffTimesheetId(' + index + '); enablebuttonTimeSheet()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateTimesheet" data-id="' + index
+                        + '"><i class="icon-pencil bigger-130"></i></a><a onClick="deleteTimeSheet(' + timesheet.ID + ')" class="red" title="Xóa" href="#" data-id="' + timesheet.ID + '"><i class="icon-trash bigger-130"></i></a></center></td>';
+                    item += '</tr>';
+
+
+                });
+                item += '</tbody>';
+                item = item.split("null").join("");
+                $('#tblTimeSheetDetail').append(item);
+                $("#tblTimeSheetDetail").dataTable().fnDestroy();
+                var oTabletimeSheet = $('#tblTimeSheetDetail').dataTable({
+                    "aoColumns": [
+                      null, null, null, null, null, { "bSortable": false }
+                    ]
+                });
+                $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+                    $(this).prev().focus();
+                });
+                validateAddTimeSheet('#addTimeSheetValidateForm');
+                $('#addAllow').prop("checked", true);
+                getStaffTimesheet();
+                getYear();
+                getMonthinYear();
+                getStaffName();
+            }
+        })
+        $('#breadcrumbsMenu').text('Nhóm nhân viên');
+    }
+
+    function getTimeSheetByStaffId() {
+
+        $.post("/Salary/GetTimeSheetByStaffId", { staffId: $('#selectTimeSheetView').val(), monthTimsheetId: $('#cboMonthTimesheet').val(), yearTimsheetId: $('#cboYearTimesheet').val() }, function (out) {
+
+            $("#tblTimeSheetDetail")[0].removeChild($("#listTimeSheetStaff")[0]);
+            {
+                var item = '<tbody id="listTimeSheetStaff">';
+                allTimesheet = out.list;
+                $.each(out.list, function (index, timesheet) {
+
+                    item += '<tr>';
+                    item += '<td><a onClick="getStaffTimesheetId(' + index + ')" data-toggle="modal" href="#tblUpdateTimesheet">' + timesheet.Staff.StaffName + '</a></td>';
+                    item += '<td>' + convertNETDateTime(timesheet.Date).toLocaleFormat('%d/%m/%Y') + '</td>';
+                    item += '<td>' + timesheet.Description + '</td>';
+                    item += '<td>' + timesheet.Hours + '</td>';
+                    if (timesheet.IsAllowed == false) {
+                        item += '<td><span class="label label-lg label-danger arrowed">Không phép</span></td>';
+                    }
+                    else if (timesheet.IsAllowed == true) {
+                        item += '<td><span class="label label-lg label-success arrowed">Có phép</span></td>';
+                    }
+                    item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getStaffTimesheetId(' + index + '); enablebuttonTimeSheet()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateTimesheet" data-id="' + index
+                        + '"><i class="icon-pencil bigger-130"></i></a><a onClick="deleteTimeSheet(' + timesheet.ID + ')" class="red" title="Xóa" href="#" data-id="' + timesheet.ID + '"><i class="icon-trash bigger-130"></i></a></center></td>';
+                    item += '</tr>';
+
+
+                });
+                item += '</tbody>';
+                item = item.split("null").join("");
+                $('#tblTimeSheetDetail').append(item);
+                $("#tblTimeSheetDetail").dataTable().fnDestroy();
+                var oTabletimeSheet = $('#tblTimeSheetDetail').dataTable({
+                    "aoColumns": [
+                      null, null, null, null, null, { "bSortable": false }
+                    ]
+                });
+                $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+                    $(this).prev().focus();
+                });
+                validateAddTimeSheet('#addTimeSheetValidateForm');
+                $('#addAllow').prop("checked", true);
+                //getStaffTimesheet();
+                ;
+            }
+        })
+        $('#breadcrumbsMenu').text('Nhóm nhân viên');
+    }
+
+    function addnewTimeSheet() {
+        if ($('#addTimeSheetValidateForm').valid()) {
+            editFr = $('#tblAddTimesheet');
+            var selectStaffTimesheet = $('#selectStaffTimesheet option:selected', editFr).val();
+            var dateStaffTimesheet = $('#dateStaffTimesheet', editFr).val();
+            var txtDetail = $('#txtDetail', editFr).val();
+            var txttimeLeave = $('#txttimeLeave', editFr).val();
+            if (document.getElementById('addAllow').checked) {
+                var staffAllow = document.getElementById('addAllow').value;
+            } else if (document.getElementById('addIsAllow').checked) {
+                var staffAllow = document.getElementById('addIsAllow').value;
+            }
+
+            $.post("/Salary/AddStaffTimesheet", {
+                selectStaffTimesheet: selectStaffTimesheet, dateStaffTimesheet: dateStaffTimesheet, txtDetail: txtDetail, txttimeLeave: txttimeLeave, staffAllow: staffAllow
+
+            }, function (result) {
+                $('#timsheetMonthError').attr("style", "display: none");
+                $('#timsheetOverLoadError').attr("style", "display: none");
+                $('#timsheetDayError').attr("style", "display: none");
+                
+                if (result == "Successful") {
+                    getAllTimesheet();
+                    $('.close').click();
+                    $("body").attr("class", "");
+
+                    notification("Thêm  nghỉ  phép thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'Error') {
+                    $('.close').click();
+                    notification("Thêm ngày nghỉ thất bại!", "", 3000, "gritter-error center");
+                }
+
+                else if (result == "overload") {
+                    $('#timsheetOverLoadError').attr("style", "display: block");
+                }
+                else if (result == "dateinValide") {
+                    $('#timsheetMonthError').attr("style", "display: block");
+                }else if (result == "sang") {
+                    $('#timsheetDayError').attr("style", "display: block");
+                }
+            })
+                .error(function () {
+                    $('.close').click();
+                    notification("Tạo bảo hiểm thất bại!", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                });
+        }
+    }
+
+
+    function getStaffTimesheetId(index) {
+        disablebuttonTimeSheet();
+        editFr = $('#tblUpdateTimesheet');
+        $('#txtTimeSheetId', editFr).val(allTimesheet[index].ID);
+        $('#txtEditName', editFr).val(allTimesheet[index].Staff.StaffId);
+        $("#txtEditName").trigger("chosen:updated");
+
+        var bd = convertNETDateTime(allTimesheet[index].Date).toLocaleFormat('%d/%m/%Y');
+        $('#txtEditDate', editFr).val(bd);
+        $('#txtEdittimeLeave', editFr).val(allTimesheet[index].Hours);
+
+        $('#txtEditDetail', editFr).val(allTimesheet[index].Description);
+
+        if (allTimesheet[index].IsAllowed == true) {
+            $('#allowed', editFr).prop("checked", true);
+        } else if (allTimesheet[index].IsAllowed == false) {
+            $('#isAllowed', editFr).prop("checked", true);
+        } else {
+            $('#allowed', editFr).prop("checked", false);
+            $('#isAllowed', editFr).prop("checked", false);
+        }
+        $('#txtEditDate').attr("readonly", "readonly");
+        $('#txtEditDate').removeAttr("style");
+
+        validateAddImpress('#updateTimeSheetValidateForm');
+    }
+
+
+    function updateTimeSheet() {
+        if ($('#updateTimeSheetValidateForm').valid()) {
+            editFr = $('#tblUpdateTimesheet');
+            var txtTimeSheetId = $('#txtTimeSheetId', editFr).val();
+            var txtEditName = $('#txtEditName', editFr).val();
+            var txtEditDate = $('#txtEditDate', editFr).val();
+            var txtEditDetail = $('#txtEditDetail', editFr).val();
+            var txtEdittimeLeave = $('#txtEdittimeLeave', editFr).val();
+
+            if (document.getElementById('allowed').checked) {
+                var editstaffAllow = document.getElementById('allowed').value;
+            } else if (document.getElementById('isAllowed').checked) {
+                var editstaffAllow = document.getElementById('isAllowed').value;
+            }
+            disablebuttonTimeSheet(); // CHỈNH sửa lần 2
+            $.post("/Salary/UpdateTimeSheet", {
+                txtTimeSheetId: txtTimeSheetId, txtEditName: txtEditName, txtEditDate: txtEditDate, txtEditDetail: txtEditDetail, txtEdittimeLeave: txtEdittimeLeave, editstaffAllow: editstaffAllow
+
+            }, function (result) {
+                $('#editTimsheetMonthError').attr("style", "display: none");
+                $('#timsheetOverLoadError').attr("style", "display: none");
+                $('#timsheetDayError').attr("style", "display: none");
+                if (result == "Successful") {
+                    $('.close').click();
+                    getAllTimesheet();
+                    $("body").attr("class", "");
+                    notification("Cập nhật ngày nghỉ nhân viên thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'Error') {
+                    $('.close').click();
+                    notification("Cập nhật ngày nghỉ nhân viên thất bại!", "", 3000, "gritter-error center");
+                } else if (result == "dateinValide") {
+                    $('#editTimsheetMonthError').attr("style", "display: block");
+                }
+                else if (result == "overload") {
+                    $('#edittimsheetOverLoadError').attr("style", "display: block");
+                }
+                else if (result == "sang") {
+                    $('#edittimsheetDayError').attr("style", "display: block");
+                }
+            })
+                        .error(function () {
+                            $('.close').click();
+                            notification("Cập nhật ngày nghỉ nhân viên thất bại!", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                        });
+        }
+    }
+
+    function deleteTimeSheet(id) {
+        $(ace.click_event, function () {
+            bootbox.confirm("Bạn thực sự muốn thực hiện thao tác này?", function (result) {
+                if (result) {
+                    $.post("/Salary/deleteTimeSheet", { txtTimeSheetId: id }
+                        , function (result) {
+                            if (result == "Successful") {
+                                getAllTimesheet();
+                                notification("Xóa lịch nghỉ nhân viên thành công!", "", 2000, "btn-primary center");
+                            } else if (result == 'Error') {
+                                $('.close').click();
+                                notification("Xóa lịch nghỉ nhân viên thất bại!", "Nhóm nhân viên này hiện đang được sử dụng!", 3000, "gritter-error center");
+                            }
+                        })
+                        .error(function () {
+                            notification("Xóa lịch nghỉ nhân viên thất bại!", "Có lỗi xảy ra trong quá trình xóa nhóm nhân viên.", 3000, "gritter-error center");
+                        });
+                }
+            });
+        });
+    }
+
+    function validateAddTimeSheet(validateform) {
+        $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                selectStaffTimesheet: {
+                    required: true
+                },
+                dateStaffTimesheet: {
+                    required: true
+                },
+                txttimeLeave: {
+                    required: true,
+                    number: true,
+                    min: true
+
+                }
+
+            },
+            messages: {
+                selectStaffTimesheet: {
+                    required: "Chọn tên nhân viên!"
+                },
+                dateStaffTimesheet: {
+                    required: "Chọn ngày nghỉ của nhân viên!",
+                }
+                ,
+                txttimeLeave: {
+                    required: "Nhập vào số giờ nghỉ!",
+                    number: "Hãy nhập số ngày nghỉ chính xác",
+                    min: "Số giờ nghỉ không hợp lệ"
+                }
+
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                }
+                else error.insertAfter(element.parent());
+            }
+        });
+    }
+
+    function disablebuttonTimeSheet() {
+        editFr = $('#tblUpdateTimesheet');
+        $('.ace', editFr).attr("disabled", "");
+        $('.editableInput', editFr).attr("disabled", "");
+        $('.editableSelect').attr("disabled", "disabled");
+        $('#enablebuttonTimeSheet').show();
+        $('#disablebuttonTimeSheet').hide();
+    }
+
+    function enablebuttonTimeSheet() {
+        editFr = $('#tblUpdateTimesheet');
+        $('.ace', editFr).removeAttr("disabled");
+        $('.editableInput', editFr).removeAttr("disabled");
+        $('.editableSelect').removeAttr("disabled");
+        $('#disablebuttonTimeSheet').show();
+        $('#enablebuttonTimeSheet').hide();
+        $('#txtEditDate').attr("readonly", "readonly");
+        $('#txtEditDate').attr("style", "background: none repeat scroll 0 0 #fff !important; width: 100%; cursor: pointer")
+
+    }
+
+    //function clearField2() {
+    //    editFr = $('#tblAddGroup');
+    //    $('#txtGroupName', editFr).val("");
+    //    $('#txtGroupDetail', editFr).val("");
+    //}
+
+</script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        var oTabletimeSheet = $('#tblTimeSheetDetail').dataTable({
+            "aoColumns": [
+              null, null, null, null, null, { "bSortable": false }
+            ]
+        });
+
+        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+            $(this).prev().focus();
+        });
+
+        $('textarea[class*=autosize]').autosize({ append: "\n" });
+    })
+</script>
+
+
+<script>
+    //$(document).ready(function () {
+    //    getStaffImpress();
+    //});
+
+    function getStaffReward() {
+        $.post("/Staff/ListAllStaff", {}, function (out) {
+            //var item = '';
+            var item = '<option value="0">Tất cả nhân viên</option>';
+            $.each(out, function (index, group) {
+                //item += 'tất cả';
+                item += '<option value="' + group.StaffId + '">' + group.StaffName + '</option>';
+            });
+           //var  aaa= 'Sang'
+            //$('#selectStaffReward').html(item);
+            $('#selectRewardView').html(item);
+            //$('#selectRewardView').val(aaa);
+            //$("#selectStaffReward").trigger("chosen:updated")
+            $('#txtEditName').html(item);
+       
+            //$('#selectStaffReward').val("");
+
+        });
+    }
+
+    function getAllReward() {
+
+
+        $.post("/Salary/getAllReward", function (out) {
+
+            document.getElementById("bodyContent").innerHTML = (out.html);
+            {
+
+                var item = '<tbody id="listStaffReward">';
+                allReward = out.list;
+                $.each(out.list, function (index, reward) {
+
+                    item += '<tr>';
+                    item += '<td><a onClick="getRewardById(' + index + ')" data-toggle="modal" href="#tblUpdateReward">' + reward.Staff.StaffName + '</a></td>';
+                    item += '<td>' + convertNETDateTime(reward.Date).toLocaleFormat('%d/%m/%Y') + '</td>';
+                    item += '<td>' + convertToMoney(reward.Money) + '</td>';
+                    item += '<td>' + reward.Description + '</td>';
+                    item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getRewardById(' + index + '); enablebuttonReward()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateReward" data-id="' + index
+                        + '"><i class="icon-pencil bigger-130"></i></a><a onClick="deleteReward(' + reward.RewardID + ')" class="red" title="Xóa" href="#" data-id="' + reward.RewardID + '"><i class="icon-trash bigger-130"></i></a></center></td>';
+                    item += '</tr>';
+                });
+                item += '</tbody>';
+                item = item.split("null").join("");
+                $('#tblRewardDetail').append(item);
+                $("#tblRewardDetail").dataTable().fnDestroy();
+                $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+                    $(this).prev().focus();
+                });
+                var oTableReward = $('#tblRewardDetail').dataTable({
+                    "aoColumns": [
+                     null, null, null, null, { "bSortable": false }
+                    ]
+                });
+                getMonthinYear()
+                getYear();
+                getStaffReward();
+                getStaffName();
+                validateAddReward('#addRewardValidateForm');
+                $("#txtmoneyReward").numeric({ decimal: false, negative: false });
+                ;
+            }
+        })
+        $('#breadcrumbsMenu').text('Tiền thưởng');
+    }
+    function getAllRewardByStaffId() {
+        $.post("/Salary/getRewardbyStaffId", { staffId: $('#selectRewardView').val(), monthRewwardId: $('#cboMonthReward').val(), yearRewardId: $('#cboYearReward').val() }, function (out) {
+
+            $("#tblRewardDetail")[0].removeChild($("#listStaffReward")[0]);
+            {
+                var item = '<tbody id="listStaffReward">';
+                allReward = out.list;
+                $.each(out.list, function (index, reward) {
+
+                    item += '<tr>';
+                    item += '<td><a onClick="getRewardById(' + index + ')" data-toggle="modal" href="#tblUpdateReward">' + reward.Staff.StaffName + '</a></td>';
+                    item += '<td>' + convertNETDateTime(reward.Date).toLocaleFormat('%d/%m/%Y') + '</td>';
+                    item += '<td>' + convertToMoney(reward.Money) + '</td>';
+                    item += '<td>' + reward.Description + '</td>';
+                    item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getRewardById(' + index + '); enablebuttonReward()" class="green" title="Chỉnh sửa" data-toggle="modal" href="#tblUpdateReward" data-id="' + index
+                        + '"><i class="icon-pencil bigger-130"></i></a><a onClick="deleteReward(' + reward.RewardID + ')" class="red" title="Xóa" href="#" data-id="' + reward.RewardID + '"><i class="icon-trash bigger-130"></i></a></center></td>';
+                    item += '</tr>';
+                });
+                item += '</tbody>';
+                item = item.split("null").join("");
+                $('#tblRewardDetail').append(item);
+                $("#tblRewardDetail").dataTable().fnDestroy();
+                $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+                    $(this).prev().focus();
+                });
+                var oTableReward = $('#tblRewardDetail').dataTable({
+                    "aoColumns": [
+                     null, null, null, null, { "bSortable": false }
+                    ]
+                });
+                //getStaffReward();
+                validateAddReward('#addRewardValidateForm');
+                $("#txtmoneyReward").numeric({ decimal: false, negative: false });
+                ;
+            }
+        })
+        $('#breadcrumbsMenu').text('Tiền thưởng');
+    }
+
+    function addNewReward() {
+        if ($('#addRewardValidateForm').valid()) {
+            editFr = $('#tblAddReward');
+            var selectStaffReward = $('#selectStaffReward option:selected', editFr).val();
+            var dateStaffReward = $('#dateStaffReward', editFr).val();
+            //var txtmoneyReward = $('#txtmoneyReward', editFr).val();
+
+            var txtmoneyReward = $("#txtmoneyReward").val().replace("VNĐ", "");
+            txtmoneyReward = txtmoneyReward.split(".").join("");
+
+            var txtDescription = $('#txtDescription', editFr).val();
+            $.post("/Salary/AddReward", {
+                selectStaffReward: selectStaffReward, dateStaffReward: dateStaffReward, txtmoneyReward: txtmoneyReward, txtDescription: txtDescription
+
+            }, function (result) {
+                $('#rewardMonthError').attr("style", "display: none");
+                if (result == "Successful") {
+                    getAllReward();
+                    $('.close').click();
+                    $("body").attr("class", "");
+
+                    notification("Thêm tiền thưởng thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'Error') {
+                    $('.close').click();
+                    notification("Thêm tiền thưởng thất bại!", "", 3000, "gritter-error center");
+                }
+                else if (result == "dateinValide") {
+                    $('#rewardMonthError').attr("style", "display: block");
+                }
+            })
+                .error(function () {
+                    $('.close').click();
+                    notification("Thêm tiền thưởng thất bại!", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                });
+        }
+    }
+
+    function getRewardById(index) {
+        disablebuttonReward();
+        editFr = $('#tblUpdateReward');
+        $('#txtRewardId', editFr).val(allReward[index].RewardID);
+        $('#txtEditName', editFr).val(allReward[index].Staff.StaffId);
+        $("#txtEditName").trigger("chosen:updated");
+
+        var bd = convertNETDateTime(allReward[index].Date).toLocaleFormat('%d/%m/%Y');
+        $('#txtEditDate', editFr).val(bd);
+        //$('#txtEditMoney', editFr).val(allReward[index].Money);
+
+        var editmoney = convertToMoney(allReward[index].Money);
+        $('#txtEditMoney', editFr).val(editmoney);
+
+        $('#editDescription', editFr).val(allReward[index].Description);
+
+        $('#txtEditDate', editFr).attr("readonly", "readonly");
+        $('#txtEditDate', editFr).removeAttr("style");
+
+        validateAddReward('#updateRewardValidateForm');
+        $("#txtEditMoney").numeric({ decimal: false, negative: false });
+      
+    }
+
+    function updateReward() {
+        if ($('#updateRewardValidateForm').valid()) {
+          
+            editFr = $('#tblUpdateReward');
+            var txtRewardId = $('#txtRewardId', editFr).val();
+            var impressName = $('#txtEditName', editFr).val();
+            var impressDate = $('#txtEditDate', editFr).val();
+            //var impressMoney = $('#txtEditMoney', editFr).val();
+            var impressMoney = $("#txtEditMoney").val().replace("VNĐ", "");
+            impressMoney = impressMoney.split(".").join("");
+
+            var impressDes = $('#editDescription', editFr).val();
+
+            disablebuttonReward(); // Chỉnh sửa lần 2
+            $.post("/Salary/UpdateReward", {
+                txtRewardId: txtRewardId, txtEditName: impressName, txtEditDate: impressDate, txtEditMoney: impressMoney, editDescription: impressDes
+            }, function (result) {
+                $('#invalidateMonthErrorEdit').attr("style", "display: none");
+                if (result == "Successful") {
+                    $('.close').click();
+                    getAllReward();
+                    $("body").attr("class", "");
+                    notification("Cập nhật tạm ứng thành công!", "", 2000, "btn-primary center");
+                } else if (result == 'Error') {
+                    $('.close').click();
+                    notification("Cập nhật tạm ứng thất bại!", "", 3000, "gritter-error center");
+                }
+                else if (result == "dateinValide") {
+                    $('#invalidateMonthErrorEdit').attr("style", "display: block");
+                }
+            })
+                        .error(function () {
+                            $('.close').click();
+                            notification("Cập nhật tạm ứng thất bại!", "Hãy kiểm tra lại kết nối database.", 3000, "gritter-error center");
+                        });
+        }
+    }
+
+    function deleteReward(id) {
+        $(ace.click_event, function () {
+            bootbox.confirm("Bạn thực sự muốn thực hiện thao tác này?", function (result) {
+                if (result) {
+                    $.post("/Salary/deleteReward", { txtRewardId: id }
+                        , function (result) {
+                            if (result == "Successful") {
+                                getAllReward();
+                                notification("Xóa tạm ứng của nhân viên thành công!", "", 2000, "btn-primary center");
+                            } else if (result == 'Error') {
+                                $('.close').click();
+                                notification("Xóa tạm ứng của nhân viên thất bại!", "Tạm ứng này hiện đang được sử dụng!", 3000, "gritter-error center");
+                            }
+                        })
+                        .error(function () {
+                            notification("Xóa tạm ứng của nhân viên thất bại!", "Có lỗi xảy ra trong quá trình xóa!", 3000, "gritter-error center");
+                        });
+                }
+            });
+        });
+    }
+
+    function validateAddReward(validateform) {
+        $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                selectStaffReward: {
+                    required: true
+                },
+                dateStaffReward: {
+                    required: true
+                }
+                ,
+                txtmoneyReward: {
+                    required: true,
+                    maxlength: false
+                }
+
+            },
+            messages: {
+                selectStaffReward: {
+                    required: "Chọn một nhân viên!"
+                },
+                dateStaffReward: {
+                    required: "Hãy chọn ngày được thưởng của nhân viên!",
+
+                },
+                txtmoneyReward: {
+                    required: "Nhập số tiền được thưởng!",
+                }
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                }
+                else error.insertAfter(element.parent());
+            }
+        });
+    }
+
+    function disablebuttonReward() {
+        editFr = $('#tblUpdateReward');
+        $('.editableInput', editFr).attr("disabled", "");
+        $('.editableSelect').attr("disabled", "disabled");
+        $('#enablebuttonReward').show();
+        $('#disablebuttonReward').hide();
+    }
+
+    function enablebuttonReward() {
+        editFr = $('#tblUpdateReward');
+        $('.editableInput', editFr).removeAttr("disabled");
+        $('.editableSelect').removeAttr("disabled");
+        $('#disablebuttonReward').show();
+        $('#enablebuttonReward').hide();
+        $('#txtEditDate').attr("readonly", "readonly");
+        $('#txtEditDate').attr("style", "background: none repeat scroll 0 0 #fff !important; width: 100%; cursor: pointer")
+
+    }
+
+
+
+
+    //function clearField2() {
+    //    editFr = $('#tblAddAssurance');
+    //    $('#txtGroupName', editFr).val("");
+    //    $('#txtGroupDetail', editFr).val("");
+    //}
+
+</script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        var oTableReward = $('#tblRewardDetail').dataTable({
+            "aoColumns": [
+             null, null, null, null, { "bSortable": false }
+            ]
+        });
+
+        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+            $(this).prev().focus();
+        });
+
+        $('textarea[class*=autosize]').autosize({ append: "\n" });
+    })
+</script>
+                            <!-- PAGE CONTENT ENDS -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.page-content -->
+            </div><!-- /.main-content -->
+
+        </div><!-- /.main-container-inner -->
+
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="icon-double-angle-up icon-only bigger-110"></i>
+        </a>
+    </div><!-- /.main-container -->
+    
+    
+
+
+<textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px none; padding: 0px; box-sizing: content-box; word-wrap: break-word; height: 0px ! important; min-height: 0px ! important; overflow: hidden; transition: none 0s ease 0s ;"></textarea><div class="datepicker datepicker-dropdown dropdown-menu"><div style="display: block;" class="datepicker-days"><table class=" table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Tháng 10 2014</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">CN</th><th class="dow">T2</th><th class="dow">T3</th><th class="dow">T4</th><th class="dow">T5</th><th class="dow">T6</th><th class="dow">T7</th></tr></thead><tbody><tr><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td></tr><tr><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day active">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td></tr><tr><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td></tr><tr><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td></tr><tr><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td></tr><tr><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td><td class="day new">6</td><td class="day new">7</td><td class="day new">8</td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div><div style="display: none;" class="datepicker-months"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2014</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Tháng 1</span><span class="month">Tháng 2</span><span class="month">Tháng 3</span><span class="month">Tháng 4</span><span class="month">Tháng 5</span><span class="month">Tháng 6</span><span class="month">Tháng 7</span><span class="month">Tháng 8</span><span class="month">Tháng 9</span><span class="month active">Tháng 10</span><span class="month">Tháng 11</span><span class="month">Tháng 12</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div><div style="display: none;" class="datepicker-years"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2010-2019</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year active">2014</span><span class="year">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year old">2020</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div></div><div class="datepicker datepicker-dropdown dropdown-menu"><div style="display: block;" class="datepicker-days"><table class=" table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Tháng 10 2014</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">CN</th><th class="dow">T2</th><th class="dow">T3</th><th class="dow">T4</th><th class="dow">T5</th><th class="dow">T6</th><th class="dow">T7</th></tr></thead><tbody><tr><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td></tr><tr><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day active">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td></tr><tr><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td></tr><tr><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td></tr><tr><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td></tr><tr><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td><td class="day new">5</td><td class="day new">6</td><td class="day new">7</td><td class="day new">8</td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div><div style="display: none;" class="datepicker-months"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2014</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Tháng 1</span><span class="month">Tháng 2</span><span class="month">Tháng 3</span><span class="month">Tháng 4</span><span class="month">Tháng 5</span><span class="month">Tháng 6</span><span class="month">Tháng 7</span><span class="month">Tháng 8</span><span class="month">Tháng 9</span><span class="month active">Tháng 10</span><span class="month">Tháng 11</span><span class="month">Tháng 12</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div><div style="display: none;" class="datepicker-years"><table class="table-condensed"><thead><tr><th style="visibility: visible;" class="prev"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2010-2019</th><th style="visibility: visible;" class="next"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year active">2014</span><span class="year">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year old">2020</span></td></tr></tbody><tfoot><tr><th style="display: none;" colspan="7" class="today">Hôm nay</th></tr></tfoot></table></div></div></body></html>
