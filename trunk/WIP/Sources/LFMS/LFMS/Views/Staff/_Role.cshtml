@@ -1,0 +1,122 @@
+﻿<div id="invoicediv">
+    <div id="tblAddRole" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header no-padding">
+                    <div class="table-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="white">&times;</span>
+                        </button>
+                        Tạo mới
+                    </div>
+                </div>
+                <form class="modal-body no-padding" id="addRoleValidateForm">
+                    <div class="col-sm-12">
+                        <div>
+                            <br />
+                            <div class="form-group">
+                                <label>Tên vai trò</label><span style="color: red"> *</span>
+                                <div>
+                                    <input type="text" id="txtRoleName" name="txtRoleName" style="width: 100%" />
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Ghi chú</label><span style="color: red"> *</span>
+                                <div>
+                                    <textarea style="width: 100%" id="txtRoleDetail" name="txtRoleDetail"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer no-margin-top">
+                    </div>
+                </form>
+                <div class="modal-footer no-margin-top">
+                    <button class="btn btn-warning pull-left" onclick="clearField3()" id="btnClose" style="width: 125px">
+                        <i class="icon-refresh"></i>
+                        Làm trống
+                    </button>
+                    <button class="btn btn-success" type="button" data-bb-handler="confirm" id="btnAddNewCase" onclick="addStaffRole()">
+                        <i class="icon-ok"></i>
+                        Tạo mới
+                    </button>
+                </div>
+                
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    @*bảng để hiện view và edit*@
+    <div id="tblUpdateRole" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header no-padding">
+                    <div class="table-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="white">&times;</span>
+                        </button>
+                        Chi tiết vai trò
+                    </div>
+                </div>
+                <form class="modal-body no-padding" id="updateRoleValidateForm">
+                    <div class="col-sm-12">
+                        <div>
+                            <br />
+                            <div class="form-group">
+
+                                <label>Tên vai trò</label><span style="color: red"> *</span>
+                                <div>
+                                    <input type="text" id="txtGroupId" style="display: none" />
+                                    <input type="text" id="txtRoleName" name="txtRoleName" style="width: 100%" class="editableInput" disabled />
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Ghi chú</label><span style="color: red"> *</span>
+                                <div>
+                                    <textarea style="width: 100%" id="txtRoleDetail" name="txtRoleDetail" class="editableInput" disabled></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer no-margin-top">
+                    </div>
+                </form>
+
+
+                <div class="modal-footer no-margin-top">
+                    <button class="btn btn-sm btn-success" onclick="updateRole()" style="display:none; width: 105px" id="disablebutton">
+                        <i class="icon-save"></i>
+                        Lưu
+                    </button>
+                    <button class="btn btn-sm btn-primary" onclick="enablebutton3()" id="enablebutton">
+                        <i class=" icon-edit">
+                        </i>
+                        Chỉnh Sửa
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    @*List all staffgroup*@
+    <div class="table-responsive" id="divHidden">
+        <a href="#tblAddRole" role="button" class="green" data-toggle="modal">
+            <button class="btn btn-success" onclick="clearField3()">
+                <i class="icon-plus"></i>
+                Thêm vai trò mới
+            </button>
+        </a>
+        <hr />
+        <table id="tblRoledetail" class="table table-striped table-bordered table-hover" width="100%">
+            <thead>
+                <tr>
+                    @*<th width="20%">Mã vai trò</th>*@
+                    <th>Tên vai trò</th>
+                    <th>Chi tiết</th>
+                    <th width="10%"></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>

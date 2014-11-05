@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ROOT>
+  <HEAD>
+    <SalaryExcelEntity>
+      <TimeValue>B4</TimeValue>
+    </SalaryExcelEntity>
+  </HEAD>
+  <LIST>
+    <StartRow>7</StartRow>
+    <Step>1</Step>
+    <Key>
+      <Column>A</Column>
+      <StepRow>1</StepRow>
+    </Key>
+    <STEP1>
+      <SalaryConcertEntity>
+        <StaffName>B</StaffName>
+        <TotalPresent>C</TotalPresent>
+        <TotalAbsent>D</TotalAbsent>
+        <BaseSalary>E</BaseSalary>
+        <TotalBenefit>F</TotalBenefit>
+        <TotalAssurance>G</TotalAssurance>
+        <AppendantPeople>H</AppendantPeople>
+        <TotalTax>I</TotalTax>
+        <TotalReward>J</TotalReward>
+        <TotalImprest>K</TotalImprest>
+		 <TotalDateDeduction>L</TotalDateDeduction>
+		  <TotalMoneyDeduction>M</TotalMoneyDeduction>
+        <ActualSalary>N</ActualSalary>
+      </SalaryConcertEntity>
+    </STEP1>
+  </LIST>
+</ROOT>
