@@ -1,0 +1,227 @@
+﻿<div id="tblAddTimesheet" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header no-padding">
+                <div class="table-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="white">&times;</span>
+                    </button>
+                    Thêm ngày nghỉ của nhân viên
+                </div>
+            </div>
+            <form class="modal-body no-padding" id="addTimeSheetValidateForm">
+                <div class="col-sm-6">
+                    <div class="space"></div>
+
+                    <div class="form-group" style="margin:0">
+                        <label>Tên nhân viên</label><span style="color: red"> *</span>
+                        <div>
+
+                            <select id="selectStaffTimesheet" class="form-control editableInput" name="selectStaffTimesheet" style="width: 100%"></select><br />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày nghỉ</label><span style="color: red"> *</span>
+                        <div class="input-group input-group-sm">
+                            <input class="form-control date-picker editableInput" id="dateStaffTimesheet" name="dateStaffTimesheet" readonly="" type="text" data-date-format="dd/mm/yyyy" style="width: 100%; cursor: pointer; background: none repeat scroll 0 0 #fff !important" />
+                            <span class="input-group-addon">
+                                <i class="icon-calendar bigger-110"></i>
+                            </span>
+                        </div>
+                        <div id="timsheetMonthError"  style="display: none">
+                            <span style="color: red">Chỉ được chọn tháng hiện tại!</span>
+                        </div>
+                        <div id="timsheetDayError" style="display: none">
+                            <span style="color: red">Không được chọn thứ 7, và chủ nhật!</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label></label>
+                        <div class="form-group">
+                            <label class="blue">
+                                <input type="radio" class="ace" value="true" name="Allow" id="addAllow">
+                                <span class="lbl"> Có phép</span>
+                            </label>
+                            <label class="blue" style="margin-left: 20px">
+                                <input type="radio" class="ace" value="false" name="Allow" id="addIsAllow">
+                                <span class="lbl"> Không phép</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="space"></div>
+                    <div class="form-group">
+                        <label>Số giờ nghỉ</label><span style="color: red"> *</span>
+                        <div>
+                            <input id="txttimeLeave" class=" form-control" name="txttimeLeave" style="resize: none" maxlength="5" />
+                        </div>
+                        <div id="timsheetOverLoadError" style="display: none">
+                            <span style="color: red">Một ngày nghỉ tối đa chỉ 8h!</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Chi tiết</label><span style="color: red"> *</span>
+                        <div>
+                            <input id="txtDetail" class=" form-control" name="txtDetail" style="resize: none" maxlength="50"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer no-margin-top">
+                </div>
+            </form>
+            <div class="modal-footer no-margin-top">
+                <button class="btn  btn-grey pull-left" type="button" data-dismiss="modal">
+                    <i class="icon-remove"></i>
+                    Đóng
+                </button>
+                <button class="btn btn-success" type="button" data-bb-handler="confirm" id="btnAddNewCase" onclick="addnewTimeSheet()">
+                    <i class="icon-ok"></i>
+                    Thêm mới
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+@*bảng để hiện view và edit*@
+<div id="tblUpdateTimesheet" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header no-padding">
+                <div class="table-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="white">&times;</span>
+                    </button>
+                    Chi tiết ngày nghỉ nhân viên
+                </div>
+            </div>
+            <form class="modal-body no-padding" id="updateTimeSheetValidateForm">
+                <div class="col-sm-6">
+                    <div class="space"></div>
+
+                    <div class="form-group" style="margin:0">
+                        <label>Tên nhân viên</label><span style="color: red"> *</span>
+                        <div>
+                            <input type="text" id="txtTimeSheetId" style="display: none" />
+                            <select id="txtEditName" class="form-control editableInput" name="selectStaffTimesheet" style="width: 100%"></select><br />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày nghỉ</label><span style="color: red"> *</span>
+                        <div class="input-group input-group-sm">
+                            <input class="form-control date-picker editableSelect" id="txtEditDate" name="dateStaffTimesheet" type="text" data-date-format="dd/mm/yyyy" style="width: 100%; cursor: pointer;" />
+                            <span class="input-group-addon">
+                                <i class="icon-calendar bigger-110"></i>
+                            </span>
+                        </div>
+                        <div id="editTimsheetMonthError" style="display: none">
+                            <span style="color: red">Chỉ được chọn tháng hiện tại!</span>
+                        </div>
+                        <div id="edittimsheetDayError" style="display: none">
+                            <span style="color: red">Không được chọn thứ 7, và chủ nhật!</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label></label>
+                        <div class="form-group">
+                            <label class="blue">
+                                <input type="radio" class="ace" value="true" name="allowed" id="allowed">
+                                <span class="lbl"> Có phép</span>
+                            </label>
+                            <label class="blue" style="margin-left: 20px">
+                                <input type="radio" class="ace" value="false" name="allowed" id="isAllowed">
+                                <span class="lbl"> Không phép</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="space"></div>
+                    <div class="form-group">
+                        <label>Số giờ nghỉ</label><span style="color: red"> *</span>
+                        <div>
+                            <input id="txtEdittimeLeave" class=" editableInput form-control" name="txtEdittimeLeave" style="resize: none" maxlength="5" />
+                        </div>
+                        <div id="edittimsheetOverLoadError" style="display: none">
+                            <span style="color: red">Một ngày nghỉ tối đa chỉ 8h!</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Chi tiết</label><span style="color: red"> *</span>
+                        <div>
+                            <input id="txtEditDetail" class=" editableInput form-control" name="txtEditDetail" style="resize: none" maxlength="50" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer no-margin-top">
+                </div>
+            </form>
+
+            <div class="modal-footer no-margin-top">
+                <button class="btn btn-grey pull-left" type="button" data-dismiss="modal">
+                    <i class="icon-remove"></i>
+                    Đóng
+                </button>
+                <button class="btn btn-success" onclick="updateTimeSheet()" style="display:none" id="disablebuttonTimeSheet">
+                    <i class="icon-ok"></i>
+                    Lưu chỉnh sửa
+                </button>
+                <button class="btn btn-primary" onclick="enablebuttonTimeSheet()" id="enablebuttonTimeSheet">
+                    <i class="icon-edit"></i>
+                    Chỉnh Sửa
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+@*List all staffgroup*@
+<div class="table-responsive" id="divHidden">
+    <a href="#tblAddTimesheet" role="button" class="green" data-toggle="modal">
+        <button class="btn btn-primary">
+            <i class="icon-plus"></i>
+            Thêm ngày nghỉ
+        </button>
+    </a>
+    <hr />
+    @*<div class="form-group">
+        <label> Hiển thị theo tên nhân viên</label>
+        <div>
+            <select name="selectTypeService" id="selectTimeSheetView" onchange="getTimeSheetByStaffId()" style="width: 30%" class="form-control"></select>
+        </div>
+    </div>*@
+    <div style="overflow: auto">
+        <div style="float: left" class="form-group">
+            <label> Tên nhân viên</label>
+            <div>
+                <select name="selectTypeService" id="selectTimeSheetView" onchange="getTimeSheetByStaffId()" style="width: 100%" class="form-control"></select>
+            </div>
+        </div>
+        <div style="float: left; margin-left: 5%" class="form-group">
+            <label>Tháng</label>
+            <div>
+                <select name="selectTypeService" id="cboMonthTimesheet" onchange="getTimeSheetByStaffId()" style="width: 100%" class="form-control"></select>
+            </div>
+        </div>
+
+        <div style="float: left; margin-left: 5%" class="form-group">
+            <label>Năm</label>
+            <div>
+                <select id="cboYearTimesheet" name="cboYear" onchange="getTimeSheetByStaffId()" style="width: 100%; cursor: pointer" class="form-control "></select><br />
+            </div>
+        </div>
+    </div>
+
+    <table id="tblTimeSheetDetail" class="table table-striped table-bordered table-hover" width="100%">
+        <thead>
+            <tr>
+                <th width="25%">Tên nhân viên</th>
+                <th width="15%">Ngày nghỉ</th>
+                <th width="20%">Lý do</th>
+                <th width="15%">Thời gian (giờ)</th>
+                <th width="15%">Trạng thái</th>
+                <th width="10%"></th>
+            </tr>
+        </thead>
+    </table>
+</div>
