@@ -1,0 +1,187 @@
+﻿<div id="tblAddTax" class="modal fade" tabindex="-1">
+    <div class="modal-dialog" style="width: 100%; max-width:700px">
+            <div class="modal-content">
+                <div class="modal-header no-padding">
+                    <div class="table-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="white">&times;</span>
+                        </button>
+                        Thêm thuế mới
+                    </div>
+                </div>
+                <form class="modal-body no-padding" id="addTaxValidateForm">
+                    <div class="col-sm-6">
+                        <div class="space"></div>
+                        <div class="form-group">
+                            <label>Tên Thuế</label><span style="color: red"> *</span>
+                            <div>
+                                <input type="text" id="txtTaxName" name="txtTaxName" style="width: 100%" maxlength="50" />
+
+                            </div>
+                            <div id="existTaxError" style="display: none">
+                                <span style="color: red">Tên thuế đã tồn tại!</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Từ</label><span style="color: red"> *</span>
+                            <div>
+                                @*<input type="text" id="txtTaxFrom" name="txtTaxFrom" style="width: 100%" class="editableInput" maxlength="9" />*@
+                                <input type="text" id="txtTaxFrom" class=" editableInput form-control" name="txtTaxFrom" maxlength="9" onclick='removeMask("#txtTaxFrom")' onblur='    maskMoney("#txtTaxFrom")' />
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Chỉ số</label><span style="color: red"> *</span>
+                            <div>
+                                @*<input type="text" id="txtTaxIndex" class="editableInput form-control" name="txtTaxIndex" maxlength="9" />*@
+                                <input type="text" id="txtTaxIndex" class="  form-control" name="txtTaxIndex" maxlength="9" onclick='removeMask("#txtTaxIndex")' onblur='    maskMoney("#txtTaxIndex")' />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="space"></div>
+                        <div class="form-group">
+                            <label>Thuế suất (%)</label><span style="color: red"> *</span>
+                            <div>
+                                <input type="text" id="txtTaxRate" class=" form-control" name="txtTaxRate" maxlength="9" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Đến</label>
+                            <div>
+                                @*<input type="text" id="txtTaxTo" class=" form-control" name="txtTaxTo" maxlength="9" />*@
+                                <input type="text" id="txtTaxTo" class="  form-control" name="txtTaxTo" maxlength="9" onclick='removeMask("#txtTaxTo")' onblur='    maskMoney("#txtTaxTo")' />
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer no-margin-top">
+                    </div>
+                </form>
+                <div class="modal-footer no-margin-top">
+                    <button class="btn  btn-grey pull-left" type="button" data-dismiss="modal">
+                        <i class="icon-remove"></i>
+                        Đóng
+                    </button>
+                    <button class="btn btn-success" type="button" data-bb-handler="confirm" id="btnAddNewCase" onclick="addNewTax()">
+                        <i class="icon-ok"></i>
+                        Thêm mới
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+@*bảng để hiện view và edit*@
+<div id="tblUpdateTax" class="modal fade" tabindex="-1">
+    <div class="modal-dialog" style="width: 100%; max-width:700px">
+            <div class="modal-content">
+                <div class="modal-header no-padding">
+                    <div class="table-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="white">&times;</span>
+                        </button>
+                        Chi tiết thuế
+                    </div>
+                </div>
+
+                <form class="modal-body no-padding" id="updateTaxValidateForm">
+
+                    <div class="col-sm-6">
+                        <div>
+                            <div class="space"></div>
+                            <div class="form-group">
+                                <label>Tên Thuế</label><span style="color: red"> *</span>
+                                <div>
+                                    <input type="text" id="txTaxId" style="display: none" />
+                                    <input type="text" id="txtEditName" name="txtTaxName" style="width: 100%" class="editableInput" maxlength="50" />
+
+                                </div>
+                                <div id="existTaxErrorDetail" style="display: none">
+                                    <span style="color: #D16E6C">Tên thuế đã tồn tại!</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Từ</label><span style="color: red"> *</span>
+                                <div>
+                                    @*<input type="text" id="txtEditFrom" name="txtTaxFrom" style="width: 100%" class="editableInput" maxlength="9" />*@
+                                    <input type="text" id="txtEditFrom" class="  editableInput" name="txtTaxFrom" maxlength="9" onclick='removeMask("#txtEditFrom")' onblur='    maskMoney("#txtEditFrom")' />
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Chỉ số</label><span style="color: red"> *</span>
+                                <div>
+                                    <input type="text" id="txtEditIndex" class="  editableInput" name="txtTaxIndex" maxlength="9" onclick='removeMask("#txtEditIndex")' onblur='    maskMoney("#txtEditIndex")' />
+
+                                    @*<input type="text" id="txtEditIndex" class="editableInput form-control" name="txtTaxIndex" maxlength="9" />*@
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="space"></div>
+
+                        <div class="form-group">
+                            <label>Thuế suất (%)</label><span style="color: red"> *</span>
+                            <div>
+                                <input type="text" id="txtEditTax" class="editableInput form-control" name="txtTaxRate" maxlength="9" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Đến</label>
+                            <div>
+                                <input type="text" id="txtEditTo" class="  editableInput" name="txtTaxTo" maxlength="9" onclick='removeMask("#txtEditTo")' onblur='    maskMoney("#txtEditTo")' />
+
+                                @*<input type="text" id="txtEditTo" class="editableInput form-control"  name="txtTaxTo" style="width: 100%" maxlength="9" />*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer no-margin-top">
+                    </div>
+                </form>
+                <div class="modal-footer no-margin-top">
+                    <button class="btn btn-grey pull-left" type="button" data-dismiss="modal">
+                        <i class="icon-remove"></i>
+                        Đóng
+                    </button>
+                    <button class="btn btn-success" onclick="updateTax()" style="display:none" id="disablebuttonTax">
+                        <i class="icon-ok"></i>
+                        Lưu chỉnh sửa
+                    </button>
+                    <button class="btn btn-primary" onclick="enablebuttonTax()" id="enablebuttonTax">
+                        <i class="icon-edit"></i>
+                        Chỉnh Sửa
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+@*List all staffgroup*@
+<div class="table-responsive" id="divHidden">
+    <a href="#tblAddTax" role="button" class="green" data-toggle="modal">
+        <button class="btn btn-primary" >
+            <i class="icon-plus"></i>
+            Thêm Thuế
+        </button>
+    </a>
+    <hr />
+    <table id="tblTaxDetail" class="table table-striped table-bordered table-hover" width="100%">
+        <thead>
+            <tr>
+                <th width="20%">Tên Thuế</th>
+                <th width="15%">Từ</th>
+                <th width="15%">Đến</th>
+                <th width="13%">Thuế suất (%)</th>
+                <th width="12%">Chỉ số</th>
+                <th width="15%">Trạng thái</th>
+                <th width="10%"></th>
+            </tr>
+        </thead>
+    </table>
+</div>

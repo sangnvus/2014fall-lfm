@@ -1,0 +1,554 @@
+﻿@{
+    ViewBag.Title = "Quản lí dịch vụ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/css/jquery.gritter.css" />
+<link rel="stylesheet" href="~/Content/css/jquery-ui-1.10.3.custom.min.css" />
+
+<link rel="stylesheet" href="~/Content/css/chosen.css" />
+<link rel="stylesheet" href="~/Content/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/Content/css/font-awesome.min.css" />
+<link rel="stylesheet" href="~/Content/css/ace.min.css" />
+<link rel="stylesheet" href="~/Content/css/datepicker.css" />
+<link rel="stylesheet" href="~/Content/css/timeline/screen.css" />
+
+<script src="~/Content/ckeditor/ckeditor.js" type="text/javascript"></script>
+<script src="~/Content/ckfinder/ckfinder.js" type="text/javascript"></script>
+<script src="~/Content/js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="~/Content/js/timeliner.min.js" type="text/javascript"></script>
+<script src="~/Content/js/bootbox.min.js" type="text/javascript"></script>
+<script src="~/Content/js/jquery.dataTablesStaff.js" type="text/javascript"></script>
+<script src="~/Content/js/jquery.dataTables.bootstrapStaff.js" type="text/javascript"></script>
+@*<script src="~/Content/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="~/Content/js/jquery.dataTables.bootstrap.js" type="text/javascript"></script>*@
+<script src="~/Content/js/date-time/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="~/Content/js/jquery.numeric.js" type="text/javascript"></script>
+<script src="~/Content/js/fuelux/fuelux.spinner.min.js" type="text/javascript"></script>
+<script src="~/Content/js/jquery.autosize.min.js" type="text/javascript"></script>
+<script src="~/Content/js/jquery.gritter.min.js" type="text/javascript"></script>
+<script src="~/Content/js/typeahead-bs2.min.js" type="text/javascript"></script>
+<script src="~/Content/js/chosen.jquery.min.js" type="text/javascript"></script>
+<script src="~/Content/js/jquery.validate.min.js"></script>
+
+@section HeaderJs
+{
+    @* for DataTable *@
+    @*<script src="~/Content/js/jquery.dataTables.min.js" type="text/javascript"></script>*@
+    @*<script src="~/Content/js/jquery.dataTables.bootstrap.js" type="text/javascript"></script>*@
+    @* for Datepicker *@
+    <script src="~/Content/js/jquery-ui-1.10.3.full.min.js" type="text/javascript"></script>
+    <script src="~/Content/js/date-time/bootstrap-datepicker.min.js" type="text/javascript"></script>
+    @* for Autosize *@
+    <script src="~/Content/js/jquery.autosize.min.js" type="text/javascript"></script>
+}
+
+@section Sidebar
+{
+    <div class=" sidebar" id="sidebar">
+        <script type="text/javascript">
+            try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+        </script>
+
+        <ul class="nav nav-list">
+            <li class="" id="liService" onclick='getAllServiceJson()'>
+                <a href="#" onclick="setLiActiveClass('#liService')">
+                    <i class="icon-edit"></i>
+                    <span class="menu-text"> Dịch vụ</span>
+                </a>
+            </li>
+
+            <li class="" id="liServiceType" onclick='getAllServiceTypeJson()'>
+                <a href="#" onclick="setLiActiveClass('#liServiceType')">
+                    <i class="icon-calendar"></i>
+                    <span class="menu-text"> Loại dịch vụ </span>
+                </a>
+            </li>
+        </ul><!-- /.nav-list -->
+
+        <div class="sidebar-collapse" id="sidebar-collapse">
+            <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+        </div>
+
+        <script type="text/javascript">
+            try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+        </script>
+    </div>
+}
+
+@section Breadcrumbs
+{
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+        </script>
+
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+                <a href="/Home/Index">Trang chủ</a> | Quản lý dịch vụ
+            </li>
+
+            <li>
+                <span id="breadcrumbsMenu" style="font-weight: bold"></span>
+            </li>
+        </ul><!-- .breadcrumb -->
+    </div>
+}
+
+<div id="bodyContent"></div>
+<div id="bodyChangePass">
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setLiActiveClass('#liService');
+        getAllServiceJson();
+    });
+
+    var allService = null;
+    var allServiceType = null;
+
+    function setLiActiveClass(liId) {
+        $('#liService').attr("class", "");
+        $('#liServiceType').attr("class", "");
+        $(liId).attr("class", "active");
+    }
+
+    function getAllServiceJson() {
+        $.post("/Service/GetAllServiceJson", {}, function (out) {
+            document.getElementById("bodyContent").innerHTML = (out.html);//render HTML cua partial view
+            var item = '<tbody>';
+            allService = out.list;
+
+            $.each(out.list, function (index, service) {
+                item += '<tr>';
+                item += '<td><a onClick="getServiceByIndex(' + index + ')" data-toggle="modal" href="#tblServiceDetail">' + service.ServiceName + '</a></td>';
+                if (service.Description == "" || service.Description == null || !service.Description || service.Description === null || service.Description == "null") {
+                    item += '<td><i style="color: grey"></i></td>';
+                } else {
+                    item += '<td>' + service.Description + '</td>';
+                }
+                item += '<td>' + service.ServiceType.ServiceTypeName + '</td>';
+                item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getServiceByIndex(' + index + ')" class="view" title="View" data-toggle="modal" href="#tblServiceDetail" id="' + index
+                    + '"><i class="icon-zoom-in bigger-130"></i></a><a onClick="getUpdateServicePopup(' + index + ')" class="green" title="Update" data-toggle="modal" href="#tblServiceDetail" id="' + index
+                    + '"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete' + service.ServiceId + '" onClick="deleteService(' + service.ServiceId + ')" class="red" title="Delete" href="#" data-id="' + service.ServiceId + '"><i class="icon-trash bigger-130"></i></a></center></td>'
+                    + '</td>';
+                item += '</tr>';
+            });
+            item += '</tbody>';
+            $('#tblService').append(item);
+            $('#tblService').dataTable().fnDestroy();
+            var oTable1 = $('#tblService').dataTable({
+                "aoColumns": [
+                    null, null, null, { "bSortable": false }
+                ]
+            });
+            loadSelectServiceType(); //sau khi render ra HTML thi goi ham nay de render ra combobox, sau do post len server
+        });
+        $('#breadcrumbsMenu').text('Danh sách dịch vụ');
+    }
+
+    function addService() {
+        if ($('#addServiceValidateForm').valid()) {
+            var serviceName = $('#txtName').val();
+            var selectServiceType = $('#selectServiceType').val();
+            var description = $('#txtDescription').val();
+
+
+            $.post("/Service/AddService", {
+                serviceName: serviceName, selectServiceType: selectServiceType, description: description
+            }, function (result) {
+                if (result == "success") {
+                    getAllServiceJson();
+                    $('.close').click();
+                    $("body").attr("class", "");
+                    notification("Tạo dịch vụ thành công!", "", 3000, "btn-primary center");
+                } else {
+                    $('.close').click();
+                    notification("Tạo dịch vụ thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                }
+            })
+            .error(function () {
+                $('.close').click();
+                notification("Tạo dịch vụ thất bại!", "Có lỗi xảy ra trong quá trình tạo dịch vụ.", 5000, "gritter-error center");
+            });
+        }
+    }
+
+    function loadSelectServiceType() {
+        $.ajax({
+            url: "/Service/GetAllServiceTypeJson",
+            type: 'POST',
+            async: false,
+            success: function (data) {
+                if (data.list != null) {
+                    var html;
+                    $.each(data.list, function (index, customer) {
+                        html += '<option value="' + customer.ServiceTypeId + '">' + customer.ServiceTypeName + '</option>';
+                    });
+                    $("#selectServiceType").html(html);
+                    $('#selectServiceType').val('');
+                }
+            },
+            error: function (errMsg) {
+                alert(errMsg.responseText);
+            }
+        });
+        validateService('#addServiceValidateForm');
+    }
+	
+    function loadSelectedServiceType(groupId) {
+        $.ajax({
+            url: "/Service/GetAllServiceTypeJson",
+            type: 'POST',
+            async: false,
+            success: function (data) {
+                if (data.list != null) {
+                    var html = '';
+                    $.each(data.list, function (index, group) {
+                        var groupIdInt = parseInt(groupId);
+                        if (group.ServiceTypeId == groupIdInt) {
+                            html += '<option selected="selected" value="' + group.ServiceTypeId + '"  class="editableInput" readonly>' + group.ServiceTypeName + '</option>';
+                        } else {
+                            html += '<option value="' + group.ServiceTypeId + '">' + group.ServiceTypeName + '</option>';
+                        }
+                    });
+                    $("#selectedServiceType").html(html);
+                }
+            },
+            error: function (errMsg) {
+                alert(errMsg.responseText);
+            }
+        });
+    }
+
+    function getServiceByIndex(index) {
+        //Lay customer detail dua vao idex cua customer do trong mang allService
+        loadSelectedServiceType(allService[index].ServiceType.ServiceTypeId);//Goi ham nay de render ra ServiceType selection
+        var editFr = $('#tblServiceDetail');
+        $('#detailServiceId', editFr).val(allService[index].ServiceId);
+        $('#detailName', editFr).val(allService[index].ServiceName);
+        $('#detailServiceType', editFr).val(allService[index].ServiceType.ServiceTypeName);
+        $('#detailDescription', editFr).val(allService[index].Description);
+
+        disablebutton();
+        validateService('#updateServiceValidateForm');
+    }
+
+    function getUpdateServicePopup(index) {
+        //Lay customer detail dua vao idex cua customer do trong mang allService
+        loadSelectedServiceType(allService[index].ServiceType.ServiceTypeId);//Goi ham nay de render ra ServiceType selection
+        var editFr = $('#tblServiceDetail');
+        $('#detailServiceId', editFr).val(allService[index].ServiceId);
+        $('#detailName', editFr).val(allService[index].ServiceName);
+        $('#detailServiceType', editFr).val(allService[index].ServiceType.ServiceTypeName);
+        $('#detailDescription', editFr).val(allService[index].Description);
+
+        enablebutton();
+        validateService('#updateServiceValidateForm');
+    }
+
+    function updateService() {
+        if ($('#updateServiceValidateForm').valid()) {
+            var serviceId = $('#detailServiceId').val();
+            var serviceName = $('#detailName').val();
+            var selectServiceType = $('#selectedServiceType').val();
+            var description = $('#detailDescription').val();
+            disablebutton(); //Nhan nut Update thi se disable cac editable field
+
+            $.post("/Service/UpdateService", {
+                serviceId: serviceId, serviceName: serviceName, selectServiceType: selectServiceType, description: description
+            }, function (result) {
+                if (result == "success") {
+                    getAllServiceJson();
+                    $('.close').click();
+                    $("body").attr("class", "");
+                    notification("Chỉnh sửa dịch vụ thành công!", "", 3000, "btn-primary center");
+                } else {
+                    notification("Chỉnh sửa dịch vụ thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                }
+            })
+            .error(function () {
+                notification("Chỉnh sửa dịch vụ thất bại!", "Có lỗi xảy ra trong quá trình chỉnh sửa dịch vụ.", 5000, "gritter-error center");
+            });
+        }
+    }
+
+    function deleteService(id) {
+        $(ace.click_event, function () {
+            bootbox.confirm("Bạn thực sự muốn xóa dịch vụ này?", function (result) {
+                if (result) {
+                    $.post("/Service/DeleteService", { serviceId: id }
+                        , function (result2) {
+                            if (result2 == "success") {
+                                getAllServiceJson();
+                                notification("Xóa dịch vụ thành công!", "", 3000, "btn-primary center");
+                            } else {
+                                notification("Xóa dịch vụ thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                            }
+                        })
+                    .error(function () {
+                        notification("Xóa dịch vụ thất bại!", "Có lỗi xảy ra trong quá trình xóa dịch vụ.", 5000, "gritter-error center");
+                    });
+                }
+            });
+        });
+    }
+
+    function disablebutton() {
+        //Khong cho user edit cac field
+        $('.editableInput').attr("readonly", "");
+        $('.editableSelect').attr("disabled", "disabled");
+        $('#enablebutton').show();
+        $('#disablebutton').hide();
+    }
+    
+    function enablebutton() {
+        //Cho phep user edit
+        $('.editableInput').removeAttr("readonly");
+        $('.editableSelect').removeAttr("disabled");
+        $('#disablebutton').show();
+        $('#enablebutton').hide();
+    }
+
+    function clearField() {
+        $('#txtName').val("");
+        $('#selectServiceType').val("0");
+        $('#txtDescription').val("");
+        $('#txtTypeName').val("");
+        $('#txtDescription').val("");
+    }
+
+    //Validate
+    function validateService(validateform) {
+        $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                txtName: {
+                    required: true
+                },
+                selectServiceType: {
+                    required: true,
+                    min: 1
+                }
+            },
+            messages: {
+                txtName: {
+                    required: "Nhập tên dịch vụ!"
+                },
+                selectServiceType: {
+                    required: "Chọn loại dịch vụ!",
+                    min: "Chọn loại dịch vụ!"
+                }
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                } else error.insertAfter(element.parent());
+            }
+        });
+    }
+
+    jQuery(function ($) {
+        var oTable1 = $('#tblService').dataTable({
+            "aoColumns": [
+                null, null, null, { "bSortable": false }
+            ]
+        });
+
+        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+            $(this).prev().focus();
+        });
+
+        $('textarea[class*=autosize]').autosize({ append: "\n" });
+
+    });
+
+    function getAllServiceTypeJson() {
+        $.post("/Service/GetAllServiceTypeJson", {}, function (out) {
+            document.getElementById("bodyContent").innerHTML = (out.html);//render HTML
+            var item = '<tbody>';
+            $.each(out.list, function (index, cus) {
+                allServiceType = out.list;
+                item += '<tr>';
+                item += '<td><a onClick="getServiceTypeByIndex(' + index + ')" data-toggle="modal" href="#tblServiceTypeDetail">' + cus.ServiceTypeName + '</a></td>';
+                if (cus.Description == "" || cus.Description == null || !cus.Description || cus.Description === null || cus.Description == "null") {
+                    item += '<td><i style="color: grey"></i></td>';
+                } else {
+                    item += '<td>' + cus.Description + '</td>';
+                }
+                item += '<td class="visible-md visible-lg hidden-sm hidden-xs action-buttons"><center><a onClick="getServiceTypeByIndex(' + index + ')" class="view" title="View" data-toggle="modal" href="#tblServiceTypeDetail" id="' + index
+                    + '"><i class="icon-zoom-in bigger-130"></i></a><a onClick="getUpdateServiceTypePopup(' + index + ')" class="green" title="Update" data-toggle="modal" href="#tblServiceTypeDetail" id="' + index
+                    + '"><i class="icon-pencil bigger-130"></i></a><a id="btnDelete' + cus.ServiceTypeId + '" onClick="deleteServiceType(' + cus.ServiceTypeId + ')" class="red" title="Delete" href="#" data-id="' + cus.ServiceTypeId + '"><i class="icon-trash bigger-130"></i></a></center></td>'
+                    + '</td>';
+                item += '</tr>';
+            });
+            item += '</tbody>';
+            $('#tblServiceType').append(item);
+            $('#tblServiceType').dataTable().fnDestroy();
+            var oTable1 = $('#tblServiceType').dataTable({
+                "aoColumns": [
+                    null, null, { "bSortable": false }
+                ]
+            });
+        });
+        validateServiceType('#addServiceTypeValidateForm');
+        $('#breadcrumbsMenu').text('Loại dịch vụ');
+    }
+
+    function addServiceType() {
+        if ($('#addServiceTypeValidateForm').valid()) {
+            var typeName = $('#txtTypeName').val();
+            var description = $('#txtDescription').val();
+
+            $.post("/Service/AddServiceType", {
+                typeName: typeName, description: description
+            }, function (result) {
+                if (result == "success") {
+                    getAllServiceTypeJson();
+                    $('.close').click();
+                    $("body").attr("class", "");
+                    notification("Tạo loại dịch vụ thành công!", "", 3000, "btn-primary center");
+                } else {
+                    $('.close').click();
+                    notification("Tạo loại dịch vụ thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                }
+            })
+            .error(function () {
+                $('.close').click();
+                notification("Tạo loại dịch vụ thất bại!", "Có lỗi xảy ra trong quá trình tạo loại dịch vụ.", 5000, "gritter-error center");
+            });
+        }
+    }
+
+    function getServiceTypeByIndex(index) {
+        //Lay ServiceType detail dua vao idex cua ServiceType do trong mang allServiceType
+        var editFr = $('#tblServiceTypeDetail');
+        $('#detailServiceTypeId', editFr).val(allServiceType[index].ServiceTypeId);
+        $('#detailName', editFr).val(allServiceType[index].ServiceTypeName);
+        $('#detailDescription', editFr).val(allServiceType[index].Description);
+
+        disablebutton();
+        validateServiceType('#updateServiceTypeValidateForm');
+    }
+
+    function getUpdateServiceTypePopup(index) {
+        //Lay ServiceType detail dua vao idex cua ServiceType do trong mang allServiceType
+        var editFr = $('#tblServiceTypeDetail');
+        $('#detailServiceTypeId', editFr).val(allServiceType[index].ServiceTypeId);
+        $('#detailName', editFr).val(allServiceType[index].ServiceTypeName);
+        $('#detailDescription', editFr).val(allServiceType[index].Description);
+
+        enablebutton();
+        validateServiceType('#updateServiceTypeValidateForm');
+    }
+
+    function updateServiceType() {
+        if ($('#updateServiceTypeValidateForm').valid()) {
+            var typeId = $('#detailServiceTypeId').val();
+            var typeName = $('#detailName').val();
+            var description = $('#detailDescription').val();
+
+            disablebutton(); //Nhan nut Update thi se disable cac editable field
+
+            $.post("/Service/UpdateServiceType", {
+                typeId: typeId, typeName: typeName, description: description
+            }, function (result) {
+                if (result == "success") {
+                    getAllServiceTypeJson();
+                    $('.close').click();
+                    $("body").attr("class", "");
+                    notification("Chỉnh sửa loại dịch vụ thành công!", "", 3000, "btn-primary center");
+                } else {
+                    notification("Chỉnh sửa loại dịch vụ thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                }
+            })
+            .error(function () {
+                notification("Chỉnh sửa loại dịch vụ thất bại!", "Có lỗi xảy ra trong quá trình chỉnh sửa loại dịch vụ.", 5000, "gritter-error center");
+            });
+        }
+    }
+
+    function deleteServiceType(id) {
+        $(ace.click_event, function () {
+            bootbox.confirm("Bạn thực sự muốn xóa loại dịch vụ này?", function (result) {
+                if (result) {
+                    $.post("/Service/DeleteServiceType", { typeId: id }
+                        , function (result2) {
+                            if (result2 == "success") {
+                                getAllServiceTypeJson();
+                                notification("Xóa loại dịch vụ thành công!", "", 3000, "btn-primary center");
+                            } else {
+                                notification("Xóa loại dịch vụ thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                            }
+                        })
+                    .error(function () {
+                        notification("Xóa loại dịch vụ thất bại!", "Có lỗi xảy ra trong quá trình xóa loại dịch vụ.", 5000, "gritter-error center");
+                    });
+                }
+            });
+        });
+    }
+
+    //Validate
+    function validateServiceType(validateform) {
+        $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                txtTypeName: {
+                    required: true
+                }
+            },
+            messages: {
+                txtTypeName: {
+                    required: "Nhập tên loại dịch vụ!"
+                }
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                } else error.insertAfter(element.parent());
+            }
+        });
+    }
+
+    jQuery(function ($) {
+        var oTable1 = $('#tblServiceType').dataTable({
+            "aoColumns": [
+                null, null, null, { "bSortable": false }
+            ]
+        });
+
+        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+            $(this).prev().focus();
+        });
+
+        $('textarea[class*=autosize]').autosize({ append: "\n" });
+
+    });
+</script>
