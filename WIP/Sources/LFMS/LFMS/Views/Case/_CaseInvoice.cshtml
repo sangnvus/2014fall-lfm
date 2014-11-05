@@ -1,0 +1,374 @@
+﻿<div class="page-content" id="invoiceDiv">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="space-6"></div>
+
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div class="widget-box transparent invoice-box">
+                        <div class="widget-header widget-header-large">
+                            <h3 class="grey lighter pull-left position-relative">
+                                <i id="editInvoice" onclick="editableInvoice()" style="cursor: pointer" class="icon-edit bigger-160 green tooltip-info" data-rel="tooltip" data-placement="top" title="Chỉnh sửa chi phí"></i>
+                                <span class="smaller lighter green">Chi phí dịch vụ</span>
+                            </h3>
+
+                            <div class="widget-toolbar no-border invoice-info">
+                                <span class="invoice-info-label">Mã Hồ Sơ : </span>
+                                <span class="red" id="CaseCodeSpan"></span>
+                                <br />
+                                <span class="invoice-info-label">Ngày : </span>
+                                <span class="blue" id="curDateSpan">
+
+                                </span>
+                                <br>
+                            </div>
+
+                            @*<div style="cursor: pointer" class="widget-toolbar hidden-480" onclick="printPDF()">
+                                <a><i class="icon-print"></i></a>
+                            </div>*@
+                        </div>
+
+                        <div class="widget-body">
+                            <div class="widget-main">
+                                <div class="row" style="padding-left: 20px">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-xs-11 label label-lg label-info arrowed-in arrowed-right">
+                                                <b>Thông Tin Văn Phòng</b>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <ul class="list-unstyled spaced">
+                                                <li id="offNameLi">
+                                                    <i class="icon-caret-right blue"></i>
+                                                    <a>Văn Phòng:</a>
+                                                </li>
+
+                                                <li id="offAddressLi">
+                                                    <i class="icon-caret-right blue"></i>
+                                                    <a style="margin-left:24px">    Địa Chỉ: </a>
+                                                </li>
+
+                                                <li id="offEmailLi">
+                                                    <i class="icon-caret-right blue"></i>
+                                                    <a style="margin-left:35px"> Email: </a>
+                                                </li>
+                                                <li id="offPhoneLi">
+                                                    <i class="icon-caret-right blue"></i>
+                                                    <a style="margin-left:2px">  Điện Thoại: </a>
+                                                </li>
+
+                                                <li class="divider"></li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- /span -->
+                                
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-xs-11 label label-lg label-success arrowed-in arrowed-right">
+                                                <b>Thông Tin Khách Hàng</b>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <ul class="list-unstyled  spaced">
+                                                <li id="cusNameLi">
+                                                    <i class="icon-caret-right green"></i>
+                                                    <a>  Tên Khách Hàng: </a>
+                                                </li>
+
+                                                <li id="cusAddressLi">
+                                                    <i class="icon-caret-right green"></i>
+                                                    <a style="margin-left:57px">   Địa Chỉ:</a>
+                                                </li>
+
+                                                <li id="cusEmailLi">
+                                                    <i class="icon-caret-right green"></i>
+                                                    <a style="margin-left:68px"> Email:</a>
+                                                </li>
+
+                                                <li id="cusPhoneLi">
+                                                    <i class="icon-caret-right green"></i>
+                                                    <a style="margin-left:35px">   Điện Thoại:</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- /span -->
+                                </div><!-- row -->
+
+                                <div class="space"></div>
+
+                                <div>
+                                    <table class="table table-striped table-bordered" id="invoiceTbl">
+                                        <thead>
+                                            <tr>
+                                                <th class="center" style="width:3%">#</th>
+                                                <th style="width:25%">Tên Dịch Vụ</th>
+                                                <th>Mô Tả</th>
+                                                <th style="width:15%" class="center">Ngày Đăng Ký</th>
+                                                <th style="width:15%" class="center">Chi Phí</th>
+                                                <th id="editInvoiceTh" style="display: none;width:7%" class="center"></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <button style="display: none" class="invoiceTd blue btn btn-primary" data-toggle="modal" href="#invoicePopup" onclick="AddInvoicePopup()">
+                                    <i class="icon-plus"></i>
+                                    Thêm dịch vụ
+                                </button>
+                                <button style="float:right;display: none" class="invoiceTd blue btn btn-success" onclick="successEditInvoice()">
+                                    <i class="icon-ok"></i>
+                                    Hoàn Thành
+                                </button>
+                                <div class="hr hr8 hr-double hr-dotted"></div>
+
+                                <div class="row">
+                                    <div class="col-sm-5 pull-right">
+                                        <h4 class="pull-right">
+                                            Tổng Chi Phí :
+                                            <span class="red" id="sumInvoiceSpan"></span>
+                                        </h4>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE CONTENT ENDS -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+
+    <div class="row">
+        <div class="col-xs-12">
+
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div class="widget-box transparent invoice-box">
+                        <div class="widget-header widget-header-large">
+                            <h3 class="grey lighter pull-left position-relative">
+                                <i id="editPayment" onclick="editablePayment()" style="cursor: pointer" class="icon-credit-card bigger-160  green tooltip-info" data-rel="tooltip" data-placement="top" title="Chỉnh sửa hóa đơn"></i>
+                                <span class="smaller lighter green">Hóa đơn thanh toán</span>
+                            </h3>
+                        </div>
+
+                        <div class="widget-body">
+                            <div class="widget-main padding-14">
+
+                                <div class="space"></div>
+
+                                <div style="width:100%">
+                                    <table class="table table-striped table-bordered" id="paymentTbl">
+                                        <thead>
+                                            <tr>
+                                                <th class="center" style="width:5%">#</th>
+                                                <th class="center">Mô Tả</th>
+                                                <th class="center" style="width:15%">Ngày Thanh Toán</th>
+                                                <th class="center" style="width:15%">Số Tiền</th>
+                                                <th id="editPaymentTh" style="display: none;width:7%" class="center"></th>
+                                            </tr>
+                                        </thead>
+
+
+                                    </table>
+                                </div>
+                                <button onclick="addPaymentPopup()" style="display: none" class="paymentTd blue btn btn-primary" data-toggle="modal" href="#paymentPopup">
+                                    <i class="icon-plus"></i>
+                                    Tạo thanh toán
+                                </button>
+                                <button style="float:right;display: none" class="paymentTd blue btn btn-success" onclick="successEditPayment()">
+                                    <i class="icon-ok"></i>
+                                    Hoàn Thành
+                                </button>
+                                <div class="hr hr8 hr-double hr-dotted"></div>
+
+                                <div class="row">
+                                    <div class="col-sm-5 pull-right">
+                                        <h4 class="pull-right">
+                                            Tổng Thanh Toán :
+                                            <span class="red" id="sumPaymentSpan"></span>
+                                        </h4>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5 pull-right">
+                                        <h4 class="pull-right" style="font-weight: bold">
+                                            <span id="balanceSpan">Chưa thanh toán:</span>
+                                            <span class="red" id="sumBalanceSpan"></span>
+                                        </h4>
+                                    </div>
+
+                                </div>
+
+                                <div class="space-6"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE CONTENT ENDS -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+
+    <div id="invoicePopup" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header no-padding">
+                    <div class="table-header" id="invoiceHeader">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="white">&times;</span>
+                        </button>
+                        Thêm Dịch Vụ:
+                    </div>
+                </div>
+
+                <form class="modal-body no-padding" id="invoiceValidateForm">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="form-group" style="margin-bottom: 0px">
+                                <div id="serviceTypeDiv" class="col-sm-6">
+                                    <p class="header blue lighter smaller" style="margin:5px">Loại Dịch Vụ:</p>
+                                    <div>
+                                        <select onchange="choseTypeService()" name="selectTypeService" id="selectTypeService" type="typeService" class="form-control"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="serviceDiv" class="form-group" style="margin-bottom: 0px">
+                                <div class="col-sm-6">
+                                    <p class="header blue lighter smaller" style="margin:5px">Tên Dịch Vụ:</p>
+                                    <div>
+                                        <select style="width:100%;" class="chosen-select" name="selectService" id="selectService" data-placeholder=" ">
+                                            <option value=""></option>
+
+
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                                                    </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="header blue lighter smaller" style="margin:5px">Ngày Đăng Ký:</p>
+                                <div class="input-group input-group-sm">
+                                    <div>
+                                        <input style="cursor: pointer; background: none repeat scroll 0 0 #fff !important" readonly="" class="form-control date-picker" id="datePickerService" type="text" data-date-format="dd/mm/yyyy" style="width:100%" />
+                                    </div>
+                                    <span class="input-group-addon">
+                                        <i class="icon-calendar bigger-110"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0px">
+                                <div class="col-sm-6">
+                                    <p class="header blue lighter smaller" style="margin:5px">Chi Phí:</p>
+                                    <div>
+                                        <input name="serviceCost" value="" maxlength="9" type="text" id="serviceCost" onclick='removeMask("#serviceCost")' onblur='maskMoney("#serviceCost")' style="width:100%" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 ">
+                                    <p class="header blue lighter smaller" style="margin:5px">Nội Dung:</p>
+                                    <div>
+                                        <textarea id="txtInvoice" spellcheck="false" name="txtDescription" id="txtDescription" class="autosize-transition form-control" style="resize: none"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-12"></div>
+                    </div>
+                </form>
+
+                <div class="modal-footer no-margin-top">
+                    <button class="btn btn-default pull-left" type="button" data-dismiss="modal" id="btnClose">
+                        <i class="icon-remove"></i>
+                        Đóng
+                    </button>
+                    <button class="btn btn-info" id="addInvoiceBtn" type="button" data-bb-handler="confirm" onclick="addInvoiceToCus()">
+                        <i class="icon-ok"></i>
+                        Thêm dịch vụ
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+
+    <div id="paymentPopup" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header no-padding">
+                    <div class="table-header" id="paymentHeader">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="white">&times;</span>
+                        </button>
+                        Tạo Thanh Toán:
+                    </div>
+                </div>
+
+                <form class="modal-body no-padding" id="paymentValidateForm">
+                    <div class="col-xs-12">
+                        <div class="row">
+
+
+                            <div class="col-sm-6">
+                                <p class="header blue lighter smaller" style="margin:5px">Ngày Thanh Toán:</p>
+                                <div class="input-group input-group-sm">
+                                    <div>
+                                        <input style="cursor: pointer; background: none repeat scroll 0 0 #fff !important" readonly="" class="form-control date-picker" id="datePickerPayment" type="text" data-date-format="dd/mm/yyyy" style="width:100%" />
+                                    </div>
+                                    <span class="input-group-addon">
+                                        <i class="icon-calendar bigger-110"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0px">
+                                <div class="col-sm-6">
+                                    <p class="header blue lighter smaller" style="margin:5px">Số Tiền:</p>
+                                    <div>
+                                        <input name="paymentCost" value="" maxlength="9" type="text" id="paymentCost" onclick='removeMask("#paymentCost")' onblur='maskMoney("#paymentCost")' style="width:100%" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 ">
+                                    <p class="header blue lighter smaller" style="margin:5px">Nội Dung:</p>
+                                    <div>
+                                        <textarea spellcheck="false" name="txtDescription" id="txtPayment" class="autosize-transition form-control" style="resize: none"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-12"></div>
+                    </div>
+                </form>
+
+                <div class="modal-footer no-margin-top">
+                    <button class="btn btn-default pull-left" type="button" data-dismiss="modal" id="btnClose">
+                        <i class="icon-remove"></i>
+                        Đóng
+                    </button>
+                    <button class="btn btn-info" id="addPaymentBtn" type="button" data-bb-handler="confirm" onclick="addPaymentToCus()">
+                        <i class="icon-ok"></i>
+                        Tạo thanh toán
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</div>
+

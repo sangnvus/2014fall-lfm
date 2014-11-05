@@ -1,0 +1,985 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_BlankLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/css/jquery-ui-1.10.3.custom.min.css" />
+<link rel="stylesheet" href="~/Content/css/fullcalendar.css" />
+<link rel="stylesheet" href="~/Content/css/jquery.gritter.css" />
+<link rel="stylesheet" href="~/Content/css/jquery-ui-1.10.3.custom.min.css" />
+
+<link rel="stylesheet" href="~/Content/css/chosen.css" />
+<link rel="stylesheet" href="~/Content/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/Content/css/font-awesome.min.css" />
+<link rel="stylesheet" href="~/Content/css/ace.min.css" />
+<link rel="stylesheet" href="~/Content/css/datepicker.css" type="text/css" />
+
+
+<script src="~/Content/js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="~/Content/js/chosen.jquery.min.js" type="text/javascript"></script>
+<script src="~/Content/js/fullcalendar.js"></script>
+<script src="~/Content/js/jquery.ui.touch-punch.min.js"></script>
+<script src="~/Content/js/bootbox.min.js" type="text/javascript"></script>
+
+<script src="~/Content/js/jquery.validate.min.js"></script>
+<script src="~/Content/js/additional-methods.js" type="text/javascript"></script>
+
+<script src="~/Content/js/date-time/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="~/Content/js/jquery.autosize.min.js" type="text/javascript"></script>
+
+<div id="bodyChangePass"> </div>
+
+<div id="staffRoleIdDiv" value="@Session["RoleId"].ToString()" style="display:none"></div>
+
+<div id="addNewCaseBtn" style="display: none; position: absolute; top: 0px; left: 6%">
+    <a href="#modalAddNewCase" role="button" class="green" data-toggle="modal">
+        <button class="btn btn-primary" onclick="" style="border-radius: 6px">
+            <center><i class="icon-plus"></i></center>
+        </button>
+    </a>
+</div>
+
+<ul class="nav nav-pills" style="width: 80%; margin-left: 10%">
+    <li id="caseLi" class="active">
+        <a href="#" id="caseA" onclick="prepareForCase()" style="background-color: #A0A0A0"><i class="icon-folder-open"></i> Hồ Sơ</a>
+    </li>
+
+    <li id="eventLi">
+        <a href="#" id="eventA" onclick="prepareForCalendar()"><i class="icon-calendar"></i> Lịch Làm Việc</a>
+    </li>
+</ul>
+
+<div style="width: 80%; margin-left: 10%">
+    <div id="caseContent" style="display: block">
+        @*<div>
+                <h3 class="header smaller lighter green">Luật Thuận Nguyễn</h3>
+                <a href="#" class="btn btn-app btn-primary">
+                    <p style="font-weight: bold; padding-bottom: 15px">HS20140002</p>
+                    <p>14/02/2014</p>
+                    <p class="myparagraph">Đòi bồi thường tai nạn giao thông</p>
+                </a>
+            </div>
+
+            <div class="space"></div>
+
+            <div>
+                <h3 class="header smaller lighter green">Thừa phát lại Vĩnh Long</h3>
+                <a href="#" class="btn btn-app btn-primary">
+                    <p style="font-weight: bold; padding-bottom: 15px">HS20140002</p>
+                    <p>20/01/2014</p>
+                    <p class="myparagraph">Tranh chấp tài sản thừa kế</p>
+                </a>
+            </div>*@
+    </div>
+</div>
+
+<div id="calendarContent" style="display: none">
+    <div style="position: absolute; right: 12px; top:0;">
+        <div id="searchBtn" style="position: absolute; right: 0; top:0">
+            <button class="btn btn-sm btn-warning" >
+                <i class="icon-arrow-left icon-on-right"></i>
+                <span class="bigger-110 no-text-shadow"> Lịch làm việc các luật sư</span> 
+            </button>
+        </div>
+
+        <div id="searchContent">
+            <div style="margin-top: 5%; margin-left: 5%;padding-bottom:15px">
+                <i style="margin-right:5px"><b>Luật sư: </b></i>
+                <select class="chosen-select" id="ChosenCalendar" data-placeholder=""></select>
+            </div>
+            
+            <div id="calendar2" style="width: 90%; margin: 3% 5%">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="width: 80%; margin-left: 10%; padding: 50px 0px">
+        <div class="col-sm-9">
+            <div id="calendar">
+
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="widget-box transparent">
+                <div class="widget-header">
+                    <h4>Kéo thả sự kiện vào lịch làm việc</h4>
+                </div>
+
+                <div class="widget-body">
+                    <div class="widget-main no-padding">
+                        <div id="external-events">
+                            <div class="external-event label-success" data-class="label-success">
+                                <i class="icon-move"></i>
+                                Gặp khách hàng
+                            </div>
+
+                            <div class="external-event label-danger" data-class="label-danger">
+                                <i class="icon-move"></i>
+                                Biện hộ trước tòa
+                            </div>
+
+                            <div class="external-event label-purple" data-class="label-purple">
+                                <i class="icon-move"></i>
+                                Thu thập tài liệu
+                            </div>
+
+                            <div class="external-event label-yellow" data-class="label-yellow">
+                                <i class="icon-move"></i>
+                                Thu thập bằng chứng
+                            </div>
+
+                            <div class="external-event label-pink" data-class="label-pink">
+                                <i class="icon-move"></i>
+                                Tư vấn khách hàng
+                            </div>
+
+                            <div class="external-event label-info" data-class="label-info">
+                                <i class="icon-move"></i>
+                                Kí kết hợp đồng
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalAddNewCase" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header no-padding">
+                <div class="table-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="white">&times;</span>
+                    </button>
+                    Thêm hồ sơ tác nghiệp
+                </div>
+            </div>
+
+            <form class="modal-body no-padding" id="addCaseValidateForm">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="form-group" style="margin-bottom: 0px">
+                            <div class="col-sm-6">
+                                <p class="header blue lighter smaller">Mã hồ sơ<span style="color: red"> *</span></p>
+                                <div>
+                                    <input type="text" id="txtCaseCode" name="txtCaseCode" class="col-xs-10 col-sm-5" style="width: 100%; height: 32px;" maxlength="50" />
+                                </div>
+                                <div id="existCaseCodeError" style="display: none">
+                                    <span style="color: #D16E6C">Mã hồ sơ đã tồn tại!</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <p class="header blue lighter smaller">Ngày thụ lý<span style="color: red"> *</span></p>
+                            <div class="input-group input-group-sm">
+                                <input class="form-control date-picker" id="datePickerReceiptDate" type="text" data-date-format="dd/mm/yyyy" style="width: 100%; cursor: pointer; background: none repeat scroll 0 0 #fff !important" readonly />
+                                <span class="input-group-addon">
+                                    <i class="icon-calendar bigger-110"></i>
+                                </span>
+
+                                <script>
+                                    var today = getCurdate();
+                                    document.getElementById("datePickerReceiptDate").value = today.toString();
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group" style="margin-bottom: 0px">
+                            <div class="col-sm-6">
+                                <p class="header blue lighter smaller">Thuộc văn phòng<span style="color: red"> *</span></p>
+                                <div>
+                                    <select class="form-control" id="cboOffice" name="cboOffice"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 0px">
+                            <div class="col-sm-6">
+                                <p class="header blue lighter smaller">Nội dung<span style="color: red"> *</span></p>
+                                <div>
+                                    <textarea id="txtCaseContent" name="txtCaseContent" class="autosize-transition form-control" style="resize: none"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-12"></div>
+                </div>
+            </form>
+
+            <div class="modal-footer no-margin-top">
+                <button class="btn btn-grey pull-left" type="button" data-dismiss="modal" id="btnClose">
+                    <i class="icon-remove"></i>
+                    Đóng
+                </button>
+                <button class="btn btn-success" type="button" data-bb-handler="confirm" id="btnAddNewCase" onclick="addCase()">
+                    <i class="icon-ok"></i>
+                    Thêm mới
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<script>
+    $(document).ready(function () {
+        document.body.setAttribute('spellcheck', false);
+        GetAssignedCases();
+
+        var roleId = $("#staffRoleIdDiv").attr("value");
+        if (roleId == "1" || roleId == "2") {
+            $('#addNewCaseBtn').show();
+        }
+
+        validateAddCase('#addCaseValidateForm');
+
+    });
+</script>
+
+<script>
+    function prepareForCase() {
+        var roleId = $("#staffRoleIdDiv").attr("value");
+        if (roleId == "1" || roleId == "2") {
+            $('#addNewCaseBtn').show();
+        }
+        
+        $('#caseContent').show();
+        $('#calendarContent').hide();
+
+        $('#caseLi').attr('class', 'active');
+        $('#eventLi').attr('class', '');
+        $('#caseA').attr('style', 'background-color: #A0A0A0');
+        $('#eventA').removeAttr('style');
+    }
+
+    function prepareForCalendar() {
+        $('#addNewCaseBtn').hide();
+        
+        $('#caseContent').hide();
+        $('#calendarContent').show();
+        $(".fc-header-left").find(".fc-button-today").click();
+
+        $('#caseLi').attr('class', '');
+        $('#eventLi').attr('class', 'active');
+        $('#caseA').removeAttr('style');
+        $('#eventA').attr('style', 'background-color: #A0A0A0');
+        loadSelectStaffCalendar();//
+    }
+</script>
+
+<script>
+    function addCase() {
+        if ($('#addCaseValidateForm').valid()) {
+            var caseCode = $('#txtCaseCode').val();
+            var receiptDate = $('#datePickerReceiptDate').val();
+            var caseContent = $('#txtCaseContent').val();
+            var officeId = $("#cboOffice option:selected").val();
+
+            $.post("/Case/AddCase", {
+                caseCode: caseCode, receiptDate: receiptDate, caseContent: caseContent, officeId: officeId
+            }, function (result) {
+                if (result != "error" && result != "existCode") {
+                    $('#existCaseCodeError').attr("style", "display: none");
+                    var url = '/Case/Case/' + result + '';
+                    $(location).attr('href', url);
+                } else if (result == "error") {
+                    notification("Thêm hồ sơ thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+                } else if (result == "existCode") {
+                    $('#existCaseCodeError').attr("style", "display: block");
+                }
+            })
+            .error(function () {
+                notification("Thêm hồ sơ thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+            });
+        }
+    }
+
+    function validateAddCase(validateform) {
+        $(validateform).validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            focusInvalid: false,
+            rules: {
+                txtCaseCode: {
+                    required: true
+                },
+                cboOffice: {
+                    required: true
+                },
+                txtCaseContent: {
+                    required: true
+                }
+            },
+            messages: {
+                txtCaseCode: {
+                    required: "Nhập mã hồ sơ!"
+                },
+                cboOffice: {
+                    required: "Chọn văn phòng!",
+                },
+                txtCaseContent: {
+                    required: "Nhập nội dung!",
+                }
+            },
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+            errorPlacement: function (error, element) {
+                if (element.is(':checkbox') || element.is(':radio')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                }
+                else error.insertAfter(element.parent());
+            }
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        $('.date-picker').datepicker({ autoclose: true }).next().on(ace.click_event, function () {
+            $(this).prev().focus();
+        });
+
+        $('textarea[class*=autosize]').autosize({ append: "\n" });
+    });
+
+</script>
+
+
+<script>
+    function GetAssignedCases() {
+        $('#caseContent').html('');
+
+        var items = '';
+        //items = '<hr/><div id="addNewCaseBtn" style="display: none">' +
+        //    '<a href="#modalAddNewCase" role="button" class="green" data-toggle="modal">' +
+        //    '<button class="btn btn-primary" onclick="">' +
+        //    '<i class="icon-plus"></i>Thêm hồ sơ tác nghiệp</button></a></div>';
+
+        var roleId = $("#staffRoleIdDiv").attr("value");
+
+        // get toan bo case ma staff duoc assign
+        $.ajax({
+            url: '/Home/GetAssignedCases',
+            type: 'POST',
+            data: {},
+            dataType: "json",
+            async: true,
+            success: function(out) {
+                var outCase = out.assignCase;
+                var outOffice = "";
+                if (roleId == "1") {
+                     outOffice = out.outOffice;
+                } else {
+                     outOffice = new Array();
+                    $.each(out.outOffice.Office_Staff, function(index, element) {
+                        outOffice.push(element.Office);
+                    });
+                }
+ 
+                $.each(outOffice, function(index, resultOffice) {
+                    items += '<div style="padding: 20px 0px"><h3 class="header smaller lighter green"><i class="icon-legal"></i> ' + resultOffice.OfficeName + '</h3>';
+
+                    if (outCase != null) {
+                        var caseCount = 0;
+                        $.each(outCase, function(index2, resultCase) {
+                            if (resultCase.OfficeId == resultOffice.OfficeId && resultCase.Status == "Đang thụ lý") {
+                                caseCount += 1;
+
+                                items += '<a href="/Case/Case/' + resultCase.CaseId + '" class="btn btn-case btn-primary">';
+                                items += '<p style="font-weight: bold; padding-bottom: 15px">' + resultCase.CaseCode + '</p>';
+                                var date = convertNETDateTime(resultCase.ReceiptDate).toLocaleFormat('%d/%m/%Y');
+                                items += '<p>' + date + '</p>';
+                                items += '<p class="myparagraph">' + resultCase.CaseContent + '</p>';
+                                items += '</a>';
+                            }
+                        });
+                        if (caseCount == 0) {
+                            items += '<p style="margin-left: 30px">Chưa có phân công hồ sơ án.</p>';
+                        }
+                    } else {
+                        items += '<p style="margin-left: 30px">Chưa có phân công hồ sơ án.</p>';
+                    }
+
+                    items += '</div>';
+                });
+                $('#caseContent').append(items);
+                
+                // load office len cobOffice
+                var itemOff = '';
+                $.each(outOffice, function (index, off) {
+                    itemOff += '<option value="' + off.OfficeId + '">' + off.OfficeName + '</option>';
+                });
+                $('#cboOffice').html(itemOff);
+                $('#cboOffice').val("");
+            },
+            error: function() {
+                notification("Liệt kê hồ sơ thất bại!", "Hãy kiểm tra lại kết nối database.", 5000, "gritter-error center");
+            }
+        });
+    }
+</script>
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+        /* initialize the external events
+        -----------------------------------------------------------------*/
+
+        $('#external-events div.external-event').each(function () {
+
+            // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+            // it doesn't need to have a start or end
+            var eventObject = {
+                title: $.trim($(this).text()) // use the element's text as the event title
+            };
+
+            // store the Event Object in the DOM element so we can get to it later
+            $(this).data('eventObject', eventObject);
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+                zIndex: 999,
+                revert: true,      // will cause the event to go back to its
+                revertDuration: 0  //  original position after the drag
+            });
+
+        });
+        /* initialize the calendar
+        -----------------------------------------------------------------*/
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+
+        var calendar = $('#calendar').fullCalendar({
+            buttonText: {
+                prev: '<i class="icon-chevron-left"></i>',
+                next: '<i class="icon-chevron-right"></i>'
+            },
+
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            //load event source
+            events: function (start, end, callback) {
+                $.ajax({
+                    url: 'JsonCalendarEvent',
+                    method: 'POST',
+                    data: {
+                        start: ConvertDateToString(start),
+                        end: ConvertDateToString(end)
+                    },
+                    success: function (doc) {
+                        var events = [];
+                        // push Calendar Event ra fullCalendar
+                        $(doc.listCE).each(function (index, element) {
+                            var boolAllDay = true;
+                            if (getHMS(convertNETDateTime($(this).attr('BeginTime'))) != "00:00:00" || getHMS(convertNETDateTime($(this).attr('EndTime'))) != "00:00:00") {
+                                boolAllDay = false;
+                            }
+                            events.push({
+                                calendarId: $(this).attr('CalendarEventId'), //day la customize feild
+                                title: $(this).attr('Title'),
+                                start: convertNETDateTime($(this).attr('BeginTime')).toLocaleFormat('%M/%d/%y %h:%m:%s'), // will be parsed
+                                end: convertNETDateTime($(this).attr('EndTime')).toLocaleFormat('%M/%d/%y %h:%m:%s'),
+                                className: $(this).attr('Priority'),
+                                allDay: boolAllDay,
+                                type: "CE" //customize feild, phan loai event dua theo nguon goc (table)
+                            });
+                        });
+                        // push Operation Event ra fullCalendar
+                        $(doc.listOE).each(function (index, element) {
+                            var boolAllDay = true;
+                            if (getHMS(convertNETDateTime($(this).attr('BeginTime'))) != "00:00:00" || getHMS(convertNETDateTime($(this).attr('EndTime'))) != "00:00:00") {
+                                boolAllDay = false;
+                            }
+                            var caseCode = $(this).attr('Case').CaseCode;
+                            events.push({
+                                calendarId: $(this).attr('OperationalEventId'),
+                                title: $(this).attr('Title') + " (" + caseCode+")",
+                                start: convertNETDateTime($(this).attr('BeginTime')).toLocaleFormat('%M/%d/%y %h:%m:%s'), // will be parsed
+                                end: convertNETDateTime($(this).attr('EndTime')).toLocaleFormat('%M/%d/%y %h:%m:%s'),
+                                className: "label-grey",
+                                allDay: boolAllDay,
+                                caseCode:caseCode,
+                                type: "OE" //customize feild, phan loai event dua theo nguon goc (table)
+                            });
+                        });
+                        //console.log(events);
+                        callback(events);
+                    }
+                });
+            },
+            editable: true,
+            droppable: true, // this allows things to be dropped onto the calendar !!!
+            //di chuyen event co san
+            eventDrop: function (event, jsEvent, ui, view) {
+                //alert("drop");
+                //viet chac nang update event
+                
+                if (event.end == null || event.end == "") {
+                    event.end = event.start;
+                } // nếu event trong 1 ngày (ko có end) thì truyền end=start về server
+                var formatedStart = ConvertDateToString(event.start);
+                var formatedEnd = ConvertDateToString(event.end);
+                if (event.allDay) {
+                    formatedStart = formatToAllDayEvent(event.start);
+                    formatedEnd = formatToAllDayEvent(event.end);
+                }
+                var title = event.title;
+                if (event.type == "OE") {
+                    title = title.split(" (")[0];
+                }
+                $.ajax({
+                    url: "UpdateCalendarEvent",
+                    type: 'POST',
+                    async: true,
+                    data: {
+                        id: event.calendarId,
+                        title: title,
+                        start: formatedStart,
+                        end: formatedEnd,
+                        className: event.className.toString(),
+                        type: event.type
+                    },
+                    success: function (result) {
+                        if (result == 'success') {
+                            calendar.fullCalendar('updateEvent', event);
+                            console.debug("success");
+                        } else {
+                            console.debug("fail");
+                        }
+                    },
+                    error: function (errMsg) {
+                        //alert(errMsg.responseText);
+                        console.debug("error");
+                    }
+                });
+
+            },
+            //keo dai event co san
+            eventResize: function (event, jsEvent, ui, view) {
+                //alert("resize");
+                //viet chac nang update event
+                if (event.end == null || event.end == "") {
+                    event.end = event.start;
+                } // nếu event trong 1 ngày (ko có end) thì truyền end=start về server
+                var title = event.title;
+                if (event.type == "OE") {
+                    title = title.split(" (")[0];
+                }
+                $.ajax({
+                    url: "UpdateCalendarEvent",
+                    type: 'POST',
+                    async: true,
+                    data: {
+                        id: event.calendarId,
+                        title: title,
+                        start: ConvertDateToString(event.start),
+                        end: ConvertDateToString(event.end),
+                        className: event.className.toString(),
+                        type: event.type
+                    },
+                    success: function (result) {
+                        if (result == 'success') {
+                            calendar.fullCalendar('updateEvent', event);
+                            console.debug("success");
+                        } else {
+                            console.debug("fail");
+                        }
+                    },
+                    error: function (errMsg) {
+                        //alert(errMsg.responseText);
+                        console.debug("error");
+                    }
+                });
+            },
+            //keo tha event moi vao calendar
+            drop: function (date, allDay) { // this function is called when something is dropped
+                // retrieve the dropped element's stored Event Object
+                //var originalEventObject = $(this).data('eventObject');
+                var $extraEventClass = $(this).attr('data-class');
+                // we need to copy it, so that multiple events don't have a reference to the same object
+                //var copiedEventObject = $.extend({}, originalEventObject);
+
+                // assign it the date that was reported
+                //copiedEventObject.start = date;
+                //copiedEventObject.allDay = allDay;
+                //if ($extraEventClass) copiedEventObject['className'] = [$extraEventClass];
+
+                // render the event on the calendar
+                // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+                //$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+
+                //code them vao
+                bootbox.prompt("Tên Sự Kiện Mới:", function (title) {
+                    if (title !== null && title != "") {
+
+                        //viet ham add new event
+                        $.ajax({
+                            url: "AddCalendarEvent",
+                            type: 'POST',
+                            async: true,
+                            data: {
+                                title: title,
+                                start: ConvertDateToString(date),
+                                end: ConvertDateToString(date),
+                                className: $extraEventClass
+                            },
+                            success: function (result) {
+                                if (result != "0") {
+                                    calendar.fullCalendar('renderEvent',
+                                        {
+                                            calendarId: result,
+                                            title: title,
+                                            start: date,
+                                            end: date,
+                                            allDay: allDay,
+                                            className: $extraEventClass,
+                                            type: "CE"
+                                        },
+                                        true //make the event "stick"
+                                    );
+                                } else {
+                                    console.debug("fail");
+                                }
+                            },
+                            error: function (errMsg) {
+                                //alert(errMsg.responseText);
+                                console.debug("fail");
+                            }
+                        });
+                    }
+                });
+                calendar.fullCalendar('unselect');
+            },
+            selectable: true,
+            selectHelper: true,
+            //click vao calendar de tao event moi
+            select: function (start, end, allDay) {
+
+                bootbox.prompt("Tên Sự Kiện Mới:", function (title) {
+                    if (title !== null) {
+
+                        //ham add new event
+                        $.ajax({
+                            url: "AddCalendarEvent",
+                            type: 'POST',
+                            async: true,
+                            data: {
+                                title: title,
+                                start: ConvertDateToString(start),
+                                end: ConvertDateToString(end),
+                                //allDay: allDay,
+                                className: "label-info"
+                            },
+                            success: function (result) {
+                                if (result != "0") {
+                                    calendar.fullCalendar('renderEvent',
+                                        {
+                                            calendarId: result,
+                                            title: title,
+                                            start: start,
+                                            end: end,
+                                            //allDay: allDay,
+                                            className: "label-info",
+                                            type: "CE"
+                                        },
+                                        true // make the event "stick"
+                                    );
+                                    console.debug("success");
+                                } else {
+                                    console.debug("fail");
+                                }
+                            },
+                            error: function (errMsg) {
+                                //alert(errMsg.responseText);
+                                console.debug("fail");
+                            }
+                        });
+                    }
+                });
+
+                calendar.fullCalendar('unselect');
+
+            },
+            //click vao event co san
+            eventClick: function (calEvent, jsEvent, view) {
+                $("#calendarContent");
+                var form = $("<form class='form-inline'><label>Đổi Tên Sự Kiện &nbsp;</label></form>");
+                var title = calEvent.title;
+                if (calEvent.type == "OE") {
+                    title = title.split(" (")[0];
+                }
+                form.append("<input class='middle' style='width:60%' autocomplete=off type=text value='" + title + "' /> ");
+                form.append("<button type='submit' class='btn btn-sm btn-success'><i class='icon-ok'></i> Lưu</button>");
+
+                var div = bootbox.dialog({
+                    message: form,
+
+                    buttons: {
+                        "delete": {
+                            "label": "<i class='icon-trash'></i> Xóa Sự Kiện",
+                            "className": "btn-sm btn-danger",
+                            "callback": function () {
+
+                                calendar.fullCalendar('removeEvents', function (ev) {
+                                    if (ev._id == calEvent._id) {
+                                        //ham delete event
+                                        var deleteResult;
+                                        $.ajax({
+                                            url: "DeleteCalendarEvent",
+                                            type: 'POST',
+                                            async: false,
+                                            data: {
+                                                calendarId: ev.calendarId,
+                                                type: ev.type
+                                            },
+                                            success: function (result) {
+                                                if (result == 'success') {
+                                                    deleteResult = true;
+                                                } else {
+                                                    deleteResult = false;
+                                                }
+                                            },
+                                            error: function (errMsg) {
+                                                //alert(errMsg.responseText);
+                                                console.debug("fail");
+                                                deleteResult = false;
+                                            }
+
+                                        });
+                                        return deleteResult;
+                                    }
+                                });
+                            }
+                        },
+                        "close": {
+                            "label": "<i class='icon-remove'></i> Đóng",
+                            "className": "btn-sm"
+                        }
+                    }
+                });
+
+                form.on('submit', function (ev) {
+                    //viet chac nang update event
+                    if (calEvent.end == null || calEvent.end == "") {
+                        calEvent.end = calEvent.start;
+                    } // nếu event trong 1 ngày (ko có end) thì truyền end=start về server
+                    $.ajax({
+                        url: "UpdateCalendarEvent",
+                        type: 'POST',
+                        async: false,
+                        data: {
+                            id: calEvent.calendarId,
+                            title: form.find("input[type=text]").val(),
+                            start: ConvertDateToString(calEvent.start),
+                            end: ConvertDateToString(calEvent.end),
+                            className: calEvent.className.toString(),
+                            type: calEvent.type
+                        },
+                        success: function (result) {
+                            if (result == 'success') {
+                                calEvent.title = form.find("input[type=text]").val() + " (" + calEvent.caseCode+")";
+                                calendar.fullCalendar('updateEvent', calEvent);
+                                div.modal("hide");
+                                console.debug("success");
+                            } else {
+                                console.debug("fail");
+                            }
+                        },
+                        error: function (errMsg) {
+                            //alert(errMsg.responseText);
+                            console.debug("error");
+                        }
+                    });
+                    return false;
+                });
+
+                //console.log(calEvent.id);
+                //console.log(jsEvent);
+                //console.log(view);
+
+                // change the border color just for fun
+                //$(this).css('border-color', 'red');
+            }
+        });
+
+        var calendar2 = $('#calendar2').fullCalendar({
+            buttonText: {
+                prev: '<i class="icon-chevron-left"></i>',
+                next: '<i class="icon-chevron-right"></i>'
+            },
+
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            events: function (start, end, callback) {
+                $.ajax({
+                    url: 'GetAllStaffCalendar',
+                    method: 'POST',
+                    data: {
+                        staffId: $('#ChosenCalendar').val(),
+                        start: ConvertDateToString(start),
+                        end: ConvertDateToString(end)
+                    },
+                    success: function (doc) {
+                        var events = [];
+                        $(doc.listCE).each(function (index, element) {
+                            var boolAllDay = true;
+                            if (getHMS(convertNETDateTime($(this).attr('BeginTime'))) != "00:00:00") {
+                                boolAllDay = false;
+                            }
+                            events.push({
+                                calendarId: $(this).attr('CalendarEventId'),
+                                title: $(this).attr('Title'),
+                                start: convertNETDateTime($(this).attr('BeginTime')).toLocaleFormat('%M/%d/%y %h:%m:%s'), // will be parsed
+                                end: convertNETDateTime($(this).attr('EndTime')).toLocaleFormat('%M/%d/%y %h:%m:%s'),
+                                className: $(this).attr('Priority'),
+                                allDay: boolAllDay
+                            });
+                        });
+                        // push Operation Event ra fullCalendar
+                        $(doc.listOE).each(function (index, element) {
+                            var boolAllDay = true;
+                            if (getHMS(convertNETDateTime($(this).attr('BeginTime'))) != "00:00:00") {
+                                boolAllDay = false;
+                            }
+                            var caseCode = $(this).attr('Case').CaseCode;
+                            events.push({
+                                calendarId: $(this).attr('OperationalEventId'),
+                                title: $(this).attr('Title') + " (" + caseCode + ")",
+                                start: convertNETDateTime($(this).attr('BeginTime')).toLocaleFormat('%M/%d/%y %h:%m:%s'), // will be parsed
+                                end: convertNETDateTime($(this).attr('EndTime')).toLocaleFormat('%M/%d/%y %h:%m:%s'),
+                                className: "label-grey",
+                                allDay: boolAllDay,
+                            });
+                        });
+                        //console.log(events);
+                        callback(events);
+                    }
+                });
+            },
+            editable: false,
+            droppable: false, // this allows things to be dropped onto the calendar !!!
+
+            selectable: false,
+            selectHelper: false,
+        });
+    });
+
+    function ConvertDateToString(date) {
+        var dd = date.getDate();
+        var mm = date.getMonth() + 1; //January is 0!
+        var yyyy = date.getFullYear();
+        var hh = date.getHours();
+        var m = date.getMinutes();
+        if (dd < 10) { dd = "0" + dd };
+        if (mm < 10) { mm = "0" + mm };
+        if (hh < 10) { hh = "0" + hh };
+        if (m < 10) { m = "0" + m };
+
+        return mm + "/" + dd + "/" + yyyy + " " + hh + ":" + m + ":" + "00";
+    }
+
+    function getHMS(date) {
+        var hh = date.getHours();
+        var m = date.getMinutes();
+        if (hh < 10) { hh = "0" + hh };
+        if (m < 10) { m = "0" + m };
+
+        return hh + ":" + m + ":" + "00";
+    }
+
+    function formatToAllDayEvent(date) {
+        var dd = date.getDate();
+        var mm = date.getMonth() + 1; //January is 0!
+        var yyyy = date.getFullYear();
+        if (dd < 10) { dd = "0" + dd };
+        if (mm < 10) { mm = "0" + mm };
+
+        return mm + "/" + dd + "/" + yyyy + " 00:00:00";
+    }
+
+    var isSearchLab = false;
+    $('#searchBtn').click(function () {
+        if (!isSearchLab) {
+            $("#searchContent").show();
+
+            $("#searchBtn").css("right", "600px");
+            $("#searchBtn").css("top", "5px");
+            $("#searchBtn").find("span").text("Đóng");
+            $("#searchBtn").find("i").appendTo($("#searchBtn").find("button"));
+            $($("#searchBtn").find("i")).attr("class", "icon-arrow-right icon-on-right");
+            $("#searchContent").find(".fc-button-today").click();
+            //$("#searchContent").css("height", "800px");
+            //$("#searchContent").css("width", "800px");
+
+            //loadSelectStaffCalendar();//chu y
+            isSearchLab = true;
+            
+        }
+        else {
+            $("#searchContent").hide();
+
+            $("#searchBtn").css("right", "0");
+            $("#searchBtn").find("span").text(" Lịch làm việc các luật sư");
+            $("#searchBtn").find("span").appendTo($("#searchBtn").find("button"));
+            $($("#searchBtn").find("i")).attr("class", "icon-arrow-left icon-on-right");
+         
+            isSearchLab = false;
+        }
+    });
+
+    $("#ChosenCalendar").chosen();
+    $("#ChosenCalendar_chosen").css("width", "50%");
+    
+    function loadSelectStaffCalendar() {
+        $.ajax({
+            url: "/Home/GetAllSelectStaff",
+            type: 'POST',
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    var item = "";//<option value=''" + ">&nbsp</option>
+                    $.each(data, function (index, staff) {
+                        item += '<option value="' + staff.StaffId + '">' + staff.StaffName + " (" + staff.Accounts[0].Username + ')</option>';
+                    });
+                    $("#ChosenCalendar").html(item);
+                    $("#ChosenCalendar").val('');
+                    $("#ChosenCalendar").trigger("chosen:updated");
+                }
+            },
+            error: function (errMsg) {
+                alert(errMsg.responseText);
+            }
+        });
+    }
+
+    $("#ChosenCalendar").change(function() {
+        //callback de calendar update source event
+        //$("#searchContent").find(".fc-button-next").click();
+        //$("#searchContent").find(".fc-button-today").click();
+        $('#calendar2').data("fullCalendar").refetchEvents();
+    });
+
+</script>

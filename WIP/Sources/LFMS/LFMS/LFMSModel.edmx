@@ -1,0 +1,2135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LFMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Assurance">
+          <Key>
+            <PropertyRef Name="AssuranceID" />
+          </Key>
+          <Property Name="AssuranceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rate" Type="float" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Benefit">
+          <Key>
+            <PropertyRef Name="BenefitID" />
+          </Key>
+          <Property Name="BenefitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rate" Type="float" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CalendarEvents">
+          <Key>
+            <PropertyRef Name="CalendarEventId" />
+          </Key>
+          <Property Name="CalendarEventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Priority" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BeginTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Case_Customer">
+          <Key>
+            <PropertyRef Name="CaseCustomerId" />
+          </Key>
+          <Property Name="CaseCustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Case_Staff">
+          <Key>
+            <PropertyRef Name="CaseStaffId" />
+          </Key>
+          <Property Name="CaseStaffId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cases">
+          <Key>
+            <PropertyRef Name="CaseId" />
+          </Key>
+          <Property Name="CaseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CaseCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatorId" Type="int" Nullable="false" />
+          <Property Name="OfficeId" Type="int" Nullable="false" />
+          <Property Name="ReceiptDate" Type="date" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CaseContent" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DisputeSubject" Type="nvarchar(max)" />
+          <Property Name="DisputeRelation" Type="nvarchar(max)" />
+          <Property Name="LimitationStatute" Type="nvarchar(max)" />
+          <Property Name="LegalEvent" Type="nvarchar(max)" />
+          <Property Name="ErrorFactor" Type="nvarchar(max)" />
+          <Property Name="ProtectiveGoal" Type="nvarchar(max)" />
+          <Property Name="OpeningProcedure" Type="nvarchar(max)" />
+          <Property Name="InquiryProcedure" Type="nvarchar(max)" />
+          <Property Name="ArgumentProcedure" Type="nvarchar(max)" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerGroups">
+          <Key>
+            <PropertyRef Name="CustomerGroupId" />
+          </Key>
+          <Property Name="CustomerGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerGroupName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerGroupId" Type="int" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Representative" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TaxCode" Type="nvarchar" MaxLength="14" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
+          <Property Name="BankAccount" Type="nvarchar" MaxLength="20" />
+          <Property Name="BankBranch" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="20" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="IdentityNumber" Type="nvarchar" MaxLength="12" />
+          <Property Name="IdentityDate" Type="date" />
+          <Property Name="IdentityPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Impress">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Money" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Office_Staff">
+          <Key>
+            <PropertyRef Name="OfficeStaffId" />
+          </Key>
+          <Property Name="OfficeStaffId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OfficeId" Type="int" Nullable="false" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Offices">
+          <Key>
+            <PropertyRef Name="OfficeId" />
+          </Key>
+          <Property Name="OfficeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OfficeName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Manager" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TaxCode" Type="nvarchar" MaxLength="14" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Website" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankAccount" Type="nvarchar" MaxLength="20" />
+          <Property Name="BankBranch" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OperationalEvents">
+          <Key>
+            <PropertyRef Name="OperationalEventId" />
+          </Key>
+          <Property Name="OperationalEventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="CreatorId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="BeginTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="OtherCost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OfficeId" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="float" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PaymentTime" Type="datetime" Nullable="false" />
+          <Property Name="PaymentMoney" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reward">
+          <Key>
+            <PropertyRef Name="RewardID" />
+          </Key>
+          <Property Name="RewardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Money" Type="float" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="SalaryID" />
+          </Key>
+          <Property Name="SalaryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="TotalAbsent" Type="float" Nullable="false" />
+          <Property Name="TotalPresent" Type="float" Nullable="false" />
+          <Property Name="TotalBenefit" Type="float" Nullable="false" />
+          <Property Name="TotalImprest" Type="float" Nullable="false" />
+          <Property Name="TotalTax" Type="float" Nullable="false" />
+          <Property Name="TotalAssurance" Type="float" Nullable="false" />
+          <Property Name="TotalReward" Type="float" Nullable="false" />
+          <Property Name="BaseSalary" Type="float" Nullable="false" />
+          <Property Name="ActualSalary" Type="float" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="TotalDateDeduction" Type="float" Nullable="false" />
+          <Property Name="TotalMoneyDeduction" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SalaryAssuranceDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SalaryID" Type="int" Nullable="false" />
+          <Property Name="AssuranceID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SalaryBenefitDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SalaryID" Type="int" Nullable="false" />
+          <Property Name="BenefitID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SalaryTaxDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SalaryID" Type="int" Nullable="false" />
+          <Property Name="TaxID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceTypeId" Type="int" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ServiceTypes">
+          <Key>
+            <PropertyRef Name="ServiceTypeId" />
+          </Key>
+          <Property Name="ServiceTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="StaffGroups">
+          <Key>
+            <PropertyRef Name="StaffGroupId" />
+          </Key>
+          <Property Name="StaffGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StaffGroupName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="BaseSalary" Type="float" />
+        </EntityType>
+        <EntityType Name="Staffs">
+          <Key>
+            <PropertyRef Name="StaffId" />
+          </Key>
+          <Property Name="StaffId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="StaffGroupId" Type="int" Nullable="false" />
+          <Property Name="StaffName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="Avatar" Type="nvarchar" MaxLength="100" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="30" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="PlaceOfBirth" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdentityNumber" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="IdentityDate" Type="date" Nullable="false" />
+          <Property Name="IdentityPlace" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TaxCode" Type="nvarchar" MaxLength="14" />
+          <Property Name="BankAccount" Type="nvarchar" MaxLength="20" />
+          <Property Name="BankBranch" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="AppendantPeople" Type="int" />
+        </EntityType>
+        <EntityType Name="Subjects">
+          <Key>
+            <PropertyRef Name="SubjectId" />
+          </Key>
+          <Property Name="SubjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="SubjectName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LitigationCapacity" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tax">
+          <Key>
+            <PropertyRef Name="TaxID" />
+          </Key>
+          <Property Name="TaxID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rate" Type="float" Nullable="false" />
+          <Property Name="IndexTax" Type="float" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="MoneyFrom" Type="float" Nullable="false" />
+          <Property Name="MoneyTo" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TimeSheet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Hours" Type="float" Nullable="false" />
+          <Property Name="IsAllowed" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsedServices">
+          <Key>
+            <PropertyRef Name="UsedServiceId" />
+          </Key>
+          <Property Name="UsedServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ServiceCost" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RegisteredDate" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Accounts_Staffs">
+          <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CalendarEvents_Staffs">
+          <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
+          <End Role="CalendarEvents" Type="Self.CalendarEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="CalendarEvents">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cases_Offices">
+          <End Role="Offices" Type="Self.Offices" Multiplicity="1" />
+          <End Role="Cases" Type="Self.Cases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="OfficeId" />
+            </Principal>
+            <Dependent Role="Cases">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_CustomerGroups">
+          <End Role="CustomerGroups" Type="Self.CustomerGroups" Multiplicity="1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerGroups">
+              <PropertyRef Name="CustomerGroupId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="CustomerGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Impress_Staffs">
+          <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
+          <End Role="Impress" Type="Self.Impress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Impress">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Customer_Customers">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="Case_Customer" Type="Self.Case_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Case_Customer">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Customer_OperationDocuments">
+          <End Role="Cases" Type="Self.Cases" Multiplicity="1" />
+          <End Role="Case_Customer" Type="Self.Case_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Case_Customer">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Staff_OperationDocuments">
+          <End Role="Cases" Type="Self.Cases" Multiplicity="1" />
+          <End Role="Case_Staff" Type="Self.Case_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Case_Staff">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Staff_Staffs">
+          <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
+          <End Role="Case_Staff" Type="Self.Case_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Case_Staff">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Office_Staff_Offices">
+          <End Role="Offices" Type="Self.Offices" Multiplicity="1" />
+          <End Role="Office_Staff" Type="Self.Office_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="OfficeId" />
+            </Principal>
+            <Dependent Role="Office_Staff">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Office_Staff_Staffs">
+          <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
+          <End Role="Office_Staff" Type="Self.Office_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Office_Staff">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OperationalEvents_OperationDocuments">
+          <End Role="Cases" Type="Self.Cases" Multiplicity="1" />
+          <End Role="OperationalEvents" Type="Self.OperationalEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="OperationalEvents">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OtherCost_Offices">
+          <End Role="Offices" Type="Self.Offices" Multiplicity="1" />
+          <End Role="OtherCost" Type="Self.OtherCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="OfficeId" />
+            </Principal>
+            <Dependent Role="OtherCost">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_OperationDocuments">
+          <End Role="Cases" Type="Self.Cases" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reward_Staffs">
+          <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
+          <End Role="Reward" Type="Self.Reward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Reward">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salary_Staffs">
+          <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
+          <End Role="Salary" Type="Self.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryAssuranceDetail_Assurance">
+          <End Role="Assurance" Type="Self.Assurance" Multiplicity="1" />
+          <End Role="SalaryAssuranceDetail" Type="Self.SalaryAssuranceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assurance">
+              <PropertyRef Name="AssuranceID" />
+            </Principal>
+            <Dependent Role="SalaryAssuranceDetail">
+              <PropertyRef Name="AssuranceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryAssuranceDetail_Salary">
+          <End Role="Salary" Type="Self.Salary" Multiplicity="1" />
+          <End Role="SalaryAssuranceDetail" Type="Self.SalaryAssuranceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary">
+              <PropertyRef Name="SalaryID" />
+            </Principal>
+            <Dependent Role="SalaryAssuranceDetail">
+              <PropertyRef Name="SalaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryBenefitDetail_Benefit">
+          <End Role="Benefit" Type="Self.Benefit" Multiplicity="1" />
+          <End Role="SalaryBenefitDetail" Type="Self.SalaryBenefitDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Benefit">
+              <PropertyRef Name="BenefitID" />
+            </Principal>
+            <Dependent Role="SalaryBenefitDetail">
+              <PropertyRef Name="BenefitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryBenefitDetail_Salary">
+          <End Role="Salary" Type="Self.Salary" Multiplicity="1" />
+          <End Role="SalaryBenefitDetail" Type="Self.SalaryBenefitDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary">
+              <PropertyRef Name="SalaryID" />
+            </Principal>
+            <Dependent Role="SalaryBenefitDetail">
+              <PropertyRef Name="SalaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryTaxDetail_Salary">
+          <End Role="Salary" Type="Self.Salary" Multiplicity="1" />
+          <End Role="SalaryTaxDetail" Type="Self.SalaryTaxDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary">
+              <PropertyRef Name="SalaryID" />
+            </Principal>
+            <Dependent Role="SalaryTaxDetail">
+              <PropertyRef Name="SalaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryTaxDetail_Tax">
+          <End Role="Tax" Type="Self.Tax" Multiplicity="1" />
+          <End Role="SalaryTaxDetail" Type="Self.SalaryTaxDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tax">
+              <PropertyRef Name="TaxID" />
+            </Principal>
+            <Dependent Role="SalaryTaxDetail">
+              <PropertyRef Name="TaxID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Services_ServiceTypes">
+          <End Role="ServiceTypes" Type="Self.ServiceTypes" Multiplicity="1" />
+          <End Role="Services" Type="Self.Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceTypes">
+              <PropertyRef Name="ServiceTypeId" />
+            </Principal>
+            <Dependent Role="Services">
+              <PropertyRef Name="ServiceTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staffs_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Staffs" Type="Self.Staffs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Staffs">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staffs_StaffGroups">
+          <End Role="StaffGroups" Type="Self.StaffGroups" Multiplicity="1" />
+          <End Role="Staffs" Type="Self.Staffs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StaffGroups">
+              <PropertyRef Name="StaffGroupId" />
+            </Principal>
+            <Dependent Role="Staffs">
+              <PropertyRef Name="StaffGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subjects_OperationDocuments">
+          <End Role="Cases" Type="Self.Cases" Multiplicity="1" />
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Subjects">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeSheet_Staffs">
+          <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
+          <End Role="TimeSheet" Type="Self.TimeSheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="TimeSheet">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsedServices_OperationDocuments">
+          <End Role="Cases" Type="Self.Cases" Multiplicity="1" />
+          <End Role="UsedServices" Type="Self.UsedServices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="UsedServices">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LFMSModelStoreContainer">
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Assurance" EntityType="Self.Assurance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Benefit" EntityType="Self.Benefit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CalendarEvents" EntityType="Self.CalendarEvents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Case_Customer" EntityType="Self.Case_Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Case_Staff" EntityType="Self.Case_Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cases" EntityType="Self.Cases" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerGroups" EntityType="Self.CustomerGroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Impress" EntityType="Self.Impress" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Office_Staff" EntityType="Self.Office_Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Offices" EntityType="Self.Offices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OperationalEvents" EntityType="Self.OperationalEvents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OtherCost" EntityType="Self.OtherCost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reward" EntityType="Self.Reward" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Salary" EntityType="Self.Salary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalaryAssuranceDetail" EntityType="Self.SalaryAssuranceDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalaryBenefitDetail" EntityType="Self.SalaryBenefitDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalaryTaxDetail" EntityType="Self.SalaryTaxDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServiceTypes" EntityType="Self.ServiceTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StaffGroups" EntityType="Self.StaffGroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staffs" EntityType="Self.Staffs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tax" EntityType="Self.Tax" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimeSheet" EntityType="Self.TimeSheet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsedServices" EntityType="Self.UsedServices" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Accounts_Staffs" Association="Self.FK_Accounts_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CalendarEvents_Staffs" Association="Self.FK_CalendarEvents_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="CalendarEvents" EntitySet="CalendarEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cases_Offices" Association="Self.FK_Cases_Offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="Cases" EntitySet="Cases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_CustomerGroups" Association="Self.FK_Customers_CustomerGroups">
+            <End Role="CustomerGroups" EntitySet="CustomerGroups" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Impress_Staffs" Association="Self.FK_Impress_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Impress" EntitySet="Impress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Customer_Customers" Association="Self.FK_OD_Customer_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Case_Customer" EntitySet="Case_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Customer_OperationDocuments" Association="Self.FK_OD_Customer_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Case_Customer" EntitySet="Case_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Staff_OperationDocuments" Association="Self.FK_OD_Staff_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Case_Staff" EntitySet="Case_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Staff_Staffs" Association="Self.FK_OD_Staff_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Case_Staff" EntitySet="Case_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Office_Staff_Offices" Association="Self.FK_Office_Staff_Offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="Office_Staff" EntitySet="Office_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Office_Staff_Staffs" Association="Self.FK_Office_Staff_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Office_Staff" EntitySet="Office_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OperationalEvents_OperationDocuments" Association="Self.FK_OperationalEvents_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="OperationalEvents" EntitySet="OperationalEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OtherCost_Offices" Association="Self.FK_OtherCost_Offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="OtherCost" EntitySet="OtherCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_OperationDocuments" Association="Self.FK_Payments_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reward_Staffs" Association="Self.FK_Reward_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Reward" EntitySet="Reward" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salary_Staffs" Association="Self.FK_Salary_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Salary" EntitySet="Salary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryAssuranceDetail_Assurance" Association="Self.FK_SalaryAssuranceDetail_Assurance">
+            <End Role="Assurance" EntitySet="Assurance" />
+            <End Role="SalaryAssuranceDetail" EntitySet="SalaryAssuranceDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryAssuranceDetail_Salary" Association="Self.FK_SalaryAssuranceDetail_Salary">
+            <End Role="Salary" EntitySet="Salary" />
+            <End Role="SalaryAssuranceDetail" EntitySet="SalaryAssuranceDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryBenefitDetail_Benefit" Association="Self.FK_SalaryBenefitDetail_Benefit">
+            <End Role="Benefit" EntitySet="Benefit" />
+            <End Role="SalaryBenefitDetail" EntitySet="SalaryBenefitDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryBenefitDetail_Salary" Association="Self.FK_SalaryBenefitDetail_Salary">
+            <End Role="Salary" EntitySet="Salary" />
+            <End Role="SalaryBenefitDetail" EntitySet="SalaryBenefitDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryTaxDetail_Salary" Association="Self.FK_SalaryTaxDetail_Salary">
+            <End Role="Salary" EntitySet="Salary" />
+            <End Role="SalaryTaxDetail" EntitySet="SalaryTaxDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryTaxDetail_Tax" Association="Self.FK_SalaryTaxDetail_Tax">
+            <End Role="Tax" EntitySet="Tax" />
+            <End Role="SalaryTaxDetail" EntitySet="SalaryTaxDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Services_ServiceTypes" Association="Self.FK_Services_ServiceTypes">
+            <End Role="ServiceTypes" EntitySet="ServiceTypes" />
+            <End Role="Services" EntitySet="Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staffs_Roles" Association="Self.FK_Staffs_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Staffs" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staffs_StaffGroups" Association="Self.FK_Staffs_StaffGroups">
+            <End Role="StaffGroups" EntitySet="StaffGroups" />
+            <End Role="Staffs" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subjects_OperationDocuments" Association="Self.FK_Subjects_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Subjects" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeSheet_Staffs" Association="Self.FK_TimeSheet_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="TimeSheet" EntitySet="TimeSheet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsedServices_OperationDocuments" Association="Self.FK_UsedServices_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="UsedServices" EntitySet="UsedServices" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LFMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK_Accounts_Staffs" FromRole="Accounts" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Assurance">
+          <Key>
+            <PropertyRef Name="AssuranceID" />
+          </Key>
+          <Property Name="AssuranceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rate" Type="Double" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="SalaryAssuranceDetails" Relationship="Self.FK_SalaryAssuranceDetail_Assurance" FromRole="Assurance" ToRole="SalaryAssuranceDetail" />
+        </EntityType>
+        <EntityType Name="Benefit">
+          <Key>
+            <PropertyRef Name="BenefitID" />
+          </Key>
+          <Property Name="BenefitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rate" Type="Double" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="SalaryBenefitDetails" Relationship="Self.FK_SalaryBenefitDetail_Benefit" FromRole="Benefit" ToRole="SalaryBenefitDetail" />
+        </EntityType>
+        <EntityType Name="CalendarEvent">
+          <Key>
+            <PropertyRef Name="CalendarEventId" />
+          </Key>
+          <Property Name="CalendarEventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Priority" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BeginTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK_CalendarEvents_Staffs" FromRole="CalendarEvents" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Case_Customer">
+          <Key>
+            <PropertyRef Name="CaseCustomerId" />
+          </Key>
+          <Property Name="CaseCustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_OD_Customer_Customers" FromRole="Case_Customer" ToRole="Customers" />
+          <NavigationProperty Name="Case" Relationship="Self.FK_OD_Customer_OperationDocuments" FromRole="Case_Customer" ToRole="Cases" />
+        </EntityType>
+        <EntityType Name="Case_Staff">
+          <Key>
+            <PropertyRef Name="CaseStaffId" />
+          </Key>
+          <Property Name="CaseStaffId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Case" Relationship="Self.FK_OD_Staff_OperationDocuments" FromRole="Case_Staff" ToRole="Cases" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK_OD_Staff_Staffs" FromRole="Case_Staff" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Case">
+          <Key>
+            <PropertyRef Name="CaseId" />
+          </Key>
+          <Property Name="CaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatorId" Type="Int32" Nullable="false" />
+          <Property Name="OfficeId" Type="Int32" Nullable="false" />
+          <Property Name="ReceiptDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CaseContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DisputeSubject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DisputeRelation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LimitationStatute" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LegalEvent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ErrorFactor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProtectiveGoal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OpeningProcedure" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InquiryProcedure" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ArgumentProcedure" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Case_Customer" Relationship="Self.FK_OD_Customer_OperationDocuments" FromRole="Cases" ToRole="Case_Customer" />
+          <NavigationProperty Name="Case_Staff" Relationship="Self.FK_OD_Staff_OperationDocuments" FromRole="Cases" ToRole="Case_Staff" />
+          <NavigationProperty Name="Office" Relationship="Self.FK_Cases_Offices" FromRole="Cases" ToRole="Offices" />
+          <NavigationProperty Name="OperationalEvents" Relationship="Self.FK_OperationalEvents_OperationDocuments" FromRole="Cases" ToRole="OperationalEvents" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK_Payments_OperationDocuments" FromRole="Cases" ToRole="Payments" />
+          <NavigationProperty Name="Subjects" Relationship="Self.FK_Subjects_OperationDocuments" FromRole="Cases" ToRole="Subjects" />
+          <NavigationProperty Name="UsedServices" Relationship="Self.FK_UsedServices_OperationDocuments" FromRole="Cases" ToRole="UsedServices" />
+        </EntityType>
+        <EntityType Name="CustomerGroup">
+          <Key>
+            <PropertyRef Name="CustomerGroupId" />
+          </Key>
+          <Property Name="CustomerGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_CustomerGroups" FromRole="CustomerGroups" ToRole="Customers" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerGroupId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Representative" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TaxCode" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BankAccount" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BankBranch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="IdentityNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="IdentityDate" Type="DateTime" Precision="0" />
+          <Property Name="IdentityPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Case_Customer" Relationship="Self.FK_OD_Customer_Customers" FromRole="Customers" ToRole="Case_Customer" />
+          <NavigationProperty Name="CustomerGroup" Relationship="Self.FK_Customers_CustomerGroups" FromRole="Customers" ToRole="CustomerGroups" />
+        </EntityType>
+        <EntityType Name="Impress">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Money" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK_Impress_Staffs" FromRole="Impress" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Office_Staff">
+          <Key>
+            <PropertyRef Name="OfficeStaffId" />
+          </Key>
+          <Property Name="OfficeStaffId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OfficeId" Type="Int32" Nullable="false" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Office" Relationship="Self.FK_Office_Staff_Offices" FromRole="Office_Staff" ToRole="Offices" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK_Office_Staff_Staffs" FromRole="Office_Staff" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Office">
+          <Key>
+            <PropertyRef Name="OfficeId" />
+          </Key>
+          <Property Name="OfficeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OfficeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Manager" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TaxCode" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankAccount" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BankBranch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cases" Relationship="Self.FK_Cases_Offices" FromRole="Offices" ToRole="Cases" />
+          <NavigationProperty Name="Office_Staff" Relationship="Self.FK_Office_Staff_Offices" FromRole="Offices" ToRole="Office_Staff" />
+          <NavigationProperty Name="OtherCosts" Relationship="Self.FK_OtherCost_Offices" FromRole="Offices" ToRole="OtherCost" />
+        </EntityType>
+        <EntityType Name="OperationalEvent">
+          <Key>
+            <PropertyRef Name="OperationalEventId" />
+          </Key>
+          <Property Name="OperationalEventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="CreatorId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BeginTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Case" Relationship="Self.FK_OperationalEvents_OperationDocuments" FromRole="OperationalEvents" ToRole="Cases" />
+        </EntityType>
+        <EntityType Name="OtherCost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OfficeId" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Double" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Office" Relationship="Self.FK_OtherCost_Offices" FromRole="OtherCost" ToRole="Offices" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PaymentTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PaymentMoney" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Case" Relationship="Self.FK_Payments_OperationDocuments" FromRole="Payments" ToRole="Cases" />
+        </EntityType>
+        <EntityType Name="Reward">
+          <Key>
+            <PropertyRef Name="RewardID" />
+          </Key>
+          <Property Name="RewardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Money" Type="Double" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK_Reward_Staffs" FromRole="Reward" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Staffs" Relationship="Self.FK_Staffs_Roles" FromRole="Roles" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="SalaryID" />
+          </Key>
+          <Property Name="SalaryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="TotalAbsent" Type="Double" Nullable="false" />
+          <Property Name="TotalPresent" Type="Double" Nullable="false" />
+          <Property Name="TotalBenefit" Type="Double" Nullable="false" />
+          <Property Name="TotalImprest" Type="Double" Nullable="false" />
+          <Property Name="TotalTax" Type="Double" Nullable="false" />
+          <Property Name="TotalAssurance" Type="Double" Nullable="false" />
+          <Property Name="TotalReward" Type="Double" Nullable="false" />
+          <Property Name="BaseSalary" Type="Double" Nullable="false" />
+          <Property Name="ActualSalary" Type="Double" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="TotalDateDeduction" Type="Double" Nullable="false" />
+          <Property Name="TotalMoneyDeduction" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK_Salary_Staffs" FromRole="Salary" ToRole="Staffs" />
+          <NavigationProperty Name="SalaryAssuranceDetails" Relationship="Self.FK_SalaryAssuranceDetail_Salary" FromRole="Salary" ToRole="SalaryAssuranceDetail" />
+          <NavigationProperty Name="SalaryBenefitDetails" Relationship="Self.FK_SalaryBenefitDetail_Salary" FromRole="Salary" ToRole="SalaryBenefitDetail" />
+          <NavigationProperty Name="SalaryTaxDetails" Relationship="Self.FK_SalaryTaxDetail_Salary" FromRole="Salary" ToRole="SalaryTaxDetail" />
+        </EntityType>
+        <EntityType Name="SalaryAssuranceDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalaryID" Type="Int32" Nullable="false" />
+          <Property Name="AssuranceID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Assurance" Relationship="Self.FK_SalaryAssuranceDetail_Assurance" FromRole="SalaryAssuranceDetail" ToRole="Assurance" />
+          <NavigationProperty Name="Salary" Relationship="Self.FK_SalaryAssuranceDetail_Salary" FromRole="SalaryAssuranceDetail" ToRole="Salary" />
+        </EntityType>
+        <EntityType Name="SalaryBenefitDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalaryID" Type="Int32" Nullable="false" />
+          <Property Name="BenefitID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Benefit" Relationship="Self.FK_SalaryBenefitDetail_Benefit" FromRole="SalaryBenefitDetail" ToRole="Benefit" />
+          <NavigationProperty Name="Salary" Relationship="Self.FK_SalaryBenefitDetail_Salary" FromRole="SalaryBenefitDetail" ToRole="Salary" />
+        </EntityType>
+        <EntityType Name="SalaryTaxDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalaryID" Type="Int32" Nullable="false" />
+          <Property Name="TaxID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Salary" Relationship="Self.FK_SalaryTaxDetail_Salary" FromRole="SalaryTaxDetail" ToRole="Salary" />
+          <NavigationProperty Name="Tax" Relationship="Self.FK_SalaryTaxDetail_Tax" FromRole="SalaryTaxDetail" ToRole="Tax" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ServiceType" Relationship="Self.FK_Services_ServiceTypes" FromRole="Services" ToRole="ServiceTypes" />
+        </EntityType>
+        <EntityType Name="ServiceType">
+          <Key>
+            <PropertyRef Name="ServiceTypeId" />
+          </Key>
+          <Property Name="ServiceTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Services" Relationship="Self.FK_Services_ServiceTypes" FromRole="ServiceTypes" ToRole="Services" />
+        </EntityType>
+        <EntityType Name="StaffGroup">
+          <Key>
+            <PropertyRef Name="StaffGroupId" />
+          </Key>
+          <Property Name="StaffGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BaseSalary" Type="Double" />
+          <NavigationProperty Name="Staffs" Relationship="Self.FK_Staffs_StaffGroups" FromRole="StaffGroups" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="StaffId" />
+          </Key>
+          <Property Name="StaffId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="StaffGroupId" Type="Int32" Nullable="false" />
+          <Property Name="StaffName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Avatar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PlaceOfBirth" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdentityNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdentityDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdentityPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TaxCode" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="BankAccount" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BankBranch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="AppendantPeople" Type="Int32" />
+          <NavigationProperty Name="Accounts" Relationship="Self.FK_Accounts_Staffs" FromRole="Staffs" ToRole="Accounts" />
+          <NavigationProperty Name="CalendarEvents" Relationship="Self.FK_CalendarEvents_Staffs" FromRole="Staffs" ToRole="CalendarEvents" />
+          <NavigationProperty Name="Case_Staff" Relationship="Self.FK_OD_Staff_Staffs" FromRole="Staffs" ToRole="Case_Staff" />
+          <NavigationProperty Name="Impresses" Relationship="Self.FK_Impress_Staffs" FromRole="Staffs" ToRole="Impress" />
+          <NavigationProperty Name="Office_Staff" Relationship="Self.FK_Office_Staff_Staffs" FromRole="Staffs" ToRole="Office_Staff" />
+          <NavigationProperty Name="Rewards" Relationship="Self.FK_Reward_Staffs" FromRole="Staffs" ToRole="Reward" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Staffs_Roles" FromRole="Staffs" ToRole="Roles" />
+          <NavigationProperty Name="Salaries" Relationship="Self.FK_Salary_Staffs" FromRole="Staffs" ToRole="Salary" />
+          <NavigationProperty Name="StaffGroup" Relationship="Self.FK_Staffs_StaffGroups" FromRole="Staffs" ToRole="StaffGroups" />
+          <NavigationProperty Name="TimeSheets" Relationship="Self.FK_TimeSheet_Staffs" FromRole="Staffs" ToRole="TimeSheet" />
+        </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="SubjectId" />
+          </Key>
+          <Property Name="SubjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="SubjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LitigationCapacity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Case" Relationship="Self.FK_Subjects_OperationDocuments" FromRole="Subjects" ToRole="Cases" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tax">
+          <Key>
+            <PropertyRef Name="TaxID" />
+          </Key>
+          <Property Name="TaxID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rate" Type="Double" Nullable="false" />
+          <Property Name="IndexTax" Type="Double" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="MoneyFrom" Type="Double" Nullable="false" />
+          <Property Name="MoneyTo" Type="Double" Nullable="false" />
+          <NavigationProperty Name="SalaryTaxDetails" Relationship="Self.FK_SalaryTaxDetail_Tax" FromRole="Tax" ToRole="SalaryTaxDetail" />
+        </EntityType>
+        <EntityType Name="TimeSheet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Hours" Type="Double" Nullable="false" />
+          <Property Name="IsAllowed" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK_TimeSheet_Staffs" FromRole="TimeSheet" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="UsedService">
+          <Key>
+            <PropertyRef Name="UsedServiceId" />
+          </Key>
+          <Property Name="UsedServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ServiceCost" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RegisteredDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Case" Relationship="Self.FK_UsedServices_OperationDocuments" FromRole="UsedServices" ToRole="Cases" />
+        </EntityType>
+        <Association Name="FK_Accounts_Staffs">
+          <End Role="Staffs" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Accounts" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryAssuranceDetail_Assurance">
+          <End Role="Assurance" Type="Self.Assurance" Multiplicity="1" />
+          <End Role="SalaryAssuranceDetail" Type="Self.SalaryAssuranceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assurance">
+              <PropertyRef Name="AssuranceID" />
+            </Principal>
+            <Dependent Role="SalaryAssuranceDetail">
+              <PropertyRef Name="AssuranceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryBenefitDetail_Benefit">
+          <End Role="Benefit" Type="Self.Benefit" Multiplicity="1" />
+          <End Role="SalaryBenefitDetail" Type="Self.SalaryBenefitDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Benefit">
+              <PropertyRef Name="BenefitID" />
+            </Principal>
+            <Dependent Role="SalaryBenefitDetail">
+              <PropertyRef Name="BenefitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CalendarEvents_Staffs">
+          <End Role="Staffs" Type="Self.Staff" Multiplicity="1" />
+          <End Role="CalendarEvents" Type="Self.CalendarEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="CalendarEvents">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Customer_Customers">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Case_Customer" Type="Self.Case_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Case_Customer">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Customer_OperationDocuments">
+          <End Role="Cases" Type="Self.Case" Multiplicity="1" />
+          <End Role="Case_Customer" Type="Self.Case_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Case_Customer">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Staff_OperationDocuments">
+          <End Role="Cases" Type="Self.Case" Multiplicity="1" />
+          <End Role="Case_Staff" Type="Self.Case_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Case_Staff">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Staff_Staffs">
+          <End Role="Staffs" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Case_Staff" Type="Self.Case_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Case_Staff">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cases_Offices">
+          <End Role="Offices" Type="Self.Office" Multiplicity="1" />
+          <End Role="Cases" Type="Self.Case" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="OfficeId" />
+            </Principal>
+            <Dependent Role="Cases">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OperationalEvents_OperationDocuments">
+          <End Role="Cases" Type="Self.Case" Multiplicity="1" />
+          <End Role="OperationalEvents" Type="Self.OperationalEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="OperationalEvents">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_OperationDocuments">
+          <End Role="Cases" Type="Self.Case" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subjects_OperationDocuments">
+          <End Role="Cases" Type="Self.Case" Multiplicity="1" />
+          <End Role="Subjects" Type="Self.Subject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Subjects">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsedServices_OperationDocuments">
+          <End Role="Cases" Type="Self.Case" Multiplicity="1" />
+          <End Role="UsedServices" Type="Self.UsedService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="UsedServices">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_CustomerGroups">
+          <End Role="CustomerGroups" Type="Self.CustomerGroup" Multiplicity="1" />
+          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerGroups">
+              <PropertyRef Name="CustomerGroupId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="CustomerGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Impress_Staffs">
+          <End Role="Staffs" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Impress" Type="Self.Impress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Impress">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Office_Staff_Offices">
+          <End Role="Offices" Type="Self.Office" Multiplicity="1" />
+          <End Role="Office_Staff" Type="Self.Office_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="OfficeId" />
+            </Principal>
+            <Dependent Role="Office_Staff">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Office_Staff_Staffs">
+          <End Role="Staffs" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Office_Staff" Type="Self.Office_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Office_Staff">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OtherCost_Offices">
+          <End Role="Offices" Type="Self.Office" Multiplicity="1" />
+          <End Role="OtherCost" Type="Self.OtherCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="OfficeId" />
+            </Principal>
+            <Dependent Role="OtherCost">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reward_Staffs">
+          <End Role="Staffs" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Reward" Type="Self.Reward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Reward">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staffs_Roles">
+          <End Role="Roles" Type="Self.Role" Multiplicity="1" />
+          <End Role="Staffs" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Staffs">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salary_Staffs">
+          <End Role="Staffs" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Salary" Type="Self.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryAssuranceDetail_Salary">
+          <End Role="Salary" Type="Self.Salary" Multiplicity="1" />
+          <End Role="SalaryAssuranceDetail" Type="Self.SalaryAssuranceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary">
+              <PropertyRef Name="SalaryID" />
+            </Principal>
+            <Dependent Role="SalaryAssuranceDetail">
+              <PropertyRef Name="SalaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryBenefitDetail_Salary">
+          <End Role="Salary" Type="Self.Salary" Multiplicity="1" />
+          <End Role="SalaryBenefitDetail" Type="Self.SalaryBenefitDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary">
+              <PropertyRef Name="SalaryID" />
+            </Principal>
+            <Dependent Role="SalaryBenefitDetail">
+              <PropertyRef Name="SalaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryTaxDetail_Salary">
+          <End Role="Salary" Type="Self.Salary" Multiplicity="1" />
+          <End Role="SalaryTaxDetail" Type="Self.SalaryTaxDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary">
+              <PropertyRef Name="SalaryID" />
+            </Principal>
+            <Dependent Role="SalaryTaxDetail">
+              <PropertyRef Name="SalaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryTaxDetail_Tax">
+          <End Role="Tax" Type="Self.Tax" Multiplicity="1" />
+          <End Role="SalaryTaxDetail" Type="Self.SalaryTaxDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tax">
+              <PropertyRef Name="TaxID" />
+            </Principal>
+            <Dependent Role="SalaryTaxDetail">
+              <PropertyRef Name="TaxID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Services_ServiceTypes">
+          <End Role="ServiceTypes" Type="Self.ServiceType" Multiplicity="1" />
+          <End Role="Services" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceTypes">
+              <PropertyRef Name="ServiceTypeId" />
+            </Principal>
+            <Dependent Role="Services">
+              <PropertyRef Name="ServiceTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staffs_StaffGroups">
+          <End Role="StaffGroups" Type="Self.StaffGroup" Multiplicity="1" />
+          <End Role="Staffs" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StaffGroups">
+              <PropertyRef Name="StaffGroupId" />
+            </Principal>
+            <Dependent Role="Staffs">
+              <PropertyRef Name="StaffGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeSheet_Staffs">
+          <End Role="Staffs" Type="Self.Staff" Multiplicity="1" />
+          <End Role="TimeSheet" Type="Self.TimeSheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="TimeSheet">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LFMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Assurances" EntityType="Self.Assurance" />
+          <EntitySet Name="Benefits" EntityType="Self.Benefit" />
+          <EntitySet Name="CalendarEvents" EntityType="Self.CalendarEvent" />
+          <EntitySet Name="Case_Customer" EntityType="Self.Case_Customer" />
+          <EntitySet Name="Case_Staff" EntityType="Self.Case_Staff" />
+          <EntitySet Name="Cases" EntityType="Self.Case" />
+          <EntitySet Name="CustomerGroups" EntityType="Self.CustomerGroup" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Impresses" EntityType="Self.Impress" />
+          <EntitySet Name="Office_Staff" EntityType="Self.Office_Staff" />
+          <EntitySet Name="Offices" EntityType="Self.Office" />
+          <EntitySet Name="OperationalEvents" EntityType="Self.OperationalEvent" />
+          <EntitySet Name="OtherCosts" EntityType="Self.OtherCost" />
+          <EntitySet Name="Payments" EntityType="Self.Payment" />
+          <EntitySet Name="Rewards" EntityType="Self.Reward" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="Salaries" EntityType="Self.Salary" />
+          <EntitySet Name="SalaryAssuranceDetails" EntityType="Self.SalaryAssuranceDetail" />
+          <EntitySet Name="SalaryBenefitDetails" EntityType="Self.SalaryBenefitDetail" />
+          <EntitySet Name="SalaryTaxDetails" EntityType="Self.SalaryTaxDetail" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <EntitySet Name="ServiceTypes" EntityType="Self.ServiceType" />
+          <EntitySet Name="StaffGroups" EntityType="Self.StaffGroup" />
+          <EntitySet Name="Staffs" EntityType="Self.Staff" />
+          <EntitySet Name="Subjects" EntityType="Self.Subject" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Taxes" EntityType="Self.Tax" />
+          <EntitySet Name="TimeSheets" EntityType="Self.TimeSheet" />
+          <EntitySet Name="UsedServices" EntityType="Self.UsedService" />
+          <AssociationSet Name="FK_Accounts_Staffs" Association="Self.FK_Accounts_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryAssuranceDetail_Assurance" Association="Self.FK_SalaryAssuranceDetail_Assurance">
+            <End Role="Assurance" EntitySet="Assurances" />
+            <End Role="SalaryAssuranceDetail" EntitySet="SalaryAssuranceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryBenefitDetail_Benefit" Association="Self.FK_SalaryBenefitDetail_Benefit">
+            <End Role="Benefit" EntitySet="Benefits" />
+            <End Role="SalaryBenefitDetail" EntitySet="SalaryBenefitDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CalendarEvents_Staffs" Association="Self.FK_CalendarEvents_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="CalendarEvents" EntitySet="CalendarEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Customer_Customers" Association="Self.FK_OD_Customer_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Case_Customer" EntitySet="Case_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Customer_OperationDocuments" Association="Self.FK_OD_Customer_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Case_Customer" EntitySet="Case_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Staff_OperationDocuments" Association="Self.FK_OD_Staff_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Case_Staff" EntitySet="Case_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Staff_Staffs" Association="Self.FK_OD_Staff_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Case_Staff" EntitySet="Case_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cases_Offices" Association="Self.FK_Cases_Offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="Cases" EntitySet="Cases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OperationalEvents_OperationDocuments" Association="Self.FK_OperationalEvents_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="OperationalEvents" EntitySet="OperationalEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_OperationDocuments" Association="Self.FK_Payments_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subjects_OperationDocuments" Association="Self.FK_Subjects_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Subjects" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsedServices_OperationDocuments" Association="Self.FK_UsedServices_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="UsedServices" EntitySet="UsedServices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_CustomerGroups" Association="Self.FK_Customers_CustomerGroups">
+            <End Role="CustomerGroups" EntitySet="CustomerGroups" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Impress_Staffs" Association="Self.FK_Impress_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Impress" EntitySet="Impresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Office_Staff_Offices" Association="Self.FK_Office_Staff_Offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="Office_Staff" EntitySet="Office_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Office_Staff_Staffs" Association="Self.FK_Office_Staff_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Office_Staff" EntitySet="Office_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OtherCost_Offices" Association="Self.FK_OtherCost_Offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="OtherCost" EntitySet="OtherCosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reward_Staffs" Association="Self.FK_Reward_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Reward" EntitySet="Rewards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staffs_Roles" Association="Self.FK_Staffs_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Staffs" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salary_Staffs" Association="Self.FK_Salary_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Salary" EntitySet="Salaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryAssuranceDetail_Salary" Association="Self.FK_SalaryAssuranceDetail_Salary">
+            <End Role="Salary" EntitySet="Salaries" />
+            <End Role="SalaryAssuranceDetail" EntitySet="SalaryAssuranceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryBenefitDetail_Salary" Association="Self.FK_SalaryBenefitDetail_Salary">
+            <End Role="Salary" EntitySet="Salaries" />
+            <End Role="SalaryBenefitDetail" EntitySet="SalaryBenefitDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryTaxDetail_Salary" Association="Self.FK_SalaryTaxDetail_Salary">
+            <End Role="Salary" EntitySet="Salaries" />
+            <End Role="SalaryTaxDetail" EntitySet="SalaryTaxDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryTaxDetail_Tax" Association="Self.FK_SalaryTaxDetail_Tax">
+            <End Role="Tax" EntitySet="Taxes" />
+            <End Role="SalaryTaxDetail" EntitySet="SalaryTaxDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Services_ServiceTypes" Association="Self.FK_Services_ServiceTypes">
+            <End Role="ServiceTypes" EntitySet="ServiceTypes" />
+            <End Role="Services" EntitySet="Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staffs_StaffGroups" Association="Self.FK_Staffs_StaffGroups">
+            <End Role="StaffGroups" EntitySet="StaffGroups" />
+            <End Role="Staffs" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeSheet_Staffs" Association="Self.FK_TimeSheet_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="TimeSheet" EntitySet="TimeSheets" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LFMSModelStoreContainer" CdmEntityContainer="LFMSEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="LFMSModel.Account">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Assurances">
+            <EntityTypeMapping TypeName="LFMSModel.Assurance">
+              <MappingFragment StoreEntitySet="Assurance">
+                <ScalarProperty Name="AssuranceID" ColumnName="AssuranceID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Benefits">
+            <EntityTypeMapping TypeName="LFMSModel.Benefit">
+              <MappingFragment StoreEntitySet="Benefit">
+                <ScalarProperty Name="BenefitID" ColumnName="BenefitID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CalendarEvents">
+            <EntityTypeMapping TypeName="LFMSModel.CalendarEvent">
+              <MappingFragment StoreEntitySet="CalendarEvents">
+                <ScalarProperty Name="CalendarEventId" ColumnName="CalendarEventId" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Case_Customer">
+            <EntityTypeMapping TypeName="LFMSModel.Case_Customer">
+              <MappingFragment StoreEntitySet="Case_Customer">
+                <ScalarProperty Name="CaseCustomerId" ColumnName="CaseCustomerId" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Case_Staff">
+            <EntityTypeMapping TypeName="LFMSModel.Case_Staff">
+              <MappingFragment StoreEntitySet="Case_Staff">
+                <ScalarProperty Name="CaseStaffId" ColumnName="CaseStaffId" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cases">
+            <EntityTypeMapping TypeName="LFMSModel.Case">
+              <MappingFragment StoreEntitySet="Cases">
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="CaseCode" ColumnName="CaseCode" />
+                <ScalarProperty Name="CreatorId" ColumnName="CreatorId" />
+                <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+                <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CaseContent" ColumnName="CaseContent" />
+                <ScalarProperty Name="DisputeSubject" ColumnName="DisputeSubject" />
+                <ScalarProperty Name="DisputeRelation" ColumnName="DisputeRelation" />
+                <ScalarProperty Name="LimitationStatute" ColumnName="LimitationStatute" />
+                <ScalarProperty Name="LegalEvent" ColumnName="LegalEvent" />
+                <ScalarProperty Name="ErrorFactor" ColumnName="ErrorFactor" />
+                <ScalarProperty Name="ProtectiveGoal" ColumnName="ProtectiveGoal" />
+                <ScalarProperty Name="OpeningProcedure" ColumnName="OpeningProcedure" />
+                <ScalarProperty Name="InquiryProcedure" ColumnName="InquiryProcedure" />
+                <ScalarProperty Name="ArgumentProcedure" ColumnName="ArgumentProcedure" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerGroups">
+            <EntityTypeMapping TypeName="LFMSModel.CustomerGroup">
+              <MappingFragment StoreEntitySet="CustomerGroups">
+                <ScalarProperty Name="CustomerGroupId" ColumnName="CustomerGroupId" />
+                <ScalarProperty Name="CustomerGroupName" ColumnName="CustomerGroupName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="LFMSModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="CustomerGroupId" ColumnName="CustomerGroupId" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Representative" ColumnName="Representative" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+                <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="IdentityNumber" ColumnName="IdentityNumber" />
+                <ScalarProperty Name="IdentityDate" ColumnName="IdentityDate" />
+                <ScalarProperty Name="IdentityPlace" ColumnName="IdentityPlace" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Impresses">
+            <EntityTypeMapping TypeName="LFMSModel.Impress">
+              <MappingFragment StoreEntitySet="Impress">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Office_Staff">
+            <EntityTypeMapping TypeName="LFMSModel.Office_Staff">
+              <MappingFragment StoreEntitySet="Office_Staff">
+                <ScalarProperty Name="OfficeStaffId" ColumnName="OfficeStaffId" />
+                <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Offices">
+            <EntityTypeMapping TypeName="LFMSModel.Office">
+              <MappingFragment StoreEntitySet="Offices">
+                <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+                <ScalarProperty Name="OfficeName" ColumnName="OfficeName" />
+                <ScalarProperty Name="Manager" ColumnName="Manager" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+                <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OperationalEvents">
+            <EntityTypeMapping TypeName="LFMSModel.OperationalEvent">
+              <MappingFragment StoreEntitySet="OperationalEvents">
+                <ScalarProperty Name="OperationalEventId" ColumnName="OperationalEventId" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="CreatorId" ColumnName="CreatorId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtherCosts">
+            <EntityTypeMapping TypeName="LFMSModel.OtherCost">
+              <MappingFragment StoreEntitySet="OtherCost">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="LFMSModel.Payment">
+              <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PaymentTime" ColumnName="PaymentTime" />
+                <ScalarProperty Name="PaymentMoney" ColumnName="PaymentMoney" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rewards">
+            <EntityTypeMapping TypeName="LFMSModel.Reward">
+              <MappingFragment StoreEntitySet="Reward">
+                <ScalarProperty Name="RewardID" ColumnName="RewardID" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="LFMSModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salaries">
+            <EntityTypeMapping TypeName="LFMSModel.Salary">
+              <MappingFragment StoreEntitySet="Salary">
+                <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="TotalAbsent" ColumnName="TotalAbsent" />
+                <ScalarProperty Name="TotalPresent" ColumnName="TotalPresent" />
+                <ScalarProperty Name="TotalBenefit" ColumnName="TotalBenefit" />
+                <ScalarProperty Name="TotalImprest" ColumnName="TotalImprest" />
+                <ScalarProperty Name="TotalTax" ColumnName="TotalTax" />
+                <ScalarProperty Name="TotalAssurance" ColumnName="TotalAssurance" />
+                <ScalarProperty Name="TotalReward" ColumnName="TotalReward" />
+                <ScalarProperty Name="BaseSalary" ColumnName="BaseSalary" />
+                <ScalarProperty Name="ActualSalary" ColumnName="ActualSalary" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="TotalDateDeduction" ColumnName="TotalDateDeduction" />
+                <ScalarProperty Name="TotalMoneyDeduction" ColumnName="TotalMoneyDeduction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalaryAssuranceDetails">
+            <EntityTypeMapping TypeName="LFMSModel.SalaryAssuranceDetail">
+              <MappingFragment StoreEntitySet="SalaryAssuranceDetail">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
+                <ScalarProperty Name="AssuranceID" ColumnName="AssuranceID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalaryBenefitDetails">
+            <EntityTypeMapping TypeName="LFMSModel.SalaryBenefitDetail">
+              <MappingFragment StoreEntitySet="SalaryBenefitDetail">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
+                <ScalarProperty Name="BenefitID" ColumnName="BenefitID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalaryTaxDetails">
+            <EntityTypeMapping TypeName="LFMSModel.SalaryTaxDetail">
+              <MappingFragment StoreEntitySet="SalaryTaxDetail">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
+                <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="LFMSModel.Service">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="ServiceTypeId" ColumnName="ServiceTypeId" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceTypes">
+            <EntityTypeMapping TypeName="LFMSModel.ServiceType">
+              <MappingFragment StoreEntitySet="ServiceTypes">
+                <ScalarProperty Name="ServiceTypeId" ColumnName="ServiceTypeId" />
+                <ScalarProperty Name="ServiceTypeName" ColumnName="ServiceTypeName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StaffGroups">
+            <EntityTypeMapping TypeName="LFMSModel.StaffGroup">
+              <MappingFragment StoreEntitySet="StaffGroups">
+                <ScalarProperty Name="StaffGroupId" ColumnName="StaffGroupId" />
+                <ScalarProperty Name="StaffGroupName" ColumnName="StaffGroupName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BaseSalary" ColumnName="BaseSalary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="LFMSModel.Staff">
+              <MappingFragment StoreEntitySet="Staffs">
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="StaffGroupId" ColumnName="StaffGroupId" />
+                <ScalarProperty Name="StaffName" ColumnName="StaffName" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="PlaceOfBirth" ColumnName="PlaceOfBirth" />
+                <ScalarProperty Name="IdentityNumber" ColumnName="IdentityNumber" />
+                <ScalarProperty Name="IdentityDate" ColumnName="IdentityDate" />
+                <ScalarProperty Name="IdentityPlace" ColumnName="IdentityPlace" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+                <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="AppendantPeople" ColumnName="AppendantPeople" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subjects">
+            <EntityTypeMapping TypeName="LFMSModel.Subject">
+              <MappingFragment StoreEntitySet="Subjects">
+                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+                <ScalarProperty Name="LitigationCapacity" ColumnName="LitigationCapacity" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LFMSModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Taxes">
+            <EntityTypeMapping TypeName="LFMSModel.Tax">
+              <MappingFragment StoreEntitySet="Tax">
+                <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="IndexTax" ColumnName="IndexTax" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="MoneyFrom" ColumnName="MoneyFrom" />
+                <ScalarProperty Name="MoneyTo" ColumnName="MoneyTo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeSheets">
+            <EntityTypeMapping TypeName="LFMSModel.TimeSheet">
+              <MappingFragment StoreEntitySet="TimeSheet">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+                <ScalarProperty Name="IsAllowed" ColumnName="IsAllowed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsedServices">
+            <EntityTypeMapping TypeName="LFMSModel.UsedService">
+              <MappingFragment StoreEntitySet="UsedServices">
+                <ScalarProperty Name="UsedServiceId" ColumnName="UsedServiceId" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="ServiceCost" ColumnName="ServiceCost" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RegisteredDate" ColumnName="RegisteredDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
