@@ -7,12 +7,7 @@
   </meta>
   <counters models="1">
     <entity-names />
-    <entity-ids>
-      <counter>
-        <item-type stereotype="" type="AbstractElementGroup" />
-        <value>57</value>
-      </counter>
-    </entity-ids>
+    <entity-ids />
     <diagrams>
       <counter>
         <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlSequenceDiagram</type>
@@ -1598,7 +1593,7 @@
     </item>
   </items>
   <models>
-    <model id="p627146442794955030" name="SangNT" type="model" namespace="" order-index="1">
+    <model id="p627146442794955030" name="KhiemDN" type="model" namespace="" order-index="1">
       <meta>
         <authors>
           <author> </author>
@@ -3257,10 +3252,10 @@
             <layout ax="-630" ay="1030" awidth="550" aheight="170" x="-630" y="1030" width="550" height="170" angle="0" />
           </item>
           <item id="di686896343665840932" iid="c6cc1a205a494d0fbd8d557f427c05f0" container="di505730034384610598" container-iid="c2ca353ee4364c58a7bdd180e80f1f88" creation-date="03/31/2014 17:02:21" order-index="61" type="entity">
-            <layout ax="-630" ay="1053.871" awidth="550" aheight="73" x="-630" y="1060" width="550" height="67" angle="0" />
+            <layout ax="-630" ay="1053.871" awidth="550" aheight="72" x="-630" y="1060" width="550" height="67" angle="0" />
           </item>
           <item id="di302008038192770502" iid="241473c646744290ae37e4b92624c9d3" container="di505730034384610598" container-iid="c2ca353ee4364c58a7bdd180e80f1f88" creation-date="03/31/2014 17:02:22" order-index="62" type="entity">
-            <layout ax="-630" ay="1126.871" awidth="550" aheight="73.12891" x="-630" y="1127" width="550" height="73" angle="0" />
+            <layout ax="-630" ay="1125.871" awidth="550" aheight="74.12891" x="-630" y="1127" width="550" height="73" angle="0" />
           </item>
           <item id="di873756883493943618" iid="9d928d027f1a4681b9c7e71a16b7cd8d" creation-date="03/31/2014 17:04:54" order-index="64" type="sequence-action">
             <layout x1="-259" y1="1189" x2="-450" y2="1189" ax="-450" ay="1174" awidth="191" aheight="20" x="-450" y="1174" width="191" height="20" message-x="-1" message-y="-10" />
@@ -3339,10 +3334,10 @@
             <layout ax="-680" ay="610" awidth="1860" aheight="730" x="-680" y="610" width="1860" height="730" angle="0" />
           </item>
           <item id="di759381756571500311" iid="a186324da3e848eeb263e393a2aebc13" container="di754325222997902865" container-iid="11f7b902513d4489b86dc88ff7d2698f" creation-date="04/01/2014 17:05:13" order-index="104" type="entity">
-            <layout ax="-680" ay="633.8711" awidth="1860" aheight="609" x="-680" y="647" width="1860" height="603" angle="0" />
+            <layout ax="-680" ay="633.8711" awidth="1860" aheight="608" x="-680" y="647" width="1860" height="603" angle="0" />
           </item>
           <item id="di765325307487604673" iid="d77bebdb5bd244aab723064f43c3fdf7" container="di754325222997902865" container-iid="11f7b902513d4489b86dc88ff7d2698f" creation-date="04/01/2014 17:05:13" order-index="103" type="entity">
-            <layout ax="-680" ay="1242.871" awidth="1860" aheight="97.12891" x="-680" y="1210" width="1860" height="130" angle="0" />
+            <layout ax="-680" ay="1241.871" awidth="1860" aheight="98.12891" x="-680" y="1210" width="1860" height="130" angle="0" />
           </item>
           <item id="di771264333685151736" iid="b96ba1f226b443348ed8d4a9efeff021" creation-date="04/01/2014 17:06:41" order-index="105" type="sequence-action">
             <layout x1="100" y1="642" x2="540" y2="642" ax="100" ay="627" awidth="440" aheight="20" x="100" y="627" width="440" height="20" message-x="0" message-y="-10" />
@@ -6195,7 +6190,7 @@
             <layout ax="-500" ay="660" awidth="1630" aheight="540" x="-500" y="660" width="1630" height="540" angle="0" />
           </item>
           <item id="di584622800269408263" iid="ce08cf4c725e41648f056cf05e67fdbd" container="di239910126655647221" container-iid="61d8d203d4104dd9a11e7df98f02095d" creation-date="03/31/2014 15:17:53" order-index="70" type="entity">
-            <layout ax="-500" ay="683.8711" awidth="1630" aheight="436" x="-410" y="780" width="1630" height="20" angle="0" />
+            <layout ax="-500" ay="683.8711" awidth="1630" aheight="435" x="-410" y="780" width="1630" height="20" angle="0" />
           </item>
           <item id="di261127563244206771" iid="7ac373e9e0df4048ba1a874369ce7bfe" creation-date="03/31/2014 16:10:26" order-index="73" type="sequence-action">
             <layout x1="29" y1="1160" x2="-249" y2="1160" ax="-249" ay="1145" awidth="278" aheight="20" x="-249" y="1145" width="278" height="20" message-x="0" message-y="-10" />
@@ -6206,7 +6201,7 @@
             <sequence-action from="di314792762502110080" to="di424535684298301187" show-sequence-number="false" />
           </item>
           <item id="di299495041573087597" iid="64dbd0a3dfce4fb68675834e90db06a0" container="di239910126655647221" container-iid="61d8d203d4104dd9a11e7df98f02095d" creation-date="03/31/2014 15:17:51" order-index="69" type="entity">
-            <layout ax="-500" ay="1119.871" awidth="1630" aheight="80.12891" x="-500" y="1120" width="1630" height="80" angle="0" />
+            <layout ax="-500" ay="1118.871" awidth="1630" aheight="81.12891" x="-500" y="1120" width="1630" height="80" angle="0" />
           </item>
           <item id="di987059580494239846" iid="81d35e41cada4ef9bf32ca2d0ab04bb2" creation-date="04/01/2014 02:18:14" order-index="90" type="entity">
             <layout ax="-430" ay="920" awidth="710" aheight="190" x="-430" y="920" width="710" height="190" angle="0" />
