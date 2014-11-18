@@ -231,7 +231,9 @@
 <script>
     $(document).ready(function () {
         document.body.setAttribute('spellcheck', false);
-        GetAssignedCases();
+        GetAssignedCases();     
+        
+        
 
         var roleId = $("#staffRoleIdDiv").attr("value");
         if (roleId == "1" || roleId == "2") {
@@ -239,7 +241,8 @@
         }
 
         validateAddCase('#addCaseValidateForm');
-
+        //prepareForCase();
+        prepareForCalendar();
     });
 </script>
 
