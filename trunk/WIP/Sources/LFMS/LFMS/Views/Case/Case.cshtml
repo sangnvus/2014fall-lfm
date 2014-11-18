@@ -307,6 +307,19 @@
 <div class="col-sm-12 widget-container-span" style="display: none" id="peopleContent">
     <div class="widget-box transparent">
         <div class="widget-header">
+             <div class="" id="">
+                <ul class="breadcrumb">
+                    <li style="color: #4C8FBD; font-weight: bold">Hồ sơ
+                    </li>
+                    <li>
+                        <span id="tittlePeople" style="font-weight: bold"></span>
+                    </li>
+                    <li style="color: #4C8FBD; font-weight: bold">
+                        Luật sư chính:
+                         <span id="tittleMainPeople" style="font-weight: bold"></span>
+                    </li>                   
+                </ul>
+            </div>
             <div class="widget-toolbar no-border">
                 <ul class="nav nav-tabs" id="myTab2">
                     <li id="lawyerLi" class="active">
@@ -1131,13 +1144,60 @@
               '<span style="font-size: 25px">➦</span>'+'<div class="dateArea">'+date[1][0]+'</div>'+' <div class="timeArea">'+ date[1][1]+'</div>'
               + '</a>';
     }
+    function formatDateforcompare(date) {
+        date = convertNETDateTime(date);
+        var day = Number((date).toLocaleFormat('%d'));
+        var month = Number((date).toLocaleFormat('%m'));
+        var year = (date).toLocaleFormat('%Y');
+        day = (day < 10) ? "0" + day : day;
+        month = (month < 10) ? "0" + month : month;
+        return year + month + day;
+    }
+    function formatDateforevent(date) {
+        date = convertNETDateTime(date);
+        var day = Number((date).toLocaleFormat('%d'));
+        var month = Number((date).toLocaleFormat('%m'));
+        var year = (date).toLocaleFormat('%Y');
+        day = (day < 10) ? "0" + day : day;
+        month = (month < 10) ? "0" + month : month;
+        return day + "/" + month + "/" + year;
+    }
+    function getendday(array) {
+        var a = 0;
+        var i = 0;
+        for (i; i < array.length; i++) {
+            var curent = formatDateforcompare(array[i].EndTime);
+            var newday = formatDateforcompare(array[a].EndTime);
+            if (curent > newday) {
+                a = i;
+            }
+        }
+        return formatDateforevent(array[a].EndTime);
+    }
+    function getstartday(array) {
+        var a = 0;
+        var i = 0;
+        for (i; i < array.length; i++) {
+            var curent = formatDateforcompare(array[i].BeginTime);
+            var newday = formatDateforcompare(array[a].BeginTime);
+            if (curent < newday) {
+                a = i;
+            }
+        }
+        return formatDateforevent(array[a].BeginTime);
+    }
     
     function getCaseEvent(id) {
         $('#peopleContent').hide();
         $('.date-picker').datepicker('remove');
         removeEditor();
         $.post("/Case/GetEvent", { caseId: id }, function (out) {
+            var tittleEvent = out.result.CaseContent;
+            var starday = getstartday(out.result.OperationalEvents);
+            var endday = getendday(out.result.OperationalEvents);
             document.getElementById("bodyContent").innerHTML = (out.html);
+            $('#tittleEvent').text(tittleEvent);
+            $('#tittleday').text("Từ: " + starday + " đến: " + endday);
             getViewpoint(id);
             showTabEvent("sktn");
             var eventStr = "";
@@ -1514,11 +1574,11 @@
         var yhour = (y.split(" ")[1]).split(":");
         var ydate = (y.split(" ")[0]).split("/");
         y = new Date(ydate[2], ydate[1] - 1, ydate[0], yhour[0], yhour[1]);
-        if (x > y) return 1;
-        else if (x < y) return -1;
+        if (x < y) return 1;
+        else if (x > y) return -1;
         else  {
-            if (x2 > y2) return 1;
-            else if (x2 < y2) return -1;
+            if (x2 < y2) return 1;
+            else if (x2 > y2) return -1;
             else return 0;
         }
     }

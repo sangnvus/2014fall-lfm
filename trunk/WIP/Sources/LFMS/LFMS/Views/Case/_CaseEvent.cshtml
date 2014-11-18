@@ -1,17 +1,27 @@
-﻿
-
-<div class="widget-box transparent">
+﻿<div class="widget-box transparent">
     <div class="widget-header">
+        <div class="" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li style="color: #4C8FBD; font-weight: bold">Hồ sơ
+                </li>
+                <li>
+                    <span id="tittleEvent" style="font-weight: bold"></span>
+                </li>
+                <li style="color: #4C8FBD">
+                    <span id="tittleday" style="font-weight: bold"></span>
+                </li>
+            </ul>
+        </div>
         <div class="widget-toolbar no-border">
             <ul class="nav nav-tabs">
                 <li id="sktnLi" class="">
                     <a onclick='showTabEvent("sktn")' href="#">Sự kiện tác nghiệp</a>
                 </li>
                 <li class="active" id="qdlsLi">
-                    <a onclick='showTabEvent("qdls")' style="font-weight:bold" href="#">Quan điểm luật sư</a>
+                    <a onclick='showTabEvent("qdls")' style="font-weight: bold" href="#">Quan điểm luật sư</a>
                 </li>
 
-            
+
 
             </ul>
         </div>
@@ -20,7 +30,7 @@
 
     <div class="widget-body">
         <div class="space-6"></div>
-        <div id="tabQDLSDiv" >
+        <div id="tabQDLSDiv">
             <h3 class="header smaller lighter green">
                 <span data-rel="tooltip" data-original-title="Sửa quan điểm luật sư" title="Sửa quan điểm luật sư" class="tooltip-info">
                     <i id="editViewpoint" class="icon-edit bigger-160" onclick="setActiveComponentViewpoint()" style="cursor: pointer"></i>
@@ -75,7 +85,24 @@
                 </span>
                 Sự kiện tác nghiệp
             </h3>
+            <div id="successDiv">
+                <button style="display: none" id="addEventBtn" class="blue btn btn-primary" onclick="addEvent()">
+                    <i class="icon-plus"></i>
+                    Thêm sự kiện
+                </button>
 
+                <button style="float: right; display: none" id="successBtn" class="invoiceTd blue btn btn-success" onclick="successEditEvent()">
+                    <i class="icon-ok"></i>
+                    Hoàn Thành
+                </button>
+            </div>
+            <div id="newEventDiv" class="timeline" style="width: 80%;">
+                <div id="titleEventInputDiv" style="width: 45%; display: none">
+                    <input style="width: 100%; font-size: 20px; height: 35px; margin-bottom: 10px;" maxlength="100" placeholder="Tiêu đề sự kiện..." id="titleEventInput" type="text" />
+                </div>
+                <div id="newEditorDiv" style="display: none">
+                </div>
+            </div>
             <div class="timeline">
                 <div class="timelineContainer" id="timelineEvent">
                     <div class="timelineToggle">
@@ -84,29 +111,12 @@
                 </div>
             </div>
 
-            <div id="newEventDiv" class="timeline" style="width: 80%;">
-                <div id="titleEventInputDiv" style="width: 45%; display: none">
-                    <input style="width: 100%;font-size: 20px;height: 35px;margin-bottom: 10px;" maxlength="100" placeholder="Tiêu đề sự kiện..." id="titleEventInput" type="text" />
-                </div>
-                <div id="newEditorDiv" style="display:none">
-
-                </div>
-            </div>
 
 
-            <div id="successDiv">
-                <button style="display: none" id="addEventBtn" class="blue btn btn-primary" onclick="addEvent()">
-                    <i class="icon-plus"></i>
-                    Thêm sự kiện
-                </button>
 
-                <button style="float:right;display: none" id="successBtn" class="invoiceTd blue btn btn-success" onclick="successEditEvent()">
-                    <i class="icon-ok"></i>
-                    Hoàn Thành
-                </button>
-            </div>
 
-            <div id="editDiv" style="display:none;margin:5px">
+
+            <div id="editDiv" style="display: none; margin: 5px">
                 <button id="closeBtn" type="button" class="btn btn-default pull-left" style="float: left; width: 100px">
                     @*<i class="icon-remove"></i>*@
                     Đóng
@@ -117,9 +127,9 @@
                 </button>
             </div>
 
-            <div class="input-group input-group-sm" style="display:none; margin-bottom: 10px;width:45%" id="eventDatepickerDiv">
+            <div class="input-group input-group-sm" style="display: none; margin-bottom: 10px; width: 45%" id="eventDatepickerDiv">
                 <div>
-                    <input style="font-size: 20px ;cursor: pointer; background: none repeat scroll 0 0 #fff !important" readonly="" class="form-control" placeholder="Thời gian sự kiện..." id="datePickerEvent" type="text" />
+                    <input style="font-size: 20px; cursor: pointer; background: none repeat scroll 0 0 #fff !important" readonly="" class="form-control" placeholder="Thời gian sự kiện..." id="datePickerEvent" type="text" />
                 </div>
                 <span class="input-group-addon">
                     <i class="icon-calendar bigger-110"></i>
