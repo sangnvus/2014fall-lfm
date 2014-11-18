@@ -1709,6 +1709,8 @@
 
         $.post("/Case/GetLawyerRelated", { caseId: caseId }, function (out) {
             document.getElementById("subPeopleContent").innerHTML = (out.html);
+            $('#tittlePeople').text(out.result.CaseContent);
+            $('#tittleMainPeople').text(out.result.Case_Staff[0].Staff.StaffName);
             law = out.result.Case_Staff;
             var itemLawyerRelated = '<tbody>';
             $.each(out.result.Case_Staff, function (index, lr) {
