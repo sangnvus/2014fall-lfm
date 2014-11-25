@@ -8,12 +8,17 @@
         </h3>
 
         <div>
+            <div style="height:90px">
             <label>Mã hồ sơ</label>
             <input type="text" id="txtCaseCode" class="col-xs-10 col-sm-4" style="width: 100%; cursor: not-allowed" disabled />
-            <hr /><hr />
+                </div>
+            <hr />
+            <div style="height:90px">
             <label>Thuộc văn phòng</label><span style="color: red"> *</span>
             <select class="form-control" id="cboOffice" disabled></select>
+                </div>
             <hr />
+            <div style="height:70px">
             <label>Ngày thụ lý</label><span style="color: red"> *</span>
             <div class="input-group input-group-sm">
                 <input class="form-control date-picker" id="datePickerReceiptDate" type="text" data-date-format="dd/mm/yyyy" />
@@ -21,6 +26,7 @@
                     <i class="icon-calendar bigger-110"></i>
                 </span>
             </div>
+                </div>
             <hr />
             <label>Trạng thái</label><span style="color: red"> *</span>
             <select class="form-control" id="cboStatus">
@@ -36,6 +42,7 @@
         </h3>
 
         <div>
+            <div style="height:90px">
             <form class="modal-body no-padding" id="updateDetailValidateForm">
                 <div class="form-group" style="margin-bottom: 0px">
                     <label>Nội dung tranh chấp</label><span style="color: red"> *</span>
@@ -44,12 +51,17 @@
                     </div>
                 </div>
             </form>
+                </div>
             <hr />
+            <div style="height:90px">
             <label>Đối tượng tranh chấp</label>
-            <textarea id="txtDisputeSubject" class="autosize-transition form-control" style="resize: none"></textarea>
+            <textarea id="txtDisputeSubject" class="autosize-transition form-control" style="resize:none; overflow: scroll !important; height:50px !important;"></textarea>
+                </div>
             <hr />
+            <div style="height:70px">
             <label>Quan hệ tranh chấp</label>
-            <textarea id="txtDisputeRelation" class="autosize-transition form-control" style="resize: none"></textarea>
+            <textarea id="txtDisputeRelation" class="autosize-transition form-control" style="resize: none;  overflow: scroll !important; height:50px !important;"></textarea>
+                </div>
         </div>
     </div>
 
@@ -59,11 +71,15 @@
         </h3>
 
         <div>
+            <div style="height:90px">
             <label>Thời hiệu</label>
             <textarea id="txtLimitationStatute" class="autosize-transition form-control" style="resize: none"></textarea>
+                </div>
             <hr />
+            <div style="height:90px">
             <label>Sự kiện pháp lý</label>
             <textarea id="txtLegalEvent" class="autosize-transition form-control" style="resize: none"></textarea>
+                </div>
             <hr />
             <label>Yếu tố lỗi</label>
             <textarea id="txtErrorFactor" class="autosize-transition form-control" style="resize: none"></textarea>

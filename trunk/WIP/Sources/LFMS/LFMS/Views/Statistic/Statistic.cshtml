@@ -84,7 +84,7 @@
             <li>
                 <i class="icon-home home-icon"></i>
 
-                <a href="/Home/Index">Trang chủ</a> | Quản lý khách hàng
+                <a href="/Home/Index">Trang chủ</a> | Thống kê
             </li>
 
             <li>
@@ -517,6 +517,7 @@
                 alert(errMsg.responseText);
             }
         });
+        $('#breadcrumbsMenu').text('Thống kê cả công ty');
     }
 
     function get12MonthRevenuePieChart() {
@@ -935,6 +936,7 @@
                 alert(errMsg.responseText);
             }
         });
+        $('#breadcrumbsMenu').text('Thống kê theo văn phòng');
     }
     function get12MonthCasePieChart() {
         $.ajax({
@@ -1411,6 +1413,7 @@
                 alert(errMsg.responseText);
             }
         });
+        $('#breadcrumbsMenu').text('Thống kê theo nhân viên');
     }
     function get12MonthStaffRevenueSS(staffId1, staffId2) {
         $.ajax({
