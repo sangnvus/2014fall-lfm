@@ -288,14 +288,14 @@ namespace LFMS.Models.DAO
             for(int i = from; i <= to; i++)
             {
                 var listPayment = db.Payments.Where(p => p.PaymentTime.Year == i).ToList();
-                var listSalary = db.Salaries.Where(s => s.Date.Year == i).ToList();
-                var listOtherCost = db.OtherCosts.Where(o => o.Date.Year == i).ToList();
+                //var listSalary = db.Salaries.Where(s => s.Date.Year == i).ToList();
+                //var listOtherCost = db.OtherCosts.Where(o => o.Date.Year == i).ToList();
                 double result = 0;
                 foreach (var payment in listPayment)
                 {
                     result += payment.PaymentMoney;
                 }
-                foreach (var salary in listSalary)
+                /*foreach (var salary in listSalary)
                 {
                     result -= salary.TotalBenefit;
                     result -= salary.TotalImprest;
@@ -307,7 +307,7 @@ namespace LFMS.Models.DAO
                 foreach (var otherCost in listOtherCost)
                 {
                     result -= otherCost.Cost;
-                }
+                }*/
                 list.Add(i.ToString(), result);
             }
             return list;
@@ -319,14 +319,14 @@ namespace LFMS.Models.DAO
             for (int i = from; i <= to; i++)
             {
                 var listPayment = db.Payments.Where(p => p.PaymentTime.Year == i && p.Case.Office.OfficeId == officeId).ToList();
-                var listSalary = db.Salaries.Where(s => s.Date.Year == i && s.Staff.Office_Staff.Any(os => os.OfficeId == officeId)).ToList();
-                var listOtherCost = db.OtherCosts.Where(o => o.Date.Year == i && o.OfficeId == officeId).ToList();
+                //var listSalary = db.Salaries.Where(s => s.Date.Year == i && s.Staff.Office_Staff.Any(os => os.OfficeId == officeId)).ToList();
+                //var listOtherCost = db.OtherCosts.Where(o => o.Date.Year == i && o.OfficeId == officeId).ToList();
                 double result = 0;
                 foreach (var payment in listPayment)
                 {
                     result += payment.PaymentMoney;
                 }
-                foreach (var salary in listSalary)
+                /*foreach (var salary in listSalary)
                 {
                     result -= salary.TotalBenefit;
                     result -= salary.TotalImprest;
@@ -338,7 +338,7 @@ namespace LFMS.Models.DAO
                 foreach (var otherCost in listOtherCost)
                 {
                     result -= otherCost.Cost;
-                }
+                }*/
                 list.Add(i.ToString(), result);
             }
             return list;
@@ -376,14 +376,14 @@ namespace LFMS.Models.DAO
         private double GetRevenueInMonth(int month, int year)
         {
             var listPayment = db.Payments.Where(p => p.PaymentTime.Month == month && p.PaymentTime.Year == year).ToList();
-            var listSalary = db.Salaries.Where(s => s.Date.Month == month && s.Date.Year == year).ToList();
-            var listOtherCost = db.OtherCosts.Where(o => o.Date.Month == month && o.Date.Year == year).ToList();
+            //var listSalary = db.Salaries.Where(s => s.Date.Month == month && s.Date.Year == year).ToList();
+            //var listOtherCost = db.OtherCosts.Where(o => o.Date.Month == month && o.Date.Year == year).ToList();
             double result = 0;
             foreach (var payment in listPayment)
             {
                 result += payment.PaymentMoney;
             }
-            foreach (var salary in listSalary)
+            /*foreach (var salary in listSalary)
             {
                 result -= salary.TotalBenefit;
                 result -= salary.TotalImprest;
@@ -395,21 +395,21 @@ namespace LFMS.Models.DAO
             foreach (var otherCost in listOtherCost)
             {
                 result -= otherCost.Cost;
-            }
+            }*/
             return result;
         }
 
         private double GetRevenueInMonthByOfficeId(int month, int year, int officeId)
         {
             var listPayment = db.Payments.Where(p => p.PaymentTime.Month == month && p.PaymentTime.Year == year && p.Case.OfficeId == officeId).ToList();
-            var listSalary = db.Salaries.Where(s => s.Date.Month == month && s.Date.Year == year && s.Staff.Office_Staff.Any(os => os.OfficeId == officeId)).ToList();
-            var listOtherCost = db.OtherCosts.Where(o => o.Date.Month == month && o.Date.Year == year && o.OfficeId == officeId).ToList();
+            //var listSalary = db.Salaries.Where(s => s.Date.Month == month && s.Date.Year == year && s.Staff.Office_Staff.Any(os => os.OfficeId == officeId)).ToList();
+            //var listOtherCost = db.OtherCosts.Where(o => o.Date.Month == month && o.Date.Year == year && o.OfficeId == officeId).ToList();
             double result = 0;
             foreach (var payment in listPayment)
             {
                 result += payment.PaymentMoney;
             }
-            foreach (var salary in listSalary)
+            /*foreach (var salary in listSalary)
             {
                 result -= salary.TotalBenefit;
                 result -= salary.TotalImprest;
@@ -421,7 +421,7 @@ namespace LFMS.Models.DAO
             foreach (var otherCost in listOtherCost)
             {
                 result -= otherCost.Cost;
-            }
+            }*/
             return result;
         }
 
@@ -429,13 +429,13 @@ namespace LFMS.Models.DAO
         {
 
             var listPayment = db.Payments.Where(p => p.Case.Case_Staff.Any(cs => cs.StaffId == staffId) && p.PaymentTime.Month == month && p.PaymentTime.Year == year).ToList();
-            var listSalary = db.Salaries.Where(s => s.Date.Month == month && s.Date.Year == year && s.StaffId == staffId).ToList();
+            //var listSalary = db.Salaries.Where(s => s.Date.Month == month && s.Date.Year == year && s.StaffId == staffId).ToList();
             double result = 0;
             foreach (var payment in listPayment)
             {
                 result += payment.PaymentMoney;
             }
-            foreach (var salary in listSalary)
+            /*foreach (var salary in listSalary)
             {
                 result -= salary.TotalBenefit;
                 result -= salary.TotalImprest;
@@ -443,7 +443,7 @@ namespace LFMS.Models.DAO
                 result -= salary.TotalAssurance;
                 result -= salary.TotalReward;
                 //result += salary.TotalMoneyDeduction;
-            }
+            }*/
 
             return result;
         }
