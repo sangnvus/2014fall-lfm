@@ -1209,7 +1209,6 @@
         removeEditor();
         $.post("/Case/GetEvent", { caseId: id }, function (out) {
             var tittleEvent = out.result.CaseContent;
-<<<<<<< .mine
             var starday;
             var endday;
             if(out.result.OperationalEvents.length == 0){
@@ -1219,11 +1218,11 @@
                  starday = getstartday(out.result.OperationalEvents);
                  endday = getendday(out.result.OperationalEvents);           
            }
-=======
+
             document.getElementById("bodyContent").innerHTML = (out.html);
             var starday = getstartday(out.result.OperationalEvents);
             var endday = getendday(out.result.OperationalEvents);
->>>>>>> .r71
+
             $('#tittleEvent').text(tittleEvent);
             $('#tittleday').text("Từ: " + starday + " đến: " + endday);
             getViewpoint(id);
