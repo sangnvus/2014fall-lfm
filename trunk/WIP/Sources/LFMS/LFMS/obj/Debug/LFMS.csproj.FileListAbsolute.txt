@@ -118,3 +118,43 @@ E:\Code\Capstone Law\2014fall-lfm\WIP\Sources\LFMS\LFMS\bin\System.Web.WebPages.
 E:\Code\Capstone Law\2014fall-lfm\WIP\Sources\LFMS\LFMS\bin\System.Web.WebPages.Razor.xml
 E:\Code\Capstone Law\2014fall-lfm\WIP\Sources\LFMS\LFMS\obj\Debug\LFMS.dll
 E:\Code\Capstone Law\2014fall-lfm\WIP\Sources\LFMS\LFMS\obj\Debug\LFMS.pdb
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\ExcelReport\StatisticTemplate.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\ExcelReport\SalaryTemplate.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\ExcelReport\SalaryTemplate.xlsx
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\ExcelReport\StatisticTemplate.xlsx
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\LFMS.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\LFMS.pdb
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\Antlr3.Runtime.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\CKFinder.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\EntityFramework.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\Microsoft.Web.Infrastructure.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\Newtonsoft.Json.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Net.Http.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Net.Http.Formatting.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Net.Http.WebRequest.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.Http.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.Http.WebHost.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.Mvc.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.Optimization.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.Providers.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.Razor.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.WebPages.Deployment.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.WebPages.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.WebPages.Razor.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\WebGrease.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\EntityFramework.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\Newtonsoft.Json.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Net.Http.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Net.Http.Formatting.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Net.Http.WebRequest.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.Http.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.Http.WebHost.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.Mvc.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.Razor.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.WebPages.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.WebPages.Deployment.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\bin\System.Web.WebPages.Razor.xml
+E:\Capstone\WIP\Sources\LFMS\LFMS\obj\Debug\LFMS.csprojResolveAssemblyReference.cache
+E:\Capstone\WIP\Sources\LFMS\LFMS\obj\Debug\LFMS.dll
+E:\Capstone\WIP\Sources\LFMS\LFMS\obj\Debug\LFMS.pdb

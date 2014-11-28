@@ -1209,9 +1209,9 @@
         removeEditor();
         $.post("/Case/GetEvent", { caseId: id }, function (out) {
             var tittleEvent = out.result.CaseContent;
+            document.getElementById("bodyContent").innerHTML = (out.html);
             var starday = getstartday(out.result.OperationalEvents);
             var endday = getendday(out.result.OperationalEvents);
-            document.getElementById("bodyContent").innerHTML = (out.html);
             $('#tittleEvent').text(tittleEvent);
             $('#tittleday').text("Từ: " + starday + " đến: " + endday);
             getViewpoint(id);

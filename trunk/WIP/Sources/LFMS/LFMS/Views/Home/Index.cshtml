@@ -800,7 +800,7 @@
                         },
                         success: function (result) {
                             if (result == 'success') {
-                                calEvent.title = form.find("input[type=text]").val() + " (" + calEvent.caseCode+")";
+                                calEvent.title = form.find("input[type=text]").val();
                                 calendar.fullCalendar('updateEvent', calEvent);
                                 div.modal("hide");
                                 console.debug("success");
