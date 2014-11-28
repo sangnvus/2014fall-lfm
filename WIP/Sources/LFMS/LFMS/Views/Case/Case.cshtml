@@ -1209,9 +1209,21 @@
         removeEditor();
         $.post("/Case/GetEvent", { caseId: id }, function (out) {
             var tittleEvent = out.result.CaseContent;
+<<<<<<< .mine
+            var starday;
+            var endday;
+            if(out.result.OperationalEvents.length == 0){
+                starday = " ";
+                endday = " ";
+            }else{
+                 starday = getstartday(out.result.OperationalEvents);
+                 endday = getendday(out.result.OperationalEvents);           
+           }
+=======
             document.getElementById("bodyContent").innerHTML = (out.html);
             var starday = getstartday(out.result.OperationalEvents);
             var endday = getendday(out.result.OperationalEvents);
+>>>>>>> .r71
             $('#tittleEvent').text(tittleEvent);
             $('#tittleday').text("Từ: " + starday + " đến: " + endday);
             getViewpoint(id);
@@ -1497,7 +1509,7 @@
             $.post("/Case/NewOEvent", { caseId: caseId, bdate: bdate, edate: edate, str: content, title: title }, function (out) {
                 var eventStr = "";
                 if (out != 0) {
-                    doCloseEditEvent("newEventDiv");
+                    /*doCloseEditEvent("newEventDiv");
                     eventStr += '<div  class="timelineMajor" id="caseEvent' + out + '" creatorId="' + creator + '">';
                     eventStr += '<h2 class="timelineMajorMarker"><span>' + title + '</span><span style="display:none">' + date + '</span></h2>';
                     eventStr += '<dl class="timelineMinor">';
@@ -1514,7 +1526,8 @@
                     obj = obj.sort(sortCaseEvent);
                     $(obj).appendTo("#timelineEvent");
                     $(".clear").remove();
-                    $('<br class="clear">').appendTo("#timelineEvent");
+                    $('<br class="clear">').appendTo("#timelineEvent");*/
+                    getCaseEvent(caseId);
                     successEditEvent();
                     editableEvent();
                     notification("Thêm sự kiện thành công!", "", 2000, "btn-primary center");
