@@ -1,20 +1,163 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="LFMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+<Schema Namespace="LFMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="LFMSModelStoreContainer">
+    <EntitySet Name="Accounts" EntityType="LFMSModel.Store.Accounts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Assurance" EntityType="LFMSModel.Store.Assurance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Benefit" EntityType="LFMSModel.Store.Benefit" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CalendarEvents" EntityType="LFMSModel.Store.CalendarEvents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Case_Customer" EntityType="LFMSModel.Store.Case_Customer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Case_Staff" EntityType="LFMSModel.Store.Case_Staff" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cases" EntityType="LFMSModel.Store.Cases" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerGroups" EntityType="LFMSModel.Store.CustomerGroups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customers" EntityType="LFMSModel.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Impress" EntityType="LFMSModel.Store.Impress" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Office_Staff" EntityType="LFMSModel.Store.Office_Staff" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Offices" EntityType="LFMSModel.Store.Offices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OperationalEvents" EntityType="LFMSModel.Store.OperationalEvents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OtherCost" EntityType="LFMSModel.Store.OtherCost" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Payments" EntityType="LFMSModel.Store.Payments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reward" EntityType="LFMSModel.Store.Reward" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="LFMSModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Salary" EntityType="LFMSModel.Store.Salary" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalaryAssuranceDetail" EntityType="LFMSModel.Store.SalaryAssuranceDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalaryBenefitDetail" EntityType="LFMSModel.Store.SalaryBenefitDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalaryTaxDetail" EntityType="LFMSModel.Store.SalaryTaxDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Services" EntityType="LFMSModel.Store.Services" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ServiceTypes" EntityType="LFMSModel.Store.ServiceTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StaffGroups" EntityType="LFMSModel.Store.StaffGroups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Staffs" EntityType="LFMSModel.Store.Staffs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Subjects" EntityType="LFMSModel.Store.Subjects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tax" EntityType="LFMSModel.Store.Tax" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TimeSheet" EntityType="LFMSModel.Store.TimeSheet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsedServices" EntityType="LFMSModel.Store.UsedServices" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Accounts_Staffs" Association="LFMSModel.Store.FK_Accounts_Staffs">
+      <End Role="Staffs" EntitySet="Staffs" />
+      <End Role="Accounts" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CalendarEvents_Staffs" Association="LFMSModel.Store.FK_CalendarEvents_Staffs">
+      <End Role="Staffs" EntitySet="Staffs" />
+      <End Role="CalendarEvents" EntitySet="CalendarEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cases_Offices" Association="LFMSModel.Store.FK_Cases_Offices">
+      <End Role="Offices" EntitySet="Offices" />
+      <End Role="Cases" EntitySet="Cases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customers_CustomerGroups" Association="LFMSModel.Store.FK_Customers_CustomerGroups">
+      <End Role="CustomerGroups" EntitySet="CustomerGroups" />
+      <End Role="Customers" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Impress_Staffs" Association="LFMSModel.Store.FK_Impress_Staffs">
+      <End Role="Staffs" EntitySet="Staffs" />
+      <End Role="Impress" EntitySet="Impress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_Customer_Customers" Association="LFMSModel.Store.FK_OD_Customer_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Case_Customer" EntitySet="Case_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_Customer_OperationDocuments" Association="LFMSModel.Store.FK_OD_Customer_OperationDocuments">
+      <End Role="Cases" EntitySet="Cases" />
+      <End Role="Case_Customer" EntitySet="Case_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_Staff_OperationDocuments" Association="LFMSModel.Store.FK_OD_Staff_OperationDocuments">
+      <End Role="Cases" EntitySet="Cases" />
+      <End Role="Case_Staff" EntitySet="Case_Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OD_Staff_Staffs" Association="LFMSModel.Store.FK_OD_Staff_Staffs">
+      <End Role="Staffs" EntitySet="Staffs" />
+      <End Role="Case_Staff" EntitySet="Case_Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Office_Staff_Offices" Association="LFMSModel.Store.FK_Office_Staff_Offices">
+      <End Role="Offices" EntitySet="Offices" />
+      <End Role="Office_Staff" EntitySet="Office_Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Office_Staff_Staffs" Association="LFMSModel.Store.FK_Office_Staff_Staffs">
+      <End Role="Staffs" EntitySet="Staffs" />
+      <End Role="Office_Staff" EntitySet="Office_Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OperationalEvents_OperationDocuments" Association="LFMSModel.Store.FK_OperationalEvents_OperationDocuments">
+      <End Role="Cases" EntitySet="Cases" />
+      <End Role="OperationalEvents" EntitySet="OperationalEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OtherCost_Offices" Association="LFMSModel.Store.FK_OtherCost_Offices">
+      <End Role="Offices" EntitySet="Offices" />
+      <End Role="OtherCost" EntitySet="OtherCost" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payments_OperationDocuments" Association="LFMSModel.Store.FK_Payments_OperationDocuments">
+      <End Role="Cases" EntitySet="Cases" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reward_Staffs" Association="LFMSModel.Store.FK_Reward_Staffs">
+      <End Role="Staffs" EntitySet="Staffs" />
+      <End Role="Reward" EntitySet="Reward" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salary_Staffs" Association="LFMSModel.Store.FK_Salary_Staffs">
+      <End Role="Staffs" EntitySet="Staffs" />
+      <End Role="Salary" EntitySet="Salary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalaryAssuranceDetail_Assurance" Association="LFMSModel.Store.FK_SalaryAssuranceDetail_Assurance">
+      <End Role="Assurance" EntitySet="Assurance" />
+      <End Role="SalaryAssuranceDetail" EntitySet="SalaryAssuranceDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalaryAssuranceDetail_Salary" Association="LFMSModel.Store.FK_SalaryAssuranceDetail_Salary">
+      <End Role="Salary" EntitySet="Salary" />
+      <End Role="SalaryAssuranceDetail" EntitySet="SalaryAssuranceDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalaryBenefitDetail_Benefit" Association="LFMSModel.Store.FK_SalaryBenefitDetail_Benefit">
+      <End Role="Benefit" EntitySet="Benefit" />
+      <End Role="SalaryBenefitDetail" EntitySet="SalaryBenefitDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalaryBenefitDetail_Salary" Association="LFMSModel.Store.FK_SalaryBenefitDetail_Salary">
+      <End Role="Salary" EntitySet="Salary" />
+      <End Role="SalaryBenefitDetail" EntitySet="SalaryBenefitDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalaryTaxDetail_Salary" Association="LFMSModel.Store.FK_SalaryTaxDetail_Salary">
+      <End Role="Salary" EntitySet="Salary" />
+      <End Role="SalaryTaxDetail" EntitySet="SalaryTaxDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalaryTaxDetail_Tax" Association="LFMSModel.Store.FK_SalaryTaxDetail_Tax">
+      <End Role="Tax" EntitySet="Tax" />
+      <End Role="SalaryTaxDetail" EntitySet="SalaryTaxDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Services_ServiceTypes" Association="LFMSModel.Store.FK_Services_ServiceTypes">
+      <End Role="ServiceTypes" EntitySet="ServiceTypes" />
+      <End Role="Services" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Staffs_Roles" Association="LFMSModel.Store.FK_Staffs_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Staffs" EntitySet="Staffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Staffs_StaffGroups" Association="LFMSModel.Store.FK_Staffs_StaffGroups">
+      <End Role="StaffGroups" EntitySet="StaffGroups" />
+      <End Role="Staffs" EntitySet="Staffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subjects_OperationDocuments" Association="LFMSModel.Store.FK_Subjects_OperationDocuments">
+      <End Role="Cases" EntitySet="Cases" />
+      <End Role="Subjects" EntitySet="Subjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimeSheet_Staffs" Association="LFMSModel.Store.FK_TimeSheet_Staffs">
+      <End Role="Staffs" EntitySet="Staffs" />
+      <End Role="TimeSheet" EntitySet="TimeSheet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsedServices_OperationDocuments" Association="LFMSModel.Store.FK_UsedServices_OperationDocuments">
+      <End Role="Cases" EntitySet="Cases" />
+      <End Role="UsedServices" EntitySet="UsedServices" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Accounts">
     <Key>
       <PropertyRef Name="AccountId" />
     </Key>
-    <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="StaffId" Type="int" Nullable="false" />
-    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
   </EntityType>
   <EntityType Name="Assurance">
     <Key>
       <PropertyRef Name="AssuranceID" />
     </Key>
-    <Property Name="AssuranceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AssuranceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Rate" Type="float" Nullable="false" />
     <Property Name="Active" Type="bit" Nullable="false" />
   </EntityType>
@@ -22,8 +165,8 @@
     <Key>
       <PropertyRef Name="BenefitID" />
     </Key>
-    <Property Name="BenefitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BenefitID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Rate" Type="float" Nullable="false" />
     <Property Name="Active" Type="bit" Nullable="false" />
   </EntityType>
@@ -31,10 +174,10 @@
     <Key>
       <PropertyRef Name="CalendarEventId" />
     </Key>
-    <Property Name="CalendarEventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CalendarEventId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="StaffId" Type="int" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="Priority" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Priority" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="BeginTime" Type="datetime" Nullable="false" />
     <Property Name="EndTime" Type="datetime" Nullable="false" />
   </EntityType>
@@ -42,7 +185,7 @@
     <Key>
       <PropertyRef Name="CaseCustomerId" />
     </Key>
-    <Property Name="CaseCustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CaseCustomerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="CaseId" Type="int" Nullable="false" />
     <Property Name="CustomerId" Type="int" Nullable="false" />
   </EntityType>
@@ -50,7 +193,7 @@
     <Key>
       <PropertyRef Name="CaseStaffId" />
     </Key>
-    <Property Name="CaseStaffId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CaseStaffId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="CaseId" Type="int" Nullable="false" />
     <Property Name="StaffId" Type="int" Nullable="false" />
   </EntityType>
@@ -58,12 +201,12 @@
     <Key>
       <PropertyRef Name="CaseId" />
     </Key>
-    <Property Name="CaseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CaseCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CaseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CaseCode" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="CreatorId" Type="int" Nullable="false" />
     <Property Name="OfficeId" Type="int" Nullable="false" />
     <Property Name="ReceiptDate" Type="date" Nullable="false" />
-    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="CaseContent" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DisputeSubject" Type="nvarchar(max)" />
     <Property Name="DisputeRelation" Type="nvarchar(max)" />
@@ -80,22 +223,22 @@
     <Key>
       <PropertyRef Name="CustomerGroupId" />
     </Key>
-    <Property Name="CustomerGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CustomerGroupName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerGroupId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerGroupName" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Customers">
     <Key>
       <PropertyRef Name="CustomerId" />
     </Key>
-    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="CustomerGroupId" Type="int" Nullable="false" />
-    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Representative" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Representative" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="TaxCode" Type="nvarchar" MaxLength="14" />
-    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
-    <Property Name="Mobile" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Mobile" Type="nvarchar" Nullable="false" MaxLength="20" />
     <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
     <Property Name="BankAccount" Type="nvarchar" MaxLength="20" />
     <Property Name="BankBranch" Type="nvarchar" MaxLength="50" />
@@ -110,7 +253,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="StaffId" Type="int" Nullable="false" />
     <Property Name="Date" Type="date" Nullable="false" />
     <Property Name="Money" Type="float" Nullable="false" />
@@ -119,7 +262,7 @@
     <Key>
       <PropertyRef Name="OfficeStaffId" />
     </Key>
-    <Property Name="OfficeStaffId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OfficeStaffId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="OfficeId" Type="int" Nullable="false" />
     <Property Name="StaffId" Type="int" Nullable="false" />
   </EntityType>
@@ -127,14 +270,14 @@
     <Key>
       <PropertyRef Name="OfficeId" />
     </Key>
-    <Property Name="OfficeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="OfficeName" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="Manager" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OfficeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OfficeName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Manager" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="TaxCode" Type="nvarchar" MaxLength="14" />
-    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="PhoneNumber" Type="nvarchar" Nullable="false" MaxLength="20" />
     <Property Name="Fax" Type="nvarchar" MaxLength="20" />
-    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Website" Type="nvarchar" MaxLength="50" />
     <Property Name="BankAccount" Type="nvarchar" MaxLength="20" />
     <Property Name="BankBranch" Type="nvarchar" MaxLength="50" />
@@ -144,10 +287,10 @@
     <Key>
       <PropertyRef Name="OperationalEventId" />
     </Key>
-    <Property Name="OperationalEventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OperationalEventId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="CaseId" Type="int" Nullable="false" />
     <Property Name="CreatorId" Type="int" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="BeginTime" Type="datetime" Nullable="false" />
     <Property Name="EndTime" Type="datetime" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" />
@@ -156,7 +299,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="OfficeId" Type="int" Nullable="false" />
     <Property Name="Cost" Type="float" Nullable="false" />
     <Property Name="Date" Type="date" Nullable="false" />
@@ -166,7 +309,7 @@
     <Key>
       <PropertyRef Name="PaymentId" />
     </Key>
-    <Property Name="PaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="CaseId" Type="int" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PaymentTime" Type="datetime" Nullable="false" />
@@ -176,7 +319,7 @@
     <Key>
       <PropertyRef Name="RewardID" />
     </Key>
-    <Property Name="RewardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RewardID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="StaffId" Type="int" Nullable="false" />
     <Property Name="Date" Type="date" Nullable="false" />
     <Property Name="Money" Type="float" Nullable="false" />
@@ -186,15 +329,15 @@
     <Key>
       <PropertyRef Name="RoleId" />
     </Key>
-    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Salary">
     <Key>
       <PropertyRef Name="SalaryID" />
     </Key>
-    <Property Name="SalaryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalaryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Date" Type="date" Nullable="false" />
     <Property Name="StaffId" Type="int" Nullable="false" />
     <Property Name="TotalAbsent" Type="float" Nullable="false" />
@@ -214,7 +357,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="SalaryID" Type="int" Nullable="false" />
     <Property Name="AssuranceID" Type="int" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="250" />
@@ -224,7 +367,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="SalaryID" Type="int" Nullable="false" />
     <Property Name="BenefitID" Type="int" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="250" />
@@ -234,7 +377,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="SalaryID" Type="int" Nullable="false" />
     <Property Name="TaxID" Type="int" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="250" />
@@ -244,25 +387,25 @@
     <Key>
       <PropertyRef Name="ServiceId" />
     </Key>
-    <Property Name="ServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="ServiceTypeId" Type="int" Nullable="false" />
-    <Property Name="ServiceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceName" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="ServiceTypes">
     <Key>
       <PropertyRef Name="ServiceTypeId" />
     </Key>
-    <Property Name="ServiceTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ServiceTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceTypeName" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="StaffGroups">
     <Key>
       <PropertyRef Name="StaffGroupId" />
     </Key>
-    <Property Name="StaffGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="StaffGroupName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StaffGroupId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StaffGroupName" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Description" Type="nvarchar(max)" />
     <Property Name="BaseSalary" Type="float" />
   </EntityType>
@@ -270,25 +413,25 @@
     <Key>
       <PropertyRef Name="StaffId" />
     </Key>
-    <Property Name="StaffId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StaffId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="RoleId" Type="int" Nullable="false" />
     <Property Name="StaffGroupId" Type="int" Nullable="false" />
-    <Property Name="StaffName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StaffName" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Position" Type="nvarchar" MaxLength="50" />
     <Property Name="Avatar" Type="nvarchar" MaxLength="100" />
     <Property Name="Sex" Type="nvarchar" MaxLength="30" />
     <Property Name="DateOfBirth" Type="date" Nullable="false" />
     <Property Name="PlaceOfBirth" Type="nvarchar" MaxLength="100" />
-    <Property Name="IdentityNumber" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="IdentityNumber" Type="nvarchar" Nullable="false" MaxLength="12" />
     <Property Name="IdentityDate" Type="date" Nullable="false" />
-    <Property Name="IdentityPlace" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdentityPlace" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="TaxCode" Type="nvarchar" MaxLength="14" />
     <Property Name="BankAccount" Type="nvarchar" MaxLength="20" />
     <Property Name="BankBranch" Type="nvarchar" MaxLength="50" />
-    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="Mobile" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Mobile" Type="nvarchar" Nullable="false" MaxLength="20" />
     <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
-    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Active" Type="bit" Nullable="false" />
     <Property Name="AppendantPeople" Type="int" />
   </EntityType>
@@ -296,30 +439,20 @@
     <Key>
       <PropertyRef Name="SubjectId" />
     </Key>
-    <Property Name="SubjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubjectId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="CaseId" Type="int" Nullable="false" />
-    <Property Name="SubjectName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="LitigationCapacity" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="LitigationCapacity" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="Address" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Tax">
     <Key>
       <PropertyRef Name="TaxID" />
     </Key>
-    <Property Name="TaxID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TaxID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Rate" Type="float" Nullable="false" />
     <Property Name="IndexTax" Type="float" Nullable="false" />
     <Property Name="Active" Type="bit" Nullable="false" />
@@ -330,7 +463,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="StaffId" Type="int" Nullable="false" />
     <Property Name="Date" Type="date" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" />
@@ -342,16 +475,16 @@
     <Key>
       <PropertyRef Name="UsedServiceId" />
     </Key>
-    <Property Name="UsedServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsedServiceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="CaseId" Type="int" Nullable="false" />
-    <Property Name="ServiceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceName" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="ServiceCost" Type="int" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
     <Property Name="RegisteredDate" Type="date" Nullable="false" />
   </EntityType>
   <Association Name="FK_Accounts_Staffs">
-    <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
-    <End Role="Accounts" Type="Self.Accounts" Multiplicity="*" />
+    <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+    <End Role="Accounts" Type="LFMSModel.Store.Accounts" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Staffs">
         <PropertyRef Name="StaffId" />
@@ -362,8 +495,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CalendarEvents_Staffs">
-    <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
-    <End Role="CalendarEvents" Type="Self.CalendarEvents" Multiplicity="*" />
+    <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+    <End Role="CalendarEvents" Type="LFMSModel.Store.CalendarEvents" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Staffs">
         <PropertyRef Name="StaffId" />
@@ -374,8 +507,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Cases_Offices">
-    <End Role="Offices" Type="Self.Offices" Multiplicity="1" />
-    <End Role="Cases" Type="Self.Cases" Multiplicity="*" />
+    <End Role="Offices" Type="LFMSModel.Store.Offices" Multiplicity="1" />
+    <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Offices">
         <PropertyRef Name="OfficeId" />
@@ -386,8 +519,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Customers_CustomerGroups">
-    <End Role="CustomerGroups" Type="Self.CustomerGroups" Multiplicity="1" />
-    <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+    <End Role="CustomerGroups" Type="LFMSModel.Store.CustomerGroups" Multiplicity="1" />
+    <End Role="Customers" Type="LFMSModel.Store.Customers" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CustomerGroups">
         <PropertyRef Name="CustomerGroupId" />
@@ -398,8 +531,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Impress_Staffs">
-    <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
-    <End Role="Impress" Type="Self.Impress" Multiplicity="*" />
+    <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+    <End Role="Impress" Type="LFMSModel.Store.Impress" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Staffs">
         <PropertyRef Name="StaffId" />
@@ -410,8 +543,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_OD_Customer_Customers">
-    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
-    <End Role="Case_Customer" Type="Self.Case_Customer" Multiplicity="*" />
+    <End Role="Customers" Type="LFMSModel.Store.Customers" Multiplicity="1" />
+    <End Role="Case_Customer" Type="LFMSModel.Store.Case_Customer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Customers">
         <PropertyRef Name="CustomerId" />
@@ -422,8 +555,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_OD_Customer_OperationDocuments">
-    <End Role="Cases" Type="Self.Cases" Multiplicity="1" />
-    <End Role="Case_Customer" Type="Self.Case_Customer" Multiplicity="*" />
+    <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="1" />
+    <End Role="Case_Customer" Type="LFMSModel.Store.Case_Customer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cases">
         <PropertyRef Name="CaseId" />
@@ -434,8 +567,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_OD_Staff_OperationDocuments">
-    <End Role="Cases" Type="Self.Cases" Multiplicity="1" />
-    <End Role="Case_Staff" Type="Self.Case_Staff" Multiplicity="*" />
+    <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="1" />
+    <End Role="Case_Staff" Type="LFMSModel.Store.Case_Staff" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cases">
         <PropertyRef Name="CaseId" />
@@ -446,8 +579,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_OD_Staff_Staffs">
-    <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
-    <End Role="Case_Staff" Type="Self.Case_Staff" Multiplicity="*" />
+    <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+    <End Role="Case_Staff" Type="LFMSModel.Store.Case_Staff" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Staffs">
         <PropertyRef Name="StaffId" />
@@ -458,8 +591,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Office_Staff_Offices">
-    <End Role="Offices" Type="Self.Offices" Multiplicity="1" />
-    <End Role="Office_Staff" Type="Self.Office_Staff" Multiplicity="*" />
+    <End Role="Offices" Type="LFMSModel.Store.Offices" Multiplicity="1" />
+    <End Role="Office_Staff" Type="LFMSModel.Store.Office_Staff" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Offices">
         <PropertyRef Name="OfficeId" />
@@ -470,8 +603,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Office_Staff_Staffs">
-    <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
-    <End Role="Office_Staff" Type="Self.Office_Staff" Multiplicity="*" />
+    <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+    <End Role="Office_Staff" Type="LFMSModel.Store.Office_Staff" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Staffs">
         <PropertyRef Name="StaffId" />
@@ -482,8 +615,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_OperationalEvents_OperationDocuments">
-    <End Role="Cases" Type="Self.Cases" Multiplicity="1" />
-    <End Role="OperationalEvents" Type="Self.OperationalEvents" Multiplicity="*" />
+    <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="1" />
+    <End Role="OperationalEvents" Type="LFMSModel.Store.OperationalEvents" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cases">
         <PropertyRef Name="CaseId" />
@@ -494,8 +627,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_OtherCost_Offices">
-    <End Role="Offices" Type="Self.Offices" Multiplicity="1" />
-    <End Role="OtherCost" Type="Self.OtherCost" Multiplicity="*" />
+    <End Role="Offices" Type="LFMSModel.Store.Offices" Multiplicity="1" />
+    <End Role="OtherCost" Type="LFMSModel.Store.OtherCost" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Offices">
         <PropertyRef Name="OfficeId" />
@@ -506,8 +639,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Payments_OperationDocuments">
-    <End Role="Cases" Type="Self.Cases" Multiplicity="1" />
-    <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+    <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="1" />
+    <End Role="Payments" Type="LFMSModel.Store.Payments" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cases">
         <PropertyRef Name="CaseId" />
@@ -518,8 +651,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Reward_Staffs">
-    <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
-    <End Role="Reward" Type="Self.Reward" Multiplicity="*" />
+    <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+    <End Role="Reward" Type="LFMSModel.Store.Reward" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Staffs">
         <PropertyRef Name="StaffId" />
@@ -530,8 +663,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Salary_Staffs">
-    <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
-    <End Role="Salary" Type="Self.Salary" Multiplicity="*" />
+    <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+    <End Role="Salary" Type="LFMSModel.Store.Salary" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Staffs">
         <PropertyRef Name="StaffId" />
@@ -542,8 +675,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_SalaryAssuranceDetail_Assurance">
-    <End Role="Assurance" Type="Self.Assurance" Multiplicity="1" />
-    <End Role="SalaryAssuranceDetail" Type="Self.SalaryAssuranceDetail" Multiplicity="*" />
+    <End Role="Assurance" Type="LFMSModel.Store.Assurance" Multiplicity="1" />
+    <End Role="SalaryAssuranceDetail" Type="LFMSModel.Store.SalaryAssuranceDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Assurance">
         <PropertyRef Name="AssuranceID" />
@@ -554,8 +687,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_SalaryAssuranceDetail_Salary">
-    <End Role="Salary" Type="Self.Salary" Multiplicity="1" />
-    <End Role="SalaryAssuranceDetail" Type="Self.SalaryAssuranceDetail" Multiplicity="*" />
+    <End Role="Salary" Type="LFMSModel.Store.Salary" Multiplicity="1" />
+    <End Role="SalaryAssuranceDetail" Type="LFMSModel.Store.SalaryAssuranceDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Salary">
         <PropertyRef Name="SalaryID" />
@@ -566,8 +699,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_SalaryBenefitDetail_Benefit">
-    <End Role="Benefit" Type="Self.Benefit" Multiplicity="1" />
-    <End Role="SalaryBenefitDetail" Type="Self.SalaryBenefitDetail" Multiplicity="*" />
+    <End Role="Benefit" Type="LFMSModel.Store.Benefit" Multiplicity="1" />
+    <End Role="SalaryBenefitDetail" Type="LFMSModel.Store.SalaryBenefitDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Benefit">
         <PropertyRef Name="BenefitID" />
@@ -578,8 +711,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_SalaryBenefitDetail_Salary">
-    <End Role="Salary" Type="Self.Salary" Multiplicity="1" />
-    <End Role="SalaryBenefitDetail" Type="Self.SalaryBenefitDetail" Multiplicity="*" />
+    <End Role="Salary" Type="LFMSModel.Store.Salary" Multiplicity="1" />
+    <End Role="SalaryBenefitDetail" Type="LFMSModel.Store.SalaryBenefitDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Salary">
         <PropertyRef Name="SalaryID" />
@@ -590,8 +723,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_SalaryTaxDetail_Salary">
-    <End Role="Salary" Type="Self.Salary" Multiplicity="1" />
-    <End Role="SalaryTaxDetail" Type="Self.SalaryTaxDetail" Multiplicity="*" />
+    <End Role="Salary" Type="LFMSModel.Store.Salary" Multiplicity="1" />
+    <End Role="SalaryTaxDetail" Type="LFMSModel.Store.SalaryTaxDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Salary">
         <PropertyRef Name="SalaryID" />
@@ -602,8 +735,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_SalaryTaxDetail_Tax">
-    <End Role="Tax" Type="Self.Tax" Multiplicity="1" />
-    <End Role="SalaryTaxDetail" Type="Self.SalaryTaxDetail" Multiplicity="*" />
+    <End Role="Tax" Type="LFMSModel.Store.Tax" Multiplicity="1" />
+    <End Role="SalaryTaxDetail" Type="LFMSModel.Store.SalaryTaxDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tax">
         <PropertyRef Name="TaxID" />
@@ -614,8 +747,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Services_ServiceTypes">
-    <End Role="ServiceTypes" Type="Self.ServiceTypes" Multiplicity="1" />
-    <End Role="Services" Type="Self.Services" Multiplicity="*" />
+    <End Role="ServiceTypes" Type="LFMSModel.Store.ServiceTypes" Multiplicity="1" />
+    <End Role="Services" Type="LFMSModel.Store.Services" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ServiceTypes">
         <PropertyRef Name="ServiceTypeId" />
@@ -626,8 +759,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Staffs_Roles">
-    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
-    <End Role="Staffs" Type="Self.Staffs" Multiplicity="*" />
+    <End Role="Roles" Type="LFMSModel.Store.Roles" Multiplicity="1" />
+    <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Roles">
         <PropertyRef Name="RoleId" />
@@ -638,8 +771,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Staffs_StaffGroups">
-    <End Role="StaffGroups" Type="Self.StaffGroups" Multiplicity="1" />
-    <End Role="Staffs" Type="Self.Staffs" Multiplicity="*" />
+    <End Role="StaffGroups" Type="LFMSModel.Store.StaffGroups" Multiplicity="1" />
+    <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="StaffGroups">
         <PropertyRef Name="StaffGroupId" />
@@ -650,8 +783,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Subjects_OperationDocuments">
-    <End Role="Cases" Type="Self.Cases" Multiplicity="1" />
-    <End Role="Subjects" Type="Self.Subjects" Multiplicity="*" />
+    <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="1" />
+    <End Role="Subjects" Type="LFMSModel.Store.Subjects" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cases">
         <PropertyRef Name="CaseId" />
@@ -662,8 +795,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_TimeSheet_Staffs">
-    <End Role="Staffs" Type="Self.Staffs" Multiplicity="1" />
-    <End Role="TimeSheet" Type="Self.TimeSheet" Multiplicity="*" />
+    <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+    <End Role="TimeSheet" Type="LFMSModel.Store.TimeSheet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Staffs">
         <PropertyRef Name="StaffId" />
@@ -674,8 +807,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UsedServices_OperationDocuments">
-    <End Role="Cases" Type="Self.Cases" Multiplicity="1" />
-    <End Role="UsedServices" Type="Self.UsedServices" Multiplicity="*" />
+    <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="1" />
+    <End Role="UsedServices" Type="LFMSModel.Store.UsedServices" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cases">
         <PropertyRef Name="CaseId" />
@@ -685,148 +818,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="LFMSModelStoreContainer">
-    <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Assurance" EntityType="Self.Assurance" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Benefit" EntityType="Self.Benefit" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CalendarEvents" EntityType="Self.CalendarEvents" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Case_Customer" EntityType="Self.Case_Customer" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Case_Staff" EntityType="Self.Case_Staff" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Cases" EntityType="Self.Cases" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CustomerGroups" EntityType="Self.CustomerGroups" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Impress" EntityType="Self.Impress" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Office_Staff" EntityType="Self.Office_Staff" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Offices" EntityType="Self.Offices" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="OperationalEvents" EntityType="Self.OperationalEvents" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="OtherCost" EntityType="Self.OtherCost" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Reward" EntityType="Self.Reward" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Salary" EntityType="Self.Salary" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="SalaryAssuranceDetail" EntityType="Self.SalaryAssuranceDetail" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="SalaryBenefitDetail" EntityType="Self.SalaryBenefitDetail" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="SalaryTaxDetail" EntityType="Self.SalaryTaxDetail" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ServiceTypes" EntityType="Self.ServiceTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="StaffGroups" EntityType="Self.StaffGroups" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Staffs" EntityType="Self.Staffs" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Tax" EntityType="Self.Tax" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TimeSheet" EntityType="Self.TimeSheet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="UsedServices" EntityType="Self.UsedServices" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Accounts_Staffs" Association="Self.FK_Accounts_Staffs">
-      <End Role="Staffs" EntitySet="Staffs" />
-      <End Role="Accounts" EntitySet="Accounts" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CalendarEvents_Staffs" Association="Self.FK_CalendarEvents_Staffs">
-      <End Role="Staffs" EntitySet="Staffs" />
-      <End Role="CalendarEvents" EntitySet="CalendarEvents" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Cases_Offices" Association="Self.FK_Cases_Offices">
-      <End Role="Offices" EntitySet="Offices" />
-      <End Role="Cases" EntitySet="Cases" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Customers_CustomerGroups" Association="Self.FK_Customers_CustomerGroups">
-      <End Role="CustomerGroups" EntitySet="CustomerGroups" />
-      <End Role="Customers" EntitySet="Customers" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Impress_Staffs" Association="Self.FK_Impress_Staffs">
-      <End Role="Staffs" EntitySet="Staffs" />
-      <End Role="Impress" EntitySet="Impress" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OD_Customer_Customers" Association="Self.FK_OD_Customer_Customers">
-      <End Role="Customers" EntitySet="Customers" />
-      <End Role="Case_Customer" EntitySet="Case_Customer" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OD_Customer_OperationDocuments" Association="Self.FK_OD_Customer_OperationDocuments">
-      <End Role="Cases" EntitySet="Cases" />
-      <End Role="Case_Customer" EntitySet="Case_Customer" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OD_Staff_OperationDocuments" Association="Self.FK_OD_Staff_OperationDocuments">
-      <End Role="Cases" EntitySet="Cases" />
-      <End Role="Case_Staff" EntitySet="Case_Staff" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OD_Staff_Staffs" Association="Self.FK_OD_Staff_Staffs">
-      <End Role="Staffs" EntitySet="Staffs" />
-      <End Role="Case_Staff" EntitySet="Case_Staff" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Office_Staff_Offices" Association="Self.FK_Office_Staff_Offices">
-      <End Role="Offices" EntitySet="Offices" />
-      <End Role="Office_Staff" EntitySet="Office_Staff" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Office_Staff_Staffs" Association="Self.FK_Office_Staff_Staffs">
-      <End Role="Staffs" EntitySet="Staffs" />
-      <End Role="Office_Staff" EntitySet="Office_Staff" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OperationalEvents_OperationDocuments" Association="Self.FK_OperationalEvents_OperationDocuments">
-      <End Role="Cases" EntitySet="Cases" />
-      <End Role="OperationalEvents" EntitySet="OperationalEvents" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OtherCost_Offices" Association="Self.FK_OtherCost_Offices">
-      <End Role="Offices" EntitySet="Offices" />
-      <End Role="OtherCost" EntitySet="OtherCost" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Payments_OperationDocuments" Association="Self.FK_Payments_OperationDocuments">
-      <End Role="Cases" EntitySet="Cases" />
-      <End Role="Payments" EntitySet="Payments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Reward_Staffs" Association="Self.FK_Reward_Staffs">
-      <End Role="Staffs" EntitySet="Staffs" />
-      <End Role="Reward" EntitySet="Reward" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Salary_Staffs" Association="Self.FK_Salary_Staffs">
-      <End Role="Staffs" EntitySet="Staffs" />
-      <End Role="Salary" EntitySet="Salary" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SalaryAssuranceDetail_Assurance" Association="Self.FK_SalaryAssuranceDetail_Assurance">
-      <End Role="Assurance" EntitySet="Assurance" />
-      <End Role="SalaryAssuranceDetail" EntitySet="SalaryAssuranceDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SalaryAssuranceDetail_Salary" Association="Self.FK_SalaryAssuranceDetail_Salary">
-      <End Role="Salary" EntitySet="Salary" />
-      <End Role="SalaryAssuranceDetail" EntitySet="SalaryAssuranceDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SalaryBenefitDetail_Benefit" Association="Self.FK_SalaryBenefitDetail_Benefit">
-      <End Role="Benefit" EntitySet="Benefit" />
-      <End Role="SalaryBenefitDetail" EntitySet="SalaryBenefitDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SalaryBenefitDetail_Salary" Association="Self.FK_SalaryBenefitDetail_Salary">
-      <End Role="Salary" EntitySet="Salary" />
-      <End Role="SalaryBenefitDetail" EntitySet="SalaryBenefitDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SalaryTaxDetail_Salary" Association="Self.FK_SalaryTaxDetail_Salary">
-      <End Role="Salary" EntitySet="Salary" />
-      <End Role="SalaryTaxDetail" EntitySet="SalaryTaxDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SalaryTaxDetail_Tax" Association="Self.FK_SalaryTaxDetail_Tax">
-      <End Role="Tax" EntitySet="Tax" />
-      <End Role="SalaryTaxDetail" EntitySet="SalaryTaxDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Services_ServiceTypes" Association="Self.FK_Services_ServiceTypes">
-      <End Role="ServiceTypes" EntitySet="ServiceTypes" />
-      <End Role="Services" EntitySet="Services" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Staffs_Roles" Association="Self.FK_Staffs_Roles">
-      <End Role="Roles" EntitySet="Roles" />
-      <End Role="Staffs" EntitySet="Staffs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Staffs_StaffGroups" Association="Self.FK_Staffs_StaffGroups">
-      <End Role="StaffGroups" EntitySet="StaffGroups" />
-      <End Role="Staffs" EntitySet="Staffs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Subjects_OperationDocuments" Association="Self.FK_Subjects_OperationDocuments">
-      <End Role="Cases" EntitySet="Cases" />
-      <End Role="Subjects" EntitySet="Subjects" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TimeSheet_Staffs" Association="Self.FK_TimeSheet_Staffs">
-      <End Role="Staffs" EntitySet="Staffs" />
-      <End Role="TimeSheet" EntitySet="TimeSheet" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UsedServices_OperationDocuments" Association="Self.FK_UsedServices_OperationDocuments">
-      <End Role="Cases" EntitySet="Cases" />
-      <End Role="UsedServices" EntitySet="UsedServices" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>
