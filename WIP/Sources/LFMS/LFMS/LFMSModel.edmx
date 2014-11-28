@@ -1,0 +1,2101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LFMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="LFMSModelStoreContainer">
+          <EntitySet Name="Accounts" EntityType="LFMSModel.Store.Accounts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Assurance" EntityType="LFMSModel.Store.Assurance" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Benefit" EntityType="LFMSModel.Store.Benefit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CalendarEvents" EntityType="LFMSModel.Store.CalendarEvents" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Case_Customer" EntityType="LFMSModel.Store.Case_Customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Case_Staff" EntityType="LFMSModel.Store.Case_Staff" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cases" EntityType="LFMSModel.Store.Cases" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CustomerGroups" EntityType="LFMSModel.Store.CustomerGroups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Customers" EntityType="LFMSModel.Store.Customers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Impress" EntityType="LFMSModel.Store.Impress" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Office_Staff" EntityType="LFMSModel.Store.Office_Staff" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Offices" EntityType="LFMSModel.Store.Offices" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OperationalEvents" EntityType="LFMSModel.Store.OperationalEvents" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OtherCost" EntityType="LFMSModel.Store.OtherCost" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Payments" EntityType="LFMSModel.Store.Payments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Reward" EntityType="LFMSModel.Store.Reward" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Roles" EntityType="LFMSModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Salary" EntityType="LFMSModel.Store.Salary" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalaryAssuranceDetail" EntityType="LFMSModel.Store.SalaryAssuranceDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalaryBenefitDetail" EntityType="LFMSModel.Store.SalaryBenefitDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalaryTaxDetail" EntityType="LFMSModel.Store.SalaryTaxDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Services" EntityType="LFMSModel.Store.Services" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ServiceTypes" EntityType="LFMSModel.Store.ServiceTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StaffGroups" EntityType="LFMSModel.Store.StaffGroups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Staffs" EntityType="LFMSModel.Store.Staffs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Subjects" EntityType="LFMSModel.Store.Subjects" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tax" EntityType="LFMSModel.Store.Tax" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TimeSheet" EntityType="LFMSModel.Store.TimeSheet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsedServices" EntityType="LFMSModel.Store.UsedServices" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Accounts_Staffs" Association="LFMSModel.Store.FK_Accounts_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CalendarEvents_Staffs" Association="LFMSModel.Store.FK_CalendarEvents_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="CalendarEvents" EntitySet="CalendarEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cases_Offices" Association="LFMSModel.Store.FK_Cases_Offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="Cases" EntitySet="Cases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_CustomerGroups" Association="LFMSModel.Store.FK_Customers_CustomerGroups">
+            <End Role="CustomerGroups" EntitySet="CustomerGroups" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Impress_Staffs" Association="LFMSModel.Store.FK_Impress_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Impress" EntitySet="Impress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Customer_Customers" Association="LFMSModel.Store.FK_OD_Customer_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Case_Customer" EntitySet="Case_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Customer_OperationDocuments" Association="LFMSModel.Store.FK_OD_Customer_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Case_Customer" EntitySet="Case_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Staff_OperationDocuments" Association="LFMSModel.Store.FK_OD_Staff_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Case_Staff" EntitySet="Case_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Staff_Staffs" Association="LFMSModel.Store.FK_OD_Staff_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Case_Staff" EntitySet="Case_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Office_Staff_Offices" Association="LFMSModel.Store.FK_Office_Staff_Offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="Office_Staff" EntitySet="Office_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Office_Staff_Staffs" Association="LFMSModel.Store.FK_Office_Staff_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Office_Staff" EntitySet="Office_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OperationalEvents_OperationDocuments" Association="LFMSModel.Store.FK_OperationalEvents_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="OperationalEvents" EntitySet="OperationalEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OtherCost_Offices" Association="LFMSModel.Store.FK_OtherCost_Offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="OtherCost" EntitySet="OtherCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_OperationDocuments" Association="LFMSModel.Store.FK_Payments_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reward_Staffs" Association="LFMSModel.Store.FK_Reward_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Reward" EntitySet="Reward" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salary_Staffs" Association="LFMSModel.Store.FK_Salary_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Salary" EntitySet="Salary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryAssuranceDetail_Assurance" Association="LFMSModel.Store.FK_SalaryAssuranceDetail_Assurance">
+            <End Role="Assurance" EntitySet="Assurance" />
+            <End Role="SalaryAssuranceDetail" EntitySet="SalaryAssuranceDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryAssuranceDetail_Salary" Association="LFMSModel.Store.FK_SalaryAssuranceDetail_Salary">
+            <End Role="Salary" EntitySet="Salary" />
+            <End Role="SalaryAssuranceDetail" EntitySet="SalaryAssuranceDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryBenefitDetail_Benefit" Association="LFMSModel.Store.FK_SalaryBenefitDetail_Benefit">
+            <End Role="Benefit" EntitySet="Benefit" />
+            <End Role="SalaryBenefitDetail" EntitySet="SalaryBenefitDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryBenefitDetail_Salary" Association="LFMSModel.Store.FK_SalaryBenefitDetail_Salary">
+            <End Role="Salary" EntitySet="Salary" />
+            <End Role="SalaryBenefitDetail" EntitySet="SalaryBenefitDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryTaxDetail_Salary" Association="LFMSModel.Store.FK_SalaryTaxDetail_Salary">
+            <End Role="Salary" EntitySet="Salary" />
+            <End Role="SalaryTaxDetail" EntitySet="SalaryTaxDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryTaxDetail_Tax" Association="LFMSModel.Store.FK_SalaryTaxDetail_Tax">
+            <End Role="Tax" EntitySet="Tax" />
+            <End Role="SalaryTaxDetail" EntitySet="SalaryTaxDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Services_ServiceTypes" Association="LFMSModel.Store.FK_Services_ServiceTypes">
+            <End Role="ServiceTypes" EntitySet="ServiceTypes" />
+            <End Role="Services" EntitySet="Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staffs_Roles" Association="LFMSModel.Store.FK_Staffs_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Staffs" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staffs_StaffGroups" Association="LFMSModel.Store.FK_Staffs_StaffGroups">
+            <End Role="StaffGroups" EntitySet="StaffGroups" />
+            <End Role="Staffs" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subjects_OperationDocuments" Association="LFMSModel.Store.FK_Subjects_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Subjects" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeSheet_Staffs" Association="LFMSModel.Store.FK_TimeSheet_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="TimeSheet" EntitySet="TimeSheet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsedServices_OperationDocuments" Association="LFMSModel.Store.FK_UsedServices_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="UsedServices" EntitySet="UsedServices" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Assurance">
+          <Key>
+            <PropertyRef Name="AssuranceID" />
+          </Key>
+          <Property Name="AssuranceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Rate" Type="float" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Benefit">
+          <Key>
+            <PropertyRef Name="BenefitID" />
+          </Key>
+          <Property Name="BenefitID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Rate" Type="float" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CalendarEvents">
+          <Key>
+            <PropertyRef Name="CalendarEventId" />
+          </Key>
+          <Property Name="CalendarEventId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Priority" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="BeginTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Case_Customer">
+          <Key>
+            <PropertyRef Name="CaseCustomerId" />
+          </Key>
+          <Property Name="CaseCustomerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Case_Staff">
+          <Key>
+            <PropertyRef Name="CaseStaffId" />
+          </Key>
+          <Property Name="CaseStaffId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cases">
+          <Key>
+            <PropertyRef Name="CaseId" />
+          </Key>
+          <Property Name="CaseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CaseCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatorId" Type="int" Nullable="false" />
+          <Property Name="OfficeId" Type="int" Nullable="false" />
+          <Property Name="ReceiptDate" Type="date" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CaseContent" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DisputeSubject" Type="nvarchar(max)" />
+          <Property Name="DisputeRelation" Type="nvarchar(max)" />
+          <Property Name="LimitationStatute" Type="nvarchar(max)" />
+          <Property Name="LegalEvent" Type="nvarchar(max)" />
+          <Property Name="ErrorFactor" Type="nvarchar(max)" />
+          <Property Name="ProtectiveGoal" Type="nvarchar(max)" />
+          <Property Name="OpeningProcedure" Type="nvarchar(max)" />
+          <Property Name="InquiryProcedure" Type="nvarchar(max)" />
+          <Property Name="ArgumentProcedure" Type="nvarchar(max)" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerGroups">
+          <Key>
+            <PropertyRef Name="CustomerGroupId" />
+          </Key>
+          <Property Name="CustomerGroupId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerGroupName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerGroupId" Type="int" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Representative" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TaxCode" Type="nvarchar" MaxLength="14" />
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
+          <Property Name="BankAccount" Type="nvarchar" MaxLength="20" />
+          <Property Name="BankBranch" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="20" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="IdentityNumber" Type="nvarchar" MaxLength="12" />
+          <Property Name="IdentityDate" Type="date" />
+          <Property Name="IdentityPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Impress">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Money" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Office_Staff">
+          <Key>
+            <PropertyRef Name="OfficeStaffId" />
+          </Key>
+          <Property Name="OfficeStaffId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OfficeId" Type="int" Nullable="false" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Offices">
+          <Key>
+            <PropertyRef Name="OfficeId" />
+          </Key>
+          <Property Name="OfficeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OfficeName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Manager" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TaxCode" Type="nvarchar" MaxLength="14" />
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Website" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankAccount" Type="nvarchar" MaxLength="20" />
+          <Property Name="BankBranch" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OperationalEvents">
+          <Key>
+            <PropertyRef Name="OperationalEventId" />
+          </Key>
+          <Property Name="OperationalEventId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="CreatorId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="BeginTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="OtherCost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OfficeId" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="float" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PaymentTime" Type="datetime" Nullable="false" />
+          <Property Name="PaymentMoney" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reward">
+          <Key>
+            <PropertyRef Name="RewardID" />
+          </Key>
+          <Property Name="RewardID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Money" Type="float" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="SalaryID" />
+          </Key>
+          <Property Name="SalaryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="TotalAbsent" Type="float" Nullable="false" />
+          <Property Name="TotalPresent" Type="float" Nullable="false" />
+          <Property Name="TotalBenefit" Type="float" Nullable="false" />
+          <Property Name="TotalImprest" Type="float" Nullable="false" />
+          <Property Name="TotalTax" Type="float" Nullable="false" />
+          <Property Name="TotalAssurance" Type="float" Nullable="false" />
+          <Property Name="TotalReward" Type="float" Nullable="false" />
+          <Property Name="BaseSalary" Type="float" Nullable="false" />
+          <Property Name="ActualSalary" Type="float" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="TotalDateDeduction" Type="float" Nullable="false" />
+          <Property Name="TotalMoneyDeduction" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SalaryAssuranceDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SalaryID" Type="int" Nullable="false" />
+          <Property Name="AssuranceID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SalaryBenefitDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SalaryID" Type="int" Nullable="false" />
+          <Property Name="BenefitID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SalaryTaxDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SalaryID" Type="int" Nullable="false" />
+          <Property Name="TaxID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceTypeId" Type="int" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ServiceTypes">
+          <Key>
+            <PropertyRef Name="ServiceTypeId" />
+          </Key>
+          <Property Name="ServiceTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceTypeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="StaffGroups">
+          <Key>
+            <PropertyRef Name="StaffGroupId" />
+          </Key>
+          <Property Name="StaffGroupId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StaffGroupName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="BaseSalary" Type="float" />
+        </EntityType>
+        <EntityType Name="Staffs">
+          <Key>
+            <PropertyRef Name="StaffId" />
+          </Key>
+          <Property Name="StaffId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="StaffGroupId" Type="int" Nullable="false" />
+          <Property Name="StaffName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="Avatar" Type="nvarchar" MaxLength="100" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="30" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="PlaceOfBirth" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdentityNumber" Type="nvarchar" Nullable="false" MaxLength="12" />
+          <Property Name="IdentityDate" Type="date" Nullable="false" />
+          <Property Name="IdentityPlace" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TaxCode" Type="nvarchar" MaxLength="14" />
+          <Property Name="BankAccount" Type="nvarchar" MaxLength="20" />
+          <Property Name="BankBranch" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Mobile" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="AppendantPeople" Type="int" />
+        </EntityType>
+        <EntityType Name="Subjects">
+          <Key>
+            <PropertyRef Name="SubjectId" />
+          </Key>
+          <Property Name="SubjectId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="SubjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LitigationCapacity" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Tax">
+          <Key>
+            <PropertyRef Name="TaxID" />
+          </Key>
+          <Property Name="TaxID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Rate" Type="float" Nullable="false" />
+          <Property Name="IndexTax" Type="float" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="MoneyFrom" Type="float" Nullable="false" />
+          <Property Name="MoneyTo" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TimeSheet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Hours" Type="float" Nullable="false" />
+          <Property Name="IsAllowed" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsedServices">
+          <Key>
+            <PropertyRef Name="UsedServiceId" />
+          </Key>
+          <Property Name="UsedServiceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="int" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ServiceCost" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RegisteredDate" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Accounts_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+          <End Role="Accounts" Type="LFMSModel.Store.Accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CalendarEvents_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+          <End Role="CalendarEvents" Type="LFMSModel.Store.CalendarEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="CalendarEvents">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cases_Offices">
+          <End Role="Offices" Type="LFMSModel.Store.Offices" Multiplicity="1" />
+          <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="OfficeId" />
+            </Principal>
+            <Dependent Role="Cases">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_CustomerGroups">
+          <End Role="CustomerGroups" Type="LFMSModel.Store.CustomerGroups" Multiplicity="1" />
+          <End Role="Customers" Type="LFMSModel.Store.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerGroups">
+              <PropertyRef Name="CustomerGroupId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="CustomerGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Impress_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+          <End Role="Impress" Type="LFMSModel.Store.Impress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Impress">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Customer_Customers">
+          <End Role="Customers" Type="LFMSModel.Store.Customers" Multiplicity="1" />
+          <End Role="Case_Customer" Type="LFMSModel.Store.Case_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Case_Customer">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Customer_OperationDocuments">
+          <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="1" />
+          <End Role="Case_Customer" Type="LFMSModel.Store.Case_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Case_Customer">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Staff_OperationDocuments">
+          <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="1" />
+          <End Role="Case_Staff" Type="LFMSModel.Store.Case_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Case_Staff">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Staff_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+          <End Role="Case_Staff" Type="LFMSModel.Store.Case_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Case_Staff">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Office_Staff_Offices">
+          <End Role="Offices" Type="LFMSModel.Store.Offices" Multiplicity="1" />
+          <End Role="Office_Staff" Type="LFMSModel.Store.Office_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="OfficeId" />
+            </Principal>
+            <Dependent Role="Office_Staff">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Office_Staff_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+          <End Role="Office_Staff" Type="LFMSModel.Store.Office_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Office_Staff">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OperationalEvents_OperationDocuments">
+          <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="1" />
+          <End Role="OperationalEvents" Type="LFMSModel.Store.OperationalEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="OperationalEvents">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OtherCost_Offices">
+          <End Role="Offices" Type="LFMSModel.Store.Offices" Multiplicity="1" />
+          <End Role="OtherCost" Type="LFMSModel.Store.OtherCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="OfficeId" />
+            </Principal>
+            <Dependent Role="OtherCost">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_OperationDocuments">
+          <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="1" />
+          <End Role="Payments" Type="LFMSModel.Store.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reward_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+          <End Role="Reward" Type="LFMSModel.Store.Reward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Reward">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salary_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+          <End Role="Salary" Type="LFMSModel.Store.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryAssuranceDetail_Assurance">
+          <End Role="Assurance" Type="LFMSModel.Store.Assurance" Multiplicity="1" />
+          <End Role="SalaryAssuranceDetail" Type="LFMSModel.Store.SalaryAssuranceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assurance">
+              <PropertyRef Name="AssuranceID" />
+            </Principal>
+            <Dependent Role="SalaryAssuranceDetail">
+              <PropertyRef Name="AssuranceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryAssuranceDetail_Salary">
+          <End Role="Salary" Type="LFMSModel.Store.Salary" Multiplicity="1" />
+          <End Role="SalaryAssuranceDetail" Type="LFMSModel.Store.SalaryAssuranceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary">
+              <PropertyRef Name="SalaryID" />
+            </Principal>
+            <Dependent Role="SalaryAssuranceDetail">
+              <PropertyRef Name="SalaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryBenefitDetail_Benefit">
+          <End Role="Benefit" Type="LFMSModel.Store.Benefit" Multiplicity="1" />
+          <End Role="SalaryBenefitDetail" Type="LFMSModel.Store.SalaryBenefitDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Benefit">
+              <PropertyRef Name="BenefitID" />
+            </Principal>
+            <Dependent Role="SalaryBenefitDetail">
+              <PropertyRef Name="BenefitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryBenefitDetail_Salary">
+          <End Role="Salary" Type="LFMSModel.Store.Salary" Multiplicity="1" />
+          <End Role="SalaryBenefitDetail" Type="LFMSModel.Store.SalaryBenefitDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary">
+              <PropertyRef Name="SalaryID" />
+            </Principal>
+            <Dependent Role="SalaryBenefitDetail">
+              <PropertyRef Name="SalaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryTaxDetail_Salary">
+          <End Role="Salary" Type="LFMSModel.Store.Salary" Multiplicity="1" />
+          <End Role="SalaryTaxDetail" Type="LFMSModel.Store.SalaryTaxDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary">
+              <PropertyRef Name="SalaryID" />
+            </Principal>
+            <Dependent Role="SalaryTaxDetail">
+              <PropertyRef Name="SalaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryTaxDetail_Tax">
+          <End Role="Tax" Type="LFMSModel.Store.Tax" Multiplicity="1" />
+          <End Role="SalaryTaxDetail" Type="LFMSModel.Store.SalaryTaxDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tax">
+              <PropertyRef Name="TaxID" />
+            </Principal>
+            <Dependent Role="SalaryTaxDetail">
+              <PropertyRef Name="TaxID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Services_ServiceTypes">
+          <End Role="ServiceTypes" Type="LFMSModel.Store.ServiceTypes" Multiplicity="1" />
+          <End Role="Services" Type="LFMSModel.Store.Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceTypes">
+              <PropertyRef Name="ServiceTypeId" />
+            </Principal>
+            <Dependent Role="Services">
+              <PropertyRef Name="ServiceTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staffs_Roles">
+          <End Role="Roles" Type="LFMSModel.Store.Roles" Multiplicity="1" />
+          <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Staffs">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staffs_StaffGroups">
+          <End Role="StaffGroups" Type="LFMSModel.Store.StaffGroups" Multiplicity="1" />
+          <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StaffGroups">
+              <PropertyRef Name="StaffGroupId" />
+            </Principal>
+            <Dependent Role="Staffs">
+              <PropertyRef Name="StaffGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subjects_OperationDocuments">
+          <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="1" />
+          <End Role="Subjects" Type="LFMSModel.Store.Subjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Subjects">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeSheet_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Store.Staffs" Multiplicity="1" />
+          <End Role="TimeSheet" Type="LFMSModel.Store.TimeSheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="TimeSheet">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsedServices_OperationDocuments">
+          <End Role="Cases" Type="LFMSModel.Store.Cases" Multiplicity="1" />
+          <End Role="UsedServices" Type="LFMSModel.Store.UsedServices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="UsedServices">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LFMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="LFMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="LFMSModel.Account" />
+          <EntitySet Name="Assurances" EntityType="LFMSModel.Assurance" />
+          <EntitySet Name="Benefits" EntityType="LFMSModel.Benefit" />
+          <EntitySet Name="CalendarEvents" EntityType="LFMSModel.CalendarEvent" />
+          <EntitySet Name="Case_Customer" EntityType="LFMSModel.Case_Customer" />
+          <EntitySet Name="Case_Staff" EntityType="LFMSModel.Case_Staff" />
+          <EntitySet Name="Cases" EntityType="LFMSModel.Case" />
+          <EntitySet Name="CustomerGroups" EntityType="LFMSModel.CustomerGroup" />
+          <EntitySet Name="Customers" EntityType="LFMSModel.Customer" />
+          <EntitySet Name="Impresses" EntityType="LFMSModel.Impress" />
+          <EntitySet Name="Office_Staff" EntityType="LFMSModel.Office_Staff" />
+          <EntitySet Name="Offices" EntityType="LFMSModel.Office" />
+          <EntitySet Name="OperationalEvents" EntityType="LFMSModel.OperationalEvent" />
+          <EntitySet Name="OtherCosts" EntityType="LFMSModel.OtherCost" />
+          <EntitySet Name="Payments" EntityType="LFMSModel.Payment" />
+          <EntitySet Name="Rewards" EntityType="LFMSModel.Reward" />
+          <EntitySet Name="Roles" EntityType="LFMSModel.Role" />
+          <EntitySet Name="Salaries" EntityType="LFMSModel.Salary" />
+          <EntitySet Name="SalaryAssuranceDetails" EntityType="LFMSModel.SalaryAssuranceDetail" />
+          <EntitySet Name="SalaryBenefitDetails" EntityType="LFMSModel.SalaryBenefitDetail" />
+          <EntitySet Name="SalaryTaxDetails" EntityType="LFMSModel.SalaryTaxDetail" />
+          <EntitySet Name="Services" EntityType="LFMSModel.Service" />
+          <EntitySet Name="ServiceTypes" EntityType="LFMSModel.ServiceType" />
+          <EntitySet Name="StaffGroups" EntityType="LFMSModel.StaffGroup" />
+          <EntitySet Name="Staffs" EntityType="LFMSModel.Staff" />
+          <EntitySet Name="Subjects" EntityType="LFMSModel.Subject" />
+          <EntitySet Name="Taxes" EntityType="LFMSModel.Tax" />
+          <EntitySet Name="TimeSheets" EntityType="LFMSModel.TimeSheet" />
+          <EntitySet Name="UsedServices" EntityType="LFMSModel.UsedService" />
+          <AssociationSet Name="FK_Accounts_Staffs" Association="LFMSModel.FK_Accounts_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryAssuranceDetail_Assurance" Association="LFMSModel.FK_SalaryAssuranceDetail_Assurance">
+            <End Role="Assurance" EntitySet="Assurances" />
+            <End Role="SalaryAssuranceDetail" EntitySet="SalaryAssuranceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryBenefitDetail_Benefit" Association="LFMSModel.FK_SalaryBenefitDetail_Benefit">
+            <End Role="Benefit" EntitySet="Benefits" />
+            <End Role="SalaryBenefitDetail" EntitySet="SalaryBenefitDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CalendarEvents_Staffs" Association="LFMSModel.FK_CalendarEvents_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="CalendarEvents" EntitySet="CalendarEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Customer_Customers" Association="LFMSModel.FK_OD_Customer_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Case_Customer" EntitySet="Case_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Customer_OperationDocuments" Association="LFMSModel.FK_OD_Customer_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Case_Customer" EntitySet="Case_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Staff_OperationDocuments" Association="LFMSModel.FK_OD_Staff_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Case_Staff" EntitySet="Case_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OD_Staff_Staffs" Association="LFMSModel.FK_OD_Staff_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Case_Staff" EntitySet="Case_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cases_Offices" Association="LFMSModel.FK_Cases_Offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="Cases" EntitySet="Cases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OperationalEvents_OperationDocuments" Association="LFMSModel.FK_OperationalEvents_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="OperationalEvents" EntitySet="OperationalEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_OperationDocuments" Association="LFMSModel.FK_Payments_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subjects_OperationDocuments" Association="LFMSModel.FK_Subjects_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Subjects" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsedServices_OperationDocuments" Association="LFMSModel.FK_UsedServices_OperationDocuments">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="UsedServices" EntitySet="UsedServices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_CustomerGroups" Association="LFMSModel.FK_Customers_CustomerGroups">
+            <End Role="CustomerGroups" EntitySet="CustomerGroups" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Impress_Staffs" Association="LFMSModel.FK_Impress_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Impress" EntitySet="Impresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Office_Staff_Offices" Association="LFMSModel.FK_Office_Staff_Offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="Office_Staff" EntitySet="Office_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Office_Staff_Staffs" Association="LFMSModel.FK_Office_Staff_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Office_Staff" EntitySet="Office_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OtherCost_Offices" Association="LFMSModel.FK_OtherCost_Offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="OtherCost" EntitySet="OtherCosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reward_Staffs" Association="LFMSModel.FK_Reward_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Reward" EntitySet="Rewards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staffs_Roles" Association="LFMSModel.FK_Staffs_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Staffs" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salary_Staffs" Association="LFMSModel.FK_Salary_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="Salary" EntitySet="Salaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryAssuranceDetail_Salary" Association="LFMSModel.FK_SalaryAssuranceDetail_Salary">
+            <End Role="Salary" EntitySet="Salaries" />
+            <End Role="SalaryAssuranceDetail" EntitySet="SalaryAssuranceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryBenefitDetail_Salary" Association="LFMSModel.FK_SalaryBenefitDetail_Salary">
+            <End Role="Salary" EntitySet="Salaries" />
+            <End Role="SalaryBenefitDetail" EntitySet="SalaryBenefitDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryTaxDetail_Salary" Association="LFMSModel.FK_SalaryTaxDetail_Salary">
+            <End Role="Salary" EntitySet="Salaries" />
+            <End Role="SalaryTaxDetail" EntitySet="SalaryTaxDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalaryTaxDetail_Tax" Association="LFMSModel.FK_SalaryTaxDetail_Tax">
+            <End Role="Tax" EntitySet="Taxes" />
+            <End Role="SalaryTaxDetail" EntitySet="SalaryTaxDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Services_ServiceTypes" Association="LFMSModel.FK_Services_ServiceTypes">
+            <End Role="ServiceTypes" EntitySet="ServiceTypes" />
+            <End Role="Services" EntitySet="Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staffs_StaffGroups" Association="LFMSModel.FK_Staffs_StaffGroups">
+            <End Role="StaffGroups" EntitySet="StaffGroups" />
+            <End Role="Staffs" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeSheet_Staffs" Association="LFMSModel.FK_TimeSheet_Staffs">
+            <End Role="Staffs" EntitySet="Staffs" />
+            <End Role="TimeSheet" EntitySet="TimeSheets" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Staff" Relationship="LFMSModel.FK_Accounts_Staffs" FromRole="Accounts" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Assurance">
+          <Key>
+            <PropertyRef Name="AssuranceID" />
+          </Key>
+          <Property Name="AssuranceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Rate" Type="Double" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="SalaryAssuranceDetails" Relationship="LFMSModel.FK_SalaryAssuranceDetail_Assurance" FromRole="Assurance" ToRole="SalaryAssuranceDetail" />
+        </EntityType>
+        <EntityType Name="Benefit">
+          <Key>
+            <PropertyRef Name="BenefitID" />
+          </Key>
+          <Property Name="BenefitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Rate" Type="Double" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="SalaryBenefitDetails" Relationship="LFMSModel.FK_SalaryBenefitDetail_Benefit" FromRole="Benefit" ToRole="SalaryBenefitDetail" />
+        </EntityType>
+        <EntityType Name="CalendarEvent">
+          <Key>
+            <PropertyRef Name="CalendarEventId" />
+          </Key>
+          <Property Name="CalendarEventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Priority" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BeginTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Staff" Relationship="LFMSModel.FK_CalendarEvents_Staffs" FromRole="CalendarEvents" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Case_Customer">
+          <Key>
+            <PropertyRef Name="CaseCustomerId" />
+          </Key>
+          <Property Name="CaseCustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="LFMSModel.FK_OD_Customer_Customers" FromRole="Case_Customer" ToRole="Customers" />
+          <NavigationProperty Name="Case" Relationship="LFMSModel.FK_OD_Customer_OperationDocuments" FromRole="Case_Customer" ToRole="Cases" />
+        </EntityType>
+        <EntityType Name="Case_Staff">
+          <Key>
+            <PropertyRef Name="CaseStaffId" />
+          </Key>
+          <Property Name="CaseStaffId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Case" Relationship="LFMSModel.FK_OD_Staff_OperationDocuments" FromRole="Case_Staff" ToRole="Cases" />
+          <NavigationProperty Name="Staff" Relationship="LFMSModel.FK_OD_Staff_Staffs" FromRole="Case_Staff" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Case">
+          <Key>
+            <PropertyRef Name="CaseId" />
+          </Key>
+          <Property Name="CaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatorId" Type="Int32" Nullable="false" />
+          <Property Name="OfficeId" Type="Int32" Nullable="false" />
+          <Property Name="ReceiptDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CaseContent" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DisputeSubject" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DisputeRelation" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="LimitationStatute" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="LegalEvent" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ErrorFactor" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ProtectiveGoal" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="OpeningProcedure" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="InquiryProcedure" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ArgumentProcedure" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Case_Customer" Relationship="LFMSModel.FK_OD_Customer_OperationDocuments" FromRole="Cases" ToRole="Case_Customer" />
+          <NavigationProperty Name="Case_Staff" Relationship="LFMSModel.FK_OD_Staff_OperationDocuments" FromRole="Cases" ToRole="Case_Staff" />
+          <NavigationProperty Name="Office" Relationship="LFMSModel.FK_Cases_Offices" FromRole="Cases" ToRole="Offices" />
+          <NavigationProperty Name="OperationalEvents" Relationship="LFMSModel.FK_OperationalEvents_OperationDocuments" FromRole="Cases" ToRole="OperationalEvents" />
+          <NavigationProperty Name="Payments" Relationship="LFMSModel.FK_Payments_OperationDocuments" FromRole="Cases" ToRole="Payments" />
+          <NavigationProperty Name="Subjects" Relationship="LFMSModel.FK_Subjects_OperationDocuments" FromRole="Cases" ToRole="Subjects" />
+          <NavigationProperty Name="UsedServices" Relationship="LFMSModel.FK_UsedServices_OperationDocuments" FromRole="Cases" ToRole="UsedServices" />
+        </EntityType>
+        <EntityType Name="CustomerGroup">
+          <Key>
+            <PropertyRef Name="CustomerGroupId" />
+          </Key>
+          <Property Name="CustomerGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerGroupName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Customers" Relationship="LFMSModel.FK_Customers_CustomerGroups" FromRole="CustomerGroups" ToRole="Customers" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerGroupId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Representative" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TaxCode" Type="String" MaxLength="14" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Telephone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="BankAccount" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="BankBranch" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Sex" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="IdentityNumber" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+          <Property Name="IdentityDate" Type="DateTime" Precision="0" />
+          <Property Name="IdentityPlace" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Case_Customer" Relationship="LFMSModel.FK_OD_Customer_Customers" FromRole="Customers" ToRole="Case_Customer" />
+          <NavigationProperty Name="CustomerGroup" Relationship="LFMSModel.FK_Customers_CustomerGroups" FromRole="Customers" ToRole="CustomerGroups" />
+        </EntityType>
+        <EntityType Name="Impress">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Money" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Staff" Relationship="LFMSModel.FK_Impress_Staffs" FromRole="Impress" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Office_Staff">
+          <Key>
+            <PropertyRef Name="OfficeStaffId" />
+          </Key>
+          <Property Name="OfficeStaffId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OfficeId" Type="Int32" Nullable="false" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Office" Relationship="LFMSModel.FK_Office_Staff_Offices" FromRole="Office_Staff" ToRole="Offices" />
+          <NavigationProperty Name="Staff" Relationship="LFMSModel.FK_Office_Staff_Staffs" FromRole="Office_Staff" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Office">
+          <Key>
+            <PropertyRef Name="OfficeId" />
+          </Key>
+          <Property Name="OfficeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OfficeName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Manager" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TaxCode" Type="String" MaxLength="14" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Fax" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Website" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BankAccount" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="BankBranch" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cases" Relationship="LFMSModel.FK_Cases_Offices" FromRole="Offices" ToRole="Cases" />
+          <NavigationProperty Name="Office_Staff" Relationship="LFMSModel.FK_Office_Staff_Offices" FromRole="Offices" ToRole="Office_Staff" />
+          <NavigationProperty Name="OtherCosts" Relationship="LFMSModel.FK_OtherCost_Offices" FromRole="Offices" ToRole="OtherCost" />
+        </EntityType>
+        <EntityType Name="OperationalEvent">
+          <Key>
+            <PropertyRef Name="OperationalEventId" />
+          </Key>
+          <Property Name="OperationalEventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="CreatorId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="BeginTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Case" Relationship="LFMSModel.FK_OperationalEvents_OperationDocuments" FromRole="OperationalEvents" ToRole="Cases" />
+        </EntityType>
+        <EntityType Name="OtherCost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OfficeId" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Double" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Office" Relationship="LFMSModel.FK_OtherCost_Offices" FromRole="OtherCost" ToRole="Offices" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PaymentTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PaymentMoney" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Case" Relationship="LFMSModel.FK_Payments_OperationDocuments" FromRole="Payments" ToRole="Cases" />
+        </EntityType>
+        <EntityType Name="Reward">
+          <Key>
+            <PropertyRef Name="RewardID" />
+          </Key>
+          <Property Name="RewardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Money" Type="Double" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Staff" Relationship="LFMSModel.FK_Reward_Staffs" FromRole="Reward" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Staffs" Relationship="LFMSModel.FK_Staffs_Roles" FromRole="Roles" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Salary">
+          <Key>
+            <PropertyRef Name="SalaryID" />
+          </Key>
+          <Property Name="SalaryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="TotalAbsent" Type="Double" Nullable="false" />
+          <Property Name="TotalPresent" Type="Double" Nullable="false" />
+          <Property Name="TotalBenefit" Type="Double" Nullable="false" />
+          <Property Name="TotalImprest" Type="Double" Nullable="false" />
+          <Property Name="TotalTax" Type="Double" Nullable="false" />
+          <Property Name="TotalAssurance" Type="Double" Nullable="false" />
+          <Property Name="TotalReward" Type="Double" Nullable="false" />
+          <Property Name="BaseSalary" Type="Double" Nullable="false" />
+          <Property Name="ActualSalary" Type="Double" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="TotalDateDeduction" Type="Double" Nullable="false" />
+          <Property Name="TotalMoneyDeduction" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Staff" Relationship="LFMSModel.FK_Salary_Staffs" FromRole="Salary" ToRole="Staffs" />
+          <NavigationProperty Name="SalaryAssuranceDetails" Relationship="LFMSModel.FK_SalaryAssuranceDetail_Salary" FromRole="Salary" ToRole="SalaryAssuranceDetail" />
+          <NavigationProperty Name="SalaryBenefitDetails" Relationship="LFMSModel.FK_SalaryBenefitDetail_Salary" FromRole="Salary" ToRole="SalaryBenefitDetail" />
+          <NavigationProperty Name="SalaryTaxDetails" Relationship="LFMSModel.FK_SalaryTaxDetail_Salary" FromRole="Salary" ToRole="SalaryTaxDetail" />
+        </EntityType>
+        <EntityType Name="SalaryAssuranceDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalaryID" Type="Int32" Nullable="false" />
+          <Property Name="AssuranceID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Assurance" Relationship="LFMSModel.FK_SalaryAssuranceDetail_Assurance" FromRole="SalaryAssuranceDetail" ToRole="Assurance" />
+          <NavigationProperty Name="Salary" Relationship="LFMSModel.FK_SalaryAssuranceDetail_Salary" FromRole="SalaryAssuranceDetail" ToRole="Salary" />
+        </EntityType>
+        <EntityType Name="SalaryBenefitDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalaryID" Type="Int32" Nullable="false" />
+          <Property Name="BenefitID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Benefit" Relationship="LFMSModel.FK_SalaryBenefitDetail_Benefit" FromRole="SalaryBenefitDetail" ToRole="Benefit" />
+          <NavigationProperty Name="Salary" Relationship="LFMSModel.FK_SalaryBenefitDetail_Salary" FromRole="SalaryBenefitDetail" ToRole="Salary" />
+        </EntityType>
+        <EntityType Name="SalaryTaxDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalaryID" Type="Int32" Nullable="false" />
+          <Property Name="TaxID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Salary" Relationship="LFMSModel.FK_SalaryTaxDetail_Salary" FromRole="SalaryTaxDetail" ToRole="Salary" />
+          <NavigationProperty Name="Tax" Relationship="LFMSModel.FK_SalaryTaxDetail_Tax" FromRole="SalaryTaxDetail" ToRole="Tax" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ServiceName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ServiceType" Relationship="LFMSModel.FK_Services_ServiceTypes" FromRole="Services" ToRole="ServiceTypes" />
+        </EntityType>
+        <EntityType Name="ServiceType">
+          <Key>
+            <PropertyRef Name="ServiceTypeId" />
+          </Key>
+          <Property Name="ServiceTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Services" Relationship="LFMSModel.FK_Services_ServiceTypes" FromRole="ServiceTypes" ToRole="Services" />
+        </EntityType>
+        <EntityType Name="StaffGroup">
+          <Key>
+            <PropertyRef Name="StaffGroupId" />
+          </Key>
+          <Property Name="StaffGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffGroupName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="BaseSalary" Type="Double" />
+          <NavigationProperty Name="Staffs" Relationship="LFMSModel.FK_Staffs_StaffGroups" FromRole="StaffGroups" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="StaffId" />
+          </Key>
+          <Property Name="StaffId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="StaffGroupId" Type="Int32" Nullable="false" />
+          <Property Name="StaffName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Position" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Avatar" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Sex" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PlaceOfBirth" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IdentityNumber" Type="String" Nullable="false" MaxLength="12" Unicode="true" FixedLength="false" />
+          <Property Name="IdentityDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdentityPlace" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TaxCode" Type="String" MaxLength="14" Unicode="true" FixedLength="false" />
+          <Property Name="BankAccount" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="BankBranch" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Telephone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="AppendantPeople" Type="Int32" />
+          <NavigationProperty Name="Accounts" Relationship="LFMSModel.FK_Accounts_Staffs" FromRole="Staffs" ToRole="Accounts" />
+          <NavigationProperty Name="CalendarEvents" Relationship="LFMSModel.FK_CalendarEvents_Staffs" FromRole="Staffs" ToRole="CalendarEvents" />
+          <NavigationProperty Name="Case_Staff" Relationship="LFMSModel.FK_OD_Staff_Staffs" FromRole="Staffs" ToRole="Case_Staff" />
+          <NavigationProperty Name="Impresses" Relationship="LFMSModel.FK_Impress_Staffs" FromRole="Staffs" ToRole="Impress" />
+          <NavigationProperty Name="Office_Staff" Relationship="LFMSModel.FK_Office_Staff_Staffs" FromRole="Staffs" ToRole="Office_Staff" />
+          <NavigationProperty Name="Rewards" Relationship="LFMSModel.FK_Reward_Staffs" FromRole="Staffs" ToRole="Reward" />
+          <NavigationProperty Name="Role" Relationship="LFMSModel.FK_Staffs_Roles" FromRole="Staffs" ToRole="Roles" />
+          <NavigationProperty Name="Salaries" Relationship="LFMSModel.FK_Salary_Staffs" FromRole="Staffs" ToRole="Salary" />
+          <NavigationProperty Name="StaffGroup" Relationship="LFMSModel.FK_Staffs_StaffGroups" FromRole="Staffs" ToRole="StaffGroups" />
+          <NavigationProperty Name="TimeSheets" Relationship="LFMSModel.FK_TimeSheet_Staffs" FromRole="Staffs" ToRole="TimeSheet" />
+        </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="SubjectId" />
+          </Key>
+          <Property Name="SubjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="SubjectName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LitigationCapacity" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Case" Relationship="LFMSModel.FK_Subjects_OperationDocuments" FromRole="Subjects" ToRole="Cases" />
+        </EntityType>
+        <EntityType Name="Tax">
+          <Key>
+            <PropertyRef Name="TaxID" />
+          </Key>
+          <Property Name="TaxID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Rate" Type="Double" Nullable="false" />
+          <Property Name="IndexTax" Type="Double" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="MoneyFrom" Type="Double" Nullable="false" />
+          <Property Name="MoneyTo" Type="Double" Nullable="false" />
+          <NavigationProperty Name="SalaryTaxDetails" Relationship="LFMSModel.FK_SalaryTaxDetail_Tax" FromRole="Tax" ToRole="SalaryTaxDetail" />
+        </EntityType>
+        <EntityType Name="TimeSheet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Hours" Type="Double" Nullable="false" />
+          <Property Name="IsAllowed" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Staff" Relationship="LFMSModel.FK_TimeSheet_Staffs" FromRole="TimeSheet" ToRole="Staffs" />
+        </EntityType>
+        <EntityType Name="UsedService">
+          <Key>
+            <PropertyRef Name="UsedServiceId" />
+          </Key>
+          <Property Name="UsedServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaseId" Type="Int32" Nullable="false" />
+          <Property Name="ServiceName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ServiceCost" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="RegisteredDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Case" Relationship="LFMSModel.FK_UsedServices_OperationDocuments" FromRole="UsedServices" ToRole="Cases" />
+        </EntityType>
+        <Association Name="FK_Accounts_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Staff" Multiplicity="1" />
+          <End Role="Accounts" Type="LFMSModel.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryAssuranceDetail_Assurance">
+          <End Role="Assurance" Type="LFMSModel.Assurance" Multiplicity="1" />
+          <End Role="SalaryAssuranceDetail" Type="LFMSModel.SalaryAssuranceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assurance">
+              <PropertyRef Name="AssuranceID" />
+            </Principal>
+            <Dependent Role="SalaryAssuranceDetail">
+              <PropertyRef Name="AssuranceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryBenefitDetail_Benefit">
+          <End Role="Benefit" Type="LFMSModel.Benefit" Multiplicity="1" />
+          <End Role="SalaryBenefitDetail" Type="LFMSModel.SalaryBenefitDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Benefit">
+              <PropertyRef Name="BenefitID" />
+            </Principal>
+            <Dependent Role="SalaryBenefitDetail">
+              <PropertyRef Name="BenefitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CalendarEvents_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Staff" Multiplicity="1" />
+          <End Role="CalendarEvents" Type="LFMSModel.CalendarEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="CalendarEvents">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Customer_Customers">
+          <End Role="Customers" Type="LFMSModel.Customer" Multiplicity="1" />
+          <End Role="Case_Customer" Type="LFMSModel.Case_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Case_Customer">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Customer_OperationDocuments">
+          <End Role="Cases" Type="LFMSModel.Case" Multiplicity="1" />
+          <End Role="Case_Customer" Type="LFMSModel.Case_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Case_Customer">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Staff_OperationDocuments">
+          <End Role="Cases" Type="LFMSModel.Case" Multiplicity="1" />
+          <End Role="Case_Staff" Type="LFMSModel.Case_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Case_Staff">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OD_Staff_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Staff" Multiplicity="1" />
+          <End Role="Case_Staff" Type="LFMSModel.Case_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Case_Staff">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cases_Offices">
+          <End Role="Offices" Type="LFMSModel.Office" Multiplicity="1" />
+          <End Role="Cases" Type="LFMSModel.Case" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="OfficeId" />
+            </Principal>
+            <Dependent Role="Cases">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OperationalEvents_OperationDocuments">
+          <End Role="Cases" Type="LFMSModel.Case" Multiplicity="1" />
+          <End Role="OperationalEvents" Type="LFMSModel.OperationalEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="OperationalEvents">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_OperationDocuments">
+          <End Role="Cases" Type="LFMSModel.Case" Multiplicity="1" />
+          <End Role="Payments" Type="LFMSModel.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subjects_OperationDocuments">
+          <End Role="Cases" Type="LFMSModel.Case" Multiplicity="1" />
+          <End Role="Subjects" Type="LFMSModel.Subject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="Subjects">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsedServices_OperationDocuments">
+          <End Role="Cases" Type="LFMSModel.Case" Multiplicity="1" />
+          <End Role="UsedServices" Type="LFMSModel.UsedService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="UsedServices">
+              <PropertyRef Name="CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_CustomerGroups">
+          <End Role="CustomerGroups" Type="LFMSModel.CustomerGroup" Multiplicity="1" />
+          <End Role="Customers" Type="LFMSModel.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerGroups">
+              <PropertyRef Name="CustomerGroupId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="CustomerGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Impress_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Staff" Multiplicity="1" />
+          <End Role="Impress" Type="LFMSModel.Impress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Impress">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Office_Staff_Offices">
+          <End Role="Offices" Type="LFMSModel.Office" Multiplicity="1" />
+          <End Role="Office_Staff" Type="LFMSModel.Office_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="OfficeId" />
+            </Principal>
+            <Dependent Role="Office_Staff">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Office_Staff_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Staff" Multiplicity="1" />
+          <End Role="Office_Staff" Type="LFMSModel.Office_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Office_Staff">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OtherCost_Offices">
+          <End Role="Offices" Type="LFMSModel.Office" Multiplicity="1" />
+          <End Role="OtherCost" Type="LFMSModel.OtherCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="OfficeId" />
+            </Principal>
+            <Dependent Role="OtherCost">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reward_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Staff" Multiplicity="1" />
+          <End Role="Reward" Type="LFMSModel.Reward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Reward">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staffs_Roles">
+          <End Role="Roles" Type="LFMSModel.Role" Multiplicity="1" />
+          <End Role="Staffs" Type="LFMSModel.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Staffs">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salary_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Staff" Multiplicity="1" />
+          <End Role="Salary" Type="LFMSModel.Salary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Salary">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryAssuranceDetail_Salary">
+          <End Role="Salary" Type="LFMSModel.Salary" Multiplicity="1" />
+          <End Role="SalaryAssuranceDetail" Type="LFMSModel.SalaryAssuranceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary">
+              <PropertyRef Name="SalaryID" />
+            </Principal>
+            <Dependent Role="SalaryAssuranceDetail">
+              <PropertyRef Name="SalaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryBenefitDetail_Salary">
+          <End Role="Salary" Type="LFMSModel.Salary" Multiplicity="1" />
+          <End Role="SalaryBenefitDetail" Type="LFMSModel.SalaryBenefitDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary">
+              <PropertyRef Name="SalaryID" />
+            </Principal>
+            <Dependent Role="SalaryBenefitDetail">
+              <PropertyRef Name="SalaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryTaxDetail_Salary">
+          <End Role="Salary" Type="LFMSModel.Salary" Multiplicity="1" />
+          <End Role="SalaryTaxDetail" Type="LFMSModel.SalaryTaxDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary">
+              <PropertyRef Name="SalaryID" />
+            </Principal>
+            <Dependent Role="SalaryTaxDetail">
+              <PropertyRef Name="SalaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalaryTaxDetail_Tax">
+          <End Role="Tax" Type="LFMSModel.Tax" Multiplicity="1" />
+          <End Role="SalaryTaxDetail" Type="LFMSModel.SalaryTaxDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tax">
+              <PropertyRef Name="TaxID" />
+            </Principal>
+            <Dependent Role="SalaryTaxDetail">
+              <PropertyRef Name="TaxID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Services_ServiceTypes">
+          <End Role="ServiceTypes" Type="LFMSModel.ServiceType" Multiplicity="1" />
+          <End Role="Services" Type="LFMSModel.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceTypes">
+              <PropertyRef Name="ServiceTypeId" />
+            </Principal>
+            <Dependent Role="Services">
+              <PropertyRef Name="ServiceTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staffs_StaffGroups">
+          <End Role="StaffGroups" Type="LFMSModel.StaffGroup" Multiplicity="1" />
+          <End Role="Staffs" Type="LFMSModel.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StaffGroups">
+              <PropertyRef Name="StaffGroupId" />
+            </Principal>
+            <Dependent Role="Staffs">
+              <PropertyRef Name="StaffGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeSheet_Staffs">
+          <End Role="Staffs" Type="LFMSModel.Staff" Multiplicity="1" />
+          <End Role="TimeSheet" Type="LFMSModel.TimeSheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staffs">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="TimeSheet">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LFMSModelStoreContainer" CdmEntityContainer="LFMSEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="LFMSModel.Account">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Assurances">
+            <EntityTypeMapping TypeName="LFMSModel.Assurance">
+              <MappingFragment StoreEntitySet="Assurance">
+                <ScalarProperty Name="AssuranceID" ColumnName="AssuranceID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Benefits">
+            <EntityTypeMapping TypeName="LFMSModel.Benefit">
+              <MappingFragment StoreEntitySet="Benefit">
+                <ScalarProperty Name="BenefitID" ColumnName="BenefitID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CalendarEvents">
+            <EntityTypeMapping TypeName="LFMSModel.CalendarEvent">
+              <MappingFragment StoreEntitySet="CalendarEvents">
+                <ScalarProperty Name="CalendarEventId" ColumnName="CalendarEventId" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Case_Customer">
+            <EntityTypeMapping TypeName="LFMSModel.Case_Customer">
+              <MappingFragment StoreEntitySet="Case_Customer">
+                <ScalarProperty Name="CaseCustomerId" ColumnName="CaseCustomerId" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Case_Staff">
+            <EntityTypeMapping TypeName="LFMSModel.Case_Staff">
+              <MappingFragment StoreEntitySet="Case_Staff">
+                <ScalarProperty Name="CaseStaffId" ColumnName="CaseStaffId" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cases">
+            <EntityTypeMapping TypeName="LFMSModel.Case">
+              <MappingFragment StoreEntitySet="Cases">
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="CaseCode" ColumnName="CaseCode" />
+                <ScalarProperty Name="CreatorId" ColumnName="CreatorId" />
+                <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+                <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CaseContent" ColumnName="CaseContent" />
+                <ScalarProperty Name="DisputeSubject" ColumnName="DisputeSubject" />
+                <ScalarProperty Name="DisputeRelation" ColumnName="DisputeRelation" />
+                <ScalarProperty Name="LimitationStatute" ColumnName="LimitationStatute" />
+                <ScalarProperty Name="LegalEvent" ColumnName="LegalEvent" />
+                <ScalarProperty Name="ErrorFactor" ColumnName="ErrorFactor" />
+                <ScalarProperty Name="ProtectiveGoal" ColumnName="ProtectiveGoal" />
+                <ScalarProperty Name="OpeningProcedure" ColumnName="OpeningProcedure" />
+                <ScalarProperty Name="InquiryProcedure" ColumnName="InquiryProcedure" />
+                <ScalarProperty Name="ArgumentProcedure" ColumnName="ArgumentProcedure" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerGroups">
+            <EntityTypeMapping TypeName="LFMSModel.CustomerGroup">
+              <MappingFragment StoreEntitySet="CustomerGroups">
+                <ScalarProperty Name="CustomerGroupId" ColumnName="CustomerGroupId" />
+                <ScalarProperty Name="CustomerGroupName" ColumnName="CustomerGroupName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="LFMSModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="CustomerGroupId" ColumnName="CustomerGroupId" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Representative" ColumnName="Representative" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+                <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="IdentityNumber" ColumnName="IdentityNumber" />
+                <ScalarProperty Name="IdentityDate" ColumnName="IdentityDate" />
+                <ScalarProperty Name="IdentityPlace" ColumnName="IdentityPlace" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Impresses">
+            <EntityTypeMapping TypeName="LFMSModel.Impress">
+              <MappingFragment StoreEntitySet="Impress">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Office_Staff">
+            <EntityTypeMapping TypeName="LFMSModel.Office_Staff">
+              <MappingFragment StoreEntitySet="Office_Staff">
+                <ScalarProperty Name="OfficeStaffId" ColumnName="OfficeStaffId" />
+                <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Offices">
+            <EntityTypeMapping TypeName="LFMSModel.Office">
+              <MappingFragment StoreEntitySet="Offices">
+                <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+                <ScalarProperty Name="OfficeName" ColumnName="OfficeName" />
+                <ScalarProperty Name="Manager" ColumnName="Manager" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+                <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OperationalEvents">
+            <EntityTypeMapping TypeName="LFMSModel.OperationalEvent">
+              <MappingFragment StoreEntitySet="OperationalEvents">
+                <ScalarProperty Name="OperationalEventId" ColumnName="OperationalEventId" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="CreatorId" ColumnName="CreatorId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtherCosts">
+            <EntityTypeMapping TypeName="LFMSModel.OtherCost">
+              <MappingFragment StoreEntitySet="OtherCost">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="LFMSModel.Payment">
+              <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PaymentTime" ColumnName="PaymentTime" />
+                <ScalarProperty Name="PaymentMoney" ColumnName="PaymentMoney" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rewards">
+            <EntityTypeMapping TypeName="LFMSModel.Reward">
+              <MappingFragment StoreEntitySet="Reward">
+                <ScalarProperty Name="RewardID" ColumnName="RewardID" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="LFMSModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salaries">
+            <EntityTypeMapping TypeName="LFMSModel.Salary">
+              <MappingFragment StoreEntitySet="Salary">
+                <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="TotalAbsent" ColumnName="TotalAbsent" />
+                <ScalarProperty Name="TotalPresent" ColumnName="TotalPresent" />
+                <ScalarProperty Name="TotalBenefit" ColumnName="TotalBenefit" />
+                <ScalarProperty Name="TotalImprest" ColumnName="TotalImprest" />
+                <ScalarProperty Name="TotalTax" ColumnName="TotalTax" />
+                <ScalarProperty Name="TotalAssurance" ColumnName="TotalAssurance" />
+                <ScalarProperty Name="TotalReward" ColumnName="TotalReward" />
+                <ScalarProperty Name="BaseSalary" ColumnName="BaseSalary" />
+                <ScalarProperty Name="ActualSalary" ColumnName="ActualSalary" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="TotalDateDeduction" ColumnName="TotalDateDeduction" />
+                <ScalarProperty Name="TotalMoneyDeduction" ColumnName="TotalMoneyDeduction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalaryAssuranceDetails">
+            <EntityTypeMapping TypeName="LFMSModel.SalaryAssuranceDetail">
+              <MappingFragment StoreEntitySet="SalaryAssuranceDetail">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
+                <ScalarProperty Name="AssuranceID" ColumnName="AssuranceID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalaryBenefitDetails">
+            <EntityTypeMapping TypeName="LFMSModel.SalaryBenefitDetail">
+              <MappingFragment StoreEntitySet="SalaryBenefitDetail">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
+                <ScalarProperty Name="BenefitID" ColumnName="BenefitID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalaryTaxDetails">
+            <EntityTypeMapping TypeName="LFMSModel.SalaryTaxDetail">
+              <MappingFragment StoreEntitySet="SalaryTaxDetail">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
+                <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="LFMSModel.Service">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="ServiceTypeId" ColumnName="ServiceTypeId" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceTypes">
+            <EntityTypeMapping TypeName="LFMSModel.ServiceType">
+              <MappingFragment StoreEntitySet="ServiceTypes">
+                <ScalarProperty Name="ServiceTypeId" ColumnName="ServiceTypeId" />
+                <ScalarProperty Name="ServiceTypeName" ColumnName="ServiceTypeName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StaffGroups">
+            <EntityTypeMapping TypeName="LFMSModel.StaffGroup">
+              <MappingFragment StoreEntitySet="StaffGroups">
+                <ScalarProperty Name="StaffGroupId" ColumnName="StaffGroupId" />
+                <ScalarProperty Name="StaffGroupName" ColumnName="StaffGroupName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BaseSalary" ColumnName="BaseSalary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="LFMSModel.Staff">
+              <MappingFragment StoreEntitySet="Staffs">
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="StaffGroupId" ColumnName="StaffGroupId" />
+                <ScalarProperty Name="StaffName" ColumnName="StaffName" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="PlaceOfBirth" ColumnName="PlaceOfBirth" />
+                <ScalarProperty Name="IdentityNumber" ColumnName="IdentityNumber" />
+                <ScalarProperty Name="IdentityDate" ColumnName="IdentityDate" />
+                <ScalarProperty Name="IdentityPlace" ColumnName="IdentityPlace" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+                <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="AppendantPeople" ColumnName="AppendantPeople" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subjects">
+            <EntityTypeMapping TypeName="LFMSModel.Subject">
+              <MappingFragment StoreEntitySet="Subjects">
+                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+                <ScalarProperty Name="LitigationCapacity" ColumnName="LitigationCapacity" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Taxes">
+            <EntityTypeMapping TypeName="LFMSModel.Tax">
+              <MappingFragment StoreEntitySet="Tax">
+                <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="IndexTax" ColumnName="IndexTax" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="MoneyFrom" ColumnName="MoneyFrom" />
+                <ScalarProperty Name="MoneyTo" ColumnName="MoneyTo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeSheets">
+            <EntityTypeMapping TypeName="LFMSModel.TimeSheet">
+              <MappingFragment StoreEntitySet="TimeSheet">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+                <ScalarProperty Name="IsAllowed" ColumnName="IsAllowed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsedServices">
+            <EntityTypeMapping TypeName="LFMSModel.UsedService">
+              <MappingFragment StoreEntitySet="UsedServices">
+                <ScalarProperty Name="UsedServiceId" ColumnName="UsedServiceId" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="ServiceCost" ColumnName="ServiceCost" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RegisteredDate" ColumnName="RegisteredDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
