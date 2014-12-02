@@ -162,11 +162,9 @@
     </Compile>
     <Compile Include="Controllers\CaseController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
-    <Compile Include="Controllers\CustomerGroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OfficeController.cs" />
-    <Compile Include="Controllers\OtherCostController.cs" />
     <Compile Include="Controllers\ProxyController.cs" />
     <Compile Include="Controllers\SalaryController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
@@ -201,12 +199,10 @@
       <DependentUpon>LFMSModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\BLO\CustomerBLO.cs" />
-    <Compile Include="Models\BLO\CustomerGroupBLO.cs" />
     <Compile Include="Models\BLO\ExcelBLO.cs" />
     <Compile Include="Models\BLO\HomeBLO.cs" />
     <Compile Include="Models\BLO\OfficeBLO.cs" />
     <Compile Include="Models\BLO\CaseBLO.cs" />
-    <Compile Include="Models\BLO\OtherCostBLO.cs" />
     <Compile Include="Models\BLO\SalaryBLO.cs" />
     <Compile Include="Models\BLO\ServiceBLO.cs" />
     <Compile Include="Models\BLO\ServiceTypeBLO.cs" />
@@ -221,11 +217,9 @@
     <Compile Include="Models\ConcerEntity\SalaryExcelEntity.cs" />
     <Compile Include="Models\ConcerEntity\TimeSheetConcertEntity.cs" />
     <Compile Include="Models\DAO\CustomerDAO.cs" />
-    <Compile Include="Models\DAO\CustomerGroupDAO.cs" />
     <Compile Include="Models\DAO\HomeDAO.cs" />
     <Compile Include="Models\DAO\OfficeDAO.cs" />
     <Compile Include="Models\DAO\CaseDAO.cs" />
-    <Compile Include="Models\DAO\OtherCostDAO.cs" />
     <Compile Include="Models\DAO\SalaryDAO.cs" />
     <Compile Include="Models\DAO\ServiceDAO.cs" />
     <Compile Include="Models\DAO\ServiceTypeDAO.cs" />
@@ -1095,7 +1089,6 @@
     <Content Include="Views\Statistic\Statistic.cshtml" />
     <Content Include="Views\Statistic\_Revenue.cshtml" />
     <Content Include="Views\Statistic\_Office.cshtml" />
-    <Content Include="Views\OtherCost\OtherCost.cshtml" />
     <Content Include="Views\Statistic\_Staff.cshtml" />
     <None Include="Views\Web.config">
       <SubType>Designer</SubType>
