@@ -205,7 +205,6 @@
     <Compile Include="Models\BLO\CaseBLO.cs" />
     <Compile Include="Models\BLO\SalaryBLO.cs" />
     <Compile Include="Models\BLO\ServiceBLO.cs" />
-    <Compile Include="Models\BLO\ServiceTypeBLO.cs" />
     <Compile Include="Models\BLO\StaffBLO.cs" />
     <Compile Include="Models\BLO\StatisticBLO.cs" />
     <Compile Include="Models\BLO\UserBLO.cs" />
@@ -222,7 +221,6 @@
     <Compile Include="Models\DAO\CaseDAO.cs" />
     <Compile Include="Models\DAO\SalaryDAO.cs" />
     <Compile Include="Models\DAO\ServiceDAO.cs" />
-    <Compile Include="Models\DAO\ServiceTypeDAO.cs" />
     <Compile Include="Models\DAO\StaffDAO.cs" />
     <Compile Include="Models\DAO\StatisticDAO.cs" />
     <Compile Include="Models\DAO\UserControlDAO.cs" />
