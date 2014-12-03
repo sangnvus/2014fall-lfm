@@ -73,6 +73,7 @@
       <type id="Dictionary&lt;string, double&gt;" tid="" name="Dictionary&lt;string, double&gt;" description="" nullable="false" />
       <type id="Class:di671202358613953855" tid="" name="StatisticDAO" description="" nullable="false" class-ref="di671202358613953855" />
       <type id="double" tid="" name="double" description="" nullable="false" />
+      <type id="List&lt;OperationalEvent&gt;" tid="" name="List&lt;OperationalEvent&gt;" description="" nullable="false" />
     </custom-types>
   </types>
   <filters />
@@ -3417,7 +3418,7 @@
         <source-codes />
       </template-parameters>
     </item>
-    <item id="di752070104918864530" cid="C001" type="class" name="CaseDAO" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="P19b5972d12e84a3db23c872edaf1bd39" creation-date="04/11/2014 10:37:42">
+    <item id="di752070104918864530" cid="C001" type="class" name="CaseDAO" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="04/11/2014 10:37:42">
       <stereotypes />
       <tagged-values />
       <associated-diagrams />
@@ -4187,7 +4188,7 @@
           </authors>
           <description />
           <creation-date>11/29/2014 09:15:21</creation-date>
-          <change-date>11/29/2014 09:43:39</change-date>
+          <change-date>12/03/2014 12:31:35</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -4746,52 +4747,6 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di573586487985170720" cid="C001" type="class" name="UtilityClass" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:39:34">
-            <stereotypes />
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-            <attributes />
-            <operations>
-              <operation id="oe4d06a763967472688ecfb4d5914b98c237" name="ConvertObjectToJson" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="int currentLevel" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="o789ecacf131948929fce047e8a007c5e10" name="ConvertDynamicObjectWithFullAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="od9c1a35ac3b4410aad75fde2be8e7675425" name="ConvertDynamicObjectWithCustomAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-            </operations>
-            <template-parameters>
-              <source-codes />
-            </template-parameters>
-          </item>
-          <item id="di309822855302427600" cid="DEP010" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:43:39">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
         </abstract-items>
         <layer name="Default" visible="true" enabled="true" locked="false">
           <item id="di740626657489118312" iid="857a65c977814cbd9eba5e7a42713c03" creation-date="04/11/2014 10:53:16" order-index="0" type="entity">
@@ -4854,19 +4809,6 @@
             </layout>
             <relation from="di299996239353931678" from-iid="f37686a96ca849279ef3c2e0eda3424e" to="di269619587523423273" to-iid="50ae5cf2df174f06a9ada1d6cdcbcc4f" />
           </item>
-          <item id="di573586487985170720" iid="04e5781b1db44c47b7b9563c90001037" creation-date="11/29/2014 09:39:34" order-index="6" type="entity">
-            <layout ax="-1352.387" ay="1171.415" awidth="514" aheight="139.7668" x="-1352.387" y="1171.415" width="514" height="139.7668" angle="0" />
-            <class />
-          </item>
-          <item id="di309822855302427600" iid="0240909d149048009911af9ce6142088" creation-date="11/29/2014 09:43:39" order-index="7" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="46,2" auto-path="" x1="-963" y1="1047" x2="-1048" y2="1171" start-border-pos="0.67485969449267" end-border-pos="0.148259738076058">
-              <points>
-                <point x="-963" y="1047" />
-                <point x="-1048" y="1171" />
-              </points>
-            </layout>
-            <relation from="di740626657489118312" from-iid="857a65c977814cbd9eba5e7a42713c03" to="di573586487985170720" to-iid="04e5781b1db44c47b7b9563c90001037" />
-          </item>
         </layer>
       </diagram>
       <diagram type="uml-class" id="p531864402741075019" name="Notify" order-index="4" overview-order-index="2" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="true" show-relationship-texts="true" auto-routed-paths="false">
@@ -4881,7 +4823,7 @@
           </authors>
           <description />
           <creation-date>11/29/2014 09:44:49</creation-date>
-          <change-date>11/29/2014 09:48:24</change-date>
+          <change-date>12/03/2014 12:31:48</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -5028,43 +4970,6 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di190366481681250295" cid="C001" type="class" name="UtilityClass" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:39:34">
-            <stereotypes />
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-            <attributes />
-            <operations>
-              <operation id="oe4d06a763967472688ecfb4d5914b98c237" name="ConvertObjectToJson" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="int currentLevel" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="o789ecacf131948929fce047e8a007c5e10" name="ConvertDynamicObjectWithFullAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="od9c1a35ac3b4410aad75fde2be8e7675425" name="ConvertDynamicObjectWithCustomAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-            </operations>
-            <template-parameters>
-              <source-codes />
-            </template-parameters>
-          </item>
           <item id="di132572217964498488" cid="DEP011" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:47:53">
             <stereotypes>
               <stereotype name="use" />
@@ -5075,15 +4980,6 @@
             <style class="default" />
           </item>
           <item id="di133790735718306173" cid="DEP012" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:48:01">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
-          <item id="di111214270776927077" cid="DEP013" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:48:24">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -5106,10 +5002,6 @@
             <layout ax="100" ay="410.2332" awidth="700" aheight="210" x="100" y="410.2332" width="700" height="210" angle="0" />
             <class />
           </item>
-          <item id="di190366481681250295" iid="fd5827b1ea68406fb9e00e5ef2aaa727" creation-date="11/29/2014 09:39:34" order-index="6" type="entity">
-            <layout ax="916.9762" ay="410.2332" awidth="514" aheight="139.7668" x="916.9762" y="410.2332" width="514" height="139.7668" angle="0" />
-            <class />
-          </item>
           <item id="di132572217964498488" iid="1eca4ff4e30d42bb9390cb75f486e89b" creation-date="11/29/2014 09:47:53" order-index="7" type="relation">
             <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="917" y1="199" x2="800" y2="198" start-border-pos="0.878863879612514" end-border-pos="0.378163419451032">
               <points>
@@ -5128,15 +5020,6 @@
             </layout>
             <relation from="di639080339915297117" from-iid="79cc751e7c434bc18f7658a3fbb4925f" to="di367699299861248165" to-iid="edf6bbd118cb4ffc92a2db7dc58e8d3a" />
           </item>
-          <item id="di111214270776927077" iid="514f3e052e8b472a8fcd5a0a47d711b8" creation-date="11/29/2014 09:48:24" order-index="9" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="800" y1="498" x2="917" y2="492" start-border-pos="0.354579671223958" end-border-pos="0.852899263594001">
-              <points>
-                <point x="800" y="498" />
-                <point x="917" y="492" />
-              </points>
-            </layout>
-            <relation from="di367699299861248165" from-iid="edf6bbd118cb4ffc92a2db7dc58e8d3a" to="di190366481681250295" to-iid="fd5827b1ea68406fb9e00e5ef2aaa727" />
-          </item>
         </layer>
       </diagram>
       <diagram type="uml-class" id="p593747953972214961" name="Manage Calendar Event" order-index="5" overview-order-index="3" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="true" show-relationship-texts="true" auto-routed-paths="false">
@@ -5151,7 +5034,7 @@
           </authors>
           <description />
           <creation-date>11/29/2014 09:56:31</creation-date>
-          <change-date>11/29/2014 09:59:42</change-date>
+          <change-date>12/03/2014 12:32:00</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -5298,43 +5181,6 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di554557061146325120" cid="C001" type="class" name="UtilityClass" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:39:34">
-            <stereotypes />
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-            <attributes />
-            <operations>
-              <operation id="oe4d06a763967472688ecfb4d5914b98c237" name="ConvertObjectToJson" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="int currentLevel" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="o789ecacf131948929fce047e8a007c5e10" name="ConvertDynamicObjectWithFullAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="od9c1a35ac3b4410aad75fde2be8e7675425" name="ConvertDynamicObjectWithCustomAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-            </operations>
-            <template-parameters>
-              <source-codes />
-            </template-parameters>
-          </item>
           <item id="di225245477783739207" cid="DEP014" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:59:35">
             <stereotypes>
               <stereotype name="use" />
@@ -5345,15 +5191,6 @@
             <style class="default" />
           </item>
           <item id="di192555944795165219" cid="DEP015" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:59:39">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
-          <item id="di159866411806591231" cid="DEP016" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:59:42">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -5376,10 +5213,6 @@
             <layout ax="100" ay="410.2332" awidth="700" aheight="210" x="100" y="410.2332" width="700" height="210" angle="0" />
             <class />
           </item>
-          <item id="di554557061146325120" iid="5d9c8f193df6402a8ab1426d0fb9df7b" creation-date="11/29/2014 09:39:34" order-index="6" type="entity">
-            <layout ax="916.9762" ay="410.2332" awidth="514" aheight="139.7668" x="916.9762" y="410.2332" width="514" height="139.7668" angle="0" />
-            <class />
-          </item>
           <item id="di225245477783739207" iid="5517d4a723ee40a9b167166889806b72" creation-date="11/29/2014 09:59:35" order-index="7" type="relation">
             <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="917" y1="199" x2="800" y2="198" start-border-pos="0.878863879612514" end-border-pos="0.378163419451032">
               <points>
@@ -5398,15 +5231,6 @@
             </layout>
             <relation from="di227422242634853325" from-iid="e85e51ff3cbe400cbe799ee7d3795ef5" to="di147389638366680022" to-iid="51e9d36f8bda4acbb1b03790b4633dd2" />
           </item>
-          <item id="di159866411806591231" iid="bb10abd64447451d94d091eff8def44f" creation-date="11/29/2014 09:59:42" order-index="9" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="800" y1="498" x2="917" y2="492" start-border-pos="0.354579671223958" end-border-pos="0.852899263594001">
-              <points>
-                <point x="800" y="498" />
-                <point x="917" y="492" />
-              </points>
-            </layout>
-            <relation from="di147389638366680022" from-iid="51e9d36f8bda4acbb1b03790b4633dd2" to="di554557061146325120" to-iid="5d9c8f193df6402a8ab1426d0fb9df7b" />
-          </item>
         </layer>
       </diagram>
       <diagram type="uml-class" id="p130875788812852644" name="Manage Case" order-index="6" overview-order-index="4" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="true" show-relationship-texts="true" auto-routed-paths="false">
@@ -5421,7 +5245,7 @@
           </authors>
           <description />
           <creation-date>11/29/2014 10:00:02</creation-date>
-          <change-date>11/29/2014 10:30:01</change-date>
+          <change-date>12/03/2014 12:32:23</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -5748,43 +5572,6 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di627822598327286104" cid="C001" type="class" name="UtilityClass" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:39:34">
-            <stereotypes />
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-            <attributes />
-            <operations>
-              <operation id="oe4d06a763967472688ecfb4d5914b98c237" name="ConvertObjectToJson" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="int currentLevel" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="o789ecacf131948929fce047e8a007c5e10" name="ConvertDynamicObjectWithFullAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="od9c1a35ac3b4410aad75fde2be8e7675425" name="ConvertDynamicObjectWithCustomAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-            </operations>
-            <template-parameters>
-              <source-codes />
-            </template-parameters>
-          </item>
           <item id="di657285478252524436" cid="DEP026" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 10:27:15">
             <stereotypes>
               <stereotype name="use" />
@@ -5795,24 +5582,6 @@
             <style class="default" />
           </item>
           <item id="di484178339788321825" cid="DEP018" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 10:03:56">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
-          <item id="di509925295208331847" cid="DEP020" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 10:04:27">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
-          <item id="di444102721509930414" cid="DEP021" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 10:04:39">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -6181,24 +5950,6 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di846956212247567517" cid="DEP022" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 10:13:22">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
-          <item id="di533973091423813768" cid="DEP024" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 10:20:27">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
           <item id="di196104729873230279" cid="DEP027" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 10:28:33">
             <stereotypes>
               <stereotype name="use" />
@@ -6267,10 +6018,6 @@
             <layout ax="-559.8996" ay="1143" awidth="730" aheight="740" x="-559.8996" y="1143" width="730" height="740" angle="0" />
             <class />
           </item>
-          <item id="di627822598327286104" iid="7784ac7536324c8d93a0a17f26ec2b1f" creation-date="11/29/2014 09:39:34" order-index="6" type="entity">
-            <layout ax="77.29926" ay="655.6486" awidth="514" aheight="139.7668" x="77.29926" y="655.6486" width="514" height="139.7668" angle="0" />
-            <class />
-          </item>
           <item id="di484178339788321825" iid="223add499e63404ab9165f02e03d0420" creation-date="11/29/2014 10:03:56" order-index="8" type="relation">
             <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="14,22" auto-path="" x1="340" y1="1490" x2="170" y2="1498" start-border-pos="0.87023087510339" end-border-pos="0.369764462032834">
               <points>
@@ -6279,25 +6026,6 @@
               </points>
             </layout>
             <relation from="di570303701826659765" from-iid="350c942b71c440358a6a7096ca80d688" to="di486428684637824020" to-iid="df1feb97332b44e48c1366be6c4f4443" />
-          </item>
-          <item id="di509925295208331847" iid="8f07a62b26e3438589ff81b910c64169" creation-date="11/29/2014 10:04:27" order-index="9" type="relation">
-            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" name-position="28,0" auto-path="" x1="373" y1="1066" x2="232" y2="795" start-border-pos="0.0113544242558438" end-border-pos="0.674756447164929">
-              <points>
-                <point x="373" y="1066" />
-                <point x="340.2993" y="1030" />
-                <point x="232" y="795" />
-              </points>
-            </layout>
-            <relation from="di570303701826659765" from-iid="350c942b71c440358a6a7096ca80d688" to="di627822598327286104" to-iid="7784ac7536324c8d93a0a17f26ec2b1f" />
-          </item>
-          <item id="di444102721509930414" iid="7efb81c5d32644f89e918e22e8fff0c9" creation-date="11/29/2014 10:04:39" order-index="10" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="-10,-16" auto-path="" x1="-56" y1="703" x2="77" y2="711" start-border-pos="0.387677025857233" end-border-pos="0.901620534256531">
-              <points>
-                <point x="-56" y="703" />
-                <point x="77" y="711" />
-              </points>
-            </layout>
-            <relation from="di762999565781904595" from-iid="cc5165247a9343b7b7818cbe3692a909" to="di627822598327286104" to-iid="7784ac7536324c8d93a0a17f26ec2b1f" />
           </item>
           <item id="di456072004284207896" iid="8203c2bb31b54312b19bae6596c91067" creation-date="04/11/2014 11:43:15" order-index="0" type="entity">
             <layout ax="230.2993" ay="-209" awidth="830" aheight="460" x="230.2993" y="-209" width="830" height="460" angle="0" />
@@ -6322,25 +6050,6 @@
           <item id="di887143839835911617" iid="f1764c8f65644517a5f0e0f8c3066c21" creation-date="04/11/2014 11:18:20" order-index="0" type="entity">
             <layout ax="-1352.387" ay="1553" awidth="740" aheight="330" x="-1352.387" y="1553" width="740" height="330" angle="0" />
             <class />
-          </item>
-          <item id="di846956212247567517" iid="fe884f5775cb4163a0afbfd3f90796a8" creation-date="11/29/2014 10:13:22" order-index="11" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="45,5" auto-path="" x1="570" y1="569" x2="439" y2="656" start-border-pos="0.700991733738633" end-border-pos="0.17568301412382" name-width="60">
-              <points>
-                <point x="570" y="569" />
-                <point x="439" y="656" />
-              </points>
-            </layout>
-            <relation from="di747831710336643822" from-iid="b7dc3183520a4353a93b8b983e900fe9" to="di627822598327286104" to-iid="7784ac7536324c8d93a0a17f26ec2b1f" />
-          </item>
-          <item id="di533973091423813768" iid="919fe328d3b04a978f8f5aa912e5122b" creation-date="11/29/2014 10:20:27" order-index="12" type="relation">
-            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" name-position="-40,-10" auto-path="" x1="445" y1="251" x2="199" y2="656" start-border-pos="0.685425687123494" end-border-pos="0.0591929691774836">
-              <points>
-                <point x="445" y="251" />
-                <point x="345" y="416" />
-                <point x="199" y="656" />
-              </points>
-            </layout>
-            <relation from="di456072004284207896" from-iid="8203c2bb31b54312b19bae6596c91067" to="di627822598327286104" to-iid="7784ac7536324c8d93a0a17f26ec2b1f" />
           </item>
           <item id="di657285478252524436" iid="339a9f94606343938eb87aa653afbf29" creation-date="11/29/2014 10:27:15" order-index="13" type="relation">
             <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="-56" y1="849" x2="340" y2="1117" start-border-pos="0.435470003372073" end-border-pos="0.984553501395703">
@@ -6420,7 +6129,7 @@
           </authors>
           <description />
           <creation-date>11/29/2014 10:49:11</creation-date>
-          <change-date>11/29/2014 11:02:20</change-date>
+          <change-date>12/03/2014 12:32:38</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -6541,52 +6250,6 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di372403136746833150" cid="C001" type="class" name="UtilityClass" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:39:34">
-            <stereotypes />
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-            <attributes />
-            <operations>
-              <operation id="oe4d06a763967472688ecfb4d5914b98c237" name="ConvertObjectToJson" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="int currentLevel" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="o789ecacf131948929fce047e8a007c5e10" name="ConvertDynamicObjectWithFullAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="od9c1a35ac3b4410aad75fde2be8e7675425" name="ConvertDynamicObjectWithCustomAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-            </operations>
-            <template-parameters>
-              <source-codes />
-            </template-parameters>
-          </item>
-          <item id="di129860139192382121" cid="DEP033" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 10:58:13">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
           <item id="di728350439847467566" cid="DEP034" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 11:02:11">
             <stereotypes>
               <stereotype name="use" />
@@ -6618,19 +6281,6 @@
           <item id="di429610728234905674" iid="728c9f85506a44b1b9eb15a54ed450c6" creation-date="04/11/2014 11:22:38" order-index="0" type="entity">
             <layout ax="-1032.387" ay="-198" awidth="1150" aheight="350" x="-1032.387" y="-198" width="1150" height="350" angle="0" />
             <class />
-          </item>
-          <item id="di372403136746833150" iid="df72a1fe0c5f4758a0c40d7385bfd5b5" creation-date="11/29/2014 09:39:34" order-index="6" type="entity">
-            <layout ax="230.2993" ay="317.6486" awidth="514" aheight="139.7668" x="230.2993" y="317.6486" width="514" height="139.7668" angle="0" />
-            <class />
-          </item>
-          <item id="di129860139192382121" iid="6cc5994fae0544b4921ed8b133ca0065" creation-date="11/29/2014 10:58:13" order-index="7" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="44,-4" auto-path="" x1="540" y1="269" x2="518" y2="318" start-border-pos="0.656056429391884" end-border-pos="0.140073019242936">
-              <points>
-                <point x="540" y="269" />
-                <point x="518" y="318" />
-              </points>
-            </layout>
-            <relation from="di327163500303448903" from-iid="59f0c362a5664a8fbb61565bb063ec06" to="di372403136746833150" to-iid="df72a1fe0c5f4758a0c40d7385bfd5b5" />
           </item>
           <item id="di728350439847467566" iid="dfe54635d08b4d86bffb477e8051f19d" creation-date="11/29/2014 11:02:11" order-index="8" type="relation">
             <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="118" y1="9" x2="228" y2="16" start-border-pos="0.398109090668815" end-border-pos="0.887712450649427">
@@ -6664,7 +6314,7 @@
           </authors>
           <description />
           <creation-date>11/29/2014 11:05:14</creation-date>
-          <change-date>11/29/2014 11:07:35</change-date>
+          <change-date>12/03/2014 12:32:49</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -6785,52 +6435,6 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di280544150639447636" cid="C001" type="class" name="UtilityClass" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:39:34">
-            <stereotypes />
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-            <attributes />
-            <operations>
-              <operation id="oe4d06a763967472688ecfb4d5914b98c237" name="ConvertObjectToJson" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="int currentLevel" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="o789ecacf131948929fce047e8a007c5e10" name="ConvertDynamicObjectWithFullAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="od9c1a35ac3b4410aad75fde2be8e7675425" name="ConvertDynamicObjectWithCustomAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-            </operations>
-            <template-parameters>
-              <source-codes />
-            </template-parameters>
-          </item>
-          <item id="di171487523611413550" cid="DEP036" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 11:07:18">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
           <item id="di528320097979023315" cid="DEP037" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 11:07:23">
             <stereotypes>
               <stereotype name="use" />
@@ -6841,15 +6445,6 @@
             <style class="default" />
           </item>
           <item id="di454025705677718797" cid="DEP038" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 11:07:31">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
-          <item id="di556707328495784749" cid="DEP039" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 11:07:35">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -6872,19 +6467,6 @@
             <layout ax="-1032.387" ay="-198" awidth="1150" aheight="350" x="-1032.387" y="-198" width="1150" height="350" angle="0" />
             <class />
           </item>
-          <item id="di280544150639447636" iid="7bdbbe597dd545018a8072e6de1c2ee0" creation-date="11/29/2014 09:39:34" order-index="6" type="entity">
-            <layout ax="206.2993" ay="-194.3514" awidth="514" aheight="139.7668" x="206.2993" y="-194.3514" width="514" height="139.7668" angle="0" />
-            <class />
-          </item>
-          <item id="di171487523611413550" iid="c0301837995f4f08976e17b580889408" creation-date="11/29/2014 11:07:18" order-index="7" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="118" y1="-86" x2="206" y2="-96" start-border-pos="0.329989128112793" end-border-pos="0.823696455593746">
-              <points>
-                <point x="118" y="-86" />
-                <point x="206" y="-96" />
-              </points>
-            </layout>
-            <relation from="di915786451312641773" from-iid="4ecfcce340e44fad98a49e259df1c65f" to="di280544150639447636" to-iid="7bdbbe597dd545018a8072e6de1c2ee0" />
-          </item>
           <item id="di528320097979023315" iid="a53e6ab3c50646aa8500667b3f6e69a0" creation-date="11/29/2014 11:07:23" order-index="8" type="relation">
             <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="118" y1="151" x2="269" y2="213" start-border-pos="0.499205878121512" end-border-pos="0.018862579529544">
               <points>
@@ -6904,15 +6486,6 @@
             </layout>
             <relation from="di863911258287571656" from-iid="4ab8aea29c6648bf9f17a456f6d630dd" to="di843414899643585260" to-iid="c9616d87d8804aac97c1ba63f1b232bf" />
           </item>
-          <item id="di556707328495784749" iid="85acfd0f345a48aa86baa5143a824d34" creation-date="11/29/2014 11:07:35" order-index="10" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="557" y1="213" x2="483" y2="-55" start-border-pos="0.105605109341173" end-border-pos="0.615658140368035">
-              <points>
-                <point x="557" y="213" />
-                <point x="483" y="-55" />
-              </points>
-            </layout>
-            <relation from="di863911258287571656" from-iid="4ab8aea29c6648bf9f17a456f6d630dd" to="di280544150639447636" to-iid="7bdbbe597dd545018a8072e6de1c2ee0" />
-          </item>
         </layer>
       </diagram>
       <diagram type="uml-class" id="p303511976477782988" name="Manage Customer Group" order-index="9" overview-order-index="7" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="true" show-relationship-texts="true" auto-routed-paths="false">
@@ -6927,7 +6500,7 @@
           </authors>
           <description />
           <creation-date>12/02/2014 22:17:47</creation-date>
-          <change-date>12/02/2014 23:01:30</change-date>
+          <change-date>12/03/2014 12:33:02</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -7163,43 +6736,6 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di224150231492873135" cid="C001" type="class" name="UtilityClass" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:39:34">
-            <stereotypes />
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-            <attributes />
-            <operations>
-              <operation id="oe4d06a763967472688ecfb4d5914b98c237" name="ConvertObjectToJson" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="int currentLevel" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="o789ecacf131948929fce047e8a007c5e10" name="ConvertDynamicObjectWithFullAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="od9c1a35ac3b4410aad75fde2be8e7675425" name="ConvertDynamicObjectWithCustomAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-            </operations>
-            <template-parameters>
-              <source-codes />
-            </template-parameters>
-          </item>
           <item id="di936824540723824265" cid="C001" type="class" name="CustomerController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="04/11/2014 10:26:20">
             <stereotypes />
             <tagged-values />
@@ -7325,15 +6861,6 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di354677755973718076" cid="DEP003" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:01:30">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
         </abstract-items>
         <layer name="Default" visible="true" enabled="true" locked="false">
           <item id="di541686721333203013" iid="b7f5b2c1399f46b8a5a0252dda3b98a0" creation-date="04/11/2014 11:18:20" order-index="0" type="entity">
@@ -7342,10 +6869,6 @@
           </item>
           <item id="di393105485754691275" iid="5eea66ee1be649b998a62162598f6f77" creation-date="04/11/2014 11:18:20" order-index="0" type="entity">
             <layout ax="-1280.387" ay="1165" awidth="740" aheight="330" x="-1280.387" y="1165" width="740" height="330" angle="0" />
-            <class />
-          </item>
-          <item id="di224150231492873135" iid="a9ee9c95c4c44d678e2330f152a66c15" creation-date="11/29/2014 09:39:34" order-index="6" type="entity">
-            <layout ax="-361.7007" ay="1165" awidth="514" aheight="139.7668" x="-361.7007" y="1165" width="514" height="139.7668" angle="0" />
             <class />
           </item>
           <item id="di936824540723824265" iid="0460d9c54ac94bd0bdb6dc3b70733cb4" creation-date="04/11/2014 10:26:20" order-index="0" type="entity">
@@ -7370,15 +6893,6 @@
             </layout>
             <relation from="di541686721333203013" from-iid="b7f5b2c1399f46b8a5a0252dda3b98a0" to="di393105485754691275" to-iid="5eea66ee1be649b998a62162598f6f77" />
           </item>
-          <item id="di354677755973718076" iid="a79d52c2a1734c24ae5da58f1df9403f" creation-date="12/02/2014 23:01:30" order-index="9" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="-540" y1="1286" x2="-362" y2="1265" start-border-pos="0.341920794862689" end-border-pos="0.820752886785097">
-              <points>
-                <point x="-540" y="1286" />
-                <point x="-362" y="1265" />
-              </points>
-            </layout>
-            <relation from="di393105485754691275" from-iid="5eea66ee1be649b998a62162598f6f77" to="di224150231492873135" to-iid="a9ee9c95c4c44d678e2330f152a66c15" />
-          </item>
         </layer>
       </diagram>
       <diagram type="uml-class" id="p736301743242968988" name="Manage Customer" order-index="10" overview-order-index="8" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="true" show-relationship-texts="true" auto-routed-paths="false">
@@ -7393,7 +6907,7 @@
           </authors>
           <description />
           <creation-date>12/02/2014 23:01:48</creation-date>
-          <change-date>12/02/2014 23:04:50</change-date>
+          <change-date>12/03/2014 12:33:16</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -7736,43 +7250,6 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di915652927305559339" cid="C001" type="class" name="UtilityClass" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:39:34">
-            <stereotypes />
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-            <attributes />
-            <operations>
-              <operation id="oe4d06a763967472688ecfb4d5914b98c237" name="ConvertObjectToJson" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="int currentLevel" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="o789ecacf131948929fce047e8a007c5e10" name="ConvertDynamicObjectWithFullAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="od9c1a35ac3b4410aad75fde2be8e7675425" name="ConvertDynamicObjectWithCustomAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-            </operations>
-            <template-parameters>
-              <source-codes />
-            </template-parameters>
-          </item>
           <item id="di872731397540815897" cid="DEP004" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:04:42">
             <stereotypes>
               <stereotype name="use" />
@@ -7783,15 +7260,6 @@
             <style class="default" />
           </item>
           <item id="di755613628172973165" cid="DEP005" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:04:46">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
-          <item id="di892646809354674247" cid="DEP006" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:04:50">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -7814,10 +7282,6 @@
             <layout ax="-361.7007" ay="737" awidth="832" aheight="270" x="-361.7007" y="737" width="832" height="270" angle="0" />
             <class />
           </item>
-          <item id="di915652927305559339" iid="44eae7158d2649858a888e16c1e591f3" creation-date="11/29/2014 09:39:34" order-index="6" type="entity">
-            <layout ax="-361.7007" ay="1165" awidth="514" aheight="139.7668" x="-361.7007" y="1165" width="514" height="139.7668" angle="0" />
-            <class />
-          </item>
           <item id="di872731397540815897" iid="3ec26ddb591f4a5b8c2293a64779e9d4" creation-date="12/02/2014 23:04:42" order-index="7" type="relation">
             <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="-362" y1="884" x2="-542" y2="889" start-border-pos="0.863862044722946" end-border-pos="0.36687529592803">
               <points>
@@ -7836,15 +7300,6 @@
             </layout>
             <relation from="di945832574837639362" from-iid="a4114141aa834c4880b77309b1b85524" to="di409522022803061070" to-iid="e4c177d06cd444c5b93478a30f51b087" />
           </item>
-          <item id="di892646809354674247" iid="fce498bf3b33494a870fbc6ca04921ba" creation-date="12/02/2014 23:04:50" order-index="9" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="-542" y1="1054" x2="-274" y2="1165" start-border-pos="0.491358716560133" end-border-pos="0.0428374769158864">
-              <points>
-                <point x="-542" y="1054" />
-                <point x="-274" y="1165" />
-              </points>
-            </layout>
-            <relation from="di945832574837639362" from-iid="a4114141aa834c4880b77309b1b85524" to="di915652927305559339" to-iid="44eae7158d2649858a888e16c1e591f3" />
-          </item>
         </layer>
       </diagram>
       <diagram type="uml-class" id="p601058353663360311" name="Manage Service" order-index="11" overview-order-index="9" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="true" show-relationship-texts="true" auto-routed-paths="false">
@@ -7859,7 +7314,7 @@
           </authors>
           <description />
           <creation-date>12/02/2014 23:05:45</creation-date>
-          <change-date>12/02/2014 23:15:57</change-date>
+          <change-date>12/03/2014 12:33:23</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -8093,43 +7548,6 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di886561421660733266" cid="C001" type="class" name="UtilityClass" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:39:34">
-            <stereotypes />
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-            <attributes />
-            <operations>
-              <operation id="oe4d06a763967472688ecfb4d5914b98c237" name="ConvertObjectToJson" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="int currentLevel" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="o789ecacf131948929fce047e8a007c5e10" name="ConvertDynamicObjectWithFullAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="od9c1a35ac3b4410aad75fde2be8e7675425" name="ConvertDynamicObjectWithCustomAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-            </operations>
-            <template-parameters>
-              <source-codes />
-            </template-parameters>
-          </item>
           <item id="di497178373439360400" cid="DEP007" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:15:41">
             <stereotypes>
               <stereotype name="use" />
@@ -8140,15 +7558,6 @@
             <style class="default" />
           </item>
           <item id="di820877906197142720" cid="DEP008" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:15:54">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
-          <item id="di295541135313065569" cid="DEP009" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:15:57">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -8171,10 +7580,6 @@
             <layout ax="864" ay="150" awidth="560" aheight="210" x="864" y="150" width="560" height="210" angle="0" />
             <class />
           </item>
-          <item id="di886561421660733266" iid="2ff4141900f64f6ea57ed2d220a7b935" creation-date="11/29/2014 09:39:34" order-index="6" type="entity">
-            <layout ax="864" ay="518" awidth="514" aheight="139.7668" x="864" y="518" width="514" height="139.7668" angle="0" />
-            <class />
-          </item>
           <item id="di497178373439360400" iid="aa5ecdb9b6b74292a71d888c2f066666" creation-date="12/02/2014 23:15:41" order-index="7" type="relation">
             <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="864" y1="264" x2="680" y2="271" start-border-pos="0.863799285888672" end-border-pos="0.36595326937162">
               <points>
@@ -8193,15 +7598,6 @@
             </layout>
             <relation from="di574590039456187623" from-iid="03e5e07d002e462080d733c9d5a4c80e" to="di907144360815750451" to-iid="46d509e97628444f85c208331704be8d" />
           </item>
-          <item id="di295541135313065569" iid="d584f5bec31e4cb7974bf9aab2b6d967" creation-date="12/02/2014 23:15:57" order-index="9" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="680" y1="625" x2="864" y2="609" start-border-pos="0.35259522658128" end-border-pos="0.836536711618005">
-              <points>
-                <point x="680" y="625" />
-                <point x="864" y="609" />
-              </points>
-            </layout>
-            <relation from="di907144360815750451" from-iid="46d509e97628444f85c208331704be8d" to="di886561421660733266" to-iid="2ff4141900f64f6ea57ed2d220a7b935" />
-          </item>
         </layer>
       </diagram>
       <diagram type="uml-class" id="p337788507408198258" name="Manage Service Type" order-index="12" overview-order-index="10" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="true" show-relationship-texts="true" auto-routed-paths="false">
@@ -8216,7 +7612,7 @@
           </authors>
           <description />
           <creation-date>12/02/2014 23:16:12</creation-date>
-          <change-date>12/02/2014 23:16:50</change-date>
+          <change-date>12/03/2014 12:33:30</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -8450,43 +7846,6 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di765003782732588644" cid="C001" type="class" name="UtilityClass" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:39:34">
-            <stereotypes />
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-            <attributes />
-            <operations>
-              <operation id="oe4d06a763967472688ecfb4d5914b98c237" name="ConvertObjectToJson" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="int currentLevel" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="o789ecacf131948929fce047e8a007c5e10" name="ConvertDynamicObjectWithFullAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="od9c1a35ac3b4410aad75fde2be8e7675425" name="ConvertDynamicObjectWithCustomAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-            </operations>
-            <template-parameters>
-              <source-codes />
-            </template-parameters>
-          </item>
           <item id="di398442249132479601" cid="DEP010" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:16:44">
             <stereotypes>
               <stereotype name="use" />
@@ -8497,15 +7856,6 @@
             <style class="default" />
           </item>
           <item id="di465906073175172842" cid="DEP011" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:16:47">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
-          <item id="di160368694477004375" cid="DEP012" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:16:50">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -8528,10 +7878,6 @@
             <layout ax="864" ay="150" awidth="560" aheight="210" x="864" y="150" width="560" height="210" angle="0" />
             <class />
           </item>
-          <item id="di765003782732588644" iid="8d3028c10c57485f826cfa77f36d4485" creation-date="11/29/2014 09:39:34" order-index="6" type="entity">
-            <layout ax="864" ay="518" awidth="514" aheight="139.7668" x="864" y="518" width="514" height="139.7668" angle="0" />
-            <class />
-          </item>
           <item id="di398442249132479601" iid="c5f9cc2845104f26a73dc73f53bbf821" creation-date="12/02/2014 23:16:44" order-index="7" type="relation">
             <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="864" y1="264" x2="680" y2="271" start-border-pos="0.863799285888672" end-border-pos="0.36595326937162">
               <points>
@@ -8550,15 +7896,6 @@
             </layout>
             <relation from="di959440328413182920" from-iid="c702e34ba0f04b4dbb273e09834f1803" to="di207936943892328614" to-iid="4699369fb68f4a8fa57a8eadde9ee531" />
           </item>
-          <item id="di160368694477004375" iid="db6a44b57be84f84a7892c0fd3fbb9c6" creation-date="12/02/2014 23:16:50" order-index="9" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="680" y1="625" x2="864" y2="609" start-border-pos="0.35259522658128" end-border-pos="0.836536711618005">
-              <points>
-                <point x="680" y="625" />
-                <point x="864" y="609" />
-              </points>
-            </layout>
-            <relation from="di207936943892328614" from-iid="4699369fb68f4a8fa57a8eadde9ee531" to="di765003782732588644" to-iid="8d3028c10c57485f826cfa77f36d4485" />
-          </item>
         </layer>
       </diagram>
       <diagram type="uml-class" id="p555882762747129391" name="Manage Office" order-index="13" overview-order-index="11" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="true" show-relationship-texts="true" auto-routed-paths="false">
@@ -8573,7 +7910,7 @@
           </authors>
           <description />
           <creation-date>12/02/2014 23:17:45</creation-date>
-          <change-date>12/02/2014 23:24:22</change-date>
+          <change-date>12/03/2014 12:33:40</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -8768,43 +8105,6 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di826016620612808924" cid="C001" type="class" name="UtilityClass" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pcca5ee802e3d4885a5d8e1b000a24efe" creation-date="11/29/2014 09:39:34">
-            <stereotypes />
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-            <attributes />
-            <operations>
-              <operation id="oe4d06a763967472688ecfb4d5914b98c237" name="ConvertObjectToJson" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="int currentLevel" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="o789ecacf131948929fce047e8a007c5e10" name="ConvertDynamicObjectWithFullAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-              <operation id="od9c1a35ac3b4410aad75fde2be8e7675425" name="ConvertDynamicObjectWithCustomAttr" type="IDictionary&lt;string, object&gt;" type-id="IDictionary&lt;string, object&gt;" visibility="public" abstract="false" virtual="false" static="false">
-                <parameters>
-                  <parameter id="" name="object data" type="" type-id="" default-value="" />
-                  <parameter id="" name="List&lt;string&gt; exceptAttr" type="" type-id="" default-value="" />
-                  <parameter id="" name="params List&lt;string&gt;[] include" type="" type-id="" default-value="" />
-                </parameters>
-                <source-codes />
-              </operation>
-            </operations>
-            <template-parameters>
-              <source-codes />
-            </template-parameters>
-          </item>
           <item id="di993043928569122020" cid="DEP013" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:24:04">
             <stereotypes>
               <stereotype name="use" />
@@ -8815,24 +8115,6 @@
             <style class="default" />
           </item>
           <item id="di561916962800207737" cid="DEP014" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:24:07">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
-          <item id="di906418924714355322" cid="DEP016" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:24:18">
-            <stereotypes>
-              <stereotype name="use" />
-            </stereotypes>
-            <tagged-values />
-            <associated-diagrams />
-            <owned-items />
-            <style class="default" />
-          </item>
-          <item id="di723499358678880491" cid="DEP017" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/02/2014 23:24:22">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -8855,10 +8137,6 @@
             <layout ax="200" ay="479" awidth="610" aheight="230" x="200" y="479" width="610" height="230" angle="0" />
             <class />
           </item>
-          <item id="di826016620612808924" iid="fc3980c8aa364ec6a7cbdb76fb812ba0" creation-date="11/29/2014 09:39:34" order-index="6" type="entity">
-            <layout ax="921" ay="479" awidth="514" aheight="139.7668" x="921" y="479" width="514" height="139.7668" angle="0" />
-            <class />
-          </item>
           <item id="di993043928569122020" iid="b325b1c8761140e48dd7c1664ad72c5c" creation-date="12/02/2014 23:24:04" order-index="7" type="relation">
             <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="921" y1="265" x2="810" y2="268" start-border-pos="0.866381906908612" end-border-pos="0.367603424072266">
               <points>
@@ -8876,24 +8154,6 @@
               </points>
             </layout>
             <relation from="di996294852814290140" from-iid="4c0a8b27924c48ec9724ebe007d262fd" to="di396220180907655014" to-iid="cfd65df14937415f9b963b6ebd535055" />
-          </item>
-          <item id="di906418924714355322" iid="68503f5d9c384d8dbd2a92d62c67d0ed" creation-date="12/02/2014 23:24:18" order-index="9" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1196" y1="365" x2="1185" y2="479" start-border-pos="0.629515584309896" end-border-pos="0.128275949203551">
-              <points>
-                <point x="1196" y="365" />
-                <point x="1185" y="479" />
-              </points>
-            </layout>
-            <relation from="di986524249869612953" from-iid="60f03c790659458293aa2fa5c92a7a40" to="di826016620612808924" to-iid="fc3980c8aa364ec6a7cbdb76fb812ba0" />
-          </item>
-          <item id="di723499358678880491" iid="45318ad763ff45c183f288e790e10212" creation-date="12/02/2014 23:24:22" order-index="10" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="810" y1="399" x2="1006" y2="479" start-border-pos="0.499175323486328" end-border-pos="0.041374354974769">
-              <points>
-                <point x="810" y="399" />
-                <point x="1006" y="479" />
-              </points>
-            </layout>
-            <relation from="di996294852814290140" from-iid="4c0a8b27924c48ec9724ebe007d262fd" to="di826016620612808924" to-iid="fc3980c8aa364ec6a7cbdb76fb812ba0" />
           </item>
         </layer>
       </diagram>
@@ -9312,7 +8572,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di261874656735351843" cid="DEP001" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/03/2014 09:03:16">
+          <item id="di261874656735351843" cid="DEP001" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/03/2014 09:03:16">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -9321,7 +8581,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di943293780303250844" cid="DEP002" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/03/2014 09:03:23">
+          <item id="di943293780303250844" cid="DEP002" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/03/2014 09:03:23">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -9382,7 +8642,7 @@
         </meta>
         <tagged-values />
         <abstract-items>
-          <item id="di443787892756784039" cid="C001" type="class" name="CustomerController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pec73318291f845cb9930559fe79cc6b3" creation-date="04/11/2014 10:26:20">
+          <item id="di443787892756784039" cid="C001" type="class" name="CustomerController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="04/11/2014 10:26:20">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -9489,7 +8749,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di461236373147298470" cid="C003" type="class" name="CaseController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pec73318291f845cb9930559fe79cc6b3" creation-date="04/11/2014 10:53:16">
+          <item id="di461236373147298470" cid="C003" type="class" name="CaseController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="04/11/2014 10:53:16">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -9810,7 +9070,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di795807170367671566" cid="C004" type="class" name="HomeController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pec73318291f845cb9930559fe79cc6b3" creation-date="04/11/2014 11:07:51">
+          <item id="di795807170367671566" cid="C004" type="class" name="HomeController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="04/11/2014 11:07:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -9876,7 +9136,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di906418894997900303" cid="C005" type="class" name="LoginController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pec73318291f845cb9930559fe79cc6b3" creation-date="04/11/2014 11:11:40">
+          <item id="di906418894997900303" cid="C005" type="class" name="LoginController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="04/11/2014 11:11:40">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -9905,7 +9165,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di370211111649723065" cid="C006" type="class" name="OfficeController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pec73318291f845cb9930559fe79cc6b3" creation-date="04/11/2014 11:14:07">
+          <item id="di370211111649723065" cid="C006" type="class" name="OfficeController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="04/11/2014 11:14:07">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -9964,7 +9224,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di597663892988688885" cid="C008" type="class" name="ServiceController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pec73318291f845cb9930559fe79cc6b3" creation-date="04/11/2014 11:19:14">
+          <item id="di597663892988688885" cid="C008" type="class" name="ServiceController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="04/11/2014 11:19:14">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -10030,7 +9290,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di782155296544863640" cid="C009" type="class" name="StaffController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pec73318291f845cb9930559fe79cc6b3" creation-date="04/11/2014 11:22:38">
+          <item id="di782155296544863640" cid="C009" type="class" name="StaffController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="04/11/2014 11:22:38">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -10145,7 +9405,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di945910573298865730" cid="C010" type="class" name="UserControlController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="Pec73318291f845cb9930559fe79cc6b3" creation-date="04/11/2014 11:26:36">
+          <item id="di945910573298865730" cid="C010" type="class" name="UserControlController" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="04/11/2014 11:26:36">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
