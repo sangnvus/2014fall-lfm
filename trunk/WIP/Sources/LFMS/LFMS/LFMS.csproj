@@ -165,8 +165,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OfficeController.cs" />
-    <Compile Include="Controllers\ProxyController.cs" />
-    <Compile Include="Controllers\SalaryController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
@@ -199,34 +197,24 @@
       <DependentUpon>LFMSModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\BLO\CustomerBLO.cs" />
-    <Compile Include="Models\BLO\ExcelBLO.cs" />
     <Compile Include="Models\BLO\HomeBLO.cs" />
     <Compile Include="Models\BLO\OfficeBLO.cs" />
     <Compile Include="Models\BLO\CaseBLO.cs" />
-    <Compile Include="Models\BLO\SalaryBLO.cs" />
     <Compile Include="Models\BLO\ServiceBLO.cs" />
     <Compile Include="Models\BLO\StaffBLO.cs" />
     <Compile Include="Models\BLO\StatisticBLO.cs" />
     <Compile Include="Models\BLO\UserBLO.cs" />
     <Compile Include="Models\BLO\UserControlBLO.cs" />
-    <Compile Include="Models\ConcerEntity\getYear.cs" />
-    <Compile Include="Models\ConcerEntity\ImpressConcertEntity.cs" />
-    <Compile Include="Models\ConcerEntity\MonthInYear.cs" />
-    <Compile Include="Models\ConcerEntity\SalaryConcertEntity.cs" />
-    <Compile Include="Models\ConcerEntity\SalaryExcelEntity.cs" />
-    <Compile Include="Models\ConcerEntity\TimeSheetConcertEntity.cs" />
     <Compile Include="Models\DAO\CustomerDAO.cs" />
     <Compile Include="Models\DAO\HomeDAO.cs" />
     <Compile Include="Models\DAO\OfficeDAO.cs" />
     <Compile Include="Models\DAO\CaseDAO.cs" />
-    <Compile Include="Models\DAO\SalaryDAO.cs" />
     <Compile Include="Models\DAO\ServiceDAO.cs" />
     <Compile Include="Models\DAO\StaffDAO.cs" />
     <Compile Include="Models\DAO\StatisticDAO.cs" />
     <Compile Include="Models\DAO\UserControlDAO.cs" />
     <Compile Include="Models\DAO\UserDAO.cs" />
     <Compile Include="Models\Entity\StatisticData.cs" />
-    <Compile Include="Models\Entity\StatisticExcelEntity.cs" />
     <Compile Include="Office.cs">
       <DependentUpon>LFMSModel.tt</DependentUpon>
     </Compile>
@@ -1035,12 +1023,6 @@
     <Content Include="Content\logo\LFMS-logo-200.png" />
     <Content Include="Content\logo\LFMS-logo-big.png" />
     <Content Include="Content\logo\luatthuannguyen.png" />
-    <Content Include="ExcelReport\StatisticTemplate.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ExcelReport\SalaryTemplate.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Global.asax" />
     <Content Include="Content\font\fontawesome-webfontd41d.eot" />
     <Content Include="Content\font\fontawesome-webfontf77b.eot" />
@@ -1052,12 +1034,6 @@
     <Content Include="Views\Case\_CaseLawyerRelated.cshtml" />
     <Content Include="Views\Login\PermissionError.cshtml" />
     <Content Include="Views\Office\Office.cshtml" />
-    <Content Include="ExcelReport\SalaryTemplate.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ExcelReport\StatisticTemplate.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <EntityDeploy Include="LFMSModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LFMSModel.Designer.cs</LastGenOutput>
