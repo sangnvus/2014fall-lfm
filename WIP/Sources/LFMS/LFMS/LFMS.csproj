@@ -231,12 +231,6 @@
     <Compile Include="ServiceType.cs">
       <DependentUpon>LFMSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>LFMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>LFMSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Staff.cs">
       <DependentUpon>LFMSModel.tt</DependentUpon>
     </Compile>
