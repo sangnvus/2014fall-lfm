@@ -18,10 +18,10 @@ namespace LFMS
         {
             this.Case_Customer = new HashSet<Case_Customer>();
             this.Case_Staff = new HashSet<Case_Staff>();
+            this.OperationalEvents = new HashSet<OperationalEvent>();
             this.Payments = new HashSet<Payment>();
             this.Subjects = new HashSet<Subject>();
             this.UsedServices = new HashSet<UsedService>();
-            this.OperationalEvents = new HashSet<OperationalEvent>();
         }
     
         public int CaseId { get; set; }
@@ -45,9 +45,9 @@ namespace LFMS
         public virtual ICollection<Case_Customer> Case_Customer { get; set; }
         public virtual ICollection<Case_Staff> Case_Staff { get; set; }
         public virtual Office Office { get; set; }
+        public virtual ICollection<OperationalEvent> OperationalEvents { get; set; }
         public virtual ICollection<Payment> Payments { get; set; }
         public virtual ICollection<Subject> Subjects { get; set; }
         public virtual ICollection<UsedService> UsedServices { get; set; }
-        public virtual ICollection<OperationalEvent> OperationalEvents { get; set; }
     }
 }
