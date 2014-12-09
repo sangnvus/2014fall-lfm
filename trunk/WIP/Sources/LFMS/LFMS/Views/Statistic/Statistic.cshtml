@@ -577,7 +577,7 @@
                                 data: [out.chartData1.feild1, out.chartData1.feild2, out.chartData1.feild3, out.chartData1.feild4, out.chartData1.feild5, out.chartData1.feild6, out.chartData1.feild7, out.chartData1.feild8, out.chartData1.feild9, out.chartData1.feild10, out.chartData1.feild11, out.chartData1.feild12]
                             },
                             {
-                                fillColor: "rgba(151,187,205,0.5)",
+                                fillColor: "rgba(143,228,215,0.5)",
                                 strokeColor: "rgba(151,187,205,1)",
                                 pointColor: "rgba(151,187,205,1)",
                                 pointStrokeColor: "#fff",
@@ -677,7 +677,7 @@
                                 data: [out.chartData1.feild1, out.chartData1.feild2, out.chartData1.feild3, out.chartData1.feild4, out.chartData1.feild5, out.chartData1.feild6, out.chartData1.feild7, out.chartData1.feild8, out.chartData1.feild9, out.chartData1.feild10, out.chartData1.feild11, out.chartData1.feild12]
                             },
                             {
-                                fillColor: "rgba(151,187,205,0.5)",
+                                fillColor: "rgba(143,228,215,0.5)",
                                 strokeColor: "rgba(151,187,205,1)",
                                 pointColor: "rgba(151,187,205,1)",
                                 pointStrokeColor: "#fff",
@@ -791,7 +791,7 @@
                                 data: vals1
                             },
                             {
-                                fillColor: "rgba(151,187,205,0.5)",
+                                fillColor: "rgba(143,228,215,0.5)",
                                 strokeColor: "rgba(151,187,205,1)",
                                 pointColor: "rgba(151,187,205,1)",
                                 pointStrokeColor: "#fff",
@@ -995,7 +995,7 @@
                                 data: [out.chartData1.feild1, out.chartData1.feild2, out.chartData1.feild3, out.chartData1.feild4, out.chartData1.feild5, out.chartData1.feild6, out.chartData1.feild7, out.chartData1.feild8, out.chartData1.feild9, out.chartData1.feild10, out.chartData1.feild11, out.chartData1.feild12]
                             },
                             {
-                                fillColor: "rgba(151,187,205,0.5)",
+                                fillColor: "rgba(143,228,215,0.5)",
                                 strokeColor: "rgba(151,187,205,1)",
                                 pointColor: "rgba(151,187,205,1)",
                                 pointStrokeColor: "#fff",
@@ -1416,41 +1416,43 @@
         $('#breadcrumbsMenu').text('Thống kê theo nhân viên');
     }
     function get12MonthStaffRevenueSS(staffId1, staffId2) {
-        $.ajax({
-            url: '/Statistic/Get12MonthStaffSS',
-            method: 'GET',
-            async: false,
-            data: { staffId1: staffId1, staffId2: staffId2 },
-            success: function (out) {
-                {
-                    //Get context with jQuery - using jQuery's .get() method.
-                    var ctx = $("#12MonthStaffRevenueSSChart").get(0).getContext("2d");
-                    //This will get the first returned node in the jQuery collection.
-                    var myNewChart = new Chart(ctx);
+        if (staffId1 != null && staffId2 != null) {
+            $.ajax({
+                url: '/Statistic/Get12MonthStaffSS',
+                method: 'GET',
+                async: false,
+                data: { staffId1: staffId1, staffId2: staffId2 },
+                success: function (out) {
+                    {
+                        //Get context with jQuery - using jQuery's .get() method.
+                        var ctx = $("#12MonthStaffRevenueSSChart").get(0).getContext("2d");
+                        //This will get the first returned node in the jQuery collection.
+                        var myNewChart = new Chart(ctx);
 
-                    var data = {
-                        labels: ["12 Tháng Trước", "11 Tháng Trước", "10 Tháng Trước", "9 Tháng Trước", "8 Tháng Trước", "7 Tháng Trước", "6 Tháng Trước", "5 Tháng Trước", "4 Tháng Trước", "3 Tháng Trước", "2 Tháng Trước", "Tháng Trước"],
-                        datasets: [
-                            {
-                                fillColor: "rgba(220,220,220,0.5)",
-                                strokeColor: "rgba(220,220,220,1)",
-                                pointColor: "rgba(220,220,220,1)",
-                                pointStrokeColor: "#fff",
-                                data: [out.chartData1.feild1, out.chartData1.feild2, out.chartData1.feild3, out.chartData1.feild4, out.chartData1.feild5, out.chartData1.feild6, out.chartData1.feild7, out.chartData1.feild8, out.chartData1.feild9, out.chartData1.feild10, out.chartData1.feild11, out.chartData1.feild12]
-                            },
-                            {
-                                fillColor: "rgba(151,187,205,0.5)",
-                                strokeColor: "rgba(151,187,205,1)",
-                                pointColor: "rgba(151,187,205,1)",
-                                pointStrokeColor: "#fff",
-                                data: [out.chartData2.feild1, out.chartData2.feild2, out.chartData2.feild3, out.chartData2.feild4, out.chartData2.feild5, out.chartData2.feild6, out.chartData2.feild7, out.chartData2.feild8, out.chartData2.feild9, out.chartData2.feild10, out.chartData2.feild11, out.chartData2.feild12]
-                            }
-                        ]
-                    }
-                    new Chart(ctx).Line(data);
-                };
-            }
-        });
+                        var data = {
+                            labels: ["12 Tháng Trước", "11 Tháng Trước", "10 Tháng Trước", "9 Tháng Trước", "8 Tháng Trước", "7 Tháng Trước", "6 Tháng Trước", "5 Tháng Trước", "4 Tháng Trước", "3 Tháng Trước", "2 Tháng Trước", "Tháng Trước"],
+                            datasets: [
+                                {
+                                    fillColor: "rgba(220,220,220,0.5)",
+                                    strokeColor: "rgba(220,220,220,1)",
+                                    pointColor: "rgba(220,220,220,1)",
+                                    pointStrokeColor: "#fff",
+                                    data: [out.chartData1.feild1, out.chartData1.feild2, out.chartData1.feild3, out.chartData1.feild4, out.chartData1.feild5, out.chartData1.feild6, out.chartData1.feild7, out.chartData1.feild8, out.chartData1.feild9, out.chartData1.feild10, out.chartData1.feild11, out.chartData1.feild12]
+                                },
+                                {
+                                    fillColor: "rgba(143,228,215,0.5)",
+                                    strokeColor: "rgba(151,187,205,1)",
+                                    pointColor: "rgba(151,187,205,1)",
+                                    pointStrokeColor: "#fff",
+                                    data: [out.chartData2.feild1, out.chartData2.feild2, out.chartData2.feild3, out.chartData2.feild4, out.chartData2.feild5, out.chartData2.feild6, out.chartData2.feild7, out.chartData2.feild8, out.chartData2.feild9, out.chartData2.feild10, out.chartData2.feild11, out.chartData2.feild12]
+                                }
+                            ]
+                        }
+                        new Chart(ctx).Line(data);
+                    };
+                }
+            });
+        }
     }
     //------------------------------------------------------------------
     function getLastYearStaffRevenue(staffId) {
@@ -1482,96 +1484,61 @@
         });
     }
     function getLastYearStaffRevenueSS(staffId1, staffId2) {
-        $.ajax({
-            url: '/Statistic/GetLastYearStaffSS',
-            method: 'GET',
-            async: false,
-            data: { staffId1: staffId1, staffId2: staffId2 },
-            success: function (out) {
-                {
-                    //Get context with jQuery - using jQuery's .get() method.
-                    var ctx = $("#LastYearStaffRevenueSSChart").get(0).getContext("2d");
-                    //This will get the first returned node in the jQuery collection.
-                    var myNewChart = new Chart(ctx);
+        if (staffId1 != null && staffId2 != null) {
+            $.ajax({
+                url: '/Statistic/GetLastYearStaffSS',
+                method: 'GET',
+                async: false,
+                data: { staffId1: staffId1, staffId2: staffId2 },
+                success: function (out) {
+                    {
+                        //Get context with jQuery - using jQuery's .get() method.
+                        var ctx = $("#LastYearStaffRevenueSSChart").get(0).getContext("2d");
+                        //This will get the first returned node in the jQuery collection.
+                        var myNewChart = new Chart(ctx);
 
-                    var data = {
-                        labels: ["12 Tháng Trước", "11 Tháng Trước", "10 Tháng Trước", "9 Tháng Trước", "8 Tháng Trước", "7 Tháng Trước", "6 Tháng Trước", "5 Tháng Trước", "4 Tháng Trước", "3 Tháng Trước", "2 Tháng Trước", "Tháng Trước"],
-                        datasets: [
-                            {
-                                fillColor: "rgba(220,220,220,0.5)",
-                                strokeColor: "rgba(220,220,220,1)",
-                                pointColor: "rgba(220,220,220,1)",
-                                pointStrokeColor: "#fff",
-                                data: [out.chartData1.feild1, out.chartData1.feild2, out.chartData1.feild3, out.chartData1.feild4, out.chartData1.feild5, out.chartData1.feild6, out.chartData1.feild7, out.chartData1.feild8, out.chartData1.feild9, out.chartData1.feild10, out.chartData1.feild11, out.chartData1.feild12]
-                            },
-                            {
-                                fillColor: "rgba(151,187,205,0.5)",
-                                strokeColor: "rgba(151,187,205,1)",
-                                pointColor: "rgba(151,187,205,1)",
-                                pointStrokeColor: "#fff",
-                                data: [out.chartData2.feild1, out.chartData2.feild2, out.chartData2.feild3, out.chartData2.feild4, out.chartData2.feild5, out.chartData2.feild6, out.chartData2.feild7, out.chartData2.feild8, out.chartData2.feild9, out.chartData2.feild10, out.chartData2.feild11, out.chartData2.feild12]
-                            }
-                        ]
-                    }
-                    new Chart(ctx).Line(data);
-                };
-            }
-        });
+                        var data = {
+                            labels: ["12 Tháng Trước", "11 Tháng Trước", "10 Tháng Trước", "9 Tháng Trước", "8 Tháng Trước", "7 Tháng Trước", "6 Tháng Trước", "5 Tháng Trước", "4 Tháng Trước", "3 Tháng Trước", "2 Tháng Trước", "Tháng Trước"],
+                            datasets: [
+                                {
+                                    fillColor: "rgba(220,220,220,0.5)",
+                                    strokeColor: "rgba(220,220,220,1)",
+                                    pointColor: "rgba(220,220,220,1)",
+                                    pointStrokeColor: "#fff",
+                                    data: [out.chartData1.feild1, out.chartData1.feild2, out.chartData1.feild3, out.chartData1.feild4, out.chartData1.feild5, out.chartData1.feild6, out.chartData1.feild7, out.chartData1.feild8, out.chartData1.feild9, out.chartData1.feild10, out.chartData1.feild11, out.chartData1.feild12]
+                                },
+                                {
+                                    fillColor: "rgba(143,228,215,0.5)",
+                                    strokeColor: "rgba(151,187,205,1)",
+                                    pointColor: "rgba(151,187,205,1)",
+                                    pointStrokeColor: "#fff",
+                                    data: [out.chartData2.feild1, out.chartData2.feild2, out.chartData2.feild3, out.chartData2.feild4, out.chartData2.feild5, out.chartData2.feild6, out.chartData2.feild7, out.chartData2.feild8, out.chartData2.feild9, out.chartData2.feild10, out.chartData2.feild11, out.chartData2.feild12]
+                                }
+                            ]
+                        }
+                        new Chart(ctx).Line(data);
+                    };
+                }
+            });
+        }
     }
     //--------------------------------------------------------
     function getYearsStaffRevenue(staffId, from, to) {
-        $.ajax({
-            url: '/Statistic/GetYearsStaffRevenue',
-            method: 'GET',
-            async: false,
-            data: { from: from, staffId: staffId, to: to },
-            success: function (out) {
-                var keys = Object.keys(out);
-                var vals = [];
-                for (var key in out) {
-                    val = out[key];
-                    vals.push(val);
-                }
-                //Get context with jQuery - using jQuery's .get() method.
-                var ctx = $("#YearsStaffChart").get(0).getContext("2d");
-                //This will get the first returned node in the jQuery collection.
-                var myNewChart = new Chart(ctx);
-
-                var data = {
-                    labels: keys,
-                    datasets: [
-                        {
-                            fillColor: "rgba(151,187,205,0.5)",
-                            strokeColor: "rgba(151,187,205,1)",
-                            data: vals
-                        }
-                    ]
-                }
-                new Chart(ctx).Bar(data);
-            }
-        });
-    }
-    function getYearsStaffRevenueSS(staffId1, staffId2, from, to) {
-        $.ajax({
-            url: '/Statistic/GetYearsStaffRevenueSS',
-            method: 'GET',
-            async: false,
-            data: { staffId1: staffId1, staffId2: staffId2, from: from, to: to },
-            success: function (out) {
-                {
-                    var keys = Object.keys(out.chartData1);
-                    var vals1 = [];
-                    var vals2 = [];
-                    for (var key in out.chartData1) {
-                        val = out.chartData1[key];
-                        vals1.push(val);
-                    }
-                    for (var key in out.chartData2) {
-                        val = out.chartData2[key];
-                        vals2.push(val);
+        if (staffId != null && from != null && to != null) {
+            $.ajax({
+                url: '/Statistic/GetYearsStaffRevenue',
+                method: 'GET',
+                async: false,
+                data: { from: from, staffId: staffId, to: to },
+                success: function (out) {
+                    var keys = Object.keys(out);
+                    var vals = [];
+                    for (var key in out) {
+                        val = out[key];
+                        vals.push(val);
                     }
                     //Get context with jQuery - using jQuery's .get() method.
-                    var ctx = $("#YearsStaffRevenueSSChart").get(0).getContext("2d");
+                    var ctx = $("#YearsStaffChart").get(0).getContext("2d");
                     //This will get the first returned node in the jQuery collection.
                     var myNewChart = new Chart(ctx);
 
@@ -1579,25 +1546,66 @@
                         labels: keys,
                         datasets: [
                             {
-                                fillColor: "rgba(220,220,220,0.5)",
-                                strokeColor: "rgba(220,220,220,1)",
-                                pointColor: "rgba(220,220,220,1)",
-                                pointStrokeColor: "#fff",
-                                data: vals1
-                            },
-                            {
                                 fillColor: "rgba(151,187,205,0.5)",
                                 strokeColor: "rgba(151,187,205,1)",
-                                pointColor: "rgba(151,187,205,1)",
-                                pointStrokeColor: "#fff",
-                                data: vals2
+                                data: vals
                             }
                         ]
                     }
-                    new Chart(ctx).Line(data);
-                };
-            }
-        });
+                    new Chart(ctx).Bar(data);
+                }
+            });
+        }
+    }
+    function getYearsStaffRevenueSS(staffId1, staffId2, from, to) {
+        if (staffId1 != null && staffId2 != null) {
+            $.ajax({
+                url: '/Statistic/GetYearsStaffRevenueSS',
+                method: 'GET',
+                async: false,
+                data: { staffId1: staffId1, staffId2: staffId2, from: from, to: to },
+                success: function (out) {
+                    {
+                        var keys = Object.keys(out.chartData1);
+                        var vals1 = [];
+                        var vals2 = [];
+                        for (var key in out.chartData1) {
+                            val = out.chartData1[key];
+                            vals1.push(val);
+                        }
+                        for (var key in out.chartData2) {
+                            val = out.chartData2[key];
+                            vals2.push(val);
+                        }
+                        //Get context with jQuery - using jQuery's .get() method.
+                        var ctx = $("#YearsStaffRevenueSSChart").get(0).getContext("2d");
+                        //This will get the first returned node in the jQuery collection.
+                        var myNewChart = new Chart(ctx);
+
+                        var data = {
+                            labels: keys,
+                            datasets: [
+                                {
+                                    fillColor: "rgba(220,220,220,0.5)",
+                                    strokeColor: "rgba(220,220,220,1)",
+                                    pointColor: "rgba(220,220,220,1)",
+                                    pointStrokeColor: "#fff",
+                                    data: vals1
+                                },
+                                {
+                                    fillColor: "rgba(143,228,215,0.5)",
+                                    strokeColor: "rgba(151,187,205,1)",
+                                    pointColor: "rgba(151,187,205,1)",
+                                    pointStrokeColor: "#fff",
+                                    data: vals2
+                                }
+                            ]
+                        }
+                        new Chart(ctx).Line(data);
+                    };
+                }
+            });
+        }
     }
     function loadFromYearStaffRevenue() {
         $.ajax({
