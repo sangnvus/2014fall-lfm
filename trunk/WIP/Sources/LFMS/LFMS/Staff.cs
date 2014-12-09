@@ -19,11 +19,7 @@ namespace LFMS
             this.Accounts = new HashSet<Account>();
             this.CalendarEvents = new HashSet<CalendarEvent>();
             this.Case_Staff = new HashSet<Case_Staff>();
-            this.Impresses = new HashSet<Impress>();
             this.Office_Staff = new HashSet<Office_Staff>();
-            this.Rewards = new HashSet<Reward>();
-            this.Salaries = new HashSet<Salary>();
-            this.TimeSheets = new HashSet<TimeSheet>();
         }
     
         public int StaffId { get; set; }
@@ -51,12 +47,8 @@ namespace LFMS
         public virtual ICollection<Account> Accounts { get; set; }
         public virtual ICollection<CalendarEvent> CalendarEvents { get; set; }
         public virtual ICollection<Case_Staff> Case_Staff { get; set; }
-        public virtual ICollection<Impress> Impresses { get; set; }
         public virtual ICollection<Office_Staff> Office_Staff { get; set; }
-        public virtual ICollection<Reward> Rewards { get; set; }
         public virtual Role Role { get; set; }
-        public virtual ICollection<Salary> Salaries { get; set; }
         public virtual StaffGroup StaffGroup { get; set; }
-        public virtual ICollection<TimeSheet> TimeSheets { get; set; }
     }
 }

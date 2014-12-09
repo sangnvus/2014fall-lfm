@@ -10,20 +10,13 @@
 namespace LFMS
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Benefit
+    public partial class sp_helpdiagrams_Result
     {
-        public Benefit()
-        {
-            this.SalaryBenefitDetails = new HashSet<SalaryBenefitDetail>();
-        }
-    
-        public int BenefitID { get; set; }
+        public string Database { get; set; }
         public string Name { get; set; }
-        public double Rate { get; set; }
-        public bool Active { get; set; }
-    
-        public virtual ICollection<SalaryBenefitDetail> SalaryBenefitDetails { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }
