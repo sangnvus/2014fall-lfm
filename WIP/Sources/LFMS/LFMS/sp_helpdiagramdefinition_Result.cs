@@ -10,18 +10,10 @@
 namespace LFMS
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class TimeSheet
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int ID { get; set; }
-        public int StaffId { get; set; }
-        public System.DateTime Date { get; set; }
-        public string Description { get; set; }
-        public bool Active { get; set; }
-        public double Hours { get; set; }
-        public bool IsAllowed { get; set; }
-    
-        public virtual Staff Staff { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
