@@ -3836,7 +3836,7 @@
         <source-codes />
       </template-parameters>
     </item>
-    <item id="di418271543810225027" cid="CMT001" type="comment" name="Comment" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:51:57">
+    <item id="di418271543810225027" cid="CMT001" type="comment" name="Comment" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:51:57">
       <stereotypes />
       <tagged-values />
       <associated-diagrams />
@@ -3844,14 +3844,14 @@
       <style class="default" />
       <comment />
     </item>
-    <item id="di741196067535453120" cid="CN001" type="comment-connector" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:51:57">
+    <item id="di741196067535453120" cid="CN001" type="comment-connector" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:51:57">
       <stereotypes />
       <tagged-values />
       <associated-diagrams />
       <owned-items />
       <style class="default" />
     </item>
-    <item id="di141450117397093031" cid="C015" type="class" name="StatisticData" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:03:23">
+    <item id="di141450117397093031" cid="C015" type="class" name="StatisticData" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:03:23">
       <stereotypes />
       <tagged-values />
       <associated-diagrams />
@@ -3876,6 +3876,21 @@
       <template-parameters>
         <source-codes />
       </template-parameters>
+    </item>
+    <item id="di934602471598999679" cid="CMT001" type="comment" name="Comment" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:14:45">
+      <stereotypes />
+      <tagged-values />
+      <associated-diagrams />
+      <owned-items />
+      <style class="default" />
+      <comment />
+    </item>
+    <item id="di272308250376316383" cid="CN001" type="comment-connector" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:14:45">
+      <stereotypes />
+      <tagged-values />
+      <associated-diagrams />
+      <owned-items />
+      <style class="default" />
     </item>
   </items>
   <models>
@@ -6925,7 +6940,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di833321113585070722" cid="C002" type="class" name="StaffGroup" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:51:47">
+          <item id="di833321113585070722" cid="C002" type="class" name="StaffGroup" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:51:47">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -6937,7 +6952,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di479791815936813906" cid="DEP001" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:52:01">
+          <item id="di479791815936813906" cid="DEP001" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:52:01">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -7126,7 +7141,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di618022738841553338" cid="DEP003" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:52:25">
+          <item id="di618022738841553338" cid="DEP003" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:52:25">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -7135,7 +7150,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di999073026594834007" cid="DEP002" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:52:22">
+          <item id="di999073026594834007" cid="DEP002" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:52:22">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -7144,7 +7159,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di877230223964694597" cid="C003" type="class" name="StaffGroup" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:52:35">
+          <item id="di877230223964694597" cid="C003" type="class" name="StaffGroup" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:52:35">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -7156,7 +7171,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di828351285672099333" cid="C004" type="class" name="Staff" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:52:56">
+          <item id="di828351285672099333" cid="C004" type="class" name="Staff" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:52:56">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -7168,7 +7183,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di939857003535138473" cid="C005" type="class" name="Role" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:53:11">
+          <item id="di939857003535138473" cid="C005" type="class" name="Role" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:53:11">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -7180,7 +7195,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di923999099542417965" cid="C006" type="class" name="Office_Staff" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:53:46">
+          <item id="di923999099542417965" cid="C006" type="class" name="Office_Staff" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:53:46">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -7192,7 +7207,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di457210825376877513" cid="DEP004" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:53:53">
+          <item id="di457210825376877513" cid="DEP004" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:53:53">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -7201,7 +7216,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di301903480725609889" cid="DEP005" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:53:56">
+          <item id="di301903480725609889" cid="DEP005" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:53:56">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -7210,7 +7225,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di776720064872799968" cid="DEP006" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:53:59">
+          <item id="di776720064872799968" cid="DEP006" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:53:59">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -7219,7 +7234,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di881063713165927062" cid="DEP007" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:54:06">
+          <item id="di881063713165927062" cid="DEP007" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 08:54:06">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -7687,7 +7702,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di177584762882856586" cid="C007" type="class" name="CustomerGroup" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:00:03">
+          <item id="di177584762882856586" cid="C007" type="class" name="CustomerGroup" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:00:03">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -7699,7 +7714,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di829818091327644860" cid="DEP015" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:10:48">
+          <item id="di829818091327644860" cid="DEP015" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:10:48">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -8128,7 +8143,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di126065549493509911" cid="C008" type="class" name="CustomerGroup" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:00:42">
+          <item id="di126065549493509911" cid="C008" type="class" name="CustomerGroup" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:00:42">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -8140,7 +8155,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di687395128185513999" cid="C009" type="class" name="Customer" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:00:54">
+          <item id="di687395128185513999" cid="C009" type="class" name="Customer" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:00:54">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -8152,7 +8167,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di580854712516888950" cid="DEP008" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:01:00">
+          <item id="di580854712516888950" cid="DEP008" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:01:00">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -8161,7 +8176,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di586354755711739854" cid="DEP009" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:01:05">
+          <item id="di586354755711739854" cid="DEP009" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:01:05">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -8494,7 +8509,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di885393065462597813" cid="C010" type="class" name="Service" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:01:31">
+          <item id="di885393065462597813" cid="C010" type="class" name="Service" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:01:31">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -8506,7 +8521,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di258572412483493061" cid="C011" type="class" name="ServiceType" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:01:49">
+          <item id="di258572412483493061" cid="C011" type="class" name="ServiceType" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:01:49">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -8518,7 +8533,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di823317275304802787" cid="DEP010" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:01:56">
+          <item id="di823317275304802787" cid="DEP010" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:01:56">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -8527,7 +8542,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di474513011818842648" cid="DEP011" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:02:01">
+          <item id="di474513011818842648" cid="DEP011" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:02:01">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -8860,7 +8875,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di645876975433409525" cid="C013" type="class" name="ServiceType" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:02:16">
+          <item id="di645876975433409525" cid="C013" type="class" name="ServiceType" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:02:16">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -8872,7 +8887,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di392078300225935815" cid="DEP012" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:02:23">
+          <item id="di392078300225935815" cid="DEP012" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:02:23">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -9153,7 +9168,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di316009873139617467" cid="C014" type="class" name="Office" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:02:51">
+          <item id="di316009873139617467" cid="C014" type="class" name="Office" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:02:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -9165,7 +9180,7 @@
               <source-codes />
             </template-parameters>
           </item>
-          <item id="di789516708253816506" cid="DEP013" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:02:57">
+          <item id="di789516708253816506" cid="DEP013" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:02:57">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -9742,7 +9757,7 @@
             <owned-items />
             <style class="default" />
           </item>
-          <item id="di811457222297452261" cid="DEP014" type="dependency" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:09:37">
+          <item id="di811457222297452261" cid="DEP014" type="dependency" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/08/2014 09:09:37">
             <stereotypes>
               <stereotype name="use" />
             </stereotypes>
@@ -9810,7 +9825,7 @@
           </authors>
           <description />
           <creation-date>12/03/2014 09:15:54</creation-date>
-          <change-date>12/07/2014 10:16:49</change-date>
+          <change-date>12/10/2014 09:03:38</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -10907,6 +10922,13 @@
             <owned-items />
             <style class="default" />
           </item>
+          <item id="di464957208878385468" cid="GNR001" type="generalization" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:03:38">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+          </item>
         </abstract-items>
         <layer name="Default" visible="true" enabled="true" locked="false">
           <item id="di443787892756784039" iid="f59f00c91afe416faf377b47333720c5" creation-date="04/11/2014 10:26:20" order-index="0" type="entity">
@@ -11034,6 +11056,15 @@
               </points>
             </layout>
             <relation from="di945910573298865730" from-iid="ca32c9eeaf98484e969ded2f7ae75512" to="di787316131667798652" to-iid="d9836f6b754645a198c0e6b96c55db3e" />
+          </item>
+          <item id="di464957208878385468" iid="2d9aa66017f84480be554e0ccf39553f" creation-date="12/10/2014 09:03:38" order-index="18" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="false" name-position="10,-10" auto-path="" x1="784" y1="1130" x2="782" y2="826" start-border-pos="0.138522427440633" end-border-pos="0.627430555555555">
+              <points>
+                <point x="784" y="1130" />
+                <point x="782" y="826" />
+              </points>
+            </layout>
+            <relation from="di597663892988688885" from-iid="a1d9c231e5584a959bbdf651218c0bd4" to="di787316131667798652" to-iid="d9836f6b754645a198c0e6b96c55db3e" />
           </item>
         </layer>
       </diagram>
@@ -12149,6 +12180,672 @@
           <item id="di939426651623614550" iid="ca56bd784b3c4043bec61312cd159358" creation-date="12/02/2014 23:35:39" order-index="8" type="entity">
             <layout ax="1230" ay="-166" awidth="396" aheight="563" x="1230" y="-166" width="396" height="563" angle="0" />
             <class />
+          </item>
+        </layer>
+      </diagram>
+      <diagram type="uml-object" id="p708642814138664287" name="Role and Responsibilities" order-index="16" overview-order-index="14" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="true" show-relationship-texts="true" auto-routed-paths="false">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>12/10/2014 09:10:15</creation-date>
+          <change-date>12/10/2014 09:54:34</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <tagged-values />
+        <abstract-items>
+          <item id="di446280774889647368" cid="REL002" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:53:14">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di180271832367741363" to="di173545968157499745">
+              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di116525681905807997" cid="REL003" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:53:25">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di180271832367741363" to="di173545968157499745">
+              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di310797610773054739" cid="REL004" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:53:37">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di180271832367741363" to="di173545968157499745">
+              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di430754369308227629" cid="REL005" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:54:08">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di998591353676619422" to="di173545968157499745">
+              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di954337882438060283" cid="REL006" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:54:14">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di998591353676619422" to="di173545968157499745">
+              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di473134238653512385" cid="REL007" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:54:17">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di129726343881527659" to="di173545968157499745">
+              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di112442871435343524" cid="REL008" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:54:23">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di129726343881527659" to="di173545968157499745">
+              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di351734943744626434" cid="REL009" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:54:25">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di129726343881527659" to="di173545968157499745">
+              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di562619008606378575" cid="REL010" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:54:26">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di129726343881527659" to="di173545968157499745">
+              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di325855203983894388" cid="REL011" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:54:30">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di342471149188919689" to="di173545968157499745">
+              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di565147275393177299" cid="REL012" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:54:31">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di342471149188919689" to="di173545968157499745">
+              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di773059565746877259" cid="REL013" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:54:33">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di335942252773725250" to="di173545968157499745">
+              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di682687777451504154" cid="REL014" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="12/10/2014 09:54:34">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+            <relation from="di335942252773725250" to="di173545968157499745">
+              <start-role id="" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+        </abstract-items>
+        <layer name="Default" visible="true" enabled="true" locked="false">
+          <item id="di588321947281280966" iid="867d404ce6574741897bd92901228979" name="Element1" creation-date="12/10/2014 09:16:25" order-index="1" type="drawing-rounded-rect">
+            <layout ax="394" ay="195" awidth="148" aheight="40" x="394" y="195" width="148" height="40" angle="0" />
+            <drawing-rounded-rect radius="10">
+              <text>     Project Manager
+          HoangLD</text>
+            </drawing-rounded-rect>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFAAAAFF" color2="#FFFFFFFF" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di106231286154226153" iid="a7354b765d874960a3c79d49bbf9be7e" name="Element2" creation-date="12/10/2014 09:16:38" order-index="2" type="drawing-rounded-rect">
+            <layout ax="393" ay="102" awidth="148" aheight="46" x="393" y="102" width="148" height="46" angle="0" />
+            <drawing-rounded-rect radius="10">
+              <text>         Supervisior
+         Mr. SangNV</text>
+            </drawing-rounded-rect>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FF55AAFF" color2="#FF55AAFF" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di419460948704186180" iid="c58fba92e45a44b88e976774f79dd85e" name="Element3" creation-date="12/10/2014 09:17:55" order-index="3" type="drawing-line">
+            <layout ax="468" ay="149" awidth="1" aheight="47" x="463" y="146" width="2" height="43" angle="0" />
+            <drawing-line start-point="468,149" end-point="468,195" />
+            <style class="default" />
+          </item>
+          <item id="di180271832367741363" iid="22c802a39c734b008f263bb879b8d272" name="Element3" creation-date="12/10/2014 09:20:29" order-index="4" type="drawing-rounded-rect">
+            <layout ax="-42" ay="282" awidth="145" aheight="41" x="-42" y="282" width="145" height="41" angle="0" />
+            <drawing-rounded-rect radius="10">
+              <text>   SRS Analysis Team
+         KhiemDN</text>
+            </drawing-rounded-rect>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FF80FF80" color2="#FFAAFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di998591353676619422" iid="e035ecf5481e46afb6e14cf69bedf145" name="Element4" creation-date="12/10/2014 09:21:16" order-index="5" type="drawing-rounded-rect">
+            <layout ax="165" ay="282" awidth="127" aheight="41" x="165" y="282" width="127" height="41" angle="0" />
+            <drawing-rounded-rect radius="10">
+              <text>    Design Team
+         DuyPV</text>
+            </drawing-rounded-rect>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFAAFFAA" color2="#FFAAFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di129726343881527659" iid="a56bdbe108124148b28e80bab48ecbc4" name="Element5" creation-date="12/10/2014 09:22:16" order-index="6" type="drawing-rounded-rect">
+            <layout ax="394" ay="282" awidth="148" aheight="41" x="394" y="282" width="148" height="41" angle="0" />
+            <drawing-rounded-rect radius="10">
+              <text>      Develop Team
+         HoangLD</text>
+            </drawing-rounded-rect>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFAAFFAA" color2="#FFAAFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di342471149188919689" iid="ddad9277b0f44c7a9c8656068b41cd64" name="Element6" creation-date="12/10/2014 09:23:15" order-index="7" type="drawing-rounded-rect">
+            <layout ax="648" ay="282" awidth="123" aheight="41" x="648" y="282" width="123" height="41" angle="0" />
+            <drawing-rounded-rect radius="10">
+              <text>       Test Team
+         TuanTA</text>
+            </drawing-rounded-rect>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFAAFFAA" color2="#FFAAFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di335942252773725250" iid="81e51c50aff44706afa5ae5fd92e25a1" name="Element7" creation-date="12/10/2014 09:26:55" order-index="8" type="drawing-rounded-rect">
+            <layout ax="813" ay="282" awidth="128" aheight="41" x="813" y="282" width="128" height="41" angle="0" />
+            <drawing-rounded-rect radius="10">
+              <text>        QA Team
+        HoangLD</text>
+            </drawing-rounded-rect>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFAAFFAA" color2="#FFAAFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di173545968157499745" iid="3f6b59ed876d42679419c6dc430518e6" name="Element5" creation-date="12/10/2014 09:32:37" order-index="11" type="drawing-shape">
+            <layout ax="66" ay="365" awidth="69" aheight="62" x="66" y="365" width="69" height="62" angle="0" />
+            <drawing-shape type="Ellipse">
+              <text> KhiemDN</text>
+            </drawing-shape>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di173545968157499745" iid="a9aa71d6799f4d519e27309c75b4ef03" name="Element5" creation-date="12/10/2014 09:32:37" order-index="11" type="drawing-shape">
+            <layout ax="-15" ay="365" awidth="69" aheight="62" x="-15" y="365" width="69" height="62" angle="0" />
+            <drawing-shape type="Ellipse">
+              <text>  DuyPV</text>
+            </drawing-shape>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di173545968157499745" iid="477705bd383b472c9dddecf50d00ba9a" name="Element5" creation-date="12/10/2014 09:32:37" order-index="11" type="drawing-shape">
+            <layout ax="-95" ay="365" awidth="69" aheight="62" x="-95" y="365" width="69" height="62" angle="0" />
+            <drawing-shape type="Ellipse">
+              <text>HoangLD</text>
+            </drawing-shape>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di173545968157499745" iid="996243df16544976a380b061998c81b8" name="Element5" creation-date="12/10/2014 09:32:37" order-index="11" type="drawing-shape">
+            <layout ax="148" ay="365" awidth="69" aheight="62" x="148" y="365" width="69" height="62" angle="0" />
+            <drawing-shape type="Ellipse">
+              <text>  DuyPV</text>
+            </drawing-shape>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di173545968157499745" iid="20152252ad424ba88a3e9ce3f2451c0e" name="Element5" creation-date="12/10/2014 09:32:37" order-index="11" type="drawing-shape">
+            <layout ax="234" ay="365" awidth="69" aheight="62" x="234" y="365" width="69" height="62" angle="0" />
+            <drawing-shape type="Ellipse">
+              <text> HoangLD</text>
+            </drawing-shape>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di173545968157499745" iid="11b83c67992649738e7790a1262ababa" name="Element5" creation-date="12/10/2014 09:32:37" order-index="11" type="drawing-shape">
+            <layout ax="555" ay="365" awidth="69" aheight="62" x="555" y="365" width="69" height="62" angle="0" />
+            <drawing-shape type="Ellipse">
+              <text> TuanTA</text>
+            </drawing-shape>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di173545968157499745" iid="803aea43636843f9a8daec1aadaca98e" name="Element5" creation-date="12/10/2014 09:32:37" order-index="11" type="drawing-shape">
+            <layout ax="473" ay="365" awidth="69" aheight="62" x="473" y="365" width="69" height="62" angle="0" />
+            <drawing-shape type="Ellipse">
+              <text> KhiemDN</text>
+            </drawing-shape>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di173545968157499745" iid="cdfa9f83fb70400aa5543b1c1a886e27" name="Element5" creation-date="12/10/2014 09:32:37" order-index="11" type="drawing-shape">
+            <layout ax="399" ay="365" awidth="69" aheight="62" x="399" y="365" width="69" height="62" angle="0" />
+            <drawing-shape type="Ellipse">
+              <text>  DuyPV</text>
+            </drawing-shape>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di173545968157499745" iid="b0b2954763f14c8c8e6e398285ef4558" name="Element5" creation-date="12/10/2014 09:32:37" order-index="11" type="drawing-shape">
+            <layout ax="319" ay="365" awidth="69" aheight="62" x="319" y="365" width="69" height="62" angle="0" />
+            <drawing-shape type="Ellipse">
+              <text>HoangLD</text>
+            </drawing-shape>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di173545968157499745" iid="741c8ac424c04ec3974ff15665d17c15" name="Element5" creation-date="12/10/2014 09:32:37" order-index="11" type="drawing-shape">
+            <layout ax="716" ay="365" awidth="69" aheight="62" x="716" y="365" width="69" height="62" angle="0" />
+            <drawing-shape type="Ellipse">
+              <text>  DuyPV</text>
+            </drawing-shape>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di173545968157499745" iid="49a4da4468754209b5f49e8f6ee08625" name="Element5" creation-date="12/10/2014 09:32:37" order-index="11" type="drawing-shape">
+            <layout ax="637" ay="365" awidth="69" aheight="62" x="637" y="365" width="69" height="62" angle="0" />
+            <drawing-shape type="Ellipse">
+              <text>  TuanTA</text>
+            </drawing-shape>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di173545968157499745" iid="43e424265e854c25a2ee73e7a2b4e80c" name="Element5" creation-date="12/10/2014 09:32:37" order-index="11" type="drawing-shape">
+            <layout ax="885" ay="365" awidth="69" aheight="62" x="885" y="365" width="69" height="62" angle="0" />
+            <drawing-shape type="Ellipse">
+              <text> HoangLD</text>
+            </drawing-shape>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di173545968157499745" iid="818d1eccf0ea4c0fafd7210d7206bca8" name="Element5" creation-date="12/10/2014 09:32:37" order-index="11" type="drawing-shape">
+            <layout ax="803" ay="365" awidth="69" aheight="62" x="803" y="365" width="69" height="62" angle="0" />
+            <drawing-shape type="Ellipse">
+              <text> KhiemDN</text>
+            </drawing-shape>
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+              <background type="vertical-linear" color="#FFFFFFAA" color2="#FFFFFFAA" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#3C000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" glow-color="#FFFFFFFF" name-color="#FF000000" name-font="Verdana;10;B" name-horizontal-alignment="center" name-vertical-alignment="center" part-header-color="#FF1E1E1E" part-header-font="Verdana;9;I" part-header-horizontal-alignment="center" part-header-vertical-alignment="center" text-color="#FF000000" text-font="Verdana;9;" text-horizontal-alignment="left" text-vertical-alignment="center" tagged-value-color="#FF1E1E1E" tagged-value-font="Verdana;9;I" tagged-value-horizontal-alignment="center" tagged-value-vertical-alignment="center" stereotype-color="#FF1E1E1E" stereotype-font="Verdana;9;I" stereotype-horizontal-alignment="center" stereotype-vertical-alignment="center">
+                  <background type="vertical-linear" color="#FF1E90FF" color2="#FF87CEFA" />
+                  <border color="#FF00008B" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
+          </item>
+          <item id="di415175613152623061" iid="ba83018c50ad4bfbab297d431d9b05ce" name="Element5" creation-date="12/10/2014 09:49:04" order-index="12" type="drawing-line">
+            <layout ax="27" ay="254" awidth="848" aheight="4" x="27" y="254" width="847" height="3" angle="0" />
+            <drawing-line start-point="27,254" end-point="874,257" />
+            <style class="default" />
+          </item>
+          <item id="di203400004229806706" iid="faedbcd92e144d71bb39b4e61dfc5058" name="Element7" creation-date="12/10/2014 09:50:42" order-index="13" type="drawing-line">
+            <layout ax="27" ay="253" awidth="2" aheight="30" x="27" y="253" width="2" height="29" angle="0" />
+            <drawing-line start-point="27,253" end-point="28,282" />
+            <style class="default" />
+          </item>
+          <item id="di351652763802557675" iid="bc47dfe4ba2542d9b2108d2fe073131b" name="Element10" creation-date="12/10/2014 09:51:37" order-index="14" type="drawing-line">
+            <layout ax="226" ay="254" awidth="1" aheight="30" x="226" y="254" width="2" height="29" angle="0" />
+            <drawing-line start-point="226,254" end-point="226,283" />
+            <style class="default" />
+          </item>
+          <item id="di919680126412451017" iid="b0b33f47b05043dc804f8e497d31cd2f" name="Element13" creation-date="12/10/2014 09:52:14" order-index="15" type="drawing-line">
+            <layout ax="470" ay="234" awidth="2" aheight="49" x="470" y="234" width="2" height="48" angle="0" />
+            <drawing-line start-point="470,234" end-point="471,282" />
+            <style class="default" />
+          </item>
+          <item id="di326324014454474478" iid="60b04818c866447a91d76bb6373353f8" name="Element15" creation-date="12/10/2014 09:52:43" order-index="17" type="drawing-line">
+            <layout ax="873" ay="257" awidth="2" aheight="26" x="873" y="257" width="2" height="25" angle="0" />
+            <drawing-line start-point="873,257" end-point="874,282" />
+            <style class="default" />
+          </item>
+          <item id="di354267736249982455" iid="762b444a7bc840bb853c9c4dcfa1dbf1" name="Element16" creation-date="12/10/2014 09:53:00" order-index="18" type="drawing-line">
+            <layout ax="707" ay="256" awidth="2" aheight="26" x="707" y="256" width="2" height="25" angle="0" />
+            <drawing-line start-point="707,256" end-point="708,281" />
+            <style class="default" />
+          </item>
+          <item id="di446280774889647368" iid="f84e72e516fb42cf8b44cc3cb1c2060d" creation-date="12/10/2014 09:53:14" order-index="19" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" name-position="10,-10" auto-path="" x1="3" y1="323" x2="-60" y2="365" start-border-pos="0.672413793103448" end-border-pos="0.126811594202899">
+              <points>
+                <point x="3" y="323" />
+                <point x="-60" y="365" />
+              </points>
+            </layout>
+            <relation from="di180271832367741363" from-iid="22c802a39c734b008f263bb879b8d272" to="di173545968157499745" to-iid="477705bd383b472c9dddecf50d00ba9a" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="27.72414,-10.68965" end-multiplicity="25,15" />
+          </item>
+          <item id="di116525681905807997" iid="6a105542fc454ef5ab4f6d9920a6255e" creation-date="12/10/2014 09:53:25" order-index="20" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="false" name-position="10,-10" auto-path="" x1="23" y1="323" x2="23" y2="365" start-border-pos="0.637931034482759" end-border-pos="0.138760407765706">
+              <points>
+                <point x="23" y="323" />
+                <point x="23" y="365" />
+              </points>
+            </layout>
+            <relation from="di180271832367741363" from-iid="22c802a39c734b008f263bb879b8d272" to="di173545968157499745" to-iid="a9aa71d6799f4d519e27309c75b4ef03" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
+          </item>
+          <item id="di310797610773054739" iid="5d267c85c3e64a3f837381f1255f7d37" creation-date="12/10/2014 09:53:37" order-index="21" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" name-position="10,-10" auto-path="" x1="46" y1="323" x2="103" y2="365" start-border-pos="0.598899486147124" end-border-pos="0.134057971014493">
+              <points>
+                <point x="46" y="323" />
+                <point x="103" y="365" />
+              </points>
+            </layout>
+            <relation from="di180271832367741363" from-iid="22c802a39c734b008f263bb879b8d272" to="di173545968157499745" to-iid="3f6b59ed876d42679419c6dc430518e6" />
+            <role-positions start-role="24.99999,14.99999" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
+          </item>
+          <item id="di430754369308227629" iid="410b59fc25714e3395f3a00e9b8f5d55" creation-date="12/10/2014 09:54:08" order-index="22" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" name-position="10,-10" auto-path="" x1="218" y1="323" x2="184" y2="365" start-border-pos="0.646213771790031" end-border-pos="0.130434782608696">
+              <points>
+                <point x="218" y="323" />
+                <point x="184" y="365" />
+              </points>
+            </layout>
+            <relation from="di998591353676619422" from-iid="e035ecf5481e46afb6e14cf69bedf145" to="di173545968157499745" to-iid="996243df16544976a380b061998c81b8" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="24.99999,-15" end-multiplicity="25,15" />
+          </item>
+          <item id="di954337882438060283" iid="0020de5b0b8243b8bf852409c4effe24" creation-date="12/10/2014 09:54:14" order-index="23" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" name-position="10,-10" auto-path="" x1="237" y1="323" x2="266" y2="365" start-border-pos="0.608393361249308" end-border-pos="0.115942028985507">
+              <points>
+                <point x="237" y="323" />
+                <point x="266" y="365" />
+              </points>
+            </layout>
+            <relation from="di998591353676619422" from-iid="e035ecf5481e46afb6e14cf69bedf145" to="di173545968157499745" to-iid="20152252ad424ba88a3e9ce3f2451c0e" />
+            <role-positions start-role="25,15.00001" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
+          </item>
+          <item id="di473134238653512385" iid="d5a439a19b5049308d68df7ca2e2d878" creation-date="12/10/2014 09:54:17" order-index="24" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" name-position="10,-10" auto-path="" x1="443" y1="323" x2="353" y2="365" start-border-pos="0.668020403062975" end-border-pos="0.123188405797101">
+              <points>
+                <point x="443" y="323" />
+                <point x="353" y="365" />
+              </points>
+            </layout>
+            <relation from="di129726343881527659" from-iid="a56bdbe108124148b28e80bab48ecbc4" to="di173545968157499745" to-iid="b0b2954763f14c8c8e6e398285ef4558" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15.00001" />
+          </item>
+          <item id="di112442871435343524" iid="0ce2391ce14e410bb3c7c4a03063730e" creation-date="12/10/2014 09:54:23" order-index="25" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="460" y1="323" x2="445" y2="365" start-border-pos="0.637830631153004" end-border-pos="0.167437567227129">
+              <points>
+                <point x="460" y="323" />
+                <point x="445" y="365" />
+              </points>
+            </layout>
+            <relation from="di129726343881527659" from-iid="a56bdbe108124148b28e80bab48ecbc4" to="di173545968157499745" to-iid="cdfa9f83fb70400aa5543b1c1a886e27" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
+          </item>
+          <item id="di351734943744626434" iid="29597efca4524d0b9ffc87d6adc86028" creation-date="12/10/2014 09:54:25" order-index="26" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="477" y1="323" x2="495" y2="365" start-border-pos="0.609905139819996" end-border-pos="0.0790163123089334">
+              <points>
+                <point x="477" y="323" />
+                <point x="495" y="365" />
+              </points>
+            </layout>
+            <relation from="di129726343881527659" from-iid="a56bdbe108124148b28e80bab48ecbc4" to="di173545968157499745" to-iid="803aea43636843f9a8daec1aadaca98e" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
+          </item>
+          <item id="di562619008606378575" iid="c008cd4d61e64b60aa419a5735de2d3a" creation-date="12/10/2014 09:54:26" order-index="27" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" name-position="10,-10" auto-path="" x1="495" y1="323" x2="588" y2="365" start-border-pos="0.578960624901024" end-border-pos="0.119565217391304">
+              <points>
+                <point x="495" y="323" />
+                <point x="588" y="365" />
+              </points>
+            </layout>
+            <relation from="di129726343881527659" from-iid="a56bdbe108124148b28e80bab48ecbc4" to="di173545968157499745" to-iid="11b83c67992649738e7790a1262ababa" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
+          </item>
+          <item id="di325855203983894388" iid="0758ac412503491e90d143d36fab8c22" creation-date="12/10/2014 09:54:30" order-index="28" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" name-position="10,-10" auto-path="" x1="702" y1="323" x2="671" y2="365" start-border-pos="0.641238576997586" end-border-pos="0.123188405797101">
+              <points>
+                <point x="702" y="323" />
+                <point x="671" y="365" />
+              </points>
+            </layout>
+            <relation from="di342471149188919689" from-iid="ddad9277b0f44c7a9c8656068b41cd64" to="di173545968157499745" to-iid="49a4da4468754209b5f49e8f6ee08625" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="21.44481,-23.78342" end-multiplicity="25,15" />
+          </item>
+          <item id="di565147275393177299" iid="a64355e42c91464ab399c8defe14473c" creation-date="12/10/2014 09:54:31" order-index="29" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" name-position="10,-10" auto-path="" x1="719" y1="323" x2="752" y2="365" start-border-pos="0.605820818645198" end-border-pos="0.130434782608696">
+              <points>
+                <point x="719" y="323" />
+                <point x="752" y="365" />
+              </points>
+            </layout>
+            <relation from="di342471149188919689" from-iid="ddad9277b0f44c7a9c8656068b41cd64" to="di173545968157499745" to-iid="741c8ac424c04ec3974ff15665d17c15" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
+          </item>
+          <item id="di773059565746877259" iid="bb15d0d6571c41ff87e443e837a246ff" creation-date="12/10/2014 09:54:33" order-index="30" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="868" y1="323" x2="851" y2="365" start-border-pos="0.642017126083374" end-border-pos="0.173411935999774">
+              <points>
+                <point x="868" y="323" />
+                <point x="851" y="365" />
+              </points>
+            </layout>
+            <relation from="di335942252773725250" from-iid="81e51c50aff44706afa5ae5fd92e25a1" to="di173545968157499745" to-iid="818d1eccf0ea4c0fafd7210d7206bca8" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25.00003,-14.99997" end-multiplicity="25,15" />
+          </item>
+          <item id="di682687777451504154" iid="9b4699e7184a414db98495e5e2a80a83" creation-date="12/10/2014 09:54:34" order-index="31" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="887" y1="323" x2="906" y2="365" start-border-pos="0.606237530708313" end-border-pos="0.0754317131595335">
+              <points>
+                <point x="887" y="323" />
+                <point x="906" y="365" />
+              </points>
+            </layout>
+            <relation from="di335942252773725250" from-iid="81e51c50aff44706afa5ae5fd92e25a1" to="di173545968157499745" to-iid="43e424265e854c25a2ee73e7a2b4e80c" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
           </item>
         </layer>
       </diagram>
