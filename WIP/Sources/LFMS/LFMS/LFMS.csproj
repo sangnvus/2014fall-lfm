@@ -1025,14 +1025,6 @@
       <LastGenOutput>LFMSModel.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\LFMS.pubxml" />
-    <Content Include="Views\Salary\Salary.cshtml" />
-    <Content Include="Views\Salary\_Tax.cshtml" />
-    <Content Include="Views\Salary\_AllSalary.cshtml" />
-    <Content Include="Views\Salary\_Assurance.cshtml" />
-    <Content Include="Views\Salary\_TimeSheet.cshtml" />
-    <Content Include="Views\Salary\_Impress.cshtml" />
-    <Content Include="Views\Salary\_Benefit.cshtml" />
-    <Content Include="Views\Salary\_Reward.cshtml" />
     <Content Include="Views\Statistic\Statistic.cshtml" />
     <Content Include="Views\Statistic\_Revenue.cshtml" />
     <Content Include="Views\Statistic\_Office.cshtml" />
