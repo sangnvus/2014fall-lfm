@@ -10,7 +10,7 @@
     <entity-ids>
       <counter>
         <item-type stereotype="" type="AbstractElementGroup" />
-        <value>90</value>
+        <value>3</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -1829,7 +1829,7 @@
       <associated-diagrams />
       <owned-items />
       <style class="default" />
-      <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+      <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
     </item>
     <item id="di188455726461147224" cid="AN007" type="sequence-action" name="Action8" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="05/21/2014 15:03:04">
       <stereotypes />
@@ -1876,7 +1876,7 @@
       <associated-diagrams />
       <owned-items />
       <style class="default" />
-      <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+      <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
     </item>
     <item id="di183866711456505128" cid="LL017" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/31/2014 13:46:45">
       <stereotypes />
@@ -1905,7 +1905,7 @@
       <associated-diagrams />
       <owned-items />
       <style class="default" />
-      <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+      <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
     </item>
     <item id="di317130973118925409" cid="AN007" type="sequence-action" name="Action8" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="05/21/2014 15:03:04">
       <stereotypes />
@@ -1943,7 +1943,7 @@
       <associated-diagrams />
       <owned-items />
       <style class="default" />
-      <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+      <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
     </item>
     <item id="di593473195470622737" cid="AN007" type="sequence-action" name="Action8" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="05/21/2014 15:03:04">
       <stereotypes />
@@ -1981,7 +1981,7 @@
       <associated-diagrams />
       <owned-items />
       <style class="default" />
-      <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+      <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
     </item>
     <item id="di472873699273474766" cid="AN007" type="sequence-action" name="Action8" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="05/21/2014 15:03:04">
       <stereotypes />
@@ -2026,7 +2026,7 @@
       <associated-diagrams />
       <owned-items />
       <style class="default" />
-      <sequence-action type="call" message="Salary()" is-asynchronous="false" from="di102511938215379451" to="di824558682578822243" return-value="" assign-to-variable="">
+      <sequence-action type="call" message="Salary()" is-asynchronous="false" return-value="" assign-to-variable="">
         <parameters />
       </sequence-action>
     </item>
@@ -2064,7 +2064,7 @@
       <associated-diagrams />
       <owned-items />
       <style class="default" />
-      <sequence-action type="call" message="Salary()" is-asynchronous="false" from="di671053673858074134" to="di686806875800919515" return-value="" assign-to-variable="">
+      <sequence-action type="call" message="Salary()" is-asynchronous="false" return-value="" assign-to-variable="">
         <parameters />
       </sequence-action>
     </item>
@@ -4202,7 +4202,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di945263605734608640" cid="LL001" type="lifeline" name="Browser" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="05/21/2014 16:07:15">
             <stereotypes />
@@ -4343,10 +4343,10 @@
             <layout ax="-860" ay="620" awidth="1560" aheight="580" x="-860" y="620" width="1560" height="580" angle="0" />
           </item>
           <item id="di106225582286965641" iid="bfae85f146244f0298c5011433446ffc" container="di754325222997902865" container-iid="e780df0f6b684919bbea839cb2febda7" creation-date="04/01/2014 17:05:13" order-index="104" type="entity">
-            <layout ax="-860" ay="643.8711" awidth="1560" aheight="456" x="-860" y="650" width="1560" height="450" angle="0" />
+            <layout ax="-860" ay="643.8711" awidth="1560" aheight="454" x="-860" y="650" width="1560" height="450" angle="0" />
           </item>
           <item id="di858967323648116979" iid="d90f9d3933a640618150b4b3acff40f6" container="di754325222997902865" container-iid="e780df0f6b684919bbea839cb2febda7" creation-date="04/01/2014 17:05:13" order-index="103" type="entity">
-            <layout ax="-860" ay="1099.871" awidth="1560" aheight="100.1289" x="-860" y="1100" width="1560" height="100" angle="0" />
+            <layout ax="-860" ay="1097.871" awidth="1560" aheight="102.1289" x="-860" y="1100" width="1560" height="100" angle="0" />
           </item>
           <item id="di966145437290016932" iid="0eaf305b8a2c46c3abe044b54e41e144" creation-date="05/21/2014 16:20:52" order-index="105" type="sequence-action">
             <layout x1="-139" y1="895" x2="-379" y2="895" ax="-379" ay="880" awidth="240" aheight="20" x="-379" y="880" width="240" height="20" message-x="0" message-y="-10" />
@@ -4356,10 +4356,10 @@
             <layout ax="-810" ay="910" awidth="710" aheight="180" x="-810" y="910" width="710" height="180" angle="0" />
           </item>
           <item id="di964814911226256560" iid="70b242dc020f45ffae98769a3c888cfd" container="di505730034384610598" container-iid="2a082515aadc4ac8803154a0e1d62523" creation-date="03/31/2014 17:02:21" order-index="61" type="entity">
-            <layout ax="-810" ay="933.8711" awidth="710" aheight="73" x="-810" y="940" width="710" height="67" angle="0" />
+            <layout ax="-810" ay="933.8711" awidth="710" aheight="71" x="-810" y="940" width="710" height="67" angle="0" />
           </item>
           <item id="di715013466483302154" iid="2d1c7430da424635a5b6e7b94f53bb20" container="di505730034384610598" container-iid="2a082515aadc4ac8803154a0e1d62523" creation-date="03/31/2014 17:02:22" order-index="62" type="entity">
-            <layout ax="-810" ay="1006.871" awidth="710" aheight="83.12891" x="-810" y="1007" width="710" height="83" angle="0" />
+            <layout ax="-810" ay="1004.871" awidth="710" aheight="85.12891" x="-810" y="1007" width="710" height="83" angle="0" />
           </item>
           <item id="di841861073533704857" iid="be5df3b23c754837b2034259b7bacb37" creation-date="05/21/2014 16:22:18" order-index="106" type="sequence-action">
             <layout x1="-399" y1="960" x2="-650" y2="960" ax="-650" ay="945" awidth="251" aheight="20" x="-650" y="945" width="251" height="20" message-x="0" message-y="-10" />
@@ -4404,7 +4404,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di751019595188469217" cid="LL003" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="05/21/2014 16:07:18">
             <stereotypes />
@@ -4810,10 +4810,10 @@
             <layout ax="-860" ay="620" awidth="1560" aheight="580" x="-860" y="620" width="1560" height="580" angle="0" />
           </item>
           <item id="di946670480394780885" iid="823cbe57a9a84718834517a1af000c55" container="di433029564717380126" container-iid="161e5bd4fcfb464ab82cbab10320f28a" creation-date="04/01/2014 17:05:13" order-index="104" type="entity">
-            <layout ax="-860" ay="643.8711" awidth="1560" aheight="456" x="-860" y="650" width="1560" height="450" angle="0" />
+            <layout ax="-860" ay="643.8711" awidth="1560" aheight="454" x="-860" y="650" width="1560" height="450" angle="0" />
           </item>
           <item id="di975182582665041867" iid="af9e9b8c8c7542b19b1e07e1b21a3be5" container="di433029564717380126" container-iid="161e5bd4fcfb464ab82cbab10320f28a" creation-date="04/01/2014 17:05:13" order-index="103" type="entity">
-            <layout ax="-860" ay="1099.871" awidth="1560" aheight="100.1289" x="-860" y="1100" width="1560" height="100" angle="0" />
+            <layout ax="-860" ay="1097.871" awidth="1560" aheight="102.1289" x="-860" y="1100" width="1560" height="100" angle="0" />
           </item>
           <item id="di831244012483472176" iid="c3cfba2a1dc448569d6f656845c4f65d" creation-date="05/21/2014 16:20:52" order-index="105" type="sequence-action">
             <layout x1="-140" y1="895" x2="-379" y2="895" ax="-379" ay="880" awidth="239" aheight="20" x="-379" y="880" width="239" height="20" message-x="0" message-y="-10" />
@@ -4823,10 +4823,10 @@
             <layout ax="-810" ay="910" awidth="710" aheight="180" x="-810" y="910" width="710" height="180" angle="0" />
           </item>
           <item id="di335817775512589720" iid="e72ff6d3813c4d9ea601b07d7308ecad" container="di949542614852691375" container-iid="864e64421f1f4352b52c75ed23ef16cf" creation-date="03/31/2014 17:02:21" order-index="61" type="entity">
-            <layout ax="-810" ay="933.8711" awidth="710" aheight="73" x="-810" y="940" width="710" height="67" angle="0" />
+            <layout ax="-810" ay="933.8711" awidth="710" aheight="71" x="-810" y="940" width="710" height="67" angle="0" />
           </item>
           <item id="di842176080191018980" iid="b1fca9a9513b42f88d1d84c5f96497ad" container="di949542614852691375" container-iid="864e64421f1f4352b52c75ed23ef16cf" creation-date="03/31/2014 17:02:22" order-index="62" type="entity">
-            <layout ax="-810" ay="1006.871" awidth="710" aheight="83.12891" x="-810" y="1007" width="710" height="83" angle="0" />
+            <layout ax="-810" ay="1004.871" awidth="710" aheight="85.12891" x="-810" y="1007" width="710" height="83" angle="0" />
           </item>
           <item id="di326842335620532162" iid="6fb9bcb6a6e142ddbcde0b9e56d0ad25" creation-date="05/21/2014 16:22:18" order-index="106" type="sequence-action">
             <layout x1="-399" y1="960" x2="-649" y2="960" ax="-649" ay="945" awidth="250" aheight="20" x="-649" y="945" width="250" height="20" message-x="0" message-y="-10" />
@@ -4871,7 +4871,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di321468966235059438" cid="LL003" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="05/21/2014 16:07:18">
             <stereotypes />
@@ -5277,10 +5277,10 @@
             <layout ax="-860" ay="620" awidth="1560" aheight="580" x="-860" y="620" width="1560" height="580" angle="0" />
           </item>
           <item id="di250548343989788018" iid="10f2417648884d0b84d08e74ff84732a" container="di617493614964846731" container-iid="06cd6a53a5c14fe1b67b66aad001957c" creation-date="04/01/2014 17:05:13" order-index="104" type="entity">
-            <layout ax="-860" ay="643.8711" awidth="1560" aheight="456" x="-860" y="650" width="1560" height="450" angle="0" />
+            <layout ax="-860" ay="643.8711" awidth="1560" aheight="454" x="-860" y="650" width="1560" height="450" angle="0" />
           </item>
           <item id="di778762622457749488" iid="0a6324a0e49542bbbc987d8178c0c5cb" container="di617493614964846731" container-iid="06cd6a53a5c14fe1b67b66aad001957c" creation-date="04/01/2014 17:05:13" order-index="103" type="entity">
-            <layout ax="-860" ay="1099.871" awidth="1560" aheight="100.1289" x="-860" y="1100" width="1560" height="100" angle="0" />
+            <layout ax="-860" ay="1097.871" awidth="1560" aheight="102.1289" x="-860" y="1100" width="1560" height="100" angle="0" />
           </item>
           <item id="di764554350700273509" iid="d4fd3a29c0054d35ba6f1885d687134f" creation-date="05/21/2014 16:20:52" order-index="105" type="sequence-action">
             <layout x1="-140" y1="895" x2="-379" y2="895" ax="-379" ay="880" awidth="239" aheight="20" x="-379" y="880" width="239" height="20" message-x="0" message-y="-10" />
@@ -5290,10 +5290,10 @@
             <layout ax="-810" ay="910" awidth="710" aheight="180" x="-810" y="910" width="710" height="180" angle="0" />
           </item>
           <item id="di479559398771981454" iid="44ad4800f45e4ddfac9a48436bf32498" container="di805018410710012946" container-iid="0ee616cc967540b38ac97ef1b98400a9" creation-date="03/31/2014 17:02:21" order-index="61" type="entity">
-            <layout ax="-810" ay="933.8711" awidth="710" aheight="73" x="-810" y="940" width="710" height="67" angle="0" />
+            <layout ax="-810" ay="933.8711" awidth="710" aheight="71" x="-810" y="940" width="710" height="67" angle="0" />
           </item>
           <item id="di401292506823009180" iid="2fd2359a90e544f8addfcfea02003d8f" container="di805018410710012946" container-iid="0ee616cc967540b38ac97ef1b98400a9" creation-date="03/31/2014 17:02:22" order-index="62" type="entity">
-            <layout ax="-810" ay="1006.871" awidth="710" aheight="83.12891" x="-810" y="1007" width="710" height="83" angle="0" />
+            <layout ax="-810" ay="1004.871" awidth="710" aheight="85.12891" x="-810" y="1007" width="710" height="83" angle="0" />
           </item>
           <item id="di137212920105423253" iid="55abf67d94844fce90a20a4de83b5acb" creation-date="05/21/2014 16:22:18" order-index="106" type="sequence-action">
             <layout x1="-399" y1="960" x2="-649" y2="960" ax="-649" ay="945" awidth="250" aheight="20" x="-649" y="945" width="250" height="20" message-x="0" message-y="-10" />
@@ -5338,7 +5338,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di653280625955991359" cid="LL003" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="05/21/2014 16:07:18">
             <stereotypes />
@@ -5744,10 +5744,10 @@
             <layout ax="-860" ay="620" awidth="1560" aheight="580" x="-860" y="620" width="1560" height="580" angle="0" />
           </item>
           <item id="di399521379312888694" iid="20724f9c922c47ef96de153d1e5fddff" container="di641230930176546485" container-iid="875924fc95d54463bc762de6ae73903a" creation-date="04/01/2014 17:05:13" order-index="104" type="entity">
-            <layout ax="-860" ay="643.8711" awidth="1560" aheight="456" x="-860" y="650" width="1560" height="450" angle="0" />
+            <layout ax="-860" ay="643.8711" awidth="1560" aheight="454" x="-860" y="650" width="1560" height="450" angle="0" />
           </item>
           <item id="di220710204286100440" iid="c2a36323241e4442a34dbd9fbcd7e488" container="di641230930176546485" container-iid="875924fc95d54463bc762de6ae73903a" creation-date="04/01/2014 17:05:13" order-index="103" type="entity">
-            <layout ax="-860" ay="1099.871" awidth="1560" aheight="100.1289" x="-860" y="1100" width="1560" height="100" angle="0" />
+            <layout ax="-860" ay="1097.871" awidth="1560" aheight="102.1289" x="-860" y="1100" width="1560" height="100" angle="0" />
           </item>
           <item id="di362474406833765916" iid="126e64a1021c46a2a331cabef686cc79" creation-date="05/21/2014 16:20:52" order-index="105" type="sequence-action">
             <layout x1="-140" y1="895" x2="-379" y2="895" ax="-379" ay="880" awidth="239" aheight="20" x="-379" y="880" width="239" height="20" message-x="0" message-y="-10" />
@@ -5757,10 +5757,10 @@
             <layout ax="-810" ay="910" awidth="710" aheight="180" x="-810" y="910" width="710" height="180" angle="0" />
           </item>
           <item id="di712995458789606821" iid="e652f94ee1c948a5a515ff8439e3fdb7" container="di521474093975773880" container-iid="68f386cfe7d14335a47658d928635ee0" creation-date="03/31/2014 17:02:21" order-index="61" type="entity">
-            <layout ax="-810" ay="933.8711" awidth="710" aheight="73" x="-810" y="940" width="710" height="67" angle="0" />
+            <layout ax="-810" ay="933.8711" awidth="710" aheight="71" x="-810" y="940" width="710" height="67" angle="0" />
           </item>
           <item id="di864287537171629845" iid="032cc6a6936f43d0af86522b675e3d63" container="di521474093975773880" container-iid="68f386cfe7d14335a47658d928635ee0" creation-date="03/31/2014 17:02:22" order-index="62" type="entity">
-            <layout ax="-810" ay="1006.871" awidth="710" aheight="83.12891" x="-810" y="1007" width="710" height="83" angle="0" />
+            <layout ax="-810" ay="1004.871" awidth="710" aheight="85.12891" x="-810" y="1007" width="710" height="83" angle="0" />
           </item>
           <item id="di830035389450311652" iid="9d8768e51a6c4db985bf0acff537a693" creation-date="05/21/2014 16:22:18" order-index="106" type="sequence-action">
             <layout x1="-399" y1="960" x2="-649" y2="960" ax="-649" ay="945" awidth="250" aheight="20" x="-649" y="945" width="250" height="20" message-x="0" message-y="-10" />
@@ -5805,7 +5805,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di958560433424477287" cid="LL003" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="05/21/2014 16:07:18">
             <stereotypes />
@@ -6282,7 +6282,7 @@
             <layout ax="-960" ay="620" awidth="1620" aheight="690" x="-960" y="620" width="1620" height="690" angle="0" />
           </item>
           <item id="di149186516335094279" iid="584d818e3dad4d3ab008ac966f8923d5" container="di239026312154277541" container-iid="46ae69724450432ba88204bdde4a471d" creation-date="04/01/2014 17:05:13" order-index="104" type="entity">
-            <layout ax="-960" ay="643.8711" awidth="1620" aheight="566" x="-960" y="650" width="1620" height="560" angle="0" />
+            <layout ax="-960" ay="643.8711" awidth="1620" aheight="564" x="-960" y="650" width="1620" height="560" angle="0" />
           </item>
           <item id="di955978492805791293" iid="0f6d243e0cd545d39a1994515f657aea" creation-date="05/21/2014 16:20:52" order-index="105" type="sequence-action">
             <layout x1="-140" y1="1010" x2="-410" y2="1010" ax="-410" ay="995" awidth="270" aheight="20" x="-410" y="995" width="270" height="20" message-x="0" message-y="-10" />
@@ -6292,7 +6292,7 @@
             <layout ax="-840" ay="1050" awidth="540" aheight="140" x="-840" y="1050" width="540" height="140" angle="0" />
           </item>
           <item id="di901730377279053088" iid="203eb5b0c4eb4940b8b1bc43b4a7b70f" container="di886154938893453001" container-iid="d0002b4efb464a0caa996914d5298c3f" creation-date="03/31/2014 17:02:21" order-index="61" type="entity">
-            <layout ax="-840" ay="1073.871" awidth="540" aheight="46" x="-840" y="1100" width="540" height="40" angle="0" />
+            <layout ax="-840" ay="1073.871" awidth="540" aheight="44" x="-840" y="1100" width="540" height="40" angle="0" />
           </item>
           <item id="di396379332766077325" iid="12f2328b00264c4d984caebaa3171b16" creation-date="05/21/2014 16:22:18" order-index="106" type="sequence-action">
             <layout x1="-430" y1="1075" x2="-690" y2="1075" ax="-690" ay="1060" awidth="260" aheight="20" x="-690" y="1060" width="260" height="20" message-x="0" message-y="-10" />
@@ -6337,17 +6337,17 @@
             <layout ax="-260" ay="883.8711" awidth="900" aheight="296.1289" x="-260" y="890" width="900" height="290" angle="0" />
           </item>
           <item id="di618577498923817075" iid="6609ba71d717410ab05e78b628ea3ea6" container="di886154938893453001" container-iid="d0002b4efb464a0caa996914d5298c3f" creation-date="03/31/2014 17:02:22" order-index="62" type="entity">
-            <layout ax="-840" ay="1119.871" awidth="540" aheight="70.12891" x="-840" y="1140" width="540" height="50" angle="0" />
+            <layout ax="-840" ay="1117.871" awidth="540" aheight="72.12891" x="-840" y="1140" width="540" height="50" angle="0" />
           </item>
           <item id="di379236005530361146" iid="4ff2274d3e834f6fabb5d14b85fa446c" container="di239026312154277541" container-iid="46ae69724450432ba88204bdde4a471d" creation-date="04/01/2014 17:05:13" order-index="103" type="entity">
-            <layout ax="-960" ay="1209.871" awidth="1620" aheight="60" x="-960" y="1210" width="1620" height="60" angle="0" />
+            <layout ax="-960" ay="1207.871" awidth="1620" aheight="60" x="-960" y="1210" width="1620" height="60" angle="0" />
           </item>
           <item id="di761093060615625510" iid="8c9307d22f684ed3b5de4b8847a4ce2a" creation-date="05/22/2014 16:40:07" order-index="115" type="sequence-action">
             <layout x1="320" y1="950" x2="120" y2="950" ax="120" ay="935" awidth="200" aheight="20" x="120" y="935" width="200" height="20" message-x="0" message-y="-10" />
             <sequence-action from="di823189919413362396" to="di341768003943504452" show-sequence-number="false" />
           </item>
           <item id="di820799386684707866" iid="c6fe497c0cba4a798e8ae2b713aa0d46" container="di239026312154277541" container-iid="46ae69724450432ba88204bdde4a471d" creation-date="05/22/2014 17:06:55" order-index="116" type="entity">
-            <layout ax="-960" ay="1269.871" awidth="1620" aheight="40.12891" x="-960" y="1270" width="1620" height="40" angle="0" />
+            <layout ax="-960" ay="1267.871" awidth="1620" aheight="42.12891" x="-960" y="1270" width="1620" height="40" angle="0" />
           </item>
           <item id="di258664970592265622" iid="e998712c5d204b4fbfc39a231ba0b61a" creation-date="05/22/2014 17:09:41" order-index="117" type="sequence-action">
             <layout x1="-430" y1="1300" x2="-690" y2="1300" ax="-690" ay="1285" awidth="260" aheight="20" x="-690" y="1285" width="260" height="20" message-x="0" message-y="-10" />
@@ -8482,7 +8482,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di629450266696977048" cid="LL006" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/30/2014 19:00:08">
             <stereotypes />
@@ -8905,7 +8905,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di316872524874139783" cid="LL006" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/30/2014 19:00:08">
             <stereotypes />
@@ -9328,7 +9328,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di188789568179420397" cid="LL006" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/30/2014 19:00:08">
             <stereotypes />
@@ -9723,7 +9723,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di129479795199131460" cid="LL003" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="05/21/2014 16:07:18">
             <stereotypes />
@@ -10129,10 +10129,10 @@
             <layout ax="-860" ay="620" awidth="1560" aheight="580" x="-860" y="620" width="1560" height="580" angle="0" />
           </item>
           <item id="di449787042677410938" iid="ce1da574b0144735a45dc28b0335e5cb" container="di831756663666483849" container-iid="8f73c9a708b949dc9d5d36ee59fe70d6" creation-date="04/01/2014 17:05:13" order-index="104" type="entity">
-            <layout ax="-860" ay="643.8711" awidth="1560" aheight="456" x="-860" y="650" width="1560" height="450" angle="0" />
+            <layout ax="-860" ay="643.8711" awidth="1560" aheight="454" x="-860" y="650" width="1560" height="450" angle="0" />
           </item>
           <item id="di680637567924588648" iid="c5c2ea5a70e643e9b9de6af55d2266e7" container="di831756663666483849" container-iid="8f73c9a708b949dc9d5d36ee59fe70d6" creation-date="04/01/2014 17:05:13" order-index="103" type="entity">
-            <layout ax="-860" ay="1099.871" awidth="1560" aheight="100.1289" x="-860" y="1100" width="1560" height="100" angle="0" />
+            <layout ax="-860" ay="1097.871" awidth="1560" aheight="102.1289" x="-860" y="1100" width="1560" height="100" angle="0" />
           </item>
           <item id="di224775266912582375" iid="e25272253cfe4d4bb3c427748d872fc3" creation-date="05/21/2014 16:20:52" order-index="105" type="sequence-action">
             <layout x1="-140" y1="895" x2="-379" y2="895" ax="-379" ay="880" awidth="239" aheight="20" x="-379" y="880" width="239" height="20" message-x="0" message-y="-10" />
@@ -10142,10 +10142,10 @@
             <layout ax="-810" ay="910" awidth="710" aheight="180" x="-810" y="910" width="710" height="180" angle="0" />
           </item>
           <item id="di432742553424112682" iid="8c96af0f5ee6405893dce1b9dceef2ee" container="di588357156184021456" container-iid="9d7893a3eed74fb89c5241b3da72de49" creation-date="03/31/2014 17:02:21" order-index="61" type="entity">
-            <layout ax="-810" ay="933.8711" awidth="710" aheight="73" x="-810" y="940" width="710" height="67" angle="0" />
+            <layout ax="-810" ay="933.8711" awidth="710" aheight="71" x="-810" y="940" width="710" height="67" angle="0" />
           </item>
           <item id="di514514146993405988" iid="bd6e89d818324d9ea4d9b79c3a34ab17" container="di588357156184021456" container-iid="9d7893a3eed74fb89c5241b3da72de49" creation-date="03/31/2014 17:02:22" order-index="62" type="entity">
-            <layout ax="-810" ay="1006.871" awidth="710" aheight="83.12891" x="-810" y="1007" width="710" height="83" angle="0" />
+            <layout ax="-810" ay="1004.871" awidth="710" aheight="85.12891" x="-810" y="1007" width="710" height="83" angle="0" />
           </item>
           <item id="di434802034225676888" iid="5395de1b725847dc8ebe0621acb186f2" creation-date="05/21/2014 16:22:18" order-index="106" type="sequence-action">
             <layout x1="-399" y1="960" x2="-650" y2="960" ax="-650" ay="945" awidth="251" aheight="20" x="-650" y="945" width="251" height="20" message-x="0" message-y="-10" />
@@ -10614,7 +10614,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di126541223282368944" cid="LL001" type="lifeline" name="Browser" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="05/21/2014 16:07:15">
             <stereotypes />
@@ -10733,7 +10733,7 @@
             <layout ax="-960" ay="620" awidth="1620" aheight="690" x="-960" y="620" width="1620" height="690" angle="0" />
           </item>
           <item id="di350262157912292786" iid="a12c9410c0bf4ce09276202036620a2d" container="di639000581631771264" container-iid="d64721b754284fdb8b6101331cbdadab" creation-date="04/01/2014 17:05:13" order-index="104" type="entity">
-            <layout ax="-960" ay="643.8711" awidth="1620" aheight="566" x="-960" y="650" width="1620" height="560" angle="0" />
+            <layout ax="-960" ay="643.8711" awidth="1620" aheight="564" x="-960" y="650" width="1620" height="560" angle="0" />
           </item>
           <item id="di129809810179375947" iid="8036b79172fa4dc7b44ac1f45aae4f74" creation-date="05/21/2014 16:20:52" order-index="105" type="sequence-action">
             <layout x1="-140" y1="1010" x2="-410" y2="1010" ax="-410" ay="995" awidth="270" aheight="20" x="-410" y="995" width="270" height="20" message-x="0" message-y="-10" />
@@ -10743,7 +10743,7 @@
             <layout ax="-840" ay="1050" awidth="540" aheight="140" x="-840" y="1050" width="540" height="140" angle="0" />
           </item>
           <item id="di395086989961122101" iid="c7ebc56f2c1e43ae8175f7c9f8161ff2" container="di929232001838087305" container-iid="0140468a37c244b5900c3870dc272df4" creation-date="03/31/2014 17:02:21" order-index="61" type="entity">
-            <layout ax="-840" ay="1073.871" awidth="540" aheight="46" x="-840" y="1100" width="540" height="40" angle="0" />
+            <layout ax="-840" ay="1073.871" awidth="540" aheight="44" x="-840" y="1100" width="540" height="40" angle="0" />
           </item>
           <item id="di494018845679233875" iid="b2a79a55726c42ccbfc17c3cc75f8d43" creation-date="05/21/2014 16:22:18" order-index="106" type="sequence-action">
             <layout x1="-430" y1="1075" x2="-690" y2="1075" ax="-690" ay="1060" awidth="260" aheight="20" x="-690" y="1060" width="260" height="20" message-x="0" message-y="-10" />
@@ -10788,17 +10788,17 @@
             <layout ax="-260" ay="883.8711" awidth="900" aheight="296.1289" x="-260" y="890" width="900" height="290" angle="0" />
           </item>
           <item id="di740740509646329946" iid="6b316c168bfe441d8fb784c97c7134b2" container="di929232001838087305" container-iid="0140468a37c244b5900c3870dc272df4" creation-date="03/31/2014 17:02:22" order-index="62" type="entity">
-            <layout ax="-840" ay="1119.871" awidth="540" aheight="70.12891" x="-840" y="1140" width="540" height="50" angle="0" />
+            <layout ax="-840" ay="1117.871" awidth="540" aheight="72.12891" x="-840" y="1140" width="540" height="50" angle="0" />
           </item>
           <item id="di490158731101214202" iid="95a24d29da59411a8ea18f13bc5059a8" container="di639000581631771264" container-iid="d64721b754284fdb8b6101331cbdadab" creation-date="04/01/2014 17:05:13" order-index="103" type="entity">
-            <layout ax="-960" ay="1209.871" awidth="1620" aheight="60" x="-960" y="1210" width="1620" height="60" angle="0" />
+            <layout ax="-960" ay="1207.871" awidth="1620" aheight="60" x="-960" y="1210" width="1620" height="60" angle="0" />
           </item>
           <item id="di954481070187814534" iid="13c0d941d9d64ea29ed7af7ddb81b78c" creation-date="05/22/2014 16:40:07" order-index="115" type="sequence-action">
             <layout x1="320" y1="950" x2="120" y2="950" ax="120" ay="935" awidth="200" aheight="20" x="120" y="935" width="200" height="20" message-x="0" message-y="-10" />
             <sequence-action from="di154042279509081256" to="di340607458645746541" show-sequence-number="false" />
           </item>
           <item id="di674667260116912425" iid="a22b4651c22c4ba6859f6c1c2131a47d" container="di639000581631771264" container-iid="d64721b754284fdb8b6101331cbdadab" creation-date="05/22/2014 17:06:55" order-index="116" type="entity">
-            <layout ax="-960" ay="1269.871" awidth="1620" aheight="40.12891" x="-960" y="1270" width="1620" height="40" angle="0" />
+            <layout ax="-960" ay="1267.871" awidth="1620" aheight="42.12891" x="-960" y="1270" width="1620" height="40" angle="0" />
           </item>
           <item id="di170200915177982459" iid="c70d592d893442548f31f4546512540c" creation-date="05/22/2014 17:09:41" order-index="117" type="sequence-action">
             <layout x1="-430" y1="1300" x2="-690" y2="1300" ax="-690" ay="1285" awidth="260" aheight="20" x="-690" y="1285" width="260" height="20" message-x="0" message-y="-10" />
@@ -10863,7 +10863,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di802943743272708282" cid="LL006" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/30/2014 19:00:08">
             <stereotypes />
@@ -11120,7 +11120,7 @@
             <layout ax="-31" ay="50" awidth="141" aheight="850" x="-31" y="50" width="141" height="850" angle="0" />
           </item>
           <item id="di218566238180675267" iid="63a2b0c0b896430d95f68d5d17298357" creation-date="03/30/2014 18:59:36" order-index="4" type="lifeline">
-            <layout ax="480" ay="50" awidth="140" aheight="840" x="480" y="50" width="140" height="840" angle="0" />
+            <layout ax="481" ay="50" awidth="140" aheight="840" x="481" y="50" width="140" height="840" angle="0" />
           </item>
           <item id="di802943743272708282" iid="b70f72bb707640d1bc9d8e45d19301a5" creation-date="03/30/2014 19:00:08" order-index="5" type="lifeline">
             <layout ax="670" ay="50" awidth="144" aheight="850" x="670" y="50" width="144" height="850" angle="0" />
@@ -11149,14 +11149,14 @@
             <sequence-action from="di777719725849791565" to="di777719725849791565" show-sequence-number="false" />
           </item>
           <item id="di342898913500329811" iid="787c95284bdb4bc6a2816bd659283dd6" creation-date="03/31/2014 15:00:49" order-index="55" type="sequence-action">
-            <layout x1="320" y1="451" x2="540" y2="451" ax="320" ay="436" awidth="220" aheight="20" x="320" y="436" width="220" height="20" message-x="0" message-y="-10" />
+            <layout x1="320" y1="451" x2="541" y2="451" ax="320" ay="436" awidth="221" aheight="20" x="320" y="436" width="221" height="20" message-x="0" message-y="-10" />
             <sequence-action from="di949145321154683737" to="di724943240774535909" show-sequence-number="false" />
           </item>
           <item id="di724943240774535909" iid="5730d55df475475e9ddad9ee85e3e502" container="di218566238180675267" container-iid="63a2b0c0b896430d95f68d5d17298357" creation-date="03/31/2014 15:00:51" order-index="56" type="entity">
-            <layout ax="540" ay="451" awidth="20" aheight="147" x="540" y="451" width="20" height="147" angle="0" />
+            <layout ax="541" ay="451" awidth="20" aheight="147" x="541" y="451" width="20" height="147" angle="0" />
           </item>
           <item id="di506334578752641882" iid="00ee7346e456467faa3df0892e3f674e" creation-date="03/31/2014 15:01:17" order-index="57" type="sequence-action">
-            <layout x1="560" y1="480" x2="732" y2="480" ax="560" ay="465" awidth="172" aheight="20" x="560" y="465" width="172" height="20" message-x="0" message-y="-10" />
+            <layout x1="561" y1="480" x2="732" y2="480" ax="561" ay="465" awidth="171" aheight="20" x="561" y="465" width="171" height="20" message-x="0" message-y="-10" />
             <sequence-action from="di724943240774535909" to="di349902353206987085" show-sequence-number="false" />
           </item>
           <item id="di349902353206987085" iid="c3a8cde9f1ce4d8abe0eb1bcd3c54803" container="di802943743272708282" container-iid="b70f72bb707640d1bc9d8e45d19301a5" creation-date="03/31/2014 15:01:18" order-index="58" type="entity">
@@ -11174,11 +11174,11 @@
             <sequence-action from="di598623870685017899" to="di349902353206987085" show-sequence-number="false" />
           </item>
           <item id="di168548559743645185" iid="d4a1606e31ad4ab0aa8675b11b022be4" creation-date="03/31/2014 15:02:56" order-index="62" type="sequence-action">
-            <layout x1="732" y1="576" x2="560" y2="576" ax="560" ay="561" awidth="172" aheight="20" x="560" y="561" width="172" height="20" message-x="1" message-y="-17" />
+            <layout x1="732" y1="576" x2="561" y2="576" ax="561" ay="561" awidth="171" aheight="20" x="561" y="561" width="171" height="20" message-x="1" message-y="-17" />
             <sequence-action from="di349902353206987085" to="di724943240774535909" show-sequence-number="false" />
           </item>
           <item id="di174663567412920372" iid="8860b35d327a4bcca1d54804b3976a21" creation-date="03/31/2014 15:03:33" order-index="63" type="sequence-action">
-            <layout x1="540" y1="598" x2="320" y2="598" ax="320" ay="583" awidth="220" aheight="20" x="320" y="583" width="220" height="20" message-x="0" message-y="-10" />
+            <layout x1="541" y1="598" x2="320" y2="598" ax="320" ay="583" awidth="221" aheight="20" x="320" y="583" width="221" height="20" message-x="0" message-y="-10" />
             <sequence-action from="di724943240774535909" to="di949145321154683737" show-sequence-number="false" />
           </item>
           <item id="di180138467416234988" iid="68aadeaadf6249b185e335cdecfa5de7" creation-date="03/31/2014 15:04:19" order-index="64" type="sequence-action">
@@ -11273,7 +11273,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di532337636915275412" cid="LL006" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/30/2014 19:00:08">
             <stereotypes />
@@ -11683,7 +11683,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di769144743480246138" cid="LL006" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/30/2014 19:00:08">
             <stereotypes />
@@ -12093,7 +12093,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di401365342477470979" cid="LL006" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/30/2014 19:00:08">
             <stereotypes />
@@ -12503,7 +12503,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di108549508556446460" cid="LL006" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/30/2014 19:00:08">
             <stereotypes />
@@ -12931,7 +12931,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="ExcelBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="ExcelBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di147576036883840139" cid="AN001" type="sequence-action" name="Action1" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="04/14/2014 16:21:27">
             <stereotypes />
@@ -13025,7 +13025,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="SalaryBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="SalaryBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di893087611723748785" cid="AB032" type="activation-bar" name="ActivationBar29" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="04/14/2014 17:16:53">
             <stereotypes />
@@ -13187,7 +13187,7 @@
             <layout ax="480" ay="50" awidth="180" aheight="860" x="480" y="50" width="180" height="860" angle="0" />
           </item>
           <item id="di534411337221110801" iid="1188516773074513ad51341a4c7c1453" creation-date="05/25/2014 17:01:42" order-index="45" type="lifeline">
-            <layout ax="920" ay="50" awidth="140" aheight="840" x="920" y="50" width="140" height="840" angle="0" />
+            <layout ax="921" ay="50" awidth="140" aheight="840" x="921" y="50" width="140" height="840" angle="0" />
           </item>
           <item id="di277620111474815575" iid="2483a36910dc40c4a5b0897d48a956cc" creation-date="05/25/2014 17:02:00" order-index="46" type="lifeline">
             <layout ax="1190" ay="50" awidth="140" aheight="850" x="1190" y="50" width="140" height="850" angle="0" />
@@ -13200,14 +13200,14 @@
             <layout ax="560" ay="240" awidth="20" aheight="220" x="560" y="240" width="20" height="220" angle="0" />
           </item>
           <item id="di472172934254709822" iid="44d6ad9d0bda42bea0a3563bea07728e" creation-date="05/25/2014 17:05:54" order-index="49" type="sequence-action">
-            <layout x1="580" y1="280" x2="980" y2="280" ax="580" ay="265" awidth="400" aheight="20" x="580" y="265" width="400" height="20" message-x="0" message-y="-10" />
+            <layout x1="580" y1="280" x2="981" y2="280" ax="580" ay="265" awidth="401" aheight="20" x="580" y="265" width="401" height="20" message-x="0" message-y="-10" />
             <sequence-action from="di318196116667202571" to="di231571112812435872" show-sequence-number="false" />
           </item>
           <item id="di231571112812435872" iid="a1a26893a9ad4dd99f6c59b0f9a21c40" container="di534411337221110801" container-iid="1188516773074513ad51341a4c7c1453" creation-date="05/25/2014 17:05:55" order-index="50" type="entity">
-            <layout ax="980" ay="280" awidth="20" aheight="140" x="980" y="280" width="20" height="140" angle="0" />
+            <layout ax="981" ay="280" awidth="20" aheight="140" x="981" y="280" width="20" height="140" angle="0" />
           </item>
           <item id="di189854244189752654" iid="10b0f82cdeef47c680ea2c35d4566690" creation-date="05/25/2014 17:06:23" order-index="51" type="sequence-action">
-            <layout x1="1000" y1="310" x2="1250" y2="310" ax="1000" ay="295" awidth="250" aheight="20" x="1000" y="295" width="250" height="20" message-x="0" message-y="-10" />
+            <layout x1="1001" y1="310" x2="1250" y2="310" ax="1001" ay="295" awidth="249" aheight="20" x="1001" y="295" width="249" height="20" message-x="0" message-y="-10" />
             <sequence-action from="di231571112812435872" to="di905272650679216681" show-sequence-number="false" />
           </item>
           <item id="di905272650679216681" iid="0b2c8a20844c41479ff90c67e1c120e9" container="di277620111474815575" container-iid="2483a36910dc40c4a5b0897d48a956cc" creation-date="05/25/2014 17:06:24" order-index="52" type="entity">
@@ -13228,11 +13228,11 @@
             <sequence-action from="di101338671521462138" to="di905272650679216681" show-sequence-number="false" />
           </item>
           <item id="di755323512544963343" iid="bc9ec66e4aea4b0d9490aec08e72e2d4" creation-date="05/25/2014 17:10:06" order-index="57" type="sequence-action">
-            <layout x1="1250" y1="400" x2="1000" y2="400" ax="1000" ay="385" awidth="250" aheight="20" x="1000" y="385" width="250" height="20" message-x="0" message-y="-10" />
+            <layout x1="1250" y1="400" x2="1001" y2="400" ax="1001" ay="385" awidth="249" aheight="20" x="1001" y="385" width="249" height="20" message-x="0" message-y="-10" />
             <sequence-action from="di905272650679216681" to="di231571112812435872" show-sequence-number="false" />
           </item>
           <item id="di848998575659689397" iid="5c429380a920462d8c6cc0869b21eb24" creation-date="05/25/2014 17:10:23" order-index="58" type="sequence-action">
-            <layout x1="980" y1="420" x2="580" y2="420" ax="580" ay="405" awidth="400" aheight="20" x="580" y="405" width="400" height="20" message-x="0" message-y="-10" />
+            <layout x1="981" y1="420" x2="580" y2="420" ax="580" ay="405" awidth="401" aheight="20" x="580" y="405" width="401" height="20" message-x="0" message-y="-10" />
             <sequence-action from="di231571112812435872" to="di318196116667202571" show-sequence-number="false" />
           </item>
           <item id="di385264257844269885" iid="ac1a8274680543368587580ce73f0909" creation-date="05/25/2014 17:13:17" order-index="59" type="sequence-action">

@@ -10,7 +10,7 @@
     <entity-ids>
       <counter>
         <item-type stereotype="" type="AbstractElementGroup" />
-        <value>14</value>
+        <value>9</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -74,7 +74,7 @@
       <associated-diagrams />
       <owned-items />
       <style class="default" />
-      <lifeline classifier-name="CaseBO" is-active="false" is-multi-object="false" />
+      <lifeline classifier-name="CaseBLO" is-active="false" is-multi-object="false" />
     </item>
     <item id="di401183149340229369" cid="LL005" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/31/2014 12:04:20">
       <stereotypes />
@@ -103,7 +103,7 @@
       <associated-diagrams />
       <owned-items />
       <style class="default" />
-      <lifeline classifier-name="CaseBO" is-active="false" is-multi-object="false" />
+      <lifeline classifier-name="CaseBLO" is-active="false" is-multi-object="false" />
     </item>
     <item id="di698949327422625010" cid="LL002" type="lifeline" name="Database Sever" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/30/2014 18:56:38">
       <stereotypes />
@@ -1616,7 +1616,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="CaseBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="CaseBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di168968698670064456" cid="LL004" type="lifeline" name="Browser" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/30/2014 18:57:57">
             <stereotypes />
@@ -1928,7 +1928,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="CaseBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="CaseBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di796061037261294455" cid="LL006" type="lifeline" name="CaseDAO" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/30/2014 19:00:08">
             <stereotypes />

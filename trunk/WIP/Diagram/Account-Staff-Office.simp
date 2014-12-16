@@ -7,7 +7,12 @@
   </meta>
   <counters models="1">
     <entity-names />
-    <entity-ids />
+    <entity-ids>
+      <counter>
+        <item-type stereotype="" type="AbstractElementGroup" />
+        <value>25</value>
+      </counter>
+    </entity-ids>
     <diagrams>
       <counter>
         <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlSequenceDiagram</type>
@@ -168,7 +173,7 @@
       <associated-diagrams />
       <owned-items />
       <style class="default" />
-      <lifeline classifier-name="OfficeBO" is-active="false" is-multi-object="false" />
+      <lifeline classifier-name="OfficeBLO" is-active="false" is-multi-object="false" />
     </item>
     <item id="di612258030448905237" cid="IOP001" type="interaction-operand" name="InteractionOperand1" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/31/2014 14:03:58">
       <stereotypes />
@@ -1571,7 +1576,7 @@
       <associated-diagrams />
       <owned-items />
       <style class="default" />
-      <lifeline classifier-name="StaffBO" is-active="false" is-multi-object="false" />
+      <lifeline classifier-name="StaffBLO" is-active="false" is-multi-object="false" />
     </item>
     <item id="di266746222672290158" cid="AN004" type="sequence-action" name="Action4" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="05/21/2014 15:00:40">
       <stereotypes />
@@ -1647,7 +1652,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="OfficeBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="OfficeBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di572122460972650926" cid="LL006" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="P44d04a8a670c4ec891c017f18b572b34" creation-date="03/30/2014 19:00:08">
             <stereotypes />
@@ -2829,7 +2834,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="StaffBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="StaffBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di484312872304575414" cid="LL010" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/31/2014 13:36:54">
             <stereotypes />
@@ -3252,10 +3257,10 @@
             <layout ax="-630" ay="1030" awidth="550" aheight="170" x="-630" y="1030" width="550" height="170" angle="0" />
           </item>
           <item id="di686896343665840932" iid="c6cc1a205a494d0fbd8d557f427c05f0" container="di505730034384610598" container-iid="c2ca353ee4364c58a7bdd180e80f1f88" creation-date="03/31/2014 17:02:21" order-index="61" type="entity">
-            <layout ax="-630" ay="1053.871" awidth="550" aheight="72" x="-630" y="1060" width="550" height="67" angle="0" />
+            <layout ax="-630" ay="1053.871" awidth="550" aheight="71" x="-630" y="1060" width="550" height="67" angle="0" />
           </item>
           <item id="di302008038192770502" iid="241473c646744290ae37e4b92624c9d3" container="di505730034384610598" container-iid="c2ca353ee4364c58a7bdd180e80f1f88" creation-date="03/31/2014 17:02:22" order-index="62" type="entity">
-            <layout ax="-630" ay="1125.871" awidth="550" aheight="74.12891" x="-630" y="1127" width="550" height="73" angle="0" />
+            <layout ax="-630" ay="1124.871" awidth="550" aheight="75.12891" x="-630" y="1127" width="550" height="73" angle="0" />
           </item>
           <item id="di873756883493943618" iid="9d928d027f1a4681b9c7e71a16b7cd8d" creation-date="03/31/2014 17:04:54" order-index="64" type="sequence-action">
             <layout x1="-259" y1="1189" x2="-450" y2="1189" ax="-450" ay="1174" awidth="191" aheight="20" x="-450" y="1174" width="191" height="20" message-x="-1" message-y="-10" />
@@ -3334,10 +3339,10 @@
             <layout ax="-680" ay="610" awidth="1860" aheight="730" x="-680" y="610" width="1860" height="730" angle="0" />
           </item>
           <item id="di759381756571500311" iid="a186324da3e848eeb263e393a2aebc13" container="di754325222997902865" container-iid="11f7b902513d4489b86dc88ff7d2698f" creation-date="04/01/2014 17:05:13" order-index="104" type="entity">
-            <layout ax="-680" ay="633.8711" awidth="1860" aheight="608" x="-680" y="647" width="1860" height="603" angle="0" />
+            <layout ax="-680" ay="633.8711" awidth="1860" aheight="607" x="-680" y="647" width="1860" height="603" angle="0" />
           </item>
           <item id="di765325307487604673" iid="d77bebdb5bd244aab723064f43c3fdf7" container="di754325222997902865" container-iid="11f7b902513d4489b86dc88ff7d2698f" creation-date="04/01/2014 17:05:13" order-index="103" type="entity">
-            <layout ax="-680" ay="1241.871" awidth="1860" aheight="98.12891" x="-680" y="1210" width="1860" height="130" angle="0" />
+            <layout ax="-680" ay="1240.871" awidth="1860" aheight="99.12891" x="-680" y="1210" width="1860" height="130" angle="0" />
           </item>
           <item id="di771264333685151736" iid="b96ba1f226b443348ed8d4a9efeff021" creation-date="04/01/2014 17:06:41" order-index="105" type="sequence-action">
             <layout x1="100" y1="642" x2="540" y2="642" ax="100" ay="627" awidth="440" aheight="20" x="100" y="627" width="440" height="20" message-x="0" message-y="-10" />
@@ -3430,7 +3435,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="OfficeBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="OfficeBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di839595371258712729" cid="LL006" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="P44d04a8a670c4ec891c017f18b572b34" creation-date="03/30/2014 19:00:08">
             <stereotypes />
@@ -3793,7 +3798,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="OfficeBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="OfficeBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di802943743272708282" cid="LL006" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="P44d04a8a670c4ec891c017f18b572b34" creation-date="03/30/2014 19:00:08">
             <stereotypes />
@@ -4377,7 +4382,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="StaffBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="StaffBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di293503038961025833" cid="AB009" type="activation-bar" name="ActivationBar12" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/31/2014 15:01:45">
             <stereotypes />
@@ -4570,7 +4575,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="StaffBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="StaffBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di796061037261294455" cid="LL006" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/30/2014 19:00:08">
             <stereotypes />
@@ -5157,7 +5162,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="StaffBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="StaffBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di566051668598797991" cid="LL004" type="lifeline" name="Browser" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="P44d04a8a670c4ec891c017f18b572b34" creation-date="03/30/2014 18:57:57">
             <stereotypes />
@@ -5292,7 +5297,7 @@
             <layout ax="-101" ay="50" awidth="141" aheight="840" x="-101" y="50" width="141" height="840" angle="0" />
           </item>
           <item id="di427690084661019384" iid="5b560e6dfe024872b3e80c0e1f71e681" creation-date="03/30/2014 18:59:36" order-index="4" type="lifeline">
-            <layout ax="570" ay="50" awidth="140" aheight="830" x="570" y="50" width="140" height="830" angle="0" />
+            <layout ax="571" ay="50" awidth="140" aheight="830" x="571" y="51" width="140" height="830" angle="0" />
           </item>
           <item id="di472833816531083494" iid="888b7dec279f49d881dfd25880db6fa4" creation-date="03/30/2014 19:00:08" order-index="5" type="lifeline">
             <layout ax="740" ay="50" awidth="140" aheight="840" x="740" y="50" width="140" height="840" angle="0" />
@@ -5321,14 +5326,14 @@
             <sequence-action from="di145336083389771268" to="di145336083389771268" show-sequence-number="false" />
           </item>
           <item id="di589796892722422850" iid="42ef6fb269204da4b9610a751815ea32" creation-date="03/31/2014 15:00:49" order-index="55" type="sequence-action">
-            <layout x1="242" y1="450" x2="630" y2="450" ax="242" ay="435" awidth="388" aheight="20" x="242" y="435" width="388" height="20" message-x="-60" message-y="-10" />
+            <layout x1="242" y1="450" x2="631" y2="450" ax="242" ay="435" awidth="389" aheight="20" x="242" y="435" width="389" height="20" message-x="-60" message-y="-10" />
             <sequence-action from="di947135577744826371" to="di884805252115676057" show-sequence-number="false" />
           </item>
           <item id="di884805252115676057" iid="ab7b127dff1949928d23f199e480eb72" container="di427690084661019384" container-iid="5b560e6dfe024872b3e80c0e1f71e681" creation-date="03/31/2014 15:00:51" order-index="56" type="entity">
-            <layout ax="630" ay="450" awidth="20" aheight="191" x="630" y="450" width="20" height="191" angle="0" />
+            <layout ax="631" ay="450" awidth="20" aheight="191" x="631" y="450" width="20" height="191" angle="0" />
           </item>
           <item id="di432965873729265106" iid="2f6d3920d7dd4e3fbe8611e50535f84d" creation-date="03/31/2014 15:01:17" order-index="57" type="sequence-action">
-            <layout x1="650" y1="530" x2="800" y2="530" ax="650" ay="515" awidth="150" aheight="20" x="650" y="515" width="150" height="20" message-x="-2" message-y="-9" />
+            <layout x1="651" y1="530" x2="800" y2="530" ax="651" ay="515" awidth="149" aheight="20" x="651" y="515" width="149" height="20" message-x="-2" message-y="-9" />
             <sequence-action from="di884805252115676057" to="di511244403344265722" show-sequence-number="false" />
           </item>
           <item id="di511244403344265722" iid="2005be955bfe4c0096af3e2cf6d66f8a" container="di472833816531083494" container-iid="888b7dec279f49d881dfd25880db6fa4" creation-date="03/31/2014 15:01:18" order-index="58" type="entity">
@@ -5346,11 +5351,11 @@
             <sequence-action from="di626566075105041301" to="di511244403344265722" show-sequence-number="false" />
           </item>
           <item id="di168719760552660194" iid="ecd84573a88645ad95d2c093ed607c7c" creation-date="03/31/2014 15:02:56" order-index="62" type="sequence-action">
-            <layout x1="800" y1="624" x2="650" y2="624" ax="650" ay="609" awidth="150" aheight="20" x="650" y="609" width="150" height="20" message-x="1" message-y="-17" />
+            <layout x1="800" y1="624" x2="651" y2="624" ax="651" ay="609" awidth="149" aheight="20" x="651" y="609" width="149" height="20" message-x="1" message-y="-17" />
             <sequence-action from="di511244403344265722" to="di884805252115676057" show-sequence-number="false" />
           </item>
           <item id="di835348303453202051" iid="8049a2a6e9c04eb9844879acf1504475" creation-date="03/31/2014 15:03:33" order-index="63" type="sequence-action">
-            <layout x1="630" y1="641" x2="242" y2="641" ax="242" ay="626" awidth="388" aheight="20" x="242" y="626" width="388" height="20" message-x="0" message-y="-10" />
+            <layout x1="631" y1="641" x2="242" y2="641" ax="242" ay="626" awidth="389" aheight="20" x="242" y="626" width="389" height="20" message-x="0" message-y="-10" />
             <sequence-action from="di884805252115676057" to="di947135577744826371" show-sequence-number="false" />
           </item>
           <item id="di195195395242543130" iid="b4ca989726594d5fb92b7cdda6349191" creation-date="03/31/2014 15:04:19" order-index="64" type="sequence-action">
@@ -5382,14 +5387,14 @@
             <layout ax="380" ay="50" awidth="110" aheight="840" x="380" y="50" width="110" height="840" angle="0" />
           </item>
           <item id="di311831285874050611" iid="70df1462855c45d3ad58397c4a6de899" creation-date="04/01/2014 00:30:14" order-index="84" type="sequence-action">
-            <layout x1="630" y1="483" x2="445" y2="483" ax="445" ay="468" awidth="185" aheight="20" x="445" y="468" width="185" height="20" message-x="0" message-y="-10" />
+            <layout x1="631" y1="483" x2="445" y2="483" ax="445" ay="468" awidth="186" aheight="20" x="445" y="468" width="186" height="20" message-x="0" message-y="-10" />
             <sequence-action from="di884805252115676057" to="di291028855717685346" show-sequence-number="false" />
           </item>
           <item id="di291028855717685346" iid="bfa4ff67e0bb42c091a8c50be30bd4a2" container="di337827560663292643" container-iid="b09f9f2f64124c79a5e96beee578cb77" creation-date="04/01/2014 00:30:16" order-index="85" type="entity">
             <layout ax="425" ay="483" awidth="20" aheight="37" x="425" y="483" width="20" height="37" angle="0" />
           </item>
           <item id="di255699047632359946" iid="70e343f009d4458eacacf152433c6aa7" creation-date="04/01/2014 00:30:38" order-index="86" type="sequence-action">
-            <layout x1="445" y1="520" x2="630" y2="520" ax="445" ay="505" awidth="185" aheight="20" x="445" y="505" width="185" height="20" message-x="0" message-y="-10" />
+            <layout x1="445" y1="520" x2="631" y2="520" ax="445" ay="505" awidth="186" aheight="20" x="445" y="505" width="186" height="20" message-x="0" message-y="-10" />
             <sequence-action from="di291028855717685346" to="di884805252115676057" show-sequence-number="false" />
           </item>
           <item id="di475465096601959841" iid="ee770ad8255747db986a6e753022dd45" creation-date="05/21/2014 15:07:07" order-index="87" type="sequence-action">
@@ -5536,7 +5541,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="UserBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="UserBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di829492738726585636" cid="AB017" type="activation-bar" name="ActivationBar20" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="04/01/2014 00:59:44">
             <stereotypes />
@@ -5798,7 +5803,7 @@
             <associated-diagrams />
             <owned-items />
             <style class="default" />
-            <lifeline classifier-name="StaffBO" is-active="false" is-multi-object="false" />
+            <lifeline classifier-name="StaffBLO" is-active="false" is-multi-object="false" />
           </item>
           <item id="di267732041714112761" cid="LL006" type="lifeline" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="03/30/2014 19:00:08">
             <stereotypes />
@@ -6190,7 +6195,7 @@
             <layout ax="-500" ay="660" awidth="1630" aheight="540" x="-500" y="660" width="1630" height="540" angle="0" />
           </item>
           <item id="di584622800269408263" iid="ce08cf4c725e41648f056cf05e67fdbd" container="di239910126655647221" container-iid="61d8d203d4104dd9a11e7df98f02095d" creation-date="03/31/2014 15:17:53" order-index="70" type="entity">
-            <layout ax="-500" ay="683.8711" awidth="1630" aheight="435" x="-410" y="780" width="1630" height="20" angle="0" />
+            <layout ax="-500" ay="683.8711" awidth="1630" aheight="434" x="-410" y="780" width="1630" height="20" angle="0" />
           </item>
           <item id="di261127563244206771" iid="7ac373e9e0df4048ba1a874369ce7bfe" creation-date="03/31/2014 16:10:26" order-index="73" type="sequence-action">
             <layout x1="29" y1="1160" x2="-249" y2="1160" ax="-249" ay="1145" awidth="278" aheight="20" x="-249" y="1145" width="278" height="20" message-x="0" message-y="-10" />
@@ -6201,7 +6206,7 @@
             <sequence-action from="di314792762502110080" to="di424535684298301187" show-sequence-number="false" />
           </item>
           <item id="di299495041573087597" iid="64dbd0a3dfce4fb68675834e90db06a0" container="di239910126655647221" container-iid="61d8d203d4104dd9a11e7df98f02095d" creation-date="03/31/2014 15:17:51" order-index="69" type="entity">
-            <layout ax="-500" ay="1118.871" awidth="1630" aheight="81.12891" x="-500" y="1120" width="1630" height="80" angle="0" />
+            <layout ax="-500" ay="1117.871" awidth="1630" aheight="82.12891" x="-500" y="1120" width="1630" height="80" angle="0" />
           </item>
           <item id="di987059580494239846" iid="81d35e41cada4ef9bf32ca2d0ab04bb2" creation-date="04/01/2014 02:18:14" order-index="90" type="entity">
             <layout ax="-430" ay="920" awidth="710" aheight="190" x="-430" y="920" width="710" height="190" angle="0" />
