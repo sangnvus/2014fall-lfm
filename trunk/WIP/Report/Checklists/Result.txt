@@ -1,0 +1,58 @@
+Checklist: Yes:  2377
+	   N/A:  1910
+	   Total:4287
+
+Login
+Yes: 78
+N/A: 67
+Calendar Event
+Yes: 138
+N/A: 107
+Case
+Yes: 83
+N/A: 64
+Case Info
+Yes: 56
+N/A: 42
+Customer Group
+Yes: 163
+N/A: 131
+Customer Related
+Yes: 105
+N/A: 91
+Customer
+Yes: 163
+N/A: 131
+Document Related
+Yes: 163
+N/A: 131
+Lawyer Related
+Yes: 105
+N/A: 91
+Office
+Yes: 168
+N/A: 126
+Operation Event
+Yes: 136
+N/A: 109
+Payment
+Yes: 111
+N/A: 85
+Service Type
+Yes: 163
+N/A: 131
+Service
+Yes: 163
+N/A: 131
+Staff
+Yes: 197
+N/A: 146
+Staff Group
+Yes: 163
+N/A: 131
+Subject Related
+Yes: 111
+N/A: 85
+User Service
+Yes: 111
+N/A: 85
