@@ -1,60 +1,65 @@
-Checklist: Yes:  2377
-	   N/A:  1910
-	   Total:4287
+Checklist: Yes:  2477
+	   N/A:  0336
+Document:  Yes:  0136
+	   N/A:  0008
+	   Total:2957
 
 Login
 Yes: 78
-N/A: 67
+N/A: 15
 Calendar Event
 Yes: 138
-N/A: 107
+N/A: 17
 Case
 Yes: 83
-N/A: 64
+N/A: 10
 Case Info
 Yes: 56
-N/A: 42
+N/A: 6
 Customer Group
 Yes: 163
-N/A: 131
+N/A: 23
 Customer Related
 Yes: 105
-N/A: 91
+N/A: 19
 Customer
 Yes: 163
-N/A: 131
+N/A: 23
 Document Related
 Yes: 163
-N/A: 131
+N/A: 23
 Lawyer Related
 Yes: 105
-N/A: 91
+N/A: 19
 Office
 Yes: 168
-N/A: 126
+N/A: 18
 Operation Event
 Yes: 136
-N/A: 109
+N/A: 19
 Payment
 Yes: 111
-N/A: 85
+N/A: 13
 Service Type
 Yes: 163
-N/A: 131
+N/A: 23
 Service
 Yes: 163
-N/A: 131
+N/A: 23
 Staff
 Yes: 197
-N/A: 146
+N/A: 18
 Staff Group
 Yes: 163
-N/A: 131
+N/A: 23
 Subject Related
 Yes: 111
-N/A: 85
+N/A: 13
 User Service
-Yes: 111
-N/A: 85
+Yes: 136
+N/A: 13
+Statistic
+Yes: 75
+N/A: 18
 
 All Pass: 1888
